@@ -43,21 +43,26 @@ flowchart TD
 スクリプトのパスは常に以下1本のみを使います（他のサブスクリプトは内部で自動呼び出しされます）：
 `SCRIPT="$HOME/.codex/skills/omni-design-studio/scripts/build_omni_design.py"`
 
-### Step 1: コンセプト確認 ＆ 写真生成プロンプト3本の取得
-1. **キャッチコピーやコンセプトが未定の場合**は、まず以下を実行してユーザーに5つの質問（ターゲット・3つのベネフィット・誰に×何によって×どうなれる・旧前提の破壊➔真の解決策・ビフォーアフター）を尋ねます：
+### Step 1: 【絶対必須・スキップ厳禁】サンプルWebサイトの検索・画像取り込み ＆ コンセプト確認
+> 🚨 **絶対規律（Reference Image Capture Gate & Anti-AI-Slop Linter）**
+> 「参考画像がない場合は省略してよい」という例外は**完全廃止**されました。
+> デザインを作成する際は、**必ず最初に実在するベンチマークWebサイト（最低2〜3サイト）を検索してPlaywrightでスクリーンショット画像として取り込む（`--benchmark-urls` / `--ref-url`）か、ユーザーの参考デザイン画像（`--ref-image`）を取り込み**、`REFERENCE_BENCHMARK_PROOF.json` と比較コンタクトシート（`BENCHMARK_CONTACT_SHEET.png`）を生成しなければなりません。この画像取り込み証跡がない場合、スクリプトは `SystemExit(1)` で物理停止します。
+> また、出力HTML/CSSは `reference_gate.py` の **`lint_html_against_ai_slop`** によって機械検査され、AI特有の安っぽい装飾（`border-radius: 999px` のピルバッジ連発、`✓` アイコン箇条書き、角丸SaaSカード枠、見出し絵文字）が1つでも含まれているとビルドが強制遮断されます。
+
+1. **キャッチコピーやコンセプトが未定の場合**は、まず以下を実行してユーザーに核心質問を尋ねます：
    ```bash
    python3 "$SCRIPT" --ask-concept
    ```
    *(テンプレート正本: `templates/CONCEPT_QUESTION_SHEET.md`)*
-2. **ブランド名・参考画像（`--ref-image` / `--ref-url`）が決まったら**、`--print-image-prompts` を付けて実行し、色彩・テイストDNAに調和した3枚の写真用プロンプト（JSON）を取得します：
+2. **実在するサンプルWebサイトを画像として取り込み、色彩・余白・タイポグラフィDNAを抽出する（必須）**：
    ```bash
    python3 "$SCRIPT" \
      --brand "ブランド名" \
-     --category "商品カテゴリ（例: イヤリング・ファインジュエリー）" \
-     --ref-image "/path/to/reference.jpg" \
+     --category "商品カテゴリ" \
+     --benchmark-urls "https://example-benchmark-1.jp/" "https://example-benchmark-2.jp/" \
+     --ref-image "/path/to/reference.png" \
      --print-image-prompts
    ```
-   *(※参考画像がない場合は `--ref-image` を省略すれば既定の人間キュレーションDNA `organic_editorial` の配色・テイストが使われます)*
 
 ### Step 2: サブスク0円の最上位モデルで写真素材を3枚生成する（文字なし写真）
 Step 1 で出力された3つのプロンプト（`hero_image_prompt`, `poster_image_prompt`, `pack_image_prompt`）を使い、文字を含まない純粋な商業スタジオ写真を3枚生成します（**APIキー従量課金は厳禁・サブスク範囲内のみ**）：

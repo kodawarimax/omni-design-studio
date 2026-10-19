@@ -696,6 +696,7 @@ def main() -> None:
     parser.add_argument("--trend", choices=list(TREND_TOKENS.keys()), default="organic_editorial")
     parser.add_argument("--ref-image", default="", help="User reference design image to extract color/layout DNA from")
     parser.add_argument("--ref-url", default="", help="User reference website URL to extract color/layout DNA from")
+    parser.add_argument("--benchmark-urls", nargs="*", default=[], help="List of real benchmark website URLs to capture as screenshots before building")
     parser.add_argument("--custom-dna", default="", help="Path to extracted USER_CUSTOM_DNA.json")
     parser.add_argument("--concept-sheet", default="", help="Path to filled CONCEPT_QUESTION_SHEET.md or JSON to auto-generate copy")
     parser.add_argument("--ask-concept", action="store_true", help="Print the Concept & Copywriting Question Sheet for the user")
@@ -768,7 +769,26 @@ def main() -> None:
             for idx, r_path in enumerate(recent, 1):
                 print(f"  {idx}. {r_path}")
 
-    # Step 3: User Reference DNA Extraction (--ref-image / --ref-url / --custom-dna)
+    # Step 3: NON-BYPASSABLE Reference Website Image Capture & DNA Extraction Gate
+    from reference_gate import capture_and_analyze_benchmarks, verify_reference_proof_gate
+
+    bench_urls = list(args.benchmark_urls)
+    if args.ref_url and args.ref_url not in bench_urls:
+        bench_urls.insert(0, args.ref_url)
+    ref_imgs = [args.ref_image] if args.ref_image else []
+
+    proof_file = out_dir / "REFERENCE_BENCHMARK_PROOF.json"
+    if bench_urls or ref_imgs:
+        capture_and_analyze_benchmarks(urls=bench_urls, ref_images=ref_imgs, out_dir=out_dir)
+    elif not proof_file.exists() and not args.custom_dna:
+        raise SystemExit(
+            "🚨 [CRITICAL GATE 1 BLOCKED: REFERENCE CAPTURE REQUIRED]\n"
+            "`omni-design-studio` ではサンプルWebサイトの検索・画像取り込み（スクリーンショット撮影）を省略することは物理的に禁止されています。\n"
+            "必ず `--benchmark-urls <URL1> <URL2> ...`、`--ref-url <URL>`、または `--ref-image <PATH>` を指定して、実在するベンチマークデザインを画像として取り込んでください。"
+        )
+    if proof_file.exists():
+        verify_reference_proof_gate(out_dir)
+
     if args.ref_image or args.ref_url or args.custom_dna:
         from analyze_user_reference import (
             build_missing_asset_recommendations,
