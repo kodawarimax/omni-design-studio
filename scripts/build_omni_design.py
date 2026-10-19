@@ -699,8 +699,10 @@ def main() -> None:
     parser.add_argument("--benchmark-urls", nargs="*", default=[], help="List of real benchmark website URLs to capture as screenshots before building")
     parser.add_argument("--custom-dna", default="", help="Path to extracted USER_CUSTOM_DNA.json")
     parser.add_argument("--concept-sheet", default="", help="Path to filled CONCEPT_QUESTION_SHEET.md or JSON to auto-generate copy")
+    parser.add_argument("--user-qa-json", default="", help="Path to user's final Q&A answers JSON (USER_QA_ANSWERS.json) to bind directly into prompts and copy")
     parser.add_argument("--ask-concept", action="store_true", help="Print the Concept & Copywriting Question Sheet for the user")
     parser.add_argument("--print-image-prompts", action="store_true", help="Print the 3 studio photo prompts for Codex `image_gen` or Antigravity `image-generator`")
+    parser.add_argument("--generate-with-codex-sub", action="store_true", help="Automatically call Codex CLI subscription `image_gen` (gpt-image-2.5-sunburst, 0 JPY) using research + Q&A prompts")
     parser.add_argument("--auto-codex-images", action="store_true", help="Automatically bind the 3 newest images from ~/.codex/generated_images/ (Codex `image_gen` output)")
     parser.add_argument("--brand", default="LUMIÈRE & CO.")
     parser.add_argument("--category", default="イヤリング・ファインジュエリー")
@@ -716,6 +718,10 @@ def main() -> None:
     out_dir = Path(args.out_dir).expanduser().resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
     t = dict(TREND_TOKENS[args.trend])
+    user_qa_brief: dict = {}
+    if args.user_qa_json and Path(args.user_qa_json).expanduser().exists():
+        user_qa_brief = json.loads(Path(args.user_qa_json).expanduser().read_text(encoding="utf-8"))
+        (out_dir / "USER_QA_ANSWERS.json").write_text(json.dumps(user_qa_brief, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # Step 1: Concept Sheet Q&A / Auto-Copywriting (if requested)
     if args.ask_concept or args.concept_sheet:
@@ -738,6 +744,8 @@ def main() -> None:
             (out_dir / "CONCEPT_COPY_DNA.json").write_text(
                 json.dumps(copy_dna, ensure_ascii=False, indent=2), encoding="utf-8"
             )
+            if not user_qa_brief:
+                user_qa_brief = copy_dna
             if copy_dna.get("brand"):
                 args.brand = copy_dna["brand"]
             if copy_dna.get("headline"):
@@ -755,24 +763,11 @@ def main() -> None:
                 print("\n📋 【エージェントからの追加ヒアリング（さらに強いコピーにするための未入力項目）】")
                 print_agent_questionnaire(copy_dna["missing_questions_for_user"])
 
-    # Step 2: Auto-bind Codex native `image_gen` outputs when --auto-codex-images is set
-    if args.auto_codex_images:
-        recent = find_latest_codex_images(3)
-        if len(recent) >= 1 and not args.hero_image:
-            args.hero_image = recent[0]
-        if len(recent) >= 2 and not args.poster_image:
-            args.poster_image = recent[1]
-        if len(recent) >= 3 and not args.pack_image:
-            args.pack_image = recent[2]
-        if recent:
-            print(f"=== 🖼️ [Codex Native `image_gen` Assets Bound] ({len(recent)} files from ~/.codex/generated_images/) ===")
-            for idx, r_path in enumerate(recent, 1):
-                print(f"  {idx}. {r_path}")
-
-    # Step 3: NON-BYPASSABLE Reference Website Image Capture & DNA Extraction Gate
+    # Step 2: NON-BYPASSABLE Reference Website Image Capture & DNA Extraction Gate
     from reference_gate import (
         capture_and_analyze_benchmarks,
         generate_image_prompts_from_research,
+        invoke_codex_sunburst_from_research,
         verify_reference_proof_gate,
     )
 
@@ -826,7 +821,7 @@ def main() -> None:
                 print(f"     -> 推奨サイズ: {m['required_spec']}")
                 print(f"     -> AI生成プロンプト案: \"{m['ready_to_use_ai_prompt']}\"")
 
-    # Step 4: Output 3 tailored studio prompts (Strictly generated FROM Research Proof!)
+    # Step 3: Output 3 tailored studio prompts (Strictly generated FROM Research Proof + User Q&A Answers!)
     bg_c = t.get("bg", "#F5EFE4")
     ac_c = t.get("primary", "#6D8C73")
     if proof_file.exists():
@@ -836,6 +831,7 @@ def main() -> None:
             category=args.category,
             override_bg=bg_c,
             override_accent=ac_c,
+            user_qa_brief=user_qa_brief,
         )
         verify_reference_proof_gate(out_dir, require_image_prompt_proof=True)
         if args.print_image_prompts:
@@ -845,6 +841,24 @@ def main() -> None:
         raise SystemExit(
             "🚨 [GATE 1.5 BLOCKED] リサーチ（サンプルWebサイトの画像キャプチャ）完了前に `--print-image-prompts` を発行することはできません。"
         )
+
+    # Step 4: Generate or Bind `gpt-image-2.5-sunburst` (Codex CLI Subscription, 0 JPY)
+    if args.generate_with_codex_sub:
+        gen_paths = invoke_codex_sunburst_from_research(out_dir)
+        if len(gen_paths) >= 3:
+            args.hero_image, args.poster_image, args.pack_image = gen_paths[0], gen_paths[1], gen_paths[2]
+    elif args.auto_codex_images:
+        recent = find_latest_codex_images(3)
+        if len(recent) >= 1 and not args.hero_image:
+            args.hero_image = recent[0]
+        if len(recent) >= 2 and not args.poster_image:
+            args.poster_image = recent[1]
+        if len(recent) >= 3 and not args.pack_image:
+            args.pack_image = recent[2]
+        if recent:
+            print(f"=== 🖼️ [Codex Native `image_gen` Assets Bound] ({len(recent)} files from ~/.codex/generated_images/) ===")
+            for idx, r_path in enumerate(recent, 1):
+                print(f"  {idx}. {r_path}")
 
     from cms_editor_runtime import inject_wordpress_like_cms
 

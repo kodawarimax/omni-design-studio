@@ -176,12 +176,14 @@ def generate_image_prompts_from_research(
     category: str,
     override_bg: str = "",
     override_accent: str = "",
+    user_qa_brief: dict | None = None,
 ) -> dict:
     """
-    Gate 1.5 Producer: Reads the verified `REFERENCE_BENCHMARK_PROOF.json`, synthesizes the extracted
-    color palette, luminance, and DOM layout rules, and writes `IMAGE_PROMPTS_FROM_RESEARCH.json`.
-    Image generation tools (`image_gen` / `image-generator`) MUST only be invoked using the prompts
-    recorded in `IMAGE_PROMPTS_FROM_RESEARCH.json`.
+    Gate 1.5 Producer: Reads the verified `REFERENCE_BENCHMARK_PROOF.json` AND the user's final Q&A answers
+    (`user_qa_brief` / `CONCEPT_COPY_DNA.json`), synthesizes the extracted color palette, luminance,
+    DOM layout rules, and user Q&A specifications, and writes `IMAGE_PROMPTS_FROM_RESEARCH.json`.
+    Image generation tools (`gpt-image-2.5-sunburst` via Codex subscription) MUST only be invoked using
+    the prompts recorded in `IMAGE_PROMPTS_FROM_RESEARCH.json`.
     """
     proof = verify_reference_proof_gate(out_dir)
     benchmarks = proof["benchmarks"]
@@ -196,10 +198,26 @@ def generate_image_prompts_from_research(
         else "dramatic low-key studio rim lighting, deep shadows, obsidian and brushed metal surfaces"
     )
 
+    qa = user_qa_brief or {}
+    persona_scene = qa.get(
+        "hero_scene_from_qa",
+        f"Editorial lifestyle & commercial photography of {category} for '{brand}'",
+    )
+    flyer_scene = qa.get(
+        "flyer_scene_from_qa",
+        f"Magazine lookbook still-life photography of {category} for '{brand}'",
+    )
+    pack_scene = qa.get(
+        "pack_scene_from_qa",
+        f"Product starter kit packaging photography for '{brand}' ({category})",
+    )
+
     prompts_payload = {
-        "gate_order_status": "RESEARCH_COMPLETED_BEFORE_IMAGE_PROMPTS",
+        "gate_order_status": "RESEARCH_AND_USER_QA_COMPLETED_BEFORE_IMAGE_PROMPTS",
+        "preferred_image_engine": "gpt-image-2.5-sunburst (via Codex CLI subscription `image_gen`, 0 JPY)",
         "based_on_proof": str((out_dir / "REFERENCE_BENCHMARK_PROOF.json").resolve()),
         "based_on_contact_sheet": proof["contact_sheet_path"],
+        "user_qa_applied": qa,
         "synthesized_palette": {
             "bg_hex": bg_hex,
             "accent_hex": accent_hex,
@@ -207,26 +225,62 @@ def generate_image_prompts_from_research(
         },
         "prompts": {
             "hero_image_prompt": (
-                f"Editorial lifestyle & commercial photography of {category} for '{brand}'. "
+                f"{persona_scene}. "
                 f"Harmonized strictly with extracted reference palette {bg_hex} (background) and {accent_hex} (accent). "
-                f"Lighting: {lighting_desc}. Generous negative space for vertical Japanese typography (tategaki) overlay, "
+                f"Lighting: {lighting_desc}. Generous negative space on the right for vertical Japanese typography (tategaki) overlay, "
                 f"shot on Hasselblad H6D-100c, 8k photorealistic, zero text, zero watermarks."
             ),
             "poster_image_prompt": (
-                f"Magazine lookbook still-life photography of {category} for '{brand}'. "
+                f"{flyer_scene}. "
                 f"Color harmony with {bg_hex} and {accent_hex}, {lighting_desc}, calm authentic craft atmosphere, "
-                f"clean composition, no text, no words."
+                f"completely blank open notebook (zero text), clean composition, no text, no words."
             ),
             "pack_image_prompt": (
-                f"Product starter kit packaging photography for '{brand}' ({category}). "
-                f"Tactile washi/paper box and contents in {bg_hex} and {accent_hex} accents resting on a natural wooden table, "
-                f"{lighting_desc}, trustworthy presentation, no text."
+                f"{pack_scene}. "
+                f"Tactile cream washi rigid gift box with {accent_hex} sage-green belly band resting on a natural wooden table, "
+                f"{lighting_desc}, trustworthy presentation, completely blank booklet cover, zero text."
             ),
         },
     }
     out_file = out_dir / "IMAGE_PROMPTS_FROM_RESEARCH.json"
     out_file.write_text(json.dumps(prompts_payload, ensure_ascii=False, indent=2), encoding="utf-8")
     return prompts_payload
+
+
+def invoke_codex_sunburst_from_research(out_dir: Path) -> list[str]:
+    """
+    Calls `codex exec` (ChatGPT Pro subscription OAuth, 0 JPY, `unset OPENAI_API_KEY`) to generate
+    the 3 commercial studio images using `gpt-image-2.5-sunburst` (`image_gen` tool) directly from
+    `IMAGE_PROMPTS_FROM_RESEARCH.json`.
+    """
+    import os
+    import subprocess
+
+    verify_reference_proof_gate(out_dir, require_image_prompt_proof=True)
+    prompt_data = json.loads((out_dir / "IMAGE_PROMPTS_FROM_RESEARCH.json").read_text(encoding="utf-8"))
+    p_dict = prompt_data["prompts"]
+
+    env = dict(os.environ)
+    env.pop("OPENAI_API_KEY", None)
+
+    instruction = (
+        "Call the built-in image_gen tool 3 times to generate these 3 commercial photos (zero text in any image):\n"
+        f"1. {p_dict['hero_image_prompt']}\n"
+        f"2. {p_dict['poster_image_prompt']}\n"
+        f"3. {p_dict['pack_image_prompt']}\n"
+        "Output ONLY the 3 saved file paths in order."
+    )
+    subprocess.run(
+        ["codex", "exec", "--skip-git-repo-check", instruction],
+        env=env,
+        check=True,
+    )
+    codex_img_root = Path.home() / ".codex" / "generated_images"
+    files = [p for p in codex_img_root.glob("*/*.png") if p.is_file()]
+    files.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    selected = [str(p.resolve()) for p in files[:3]]
+    selected.reverse()  # chronological order 1, 2, 3
+    return selected
 
 
 def verify_reference_proof_gate(out_dir: Path, require_image_prompt_proof: bool = False) -> dict:

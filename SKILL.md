@@ -15,23 +15,21 @@ description: コンセプト質問シート・参考デザイン（画像/URL/10
 
 ```mermaid
 flowchart TD
-    Start(["👤 ユーザー依頼"]) --> Check{"コンセプト・参考画像は<br>指定されているか？"}
+    Start(["👤 ユーザー依頼"]) --> Check{"コンセプト・質問回答は<br>揃っているか？"}
 
-    %% Step 1
-    Check -- "未指定（曖昧な依頼）" --> Ask["【Step 1A】5つの核心質問を提示<br>build_omni_design.py --ask-concept"]
-    Ask --> UserAns["ユーザー回答 / シート記入"]
-    Check -- "指定あり / 回答済み" --> PromptGen["【Step 1B】DNA抽出 ＆ 写真プロンプト3本出力<br>build_omni_design.py --print-image-prompts<br>(--ref-image / --ref-url / --concept-sheet)"]
-    UserAns --> PromptGen
+    %% Step 1A: User Q&A
+    Check -- "未指定・確認事項あり" --> Ask["【Step 1A】核心質問・ヒアリング回答を構造化保存<br>USER_QA_ANSWERS.json (--user-qa-json)"]
+    Ask --> BenchCapture
+    Check -- "回答済み" --> BenchCapture["【Step 1B / Gate 1】実在ベンチマークWebサイトを検索＆画像キャプチャ<br>reference_gate.py: capture_and_analyze_benchmarks()<br>➔ BENCHMARK_CONTACT_SHEET.png & REFERENCE_BENCHMARK_PROOF.json"]
 
-    %% Step 2
-    PromptGen --> Harness{"実行環境（ハーネス）は？"}
-    Harness -- "Codex (Primary)" --> CodexImg["【Step 2A】Codex内蔵 image_gen ツール × 3回<br>(gpt-image-2.5-sunburst / サブスク0円)<br>~/.codex/generated_images/ へ自動保存"]
-    Harness -- "Antigravity" --> AgyImg["【Step 2B】image-generator サブエージェント × 3枚<br>(Imagen 4 Ultra / サブスク0円)"]
-    Harness -- "手持ち写真あり / なし" --> DirectBuild
+    %% Step 1.5: Causal Prompt Synthesis
+    BenchCapture --> PromptGen["【Step 1C / Gate 1.5】リサーチ色彩・余白DNA × ユーザー質問回答から<br>写真プロンプト3本を因果合成<br>➔ IMAGE_PROMPTS_FROM_RESEARCH.json"]
 
-    %% Step 3
-    CodexImg --> DirectBuild["【Step 3】1コマンド全媒体ビルド<br>build_omni_design.py --auto-codex-images --with-promo-video"]
-    AgyImg --> DirectBuild
+    %% Step 2: Image Generation (Sunburst Primary)
+    PromptGen --> SunburstGen["【Step 2】サブスク0円の gpt-image-2.5-sunburst で商業写真3枚を生成<br>① Codex実行中: 内蔵 image_gen ツール × 3回<br>② Antigravity/Claude実行中: --generate-with-codex-sub<br>(unset OPENAI_API_KEY && codex exec で gpt-image-2.5-sunburst 呼び出し)"]
+
+    %% Step 3: Build & Gate 2 Lint
+    SunburstGen --> DirectBuild["【Step 3 / Gate 2】Anti-AI-Slop 静的Linter検査 ＆ 全媒体一括ビルド<br>build_omni_design.py --with-promo-video<br>(999pxピルバッジ・✓リスト・角丸SaaS枠・絵文字を物理遮断)"]
 
     DirectBuild --> Out(["📦 編集自在な完成パッケージ (0円)<br>① website.html / poster.html / packaging_mockup.html<br>（WordPress風ビジュアルブロック＆キャンバスエディタ内蔵）<br>② website_preview.png / poster_300dpi.png / poster_print.pdf / packaging_3d_mockup.png / packaging_dieline.svg<br>③ promo_video_vertical_9x16.mp4 / landscape_16x9.mp4<br>④ promo_video_studio_9x16.html / 16x9.html（ブラウザ字幕＆タイムライン編集スタジオ）<br>⑤ promo_captions.srt / .vtt（Premiere・CapCut用字幕）＆ promo_audio_track.wav"])
 ```
@@ -43,35 +41,32 @@ flowchart TD
 スクリプトのパスは常に以下1本のみを使います（他のサブスクリプトは内部で自動呼び出しされます）：
 `SCRIPT="$HOME/.codex/skills/omni-design-studio/scripts/build_omni_design.py"`
 
-### Step 1: 【絶対必須・スキップ厳禁】サンプルWebサイトの検索・画像取り込み ＆ コンセプト確認
-> 🚨 **絶対規律（Reference Image Capture Gate & Anti-AI-Slop Linter）**
-> 「参考画像がない場合は省略してよい」という例外は**完全廃止**されました。
-> デザインを作成する際は、**必ず最初に実在するベンチマークWebサイト（最低2〜3サイト）を検索してPlaywrightでスクリーンショット画像として取り込む（`--benchmark-urls` / `--ref-url`）か、ユーザーの参考デザイン画像（`--ref-image`）を取り込み**、`REFERENCE_BENCHMARK_PROOF.json` と比較コンタクトシート（`BENCHMARK_CONTACT_SHEET.png`）を生成しなければなりません。この画像取り込み証跡がない場合、スクリプトは `SystemExit(1)` で物理停止します。
-> また、出力HTML/CSSは `reference_gate.py` の **`lint_html_against_ai_slop`** によって機械検査され、AI特有の安っぽい装飾（`border-radius: 999px` のピルバッジ連発、`✓` アイコン箇条書き、角丸SaaSカード枠、見出し絵文字）が1つでも含まれているとビルドが強制遮断されます。
+### Step 1: 【絶対必須・スキップ厳禁】サンプルWebサイトの検索・画像取り込み ＆ ユーザー質問回答の固定（Gate 1 & Gate 1.5）
+> 🚨 **絶対規律（Reference Image Capture Gate & Causal Image Prompt Lock）**
+> 「参考画像がない場合は省略してよい」「リサーチ結果と無関係に汎用プロンプトで画像生成してよい」という例外は**完全廃止**されました。
+> 1. **Gate 1（実サイト画像キャプチャ必須）**: 必ず最初に実在するベンチマークWebサイト（最低2〜3サイト）を検索してPlaywrightでスクリーンショット画像として取り込む（`--benchmark-urls` / `--ref-url`）か、参考デザイン画像（`--ref-image`）を取り込み、`REFERENCE_BENCHMARK_PROOF.json` と比較コンタクトシート（`BENCHMARK_CONTACT_SHEET.png`）を生成しなければなりません。
+> 2. **Gate 1.5（リサーチ＋質問回答 ➔ 画像プロンプト因果ロック）**: 取り込んだベンチマークの色彩・明度・余白DNA（`REFERENCE_BENCHMARK_PROOF.json`）と、ユーザーの質問回答（`--user-qa-json USER_QA_ANSWERS.json`）を統合して **`IMAGE_PROMPTS_FROM_RESEARCH.json`** を自動生成します。この証跡がない場合、スクリプトは `SystemExit(1)` で物理停止します。
+> 3. **Gate 2（Anti-AI-Slop Linter）**: 出力HTML/CSSは `reference_gate.py` の **`lint_html_against_ai_slop`** によって機械検査され、AI特有の安っぽい装飾（`border-radius: 999px` のピルバッジ連発、`✓` アイコン箇条書き、角丸SaaSカード枠、見出し絵文字）が1つでも含まれているとビルドが強制遮断されます。
 
-1. **キャッチコピーやコンセプトが未定の場合**は、まず以下を実行してユーザーに核心質問を尋ねます：
-   ```bash
-   python3 "$SCRIPT" --ask-concept
-   ```
-   *(テンプレート正本: `templates/CONCEPT_QUESTION_SHEET.md`)*
-2. **実在するサンプルWebサイトを画像として取り込み、色彩・余白・タイポグラフィDNAを抽出する（必須）**：
+1. **実在するサンプルWebサイトを画像として取り込み、ユーザー質問回答（`USER_QA_ANSWERS.json`）と結合して写真プロンプト3本＆写真素材を生成する（必須）**：
    ```bash
    python3 "$SCRIPT" \
      --brand "ブランド名" \
      --category "商品カテゴリ" \
      --benchmark-urls "https://example-benchmark-1.jp/" "https://example-benchmark-2.jp/" \
      --ref-image "/path/to/reference.png" \
+     --user-qa-json "/path/to/USER_QA_ANSWERS.json" \
+     --generate-with-codex-sub \
      --print-image-prompts
    ```
 
-### Step 2: サブスク0円の最上位モデルで写真素材を3枚生成する（文字なし写真）
-Step 1 で出力された3つのプロンプト（`hero_image_prompt`, `poster_image_prompt`, `pack_image_prompt`）を使い、文字を含まない純粋な商業スタジオ写真を3枚生成します（**APIキー従量課金は厳禁・サブスク範囲内のみ**）：
-- **🅰️ Codex で実行中の場合（第1優先: `gpt-image-2.5-sunburst`）**:
-  Codex 内蔵の **`image_gen` ツール** を3回呼び出す（`~/.codex/generated_images/` に自動保存されます）。
-- **🅱️ Antigravity で実行中の場合（`Imagen 4 Ultra / Nano Banana 2.1`）**:
-  `invoke_subagent(TypeName="image-generator")` を呼び出して3枚生成し、保存パスを受け取る。
-- **🅲 ユーザーに写真を用意してもらう場合**:
-  Step 1（`--print-image-prompts` を外した実行）が出力する「📋 エージェントからの素材リクエスト（必要な写真の構図・推奨サイズ・AIプロンプト案）」をそのままユーザーに伝える。
+### Step 2: サブスク0円の最上位モデル `gpt-image-2.5-sunburst` で写真素材を3枚生成する（文字なし商業写真）
+Step 1 で生成された `IMAGE_PROMPTS_FROM_RESEARCH.json` の3つのプロンプト（`hero_photo`, `poster_photo`, `pack_photo`）を使い、文字を含まない純粋な商業スタジオ写真を3枚生成します（**APIキー従量課金は厳禁・`unset OPENAI_API_KEY` でサブスクOAuth枠のみ使用**）：
+- **🅰️ 第1優先（全ハーネス共通推奨）: Codex CLI サブスク `gpt-image-2.5-sunburst`（0円）**:
+  - Codex セッション内では内蔵 `image_gen` ツールを3回呼び出す。
+  - Antigravity / Claude Code 等からは `--generate-with-codex-sub` フラグ（内部で `unset OPENAI_API_KEY && codex exec --skip-git-repo-check` を呼び出し、`gpt-image-2.5-sunburst` で生成して指定パスへ保存）を使用する。被写体の本物感（お灸・和紙箱・リネン質感）と縦書き用の白余白確保において最も高品質。
+- **🅱️ フォールバック: Antigravity `image-generator` サブエージェント（Imagen 4 Ultra / 0円）**:
+  Codex CLI が利用できない環境のみフォールバックとして使用。
 
 ### Step 3: 1コマンドで全デザイン＆プロモ動画を一括出力する
 あとは以下の1コマンドを実行するだけで、**WordPressのようにブラウザ上で画像・文字・要素・レイアウトを自由自在に編集できる3つのHTML**、高解像度PNG/PDF/SVG、および**後からキャプションや映像を自在に編集できるプロモーショナルビデオ一式**がすべて完成します：
