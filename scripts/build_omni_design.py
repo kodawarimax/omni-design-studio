@@ -770,7 +770,11 @@ def main() -> None:
                 print(f"  {idx}. {r_path}")
 
     # Step 3: NON-BYPASSABLE Reference Website Image Capture & DNA Extraction Gate
-    from reference_gate import capture_and_analyze_benchmarks, verify_reference_proof_gate
+    from reference_gate import (
+        capture_and_analyze_benchmarks,
+        generate_image_prompts_from_research,
+        verify_reference_proof_gate,
+    )
 
     bench_urls = list(args.benchmark_urls)
     if args.ref_url and args.ref_url not in bench_urls:
@@ -786,8 +790,6 @@ def main() -> None:
             "`omni-design-studio` ではサンプルWebサイトの検索・画像取り込み（スクリーンショット撮影）を省略することは物理的に禁止されています。\n"
             "必ず `--benchmark-urls <URL1> <URL2> ...`、`--ref-url <URL>`、または `--ref-image <PATH>` を指定して、実在するベンチマークデザインを画像として取り込んでください。"
         )
-    if proof_file.exists():
-        verify_reference_proof_gate(out_dir)
 
     if args.ref_image or args.ref_url or args.custom_dna:
         from analyze_user_reference import (
@@ -824,17 +826,25 @@ def main() -> None:
                 print(f"     -> 推奨サイズ: {m['required_spec']}")
                 print(f"     -> AI生成プロンプト案: \"{m['ready_to_use_ai_prompt']}\"")
 
-    # Step 4: Output 3 tailored studio prompts (after Concept & Reference DNA are applied!)
-    if args.print_image_prompts:
-        bg_c = t.get("bg", "#F6F3EC")
-        ac_c = t.get("primary", "#9E7B56")
-        prompts = {
-            "hero_image_prompt": f"Ultra-luxury macro commercial studio photography of {args.category} for brand '{args.brand}'. Harmonized with palette {bg_c} and {ac_c}, natural organic textures (linen, travertine stone, silk), dramatic warm rim lighting, shallow depth of field, shot on Hasselblad H6D-100c, 8k photorealistic, no text, no watermarks.",
-            "poster_image_prompt": f"High-fashion editorial lookbook still-life photography of {args.category} for '{args.brand}'. Warm sunlight streaming through crystal glass prisms casting soft caustics and bokeh, color harmony with {bg_c} and {ac_c}, magazine campaign aesthetic, no text, no words.",
-            "pack_image_prompt": f"Commercial luxury packaging studio photography for '{args.brand}' ({args.category}). Tactile rigid drawer box and bespoke display card in {bg_c} and {ac_c} foil accents resting on a travertine marble pedestal, warm architectural studio lighting, photorealistic product shot, no text.",
-        }
-        print(json.dumps(prompts, ensure_ascii=False, indent=2))
-        return
+    # Step 4: Output 3 tailored studio prompts (Strictly generated FROM Research Proof!)
+    bg_c = t.get("bg", "#F5EFE4")
+    ac_c = t.get("primary", "#6D8C73")
+    if proof_file.exists():
+        prompt_payload = generate_image_prompts_from_research(
+            out_dir=out_dir,
+            brand=args.brand,
+            category=args.category,
+            override_bg=bg_c,
+            override_accent=ac_c,
+        )
+        verify_reference_proof_gate(out_dir, require_image_prompt_proof=True)
+        if args.print_image_prompts:
+            print(json.dumps(prompt_payload, ensure_ascii=False, indent=2))
+            return
+    elif args.print_image_prompts:
+        raise SystemExit(
+            "🚨 [GATE 1.5 BLOCKED] リサーチ（サンプルWebサイトの画像キャプチャ）完了前に `--print-image-prompts` を発行することはできません。"
+        )
 
     from cms_editor_runtime import inject_wordpress_like_cms
 

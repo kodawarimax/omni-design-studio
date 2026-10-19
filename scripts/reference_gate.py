@@ -170,9 +170,69 @@ def capture_and_analyze_benchmarks(
     return proof
 
 
-def verify_reference_proof_gate(out_dir: Path) -> dict:
+def generate_image_prompts_from_research(
+    out_dir: Path,
+    brand: str,
+    category: str,
+    override_bg: str = "",
+    override_accent: str = "",
+) -> dict:
+    """
+    Gate 1.5 Producer: Reads the verified `REFERENCE_BENCHMARK_PROOF.json`, synthesizes the extracted
+    color palette, luminance, and DOM layout rules, and writes `IMAGE_PROMPTS_FROM_RESEARCH.json`.
+    Image generation tools (`image_gen` / `image-generator`) MUST only be invoked using the prompts
+    recorded in `IMAGE_PROMPTS_FROM_RESEARCH.json`.
+    """
+    proof = verify_reference_proof_gate(out_dir)
+    benchmarks = proof["benchmarks"]
+    primary_bench = benchmarks[-1]  # Prefer user_ref if present, else last benchmark
+    tokens = primary_bench.get("tokens", {})
+    bg_hex = override_bg or tokens.get("bg", "#F5EFE4")
+    accent_hex = override_accent or tokens.get("primary", "#6D8C73")
+    is_light = primary_bench.get("is_light_theme", True)
+    lighting_desc = (
+        "soft natural morning window light, high-key calm editorial atmosphere, organic linen and raw wood surfaces"
+        if is_light
+        else "dramatic low-key studio rim lighting, deep shadows, obsidian and brushed metal surfaces"
+    )
+
+    prompts_payload = {
+        "gate_order_status": "RESEARCH_COMPLETED_BEFORE_IMAGE_PROMPTS",
+        "based_on_proof": str((out_dir / "REFERENCE_BENCHMARK_PROOF.json").resolve()),
+        "based_on_contact_sheet": proof["contact_sheet_path"],
+        "synthesized_palette": {
+            "bg_hex": bg_hex,
+            "accent_hex": accent_hex,
+            "lighting": lighting_desc,
+        },
+        "prompts": {
+            "hero_image_prompt": (
+                f"Editorial lifestyle & commercial photography of {category} for '{brand}'. "
+                f"Harmonized strictly with extracted reference palette {bg_hex} (background) and {accent_hex} (accent). "
+                f"Lighting: {lighting_desc}. Generous negative space for vertical Japanese typography (tategaki) overlay, "
+                f"shot on Hasselblad H6D-100c, 8k photorealistic, zero text, zero watermarks."
+            ),
+            "poster_image_prompt": (
+                f"Magazine lookbook still-life photography of {category} for '{brand}'. "
+                f"Color harmony with {bg_hex} and {accent_hex}, {lighting_desc}, calm authentic craft atmosphere, "
+                f"clean composition, no text, no words."
+            ),
+            "pack_image_prompt": (
+                f"Product starter kit packaging photography for '{brand}' ({category}). "
+                f"Tactile washi/paper box and contents in {bg_hex} and {accent_hex} accents resting on a natural wooden table, "
+                f"{lighting_desc}, trustworthy presentation, no text."
+            ),
+        },
+    }
+    out_file = out_dir / "IMAGE_PROMPTS_FROM_RESEARCH.json"
+    out_file.write_text(json.dumps(prompts_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return prompts_payload
+
+
+def verify_reference_proof_gate(out_dir: Path, require_image_prompt_proof: bool = False) -> dict:
     """
     Gate 1 Verifier: Raises SystemExit(1) if `REFERENCE_BENCHMARK_PROOF.json` or its physical images do not exist.
+    When `require_image_prompt_proof=True`, also verifies that `IMAGE_PROMPTS_FROM_RESEARCH.json` exists.
     """
     proof_path = out_dir / "REFERENCE_BENCHMARK_PROOF.json"
     if not proof_path.exists():
@@ -188,6 +248,16 @@ def verify_reference_proof_gate(out_dir: Path) -> dict:
         sp = Path(b.get("screenshot_path", ""))
         if not sp.exists() or sp.stat().st_size < 5000:
             raise SystemExit(f"🚨 [GATE 1 BLOCKED] キャプチャ画像 `{sp}` が実在しないか破損しています。")
+
+    if require_image_prompt_proof:
+        prompt_proof_path = out_dir / "IMAGE_PROMPTS_FROM_RESEARCH.json"
+        if not prompt_proof_path.exists():
+            raise SystemExit(
+                f"🚨 [GATE 1.5 BLOCKED: IMAGE GENERATION BEFORE RESEARCH DETECTED]\n"
+                f"`{prompt_proof_path}` が存在しません。リサーチ（サンプルWebサイトの画像キャプチャ＆DNA解析）の結果から\n"
+                "`generate_image_prompts_from_research`（または `--print-image-prompts`）を実行して写真プロンプトを生成する前に、\n"
+                "単独で画像生成を行うことは物理的に禁止されています。"
+            )
 
     return proof
 
