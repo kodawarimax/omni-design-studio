@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400&family=Plus+Jakarta+Sans:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #f4f0ea;
+    color: #111111;
+    font-family: 'Arial Black', 'Hiragino Kaku Gothic StdN', sans-serif;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Tactile Paper Grain & Warm Sunlight Prism Leak */
+  .grain-overlay {
+    position: absolute; inset: 0; pointer-events: none; z-index: 90;
+    opacity: 0.24;
+    background-image: radial-gradient(rgba(28,26,23,0.09) 1px, transparent 0);
+    background-size: 16px 16px;
+  }
+  .light-leak {
+    position: absolute;
+    width: 1728px;
+    height: 972px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff3b0044 0%, #ff3b0018 45%, transparent 72%);
+    filter: blur(45px);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Persistent Editorial Frame & Header */
+  .editorial-border {
+    position: absolute;
+    inset: 36px;
+    border: 4px solid #111111;
+    pointer-events: none;
+    z-index: 80;
+  }
+  .top-bar {
+    position: absolute;
+    top: 62px; left: 72px; right: 72px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase;
+    z-index: 85;
+    opacity: 0.85;
+  }
+  .bottom-bar {
+    position: absolute;
+    bottom: 62px; left: 72px; right: 72px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase;
+    z-index: 85;
+    opacity: 0.72;
+  }
+
+  /* Scene Container */
+  .scene {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 20;
+  }
+
+  /* Vertical Japanese Tategaki Accent */
+  .tategaki {
+    writing-mode: vertical-rl;
+    font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.38em;
+    color: #111111;
+    line-height: 2.0;
+  }
+
+  /* Dynamic Shape Photo Mask (Arch / Bento / Brutal / Grid) */
+  .arch-frame {
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 10px 10px 0px #111111;
+    border: 4px solid #111111;
+    background: #ffffff;
+    position: relative;
+  }
+  .arch-frame img, .polaroid img, .pack-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  /* Polaroid Inset */
+  .polaroid {
+    background: #FCFBF8;
+    padding: 18px 18px 46px 18px;
+    box-shadow: 0 28px 65px rgba(28, 26, 23, 0.20);
+    border: 1px solid rgba(28, 26, 23, 0.16);
+    position: absolute;
+  }
+  .polaroid-caption {
+    position: absolute;
+    bottom: 14px; left: 20px; right: 20px;
+    display: flex; justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px; letter-spacing: 0.18em; color: #6E665E;
+    text-transform: uppercase;
+  }
+
+  .badge-pill {
+    display: inline-block;
+    padding: 9px 22px;
+    border: 1px solid #ff3b00;
+    border-radius: 999px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #ff3b00;
+    background: rgba(255,255,255,0.55);
+  }
+</style>
+</head>
+<body>
+
+  <div class="light-leak" id="lightLeak"></div>
+  <div class="editorial-border"></div>
+
+  <div class="top-bar">
+    <span>MERRY LOOP</span>
+    <span id="sceneCounter">01 / ATELIER COLLECTION</span>
+  </div>
+
+  <!-- SCENE 1: HOOK & ORGANIC ARCH REVEAL (0.0s - 2.6s) -->
+  <div class="scene" id="scene1">
+    <div id="s1Arch" class="arch-frame" style="
+      position: absolute;
+      right: 130px; top: 130px; width: 640px; height: 820px;
+    ">
+      <img id="s1Img" src="./assets/casual_acc_hero.jpg" alt="Hero" />
+    </div>
+
+    <div id="s1Tategaki" class="tategaki" style="
+      position: absolute;
+      right: 820px; top: 170px; font-size: 24px;
+    ">デイリー・カジュアルアクセサリー</div>
+
+    <div id="s1TextWrap" style="
+      position: absolute;
+      left: 120px; top: 250px; width: 690px;
+    ">
+      <div class="badge-pill" style="margin-bottom: 24px;">2026 NEW SEASON COLLECTION</div>
+      <h1 style="
+        font-size: 90px;
+        font-weight: 600;
+        line-height: 0.98;
+        letter-spacing: -0.02em;
+        margin-bottom: 24px;
+      ">Playful Color, Every Day.</h1>
+      <p style="
+        font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.75;
+        opacity: 0.88;
+      ">いつものTシャツに、3秒のときめきを。水や汗にも強い超軽量カラーレジン＆ビーズのデイリーアクセサリーコレクション</p>
+    </div>
+  </div>
+
+  <!-- SCENE 2: MACRO CRAFTSMANSHIP & PARALLAX DUAL SHOT (2.6s - 5.4s) -->
+  <div class="scene" id="scene2">
+    <div id="s2BgPhoto" style="
+      position: absolute;
+      left: 120px; top: 140px; width: 760px; height: 800px;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 10px 10px 0px #111111;
+      border: 4px solid #111111;
+    ">
+      <img id="s2MainImg" src="./assets/casual_acc_poster.jpg" style="width:100%; height:100%; object-fit:cover;" />
+    </div>
+
+    <div id="s2Polaroid" class="polaroid" style="
+      left: 660px; top: 340px; width: 440px; height: 520px;
+    ">
+      <img id="s2SubImg" src="./assets/casual_acc_hero.jpg" />
+      <div class="polaroid-caption">
+        <span>FIG. 02 — MERRY LOOP</span>
+        <span>TOKYO STUDIO</span>
+      </div>
+    </div>
+
+    <div id="s2Specs" style="
+      position: absolute;
+      right: 120px; top: 250px; width: 580px;
+    ">
+      <div class="badge-pill" style="margin-bottom: 20px;">SIGNATURE DETAILS</div>
+      <h2 style="font-size: 62px; font-weight: 600; line-height: 1.08; margin-bottom: 22px;">
+        Designed for<br><i style="color:#ff3b00;">Everyday Joy.</i>
+      </h2>
+      <div style="border-top: 4px solid #111111; padding-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; font-size: 18px;">
+        <div><strong style="display:block; font-size:13px; letter-spacing:0.2em; color:#ff3b00; font-family:'Plus Jakarta Sans';">CATEGORY</strong>デイリー・カジュアルアクセサリー</div>
+        <div><strong style="display:block; font-size:13px; letter-spacing:0.2em; color:#ff3b00; font-family:'Plus Jakarta Sans';">COLLECTION</strong>MERRY LOOP 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 3: TACTILE PACKAGING & UNBOXING EXPERIENCE (5.4s - 8.0s) -->
+  <div class="scene" id="scene3">
+    <div id="s3Card" class="pack-card" style="
+      position: absolute;
+      right: 130px; top: 145px; width: 820px; height: 790px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 10px 10px 0px #111111;
+      border: 4px solid #111111;
+    ">
+      <img id="s3PackImg" src="./assets/casual_acc_pack.jpg" />
+    </div>
+
+    <div id="s3Copy" style="
+      position: absolute;
+      left: 120px; top: 270px; width: 680px;
+    ">
+      <div class="badge-pill" style="margin-bottom: 20px;">SPECIAL GIFT PACKAGING</div>
+      <h2 style="font-size: 66px; font-weight: 600; line-height: 1.06; margin-bottom: 20px;">
+        Unbox Your<br><i style="color:#ff3b00;">Daily Sparkle.</i>
+      </h2>
+      <p style="font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; font-size: 21px; font-weight: 400; line-height: 1.8; opacity: 0.88;">
+        そのままギフトにも使える特製スライドボックス＆オリジナルポーチ付き。手元に届いた瞬間から気分が上がるパッケージデザイン。
+      </p>
+    </div>
+  </div>
+
+  <!-- SCENE 4: GRAND FINALE & CALL TO ACTION (8.0s - 10.0s) -->
+  <div class="scene" id="scene4">
+    <div id="s4Center" style="
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px;
+    ">
+      <div style="width: 190px; height: 240px; border-radius: 32px; overflow: hidden; margin-bottom: 38px; border: 4px solid #111111; box-shadow: 10px 10px 0px #111111;">
+        <img src="./assets/casual_acc_hero.jpg" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="font-family:'Plus Jakarta Sans'; font-size:15px; letter-spacing:0.35em; color:#ff3b00; margin-bottom:18px;">
+        デイリー・カジュアルアクセサリー
+      </div>
+      <h1 style="font-size: 100px; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 18px;">
+        MERRY LOOP
+      </h1>
+      <p style="font-family:'Hiragino Sans', 'Noto Sans JP', sans-serif; font-size: 22px; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 44px; opacity: 0.88;">
+        いつものTシャツに、3秒のときめきを。水や汗にも強い超軽量カラーレジン＆ビーズのデイリーアクセサリーコレクション
+      </p>
+      <div style="
+        padding: 18px 48px;
+        background: #ff3b00;
+        color: #FFFFFF;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        border-radius: 999px;
+        border: 4px solid #111111;
+        box-shadow: 10px 10px 0px #111111;
+      ">
+        CHECK ONLINE STORE — MERRY LOOP
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <span>OMNI-DESIGN STUDIO // ORGANIC MOTION DNA</span>
+    <span id="timecode">00:00:00</span>
+  </div>
+
+  <div class="grain-overlay"></div>
+
+<script>
+  // Custom Bezier-like easeOutExpo & easeInOutCubic (haidrrrry/claude-remotion-skill rule)
+  function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+  function easeOutCubic(x) { return 1 - Math.pow(1 - clamp(x, 0, 1), 3); }
+  function easeInOutQuad(x) {
+    x = clamp(x, 0, 1);
+    return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+  }
+
+  function sceneOpacity(t, start, end, fadeIn, fadeOut) {
+    if (t < start || t > end) return 0;
+    if (t < start + fadeIn) return easeOutCubic((t - start) / fadeIn);
+    if (t > end - fadeOut) return easeOutCubic((end - t) / fadeOut);
+    return 1;
+  }
+
+  window.setFrame = function(frame, fps) {
+    const t = frame / fps;
+
+    // Subtle organic drift of sunlight leak
+    const leak = document.getElementById('lightLeak');
+    const lx = Math.sin(t * 0.9) * 120 + 180;
+    const ly = Math.cos(t * 0.7) * 90 + 120;
+    leak.style.transform = `translate3d(${lx}px, ${ly}px, 0) scale(${1 + 0.08 * Math.sin(t * 1.5)})`;
+
+    // Timecode & scene counter
+    const sec = Math.floor(t);
+    const fr = Math.floor(frame % fps);
+    document.getElementById('timecode').textContent =
+      `00:00:${String(sec).padStart(2,'0')}:${String(fr).padStart(2,'0')}`;
+
+    const counter = document.getElementById('sceneCounter');
+    if (t < 2.6) counter.textContent = '01 / ATELIER COLLECTION';
+    else if (t < 5.4) counter.textContent = '02 / FINE CRAFTSMANSHIP';
+    else if (t < 8.0) counter.textContent = '03 / BESPOKE PACKAGING';
+    else counter.textContent = '04 / TOKYO — PARIS';
+
+    // SCENE 1 (0.0 - 2.8s)
+    const s1 = document.getElementById('scene1');
+    const op1 = sceneOpacity(t, 0.0, 2.75, 0.45, 0.45);
+    s1.style.opacity = op1;
+    if (op1 > 0) {
+      const p1 = easeOutCubic(t / 2.75);
+      document.getElementById('s1Img').style.transform = `scale(${1.14 - 0.12 * p1}) translate3d(0, ${18 * (1 - p1)}px, 0)`;
+      document.getElementById('s1Arch').style.transform = `translate3d(0, ${35 * (1 - easeOutCubic(t / 1.1))}px, 0)`;
+      document.getElementById('s1TextWrap').style.transform = `translate3d(0, ${42 * (1 - easeOutCubic(Math.max(0, t - 0.18) / 1.1))}px, 0)`;
+      document.getElementById('s1Tategaki').style.opacity = easeOutCubic(Math.max(0, t - 0.3) / 1.0);
+    }
+
+    // SCENE 2 (2.45 - 5.55s)
+    const s2 = document.getElementById('scene2');
+    const op2 = sceneOpacity(t, 2.45, 5.55, 0.45, 0.45);
+    s2.style.opacity = op2;
+    if (op2 > 0) {
+      const localT = t - 2.45;
+      const p2 = easeOutCubic(localT / 3.0);
+      document.getElementById('s2MainImg').style.transform = `scale(${1.02 + 0.10 * (localT / 3.1)})`;
+      document.getElementById('s2Polaroid').style.transform =
+        `translate3d(0, ${65 * (1 - easeOutCubic(Math.max(0, localT - 0.25) / 1.2))}px, 0) rotate(${-2.5 + 1.8 * p2}deg)`;
+      document.getElementById('s2Specs').style.transform =
+        `translate3d(0, ${36 * (1 - easeOutCubic(Math.max(0, localT - 0.35) / 1.1))}px, 0)`;
+    }
+
+    // SCENE 3 (5.25 - 8.15s)
+    const s3 = document.getElementById('scene3');
+    const op3 = sceneOpacity(t, 5.25, 8.15, 0.45, 0.45);
+    s3.style.opacity = op3;
+    if (op3 > 0) {
+      const localT = t - 5.25;
+      const p3 = easeOutCubic(localT / 2.8);
+      document.getElementById('s3PackImg').style.transform = `scale(${1.12 - 0.10 * p3})`;
+      document.getElementById('s3Card').style.transform = `translate3d(0, ${40 * (1 - easeOutCubic(localT / 1.1))}px, 0)`;
+      document.getElementById('s3Copy').style.transform = `translate3d(0, ${35 * (1 - easeOutCubic(Math.max(0, localT - 0.25) / 1.1))}px, 0)`;
+    }
+
+    // SCENE 4 (7.85 - 10.0s)
+    const s4 = document.getElementById('scene4');
+    const op4 = sceneOpacity(t, 7.85, 10.0, 0.45, 0.25);
+    s4.style.opacity = op4;
+    if (op4 > 0) {
+      const localT = t - 7.85;
+      const p4 = easeOutCubic(localT / 1.4);
+      document.getElementById('s4Center').style.transform = `scale(${0.94 + 0.06 * p4}) translate3d(0, ${24 * (1 - p4)}px, 0)`;
+    }
+  };
+</script>
+
+<!-- ==================== OMNI-CMS WORDPRESS-LIKE VISUAL EDITOR ==================== -->
+<style id="omni-cms-styles">
+  @media print {
+    #omni-cms-root, .omni-block-toolbar { display: none !important; }
+    [data-omni-selected] { outline: none !important; }
+  }
+  html.omni-headless #omni-cms-root,
+  html.omni-headless .omni-block-toolbar {
+    display: none !important;
+  }
+  #omni-cms-root {
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    user-select: none;
+  }
+  .omni-cms-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(20, 20, 23, 0.94);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.14);
+    backdrop-filter: blur(16px);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .omni-cms-brand {
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #E5C158;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .omni-cms-btn {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.16);
+    padding: 5px 11px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .omni-cms-btn:hover { background: rgba(255,255,255,0.22); }
+  .omni-cms-btn.active { background: #E5C158; color: #141417; border-color: #E5C158; font-weight: 700; }
+  .omni-cms-btn.primary { background: #2563EB; border-color: #3B82F6; font-weight: 600; }
+  .omni-cms-btn.primary:hover { background: #1D4ED8; }
+  .omni-cms-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.18); margin: 0 2px; }
+  .omni-color-input {
+    width: 22px; height: 22px; border: none; padding: 0; border-radius: 50%;
+    overflow: hidden; cursor: pointer; background: transparent;
+  }
+  .omni-cms-select {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .omni-cms-select option { background: #1c1c21; color: #fff; }
+
+  /* Floating Inspector for Selected Element */
+  .omni-inspector {
+    margin-top: 8px;
+    background: rgba(24, 24, 28, 0.95);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.14);
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .omni-inspector.visible { display: flex; }
+
+  /* Edit Mode Outlines */
+  body.omni-edit-mode [data-omni-editable]:hover {
+    outline: 2px dashed rgba(59, 130, 246, 0.75) !important;
+    outline-offset: 3px;
+    cursor: pointer;
+  }
+  body.omni-edit-mode [data-omni-selected="true"] {
+    outline: 2px solid #2563EB !important;
+    outline-offset: 4px;
+  }
+  body.omni-edit-mode img:hover {
+    outline: 3px solid #E5C158 !important;
+    cursor: pointer;
+  }
+</style>
+
+<div id="omni-cms-root">
+  <div class="omni-cms-bar">
+    <span class="omni-cms-brand">✦ OMNI WP-STUDIO</span>
+    <button class="omni-cms-btn active" id="omniToggleEditBtn" title="編集モードとプレビューを切り替えます">✏️ 編集モード ON</button>
+    <div class="omni-cms-sep"></div>
+
+    <label title="背景色を変更" style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span>背景</span><input type="color" id="omniBgColor" class="omni-color-input" value="#F6F3EC" />
+    </label>
+    <label title="文字色を変更" style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span>文字</span><input type="color" id="omniTextColor" class="omni-color-input" value="#1C1A17" />
+    </label>
+    <select id="omniFontSelect" class="omni-cms-select" title="全体のフォントテイストを変更">
+      <option value="">フォント切替...</option>
+      <option value="'Cormorant Garamond', 'Noto Serif JP', serif">エレガント明朝 (Editorial Serif)</option>
+      <option value="'Shippori Mincho', 'Hiragino Mincho ProN', serif">和モダン明朝 (Japanese Luxury)</option>
+      <option value="'Plus Jakarta Sans', 'Inter', 'Hiragino Sans', sans-serif">モダンゴシック (Bento Sans)</option>
+      <option value="'Space Grotesk', 'Arial Black', sans-serif">ストリート太ゴシック (Neo-Brutal)</option>
+      <option value="'Helvetica Neue', 'Arial', sans-serif">スイスグリッド (Swiss Grid)</option>
+    </select>
+
+    <div class="omni-cms-sep"></div>
+    <button class="omni-cms-btn" id="omniAddTextBtn" title="新しいテキストブロックを追加">＋ 文字追加</button>
+    <button class="omni-cms-btn" id="omniAddImgBtn" title="新しい画像ブロックを追加">🖼️ 画像追加</button>
+    <button class="omni-cms-btn" id="omniFlipLayoutBtn" title="左右レイアウトを反転">⇄ レイアウト反転</button>
+
+    <div class="omni-cms-sep"></div>
+    <button class="omni-cms-btn primary" id="omniSaveHtmlBtn" title="編集した内容をHTMLファイルとして保存">💾 HTML保存</button>
+    <button class="omni-cms-btn" id="omniPrintPdfBtn" title="PDFまたは高解像度印刷">🖨️ PDF出力</button>
+  </div>
+
+  <!-- Selected Element Inspector Bar -->
+  <div class="omni-inspector" id="omniInspector">
+    <span id="omniSelectedTag" style="color:#93C5FD;font-weight:700;">選択中: 要素</span>
+    <button class="omni-cms-btn" id="omniMoveUpBtn">↑ 前へ</button>
+    <button class="omni-cms-btn" id="omniMoveDownBtn">↓ 次へ</button>
+    <button class="omni-cms-btn" id="omniMoveLeftBtn">← 左</button>
+    <button class="omni-cms-btn" id="omniMoveRightBtn">→ 右</button>
+    <button class="omni-cms-btn" id="omniFontDecBtn">A-</button>
+    <button class="omni-cms-btn" id="omniFontIncBtn">A+</button>
+    <label style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span>要素色</span><input type="color" id="omniElemColor" class="omni-color-input" value="#1C1A17" />
+    </label>
+    <select id="omniShapeSelect" class="omni-cms-select" title="画像や枠の形状を変更">
+      <option value="">枠の形状...</option>
+      <option value="999px 999px 18px 18px">アーチ窓 (Arch)</option>
+      <option value="28px">角丸カード (Bento 28px)</option>
+      <option value="0px">直角ボックス (Sharp 0px)</option>
+      <option value="9999px">円形・ピル型 (Circle)</option>
+    </select>
+    <button class="omni-cms-btn" id="omniReplaceImgBtn" style="display:none;background:#D97706;">📷 画像を差し替え</button>
+    <button class="omni-cms-btn" id="omniDupBtn">⧉ 複製</button>
+    <button class="omni-cms-btn" id="omniDelBtn" style="background:#DC2626;border-color:#EF4444;">🗑️ 削除</button>
+  </div>
+  <input type="file" id="omniFileInput" accept="image/*" style="display:none;" />
+</div>
+
+<script id="omni-cms-script">
+(function() {
+  if (navigator.webdriver || window.location.search.includes('export=1')) {
+    document.documentElement.classList.add('omni-headless');
+    return;
+  }
+
+  let editMode = true;
+  let selectedEl = null;
+  let pendingImgTarget = null;
+  const fileInput = document.getElementById('omniFileInput');
+  const inspector = document.getElementById('omniInspector');
+  const selectedTag = document.getElementById('omniSelectedTag');
+  const replaceImgBtn = document.getElementById('omniReplaceImgBtn');
+
+  function initEditableNodes() {
+    document.body.classList.add('omni-edit-mode');
+    const selectors = 'h1, h2, h3, h4, p, span, a, button, li, div, section, article, figure, img';
+    document.querySelectorAll(selectors).forEach(el => {
+      if (el.closest('#omni-cms-root')) return;
+      el.setAttribute('data-omni-editable', 'true');
+      const tag = el.tagName.toLowerCase();
+      if (['h1','h2','h3','h4','p','span','li','a','button'].includes(tag) || (tag === 'div' && el.children.length === 0 && el.textContent.trim())) {
+        el.setAttribute('contenteditable', 'true');
+        el.style.outline = 'none';
+      }
+    });
+  }
+
+  initEditableNodes();
+
+  // Select element on click
+  document.addEventListener('click', function(e) {
+    if (!editMode) return;
+    if (e.target.closest('#omni-cms-root')) return;
+    const target = e.target.closest('[data-omni-editable]');
+    if (!target) return;
+
+    if (selectedEl && selectedEl !== target) {
+      selectedEl.removeAttribute('data-omni-selected');
+    }
+    selectedEl = target;
+    selectedEl.setAttribute('data-omni-selected', 'true');
+    const tag = selectedEl.tagName.toLowerCase();
+    selectedTag.textContent = '選択中: <' + tag + '>';
+    inspector.classList.add('visible');
+
+    if (tag === 'img') {
+      replaceImgBtn.style.display = 'inline-flex';
+    } else {
+      replaceImgBtn.style.display = 'none';
+    }
+  }, true);
+
+  // Double click image to replace immediately
+  document.addEventListener('dblclick', function(e) {
+    if (!editMode) return;
+    if (e.target.tagName && e.target.tagName.toLowerCase() === 'img') {
+      pendingImgTarget = e.target;
+      fileInput.click();
+    }
+  });
+
+  // Drag & Drop image replacement from desktop
+  document.addEventListener('dragover', function(e) { e.preventDefault(); });
+  document.addEventListener('drop', function(e) {
+    if (!editMode) return;
+    if (!e.dataTransfer || !e.dataTransfer.files || !e.dataTransfer.files.length) return;
+    const file = e.dataTransfer.files[0];
+    if (!file.type.startsWith('image/')) return;
+    e.preventDefault();
+    const imgEl = e.target.closest('img') || (selectedEl && selectedEl.tagName === 'IMG' ? selectedEl : null);
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      if (imgEl) {
+        imgEl.src = ev.target.result;
+      } else {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'max-width:420px;margin:24px auto;border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,0.15);';
+        wrap.setAttribute('data-omni-editable', 'true');
+        wrap.innerHTML = '<img src="' + ev.target.result + '" style="width:100%;height:auto;display:block;" data-omni-editable="true" />';
+        (selectedEl ? selectedEl.parentNode : document.body).appendChild(wrap);
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+
+  fileInput.addEventListener('change', function() {
+    if (!fileInput.files || !fileInput.files[0]) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      if (pendingImgTarget) {
+        pendingImgTarget.src = ev.target.result;
+        pendingImgTarget = null;
+      } else {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'max-width:420px;margin:24px auto;border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,0.15);';
+        wrap.setAttribute('data-omni-editable', 'true');
+        wrap.innerHTML = '<img src="' + ev.target.result + '" style="width:100%;height:auto;display:block;" data-omni-editable="true" />';
+        (selectedEl ? selectedEl.parentNode : document.body).appendChild(wrap);
+      }
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+    fileInput.value = '';
+  });
+
+  // Toggle Edit / Preview Mode
+  document.getElementById('omniToggleEditBtn').addEventListener('click', function() {
+    editMode = !editMode;
+    this.classList.toggle('active', editMode);
+    this.textContent = editMode ? '✏️ 編集モード ON' : '👁️ プレビュー中';
+    document.body.classList.toggle('omni-edit-mode', editMode);
+    document.querySelectorAll('[contenteditable]').forEach(el => {
+      el.setAttribute('contenteditable', editMode ? 'true' : 'false');
+    });
+    if (!editMode && selectedEl) {
+      selectedEl.removeAttribute('data-omni-selected');
+      inspector.classList.remove('visible');
+    }
+  });
+
+  // Global Theme Controls
+  document.getElementById('omniBgColor').addEventListener('input', function(e) {
+    document.body.style.background = e.target.value;
+    document.documentElement.style.background = e.target.value;
+  });
+  document.getElementById('omniTextColor').addEventListener('input', function(e) {
+    document.body.style.color = e.target.value;
+  });
+  document.getElementById('omniFontSelect').addEventListener('change', function(e) {
+    if (!e.target.value) return;
+    document.body.style.fontFamily = e.target.value;
+    document.querySelectorAll('h1, h2, h3, .headline, .brand').forEach(el => {
+      el.style.fontFamily = e.target.value;
+    });
+  });
+
+  // Add Text / Image / Flip Layout
+  document.getElementById('omniAddTextBtn').addEventListener('click', function() {
+    const p = document.createElement('div');
+    p.setAttribute('contenteditable', 'true');
+    p.setAttribute('data-omni-editable', 'true');
+    p.style.cssText = 'padding:16px 24px;margin:16px auto;max-width:680px;font-size:20px;line-height:1.6;border:1px dashed rgba(150,150,150,0.4);border-radius:8px;';
+    p.textContent = '新しいテキストブロック（クリックして自由に文字を編集・移動できます）';
+    (selectedEl ? selectedEl.parentNode : document.body).appendChild(p);
+  });
+
+  document.getElementById('omniAddImgBtn').addEventListener('click', function() {
+    pendingImgTarget = null;
+    fileInput.click();
+  });
+
+  document.getElementById('omniFlipLayoutBtn').addEventListener('click', function() {
+    document.querySelectorAll('section, .hero, .grid, main, .split').forEach(el => {
+      const st = window.getComputedStyle(el);
+      if (st.display === 'grid' || st.display === 'flex') {
+        const children = Array.from(el.children);
+        if (children.length >= 2) {
+          children.reverse().forEach(c => el.appendChild(c));
+        }
+      }
+    });
+  });
+
+  // Selected Element Inspector Actions
+  function nudgeSelected(dx, dy) {
+    if (!selectedEl) return;
+    const curX = parseFloat(selectedEl.getAttribute('data-ox') || '0') + dx;
+    const curY = parseFloat(selectedEl.getAttribute('data-oy') || '0') + dy;
+    selectedEl.setAttribute('data-ox', curX);
+    selectedEl.setAttribute('data-oy', curY);
+    selectedEl.style.transform = `translate(${curX}px, ${curY}px)`;
+  }
+
+  document.getElementById('omniMoveUpBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    if (selectedEl.previousElementSibling && selectedEl.previousElementSibling.id !== 'omni-cms-root') {
+      selectedEl.parentNode.insertBefore(selectedEl, selectedEl.previousElementSibling);
+    } else {
+      nudgeSelected(0, -16);
+    }
+  });
+  document.getElementById('omniMoveDownBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    if (selectedEl.nextElementSibling) {
+      selectedEl.parentNode.insertBefore(selectedEl.nextElementSibling, selectedEl);
+    } else {
+      nudgeSelected(0, 16);
+    }
+  });
+  document.getElementById('omniMoveLeftBtn').addEventListener('click', function() { nudgeSelected(-16, 0); });
+  document.getElementById('omniMoveRightBtn').addEventListener('click', function() { nudgeSelected(16, 0); });
+
+  document.getElementById('omniFontIncBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const cur = parseFloat(window.getComputedStyle(selectedEl).fontSize) || 18;
+    selectedEl.style.fontSize = (cur + 3) + 'px';
+  });
+  document.getElementById('omniFontDecBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const cur = parseFloat(window.getComputedStyle(selectedEl).fontSize) || 18;
+    selectedEl.style.fontSize = Math.max(10, cur - 3) + 'px';
+  });
+  document.getElementById('omniElemColor').addEventListener('input', function(e) {
+    if (!selectedEl) return;
+    selectedEl.style.color = e.target.value;
+  });
+  document.getElementById('omniShapeSelect').addEventListener('change', function(e) {
+    if (!selectedEl || !e.target.value) return;
+    const box = selectedEl.tagName === 'IMG' && selectedEl.parentElement ? selectedEl.parentElement : selectedEl;
+    box.style.borderRadius = e.target.value;
+    box.style.overflow = 'hidden';
+  });
+  replaceImgBtn.addEventListener('click', function() {
+    if (selectedEl && selectedEl.tagName === 'IMG') {
+      pendingImgTarget = selectedEl;
+      fileInput.click();
+    }
+  });
+  document.getElementById('omniDupBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const clone = selectedEl.cloneNode(true);
+    clone.removeAttribute('data-omni-selected');
+    selectedEl.parentNode.insertBefore(clone, selectedEl.nextSibling);
+  });
+  document.getElementById('omniDelBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const toRemove = selectedEl;
+    selectedEl = null;
+    inspector.classList.remove('visible');
+    toRemove.remove();
+  });
+
+  // Save edited HTML
+  document.getElementById('omniSaveHtmlBtn').addEventListener('click', function() {
+    if (selectedEl) selectedEl.removeAttribute('data-omni-selected');
+    const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    const pageName = (window.location.pathname.split('/').pop() || 'edited_design.html').replace(/\.html?$/i, '') + '_edited.html';
+    a.download = pageName;
+    a.click();
+  });
+
+  // Print / Save PDF
+  document.getElementById('omniPrintPdfBtn').addEventListener('click', function() {
+    window.print();
+  });
+})();
+</script>
+<!-- ==================== /OMNI-CMS WORDPRESS-LIKE VISUAL EDITOR ==================== -->
+
+
+<!-- ==================== OMNI VIDEO & CAPTION TIMELINE STUDIO ==================== -->
+<style id="omni-video-studio-styles">
+  html.omni-headless #omni-video-timeline-bar,
+  html.omni-headless #omni-caption-overlay {
+    display: none !important;
+  }
+  #omni-caption-overlay {
+    position: absolute;
+    left: 50%;
+    bottom: 88px;
+    transform: translateX(-50%);
+    z-index: 95;
+    background: rgba(15, 15, 18, 0.78);
+    color: #F6F3EC;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-family: 'Noto Serif JP', 'Hiragino Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 82%;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.22);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    cursor: text;
+  }
+  #omni-video-timeline-bar {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(20, 20, 24, 0.95);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.16);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  #omniScrubber {
+    width: 220px;
+    accent-color: #E5C158;
+    cursor: pointer;
+  }
+</style>
+
+<div id="omni-caption-overlay" contenteditable="true" data-omni-editable="true" title="クリックしてこのシーンの字幕（キャプション）を直接編集できます">
+  光と静寂を纏う、手仕事の造形美
+</div>
+
+<div id="omni-video-timeline-bar">
+  <button class="omni-cms-btn active" id="omniPlayPauseBtn">⏸ 一時停止 (編集)</button>
+  <input type="range" id="omniScrubber" min="0" max="239" value="30" />
+  <span id="omniTimeLabel" style="font-variant-numeric:tabular-nums;min-width:78px;">01.2s / 10.0s</span>
+  <div class="omni-cms-sep"></div>
+  <button class="omni-cms-btn" data-jump-sec="0.8">Scene 1 (導入)</button>
+  <button class="omni-cms-btn" data-jump-sec="3.5">Scene 2 (造形)</button>
+  <button class="omni-cms-btn" data-jump-sec="6.2">Scene 3 (箱・包装)</button>
+  <button class="omni-cms-btn" data-jump-sec="8.8">Scene 4 (CTA)</button>
+  <div class="omni-cms-sep"></div>
+  <button class="omni-cms-btn primary" id="omniExportSrtBtn" title="編集したキャプションをPremiere/CapCut用のSRT字幕ファイルとして保存">📝 SRT字幕を保存</button>
+</div>
+
+<script id="omni-video-studio-script">
+(function() {
+  if (navigator.webdriver || window.location.search.includes('export=1')) {
+    return;
+  }
+
+  const fps = 24;
+  const totalFrames = 240;
+  let currentFrame = 30;
+  let playing = false;
+  const scrubber = document.getElementById('omniScrubber');
+  const timeLabel = document.getElementById('omniTimeLabel');
+  const playBtn = document.getElementById('omniPlayPauseBtn');
+  const captionBox = document.getElementById('omni-caption-overlay');
+
+  // Per-scene editable captions (synchronized with SRT export)
+  const sceneCaptions = [
+    { start: 0.0, end: 2.6, text: "光と静寂を纏う、手仕事の造形美。" },
+    { start: 2.6, end: 5.4, text: "18Kリサイクルゴールドと、あこや真珠の有機的な輝き。" },
+    { start: 5.4, end: 8.0, text: "箱を開ける瞬間から始まる、特別な余韻をお届けします。" },
+    { start: 8.0, end: 10.0, text: "LUMIÈRE & CO. — 公式オンラインアトリエにて公開中。" }
+  ];
+
+  function activeSceneIdx(t) {
+    if (t < 2.6) return 0;
+    if (t < 5.4) return 1;
+    if (t < 8.0) return 2;
+    return 3;
+  }
+
+  let lastIdx = -1;
+  captionBox.addEventListener('input', function() {
+    const t = currentFrame / fps;
+    const idx = activeSceneIdx(t);
+    sceneCaptions[idx].text = captionBox.textContent.trim();
+  });
+
+  function updateFrame(f) {
+    currentFrame = Math.max(0, Math.min(totalFrames - 1, f));
+    scrubber.value = currentFrame;
+    const t = currentFrame / fps;
+    timeLabel.textContent = t.toFixed(1) + 's / 10.0s';
+    if (typeof window.setFrame === 'function') {
+      window.setFrame(currentFrame, fps);
+    }
+    const idx = activeSceneIdx(t);
+    if (idx !== lastIdx && document.activeElement !== captionBox) {
+      captionBox.textContent = sceneCaptions[idx].text;
+      lastIdx = idx;
+    }
+  }
+
+  // Fit 1080p canvas nicely inside browser window for interactive editing
+  function fitViewport() {
+    const w = document.body.offsetWidth || 1080;
+    const h = document.body.offsetHeight || 1920;
+    const scale = Math.min((window.innerWidth - 60) / w, (window.innerHeight - 160) / h, 1);
+    document.body.style.transformOrigin = 'top center';
+    document.body.style.transform = `scale(${scale})`;
+    document.body.style.margin = '64px auto 0 auto';
+    document.documentElement.style.background = '#121215';
+    document.documentElement.style.overflow = 'auto';
+  }
+  window.addEventListener('resize', fitViewport);
+  setTimeout(fitViewport, 50);
+  updateFrame(30);
+
+  scrubber.addEventListener('input', function(e) {
+    playing = false;
+    playBtn.textContent = '▶️ 再生プレビュー';
+    playBtn.classList.remove('active');
+    updateFrame(parseInt(e.target.value, 10));
+  });
+
+  playBtn.addEventListener('click', function() {
+    playing = !playing;
+    this.textContent = playing ? '⏸ 一時停止 (編集)' : '▶️ 再生プレビュー';
+    this.classList.toggle('active', playing);
+  });
+
+  document.querySelectorAll('[data-jump-sec]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      playing = false;
+      playBtn.textContent = '▶️ 再生プレビュー';
+      playBtn.classList.remove('active');
+      const sec = parseFloat(this.getAttribute('data-jump-sec'));
+      updateFrame(Math.floor(sec * fps));
+    });
+  });
+
+  setInterval(function() {
+    if (playing) {
+      updateFrame((currentFrame + 1) % totalFrames);
+    }
+  }, 1000 / fps);
+
+  function fmtSrtTime(sec) {
+    const ms = Math.round((sec % 1) * 1000);
+    const s = Math.floor(sec) % 60;
+    const m = Math.floor(sec / 60) % 60;
+    const h = Math.floor(sec / 3600);
+    const pad = (n, l=2) => String(n).padStart(l, '0');
+    return `${pad(h)}:${pad(m)}:${pad(s)},${pad(ms, 3)}`;
+  }
+
+  document.getElementById('omniExportSrtBtn').addEventListener('click', function() {
+    const lines = sceneCaptions.map((c, i) =>
+      `${i + 1}\n${fmtSrtTime(c.start)} --> ${fmtSrtTime(c.end)}\n${c.text}\n`
+    ).join('\n');
+    const blob = new Blob([lines], { type: 'text/plain;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'promo_captions_edited.srt';
+    a.click();
+  });
+})();
+</script>
+<!-- ==================== /OMNI VIDEO & CAPTION TIMELINE STUDIO ==================== -->
+
+</body>
+</html>

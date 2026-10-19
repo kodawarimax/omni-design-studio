@@ -1,0 +1,24 @@
+{
+  "brand": "MERRY LOOP",
+  "trend": "neo_brutalism",
+  "trend_label": "ネオ・ブルータリズム (Neo-Brutalism 2026)",
+  "plan": "plan_a",
+  "estimated_cost_jpy": 0.0,
+  "files": [
+    "./website.html",
+    "./website_preview.png",
+    "./poster.html",
+    "./poster_300dpi.png",
+    "./poster_print.pdf",
+    "./packaging_mockup.html",
+    "./packaging_3d_mockup.png",
+    "./packaging_dieline.svg",
+    "./promo_video_vertical_9x16.mp4",
+    "./promo_video_studio_9x16.html",
+    "./promo_video_landscape_16x9.mp4",
+    "./promo_video_studio_16x9.html",
+    "./promo_captions.srt",
+    "./promo_captions.vtt",
+    "./promo_audio_track.wav"
+  ]
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+  <rect width="1400" height="1000" fill="#0f172a"/>
+  <text x="60" y="58" fill="#94a3b8" font-family="sans-serif" font-size="19" letter-spacing="3">ACCESSORY BOX DIE-LINE BLUEPRINT (90x90x32mm / RED=CUT / BLUE DASH=FOLD) — MERRY LOOP</text>
+  <rect x="400" y="90" width="320" height="140" fill="#f4f0ea" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8,6"/>
+  <rect x="220" y="230" width="180" height="500" fill="#ffffff" stroke="#ef4444" stroke-width="3"/>
+  <text x="310" y="485" fill="#4b5563" font-family="sans-serif" font-size="13" text-anchor="middle" transform="rotate(-90 310 485)">MERRY LOOP ORIGINAL</text>
+  <rect x="400" y="230" width="320" height="500" fill="#f4f0ea" stroke="#ef4444" stroke-width="3"/>
+  <rect x="426" y="258" width="268" height="444" fill="none" stroke="#ff3b00" stroke-width="2"/>
+  <circle cx="560" cy="405" r="44" fill="none" stroke="#ff3b00" stroke-width="2.5"/>
+  <circle cx="560" cy="462" r="10" fill="#111111" stroke="#ff3b00" stroke-width="2"/>
+  <text x="560" y="330" fill="#ff3b00" font-family="sans-serif" font-size="22" font-weight="bold" text-anchor="middle" letter-spacing="5">MERRY LOOP</text>
+  <text x="560" y="545" fill="#111111" font-family="sans-serif" font-size="18" text-anchor="middle">Playful Color, Eve</text>
+  <text x="560" y="665" fill="#4b5563" font-family="sans-serif" font-size="12" text-anchor="middle" letter-spacing="2">DAILY ACCESSORIES &amp; GIFT BOX</text>
+  <rect x="720" y="230" width="180" height="500" fill="#ffffff" stroke="#ef4444" stroke-width="3"/>
+  <rect x="900" y="230" width="320" height="500" fill="#f4f0ea" stroke="#ef4444" stroke-width="3"/>
+  <text x="1060" y="335" fill="#ff3b00" font-family="sans-serif" font-size="16" text-anchor="middle" letter-spacing="3">MATERIAL &amp; CARE</text>
+  <text x="1060" y="390" fill="#111111" font-family="sans-serif" font-size="13" text-anchor="middle">Acrylic Resin / 316L Stainless / Glass Beads</text>
+  <text x="1060" y="425" fill="#4b5563" font-family="sans-serif" font-size="12" text-anchor="middle">いつものTシャツに、3秒のときめきを。水や汗にも</text>
+  <rect x="990" y="610" width="140" height="68" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+  <text x="1060" y="652" fill="#111111" font-family="monospace" font-size="15" text-anchor="middle">4 902468 135792</text>
+  <rect x="400" y="730" width="320" height="140" fill="#f4f0ea" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8,6"/>
+</svg>

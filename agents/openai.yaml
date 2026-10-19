@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omni-Design Studio (Web・ポスター・箱・動画・WP編集)"
+  short_description: "コンセプト質問＆参考デザインからWeb・300DPIポスター・パッケージ・プロモ動画・WordPress風編集HTMLを3ステップで一括生成"
+  default_prompt: "Use $omni-design-studio to design a cohesive Website, 300DPI Print Poster (PNG/PDF), Packaging (3D Mockup & SVG Dieline), and Promotional Video (9:16 & 16:9 MP4 + SRT/Studio) with WordPress-like browser editing."
