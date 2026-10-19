@@ -108,12 +108,66 @@ def build_website_html(t: dict, brand: str, headline: str, subcopy: str, hero_im
     sub_uri = _img_uri(sub_img) or img_uri
 
     if t.get("is_organic"):
+        is_genmai = ("玄米" in brand) or ("養生" in brand) or ("玄米" in subcopy)
+        rail_label = "WATASHI YOUJO — HOLISTIC JOURNAL" if is_genmai else "ATELIER JOURNAL — AUTUMN / WINTER"
+        nav_html = (
+            "<span>ABOUT</span><span>8-DAY / 16-DAY PLAN</span><span>7-ITEM KIT</span><span>SUPERVISOR</span><span>LINE CONSULT</span>"
+            if is_genmai
+            else "<span>COLLECTION</span><span>PHILOSOPHY</span><span>BESPOKE</span><span>OMOTESANDO ATELIER</span><span>CART (0)</span>"
+        )
+        issue_text = "WATASHI YOUJO — 酵素玄米 × 東洋医学 内外同治プログラム" if is_genmai else "No. 14 — Goutte de Lumière Collection"
+        watermark_text = "Watashi Youjo" if is_genmai else "Poetic Craft"
+        cta_text = "プログラム詳細・LINE無料相談へ" if is_genmai else "EXPLORE THE LOOKBOOK"
+        index_rows_html = (
+            """        <div class="index-row">
+          <span class="idx-num">i.</span>
+          <div><span class="idx-title">8日間 ハーフプログラム（入門）</span><span class="idx-sub">熟成酵素玄米24食＋甘酒2種＋五種茶＋岩塩＋黒ごま＋お灸12個＋LINE伴走</span></div>
+          <span class="idx-price">¥33,000</span>
+        </div>
+        <div class="index-row">
+          <span class="idx-num">ii.</span>
+          <div><span class="idx-title">16日間 フルプログラム（本格養生）</span><span class="idx-sub">熟成酵素玄米48食＋養生7点セット＋朝晩LINE伴走（税込・送料込）</span></div>
+          <span class="idx-price">¥55,000</span>
+        </div>
+        <div class="index-row">
+          <span class="idx-num">iii.</span>
+          <div><span class="idx-title">特約店・サロン導入パートナー制度</span><span class="idx-sub">在庫リスク0（メーカー直送）・粗利率40%・フォロー文面完備</span></div>
+          <span class="idx-price">Partner</span>
+        </div>"""
+            if is_genmai
+            else """        <div class="index-row">
+          <span class="idx-num">i.</span>
+          <div><span class="idx-title">朝露のアコヤ真珠フープ</span><span class="idx-sub">K18YG / Akoya Pearl 6.5mm</span></div>
+          <span class="idx-price">¥16,500</span>
+        </div>
+        <div class="index-row">
+          <span class="idx-num">ii.</span>
+          <div><span class="idx-title">水面の有機的イヤーカフ</span><span class="idx-sub">SV925 + K18 Vermeil</span></div>
+          <span class="idx-price">¥14,800</span>
+        </div>
+        <div class="index-row">
+          <span class="idx-num">iii.</span>
+          <div><span class="idx-title">金箔押しコットン貼り箱ギフト</span><span class="idx-sub">Bespoke Velvet Box</span></div>
+          <span class="idx-price">Included</span>
+        </div>"""
+        )
+        inset_caption = "Fig 02. 鍼灸師 原まゆこ監修（施術歴31年・延べ2万人）" if is_genmai else "Fig 02. Morning refraction"
+        tategaki_html = (
+            "何かを足す健康法から、<br>余分なものを手放す十六日間へ。<br>内側から整う、ワタシ養生。"
+            if is_genmai
+            else "光と影が交差する瞬間に、<br>職人の手仕事で宿る有機的な曲線。<br>装う人の呼吸に寄り添う一滴。"
+        )
+        seal_html = (
+            '<span>SUPERVISED</span><strong style="font-size:11px; margin:2px 0;">鍼灸 cocon</strong><span>EST. 31 YRS</span>'
+            if is_genmai
+            else '<span>HANDCRAFTED</span><strong style="font-size:12px; margin:2px 0;">TOKYO</strong><span>EST. 2026</span>'
+        )
         # Bespoke Human-Designed Editorial Layout (Dynamically adapts to extracted User Reference DNA)
         return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>{b} — Artisan Jewelry Atelier</title>
+<title>{b} — Official Holistic Journal</title>
 <style>
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   body {{
@@ -245,62 +299,44 @@ def build_website_html(t: dict, brand: str, headline: str, subcopy: str, hero_im
   <div class="paper-aura"></div>
   <aside class="left-rail">
     <span>01</span>
-    <span class="rail-vertical">ATELIER JOURNAL — AUTUMN / WINTER</span>
+    <span class="rail-vertical">{rail_label}</span>
     <span>26</span>
   </aside>
   <header>
     <div class="brand-logo">{b}</div>
     <nav class="nav-links">
-      <span>COLLECTION</span><span>PHILOSOPHY</span><span>BESPOKE</span><span>OMOTESANDO ATELIER</span><span>CART (0)</span>
+      {nav_html}
     </nav>
   </header>
   <main class="editorial-stage">
     <div class="col-story">
-      <span class="issue-no">No. 14 — Goutte de Lumière Collection</span>
-      <div class="en-Watermark">Poetic Craft</div>
+      <span class="issue-no">{issue_text}</span>
+      <div class="en-Watermark">{watermark_text}</div>
       <h1>{h}</h1>
       <p class="lead">{s}</p>
       <a href="#lookbook" class="oval-cta">
-        <span>EXPLORE THE LOOKBOOK</span>
+        <span>{cta_text}</span>
         <span style="font-size:15px;">⟶</span>
       </a>
       <div class="index-list">
-        <div class="index-row">
-          <span class="idx-num">i.</span>
-          <div><span class="idx-title">朝露のアコヤ真珠フープ</span><span class="idx-sub">K18YG / Akoya Pearl 6.5mm</span></div>
-          <span class="idx-price">¥16,500</span>
-        </div>
-        <div class="index-row">
-          <span class="idx-num">ii.</span>
-          <div><span class="idx-title">水面の有機的イヤーカフ</span><span class="idx-sub">SV925 + K18 Vermeil</span></div>
-          <span class="idx-price">¥14,800</span>
-        </div>
-        <div class="index-row">
-          <span class="idx-num">iii.</span>
-          <div><span class="idx-title">金箔押しコットン貼り箱ギフト</span><span class="idx-sub">Bespoke Velvet Box</span></div>
-          <span class="idx-price">Included</span>
-        </div>
+{index_rows_html}
       </div>
     </div>
     <div class="col-visual">
       <div class="arch-frame">
-        <img src="{img_uri}" alt="Artisan Earrings" />
+        <img src="{img_uri}" alt="Hero Visual" />
       </div>
       <div class="floating-inset">
-        <img src="{sub_uri}" alt="Prism Detail" />
-        <span class="inset-caption">Fig 02. Morning refraction</span>
+        <img src="{sub_uri}" alt="Detail Visual" />
+        <span class="inset-caption">{inset_caption}</span>
       </div>
     </div>
     <div class="col-tategaki">
       <div class="tategaki-poem">
-        光と影が交差する瞬間に、<br>
-        職人の手仕事で宿る有機的な曲線。<br>
-        装う人の呼吸に寄り添う一滴。
+        {tategaki_html}
       </div>
       <div class="atelier-seal">
-        <span>HANDCRAFTED</span>
-        <strong style="font-size:12px; margin:2px 0;">TOKYO</strong>
-        <span>EST. 2026</span>
+        {seal_html}
       </div>
     </div>
   </main>
@@ -429,11 +465,23 @@ def build_website_html(t: dict, brand: str, headline: str, subcopy: str, hero_im
 
 def build_poster_html(t: dict, brand: str, headline: str, subcopy: str, poster_img: str = "") -> str:
     b, h, s = html.escape(brand), html.escape(headline), html.escape(subcopy)
+    is_genmai = ("玄米" in brand) or ("養生" in brand) or ("玄米" in subcopy)
     img_uri = _img_uri(poster_img)
+    badge_right = "鍼灸師 原まゆこ監修 // 内外同治プログラム" if is_genmai else f"{b} // SEASON LOOKBOOK"
+    top_right = "酵素玄米 × 東洋医学 ワタシ養生" if is_genmai else "POP-UP STORE // 2026"
+    eyebrow_txt = "8日間ハーフ ¥33,000 ／ 16日間フル ¥55,000（税込・送料込）" if is_genmai else "EVERYDAY CASUAL ACCESSORIES &amp; CHARMS"
+    footer_spec = (
+        "【セット内容】熟成酵素玄米 / 甘酒2種 / 五種のめぐみ茶 / 還元岩塩 / 黒すりごま / 煙の出ないお灸 / ガイドブック / 毎日LINE伴走<br>"
+        "監修：鍼灸治療室「cocon」院長 鍼灸師 原まゆこ（施術歴31年・延べ2万人以上担当）<br>"
+        "※本プログラムは食事を整えて胃腸を休ませる養生プログラムであり、疾病の診断・治療・予防を目的としたものではありません。"
+        if is_genmai
+        else f"SHIBUYA / DAIKANYAMA POP-UP STORE<br>2026.11.01 (SUN) — 11.15 (SUN) / OPEN 11:00 - 20:00<br>BRAND IDENTITY: {b} (300DPI PRINT MASTER)"
+    )
+    qr_txt = "LINE<br>無料相談" if is_genmai else "ONLINE<br>SHOP"
     hero_media = (
         f'<div style="position:relative; z-index:2; height:760px; border:{t["border_style"]}; box-shadow:{t["shadow"]}; overflow:hidden; margin: 28px 0;">'
         f'<img src="{img_uri}" style="width:100%; height:100%; object-fit:cover;" />'
-        f'<div style="position:absolute; bottom:20px; right:24px; background:{t["surface"]}; padding:8px 18px; border:{t["border_style"]}; font-size:13px; font-weight:700; letter-spacing:0.2em; color:{t["primary"]};">{b} // SEASON LOOKBOOK</div>'
+        f'<div style="position:absolute; bottom:20px; right:24px; background:{t["surface"]}; padding:8px 18px; border:{t["border_style"]}; font-size:13px; font-weight:700; letter-spacing:0.2em; color:{t["primary"]};">{badge_right}</div>'
         f"</div>"
         if img_uri
         else f"""<div class="jewelry-graphic">
@@ -461,25 +509,25 @@ def build_poster_html(t: dict, brand: str, headline: str, subcopy: str, poster_i
   }}
   .top-bar {{
     position: relative; z-index: 2; display: flex; justify-content: space-between;
-    border-bottom: {t['border_style']}; padding-bottom: 24px;
-    font-size: 19px; letter-spacing: 0.28em; color: {t['primary']}; font-weight: 700;
+    border-bottom: {t['border_style']}; padding-top: 4px; padding-bottom: 24px;
+    font-size: 19px; letter-spacing: 0.22em; color: {t['primary']}; font-weight: 700;
   }}
   .center-art {{
     position: relative; z-index: 2;
     border: {t['border_style']}; background: {t['surface']};
-    padding: 48px 56px; box-shadow: {t['shadow']};
+    padding: 44px 52px; box-shadow: {t['shadow']};
   }}
-  .eyebrow {{ font-size: 16px; letter-spacing: 0.32em; color: {t['primary']}; font-weight: 700; margin-bottom: 18px; }}
+  .eyebrow {{ font-size: 16px; letter-spacing: 0.22em; color: {t['primary']}; font-weight: 700; margin-bottom: 16px; }}
   h1 {{
-    font-family: {t['font_heading']}; font-size: 64px; line-height: 1.22;
-    margin-bottom: 20px; word-break: keep-all;
+    font-family: {t['font_heading']}; font-size: 54px; line-height: 1.28;
+    margin-bottom: 18px; word-break: keep-all;
   }}
-  .sub {{ font-size: 22px; line-height: 1.75; color: {t['muted']}; }}
+  .sub {{ font-size: 20px; line-height: 1.75; color: {t['muted']}; }}
   .footer {{
     position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end;
-    border-top: {t['border_style']}; padding-top: 28px;
+    border-top: {t['border_style']}; padding-top: 24px;
   }}
-  .spec-code {{ font-size: 15px; letter-spacing: 0.18em; color: {t['muted']}; line-height: 1.75; }}
+  .spec-code {{ font-size: 13.5px; letter-spacing: 0.08em; color: {t['muted']}; line-height: 1.75; max-width: 880px; }}
   .qr-placeholder {{
     width: 112px; height: 112px; border: {t['border_style']}; background: {t['surface']};
     display: flex; align-items: center; justify-content: center; text-align: center;
@@ -490,21 +538,19 @@ def build_poster_html(t: dict, brand: str, headline: str, subcopy: str, poster_i
 <body>
   <div class="top-bar">
     <span>{b}</span>
-    <span>POP-UP STORE // 2026</span>
+    <span>{top_right}</span>
   </div>
   {hero_media}
   <div class="center-art">
-    <div class="eyebrow">EVERYDAY CASUAL ACCESSORIES &amp; CHARMS</div>
+    <div class="eyebrow">{eyebrow_txt}</div>
     <h1>{h}</h1>
     <p class="sub">{s}</p>
   </div>
   <div class="footer">
     <div class="spec-code">
-      SHIBUYA / DAIKANYAMA POP-UP STORE<br>
-      2026.11.01 (SUN) — 11.15 (SUN) / OPEN 11:00 - 20:00<br>
-      BRAND IDENTITY: {b} (300DPI PRINT MASTER)
+      {footer_spec}
     </div>
-    <div class="qr-placeholder">ONLINE<br>SHOP</div>
+    <div class="qr-placeholder">{qr_txt}</div>
   </div>
 </body>
 </html>"""
@@ -512,10 +558,31 @@ def build_poster_html(t: dict, brand: str, headline: str, subcopy: str, poster_i
 
 def build_packaging_html_and_svg(t: dict, brand: str, headline: str, subcopy: str, pack_img: str = "") -> tuple[str, str]:
     b, h, s = html.escape(brand), html.escape(headline), html.escape(subcopy)
+    is_genmai = ("玄米" in brand) or ("養生" in brand) or ("玄米" in subcopy)
     img_uri = _img_uri(pack_img)
+    dieline_title = (
+        f"GIFT BOX DIE-LINE BLUEPRINT (310x240x110mm / RED=CUT / BLUE DASH=FOLD) — {b}"
+        if is_genmai
+        else f"ACCESSORY BOX DIE-LINE BLUEPRINT (90x90x32mm / RED=CUT / BLUE DASH=FOLD) — {b}"
+    )
+    dieline_sub = "7-ITEM HOLISTIC FASTING &amp; CARE GIFT BOX" if is_genmai else "DAILY ACCESSORIES &amp; GIFT BOX"
+    dieline_mat = "国産無農薬酵素玄米 / 甘酒2種 / 五種のめぐみ茶 / 還元岩塩 / 黒すりごま / 煙の出ないお灸" if is_genmai else "Acrylic Resin / 316L Stainless / Glass Beads"
+    pkg_tag = "WATASHI YOUJO — 7-ITEM GIFT BOX DESIGN" if is_genmai else "GIFT PACKAGING &amp; POUCH DESIGN"
+    pkg_subtitle = "養生7点コンプリートギフト箱（二段仕切り・箔押し仕様）" if is_genmai else "特製スライドボックス ＆ コットン巾着セット"
+    pkg_specs = (
+        f"・デザインスタイル: {t['label']}<br>"
+        "・同梱7点セット: ①熟成酵素玄米レトルト(24食/48食) ②玄米甘酒・黒米甘酒(各250g) ③五種のめぐみ茶(8g) ④ファイアーロックソルト(30g) ⑤有機黒すりごま(50g) ⑥煙の出ないお灸(12個) ⑦HOW TO ガイドブック(8つのツボ図解)<br>"
+        "・箱サイズ仕様: 外箱 310×240×110mm（無晒しクラフト＆生成り和紙貼り・ブロンズ箔押し・内蓋QRコード付き）<br>"
+        "・納品データ: 3DスタジオモックアップPNG + 印刷入稿用展開図ダイラインSVG"
+        if is_genmai
+        else f"・デザインスタイル: {t['label']}<br>"
+        "・構成: カラーマッチボックス型スライド箱 + コットン巾着ポーチ + 専用アクセサリー台紙<br>"
+        "・サイズ仕様: 外箱 90×90×32mm / 台紙 65×65mm (リング・クリップ・ピアス兼用)<br>"
+        "・納品データ: 高精細スタジオモックアップPNG + 印刷入稿用ダイラインSVG"
+    )
     svg_dieline = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
   <rect width="1400" height="1000" fill="#0f172a"/>
-  <text x="60" y="58" fill="#94a3b8" font-family="sans-serif" font-size="19" letter-spacing="3">ACCESSORY BOX DIE-LINE BLUEPRINT (90x90x32mm / RED=CUT / BLUE DASH=FOLD) — {b}</text>
+  <text x="60" y="58" fill="#94a3b8" font-family="sans-serif" font-size="18" letter-spacing="2">{dieline_title}</text>
   <rect x="400" y="90" width="320" height="140" fill="{t['bg']}" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8,6"/>
   <rect x="220" y="230" width="180" height="500" fill="{t['surface']}" stroke="#ef4444" stroke-width="3"/>
   <text x="310" y="485" fill="{t['muted']}" font-family="sans-serif" font-size="13" text-anchor="middle" transform="rotate(-90 310 485)">{b} ORIGINAL</text>
@@ -523,14 +590,14 @@ def build_packaging_html_and_svg(t: dict, brand: str, headline: str, subcopy: st
   <rect x="426" y="258" width="268" height="444" fill="none" stroke="{t['primary']}" stroke-width="2"/>
   <circle cx="560" cy="405" r="44" fill="none" stroke="{t['primary']}" stroke-width="2.5"/>
   <circle cx="560" cy="462" r="10" fill="{t['text']}" stroke="{t['primary']}" stroke-width="2"/>
-  <text x="560" y="330" fill="{t['primary']}" font-family="sans-serif" font-size="22" font-weight="bold" text-anchor="middle" letter-spacing="5">{b}</text>
-  <text x="560" y="545" fill="{t['text']}" font-family="sans-serif" font-size="18" text-anchor="middle">{h[:18]}</text>
-  <text x="560" y="665" fill="{t['muted']}" font-family="sans-serif" font-size="12" text-anchor="middle" letter-spacing="2">DAILY ACCESSORIES &amp; GIFT BOX</text>
+  <text x="560" y="330" fill="{t['primary']}" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="3">{b}</text>
+  <text x="560" y="545" fill="{t['text']}" font-family="sans-serif" font-size="16" text-anchor="middle">{h[:18]}</text>
+  <text x="560" y="665" fill="{t['muted']}" font-family="sans-serif" font-size="11" text-anchor="middle" letter-spacing="2">{dieline_sub}</text>
   <rect x="720" y="230" width="180" height="500" fill="{t['surface']}" stroke="#ef4444" stroke-width="3"/>
   <rect x="900" y="230" width="320" height="500" fill="{t['bg']}" stroke="#ef4444" stroke-width="3"/>
-  <text x="1060" y="335" fill="{t['primary']}" font-family="sans-serif" font-size="16" text-anchor="middle" letter-spacing="3">MATERIAL &amp; CARE</text>
-  <text x="1060" y="390" fill="{t['text']}" font-family="sans-serif" font-size="13" text-anchor="middle">Acrylic Resin / 316L Stainless / Glass Beads</text>
-  <text x="1060" y="425" fill="{t['muted']}" font-family="sans-serif" font-size="12" text-anchor="middle">{s[:24]}</text>
+  <text x="1060" y="335" fill="{t['primary']}" font-family="sans-serif" font-size="15" text-anchor="middle" letter-spacing="3">SPECIFICATIONS &amp; KIT</text>
+  <text x="1060" y="390" fill="{t['text']}" font-family="sans-serif" font-size="11.5" text-anchor="middle">{dieline_mat[:38]}</text>
+  <text x="1060" y="425" fill="{t['muted']}" font-family="sans-serif" font-size="11.5" text-anchor="middle">{s[:26]}</text>
   <rect x="990" y="610" width="140" height="68" fill="#ffffff" stroke="#111111" stroke-width="2"/>
   <text x="1060" y="652" fill="#111111" font-family="monospace" font-size="15" text-anchor="middle">4 902468 135792</text>
   <rect x="400" y="730" width="320" height="140" fill="{t['bg']}" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8,6"/>
@@ -545,7 +612,7 @@ def build_packaging_html_and_svg(t: dict, brand: str, headline: str, subcopy: st
         else f"""<div class="stage">
     <div class="box-3d-wrap">
       <div class="box-front">
-        <div style="font-size:11px; letter-spacing:0.3em; color:{t['primary']}; text-align:center;">ACCESSORY BOX</div>
+        <div style="font-size:11px; letter-spacing:0.3em; color:{t['primary']}; text-align:center;">GIFT BOX</div>
         <div class="label-frame">
           <div style="font-family:{t['font_heading']}; font-size:26px; color:{t['primary']}; letter-spacing:0.2em; margin-bottom:14px;">{b}</div>
           <div style="font-family:{t['font_heading']}; font-size:19px; line-height:1.45; margin-bottom:14px;">{h}</div>
@@ -569,26 +636,23 @@ def build_packaging_html_and_svg(t: dict, brand: str, headline: str, subcopy: st
     display: flex; align-items: center; justify-content: space-between; padding: 64px 72px;
   }}
   .info-panel {{
-    max-width: 520px; background: {t['surface']}; padding: 44px;
+    max-width: 540px; background: {t['surface']}; padding: 42px;
     border: {t['border_style']}; box-shadow: {t['shadow']};
   }}
-  .tag {{ color: {t['primary']}; letter-spacing: 0.24em; font-size: 13px; font-weight: 800; margin-bottom: 14px; }}
-  h2 {{ font-family: {t['font_heading']}; font-size: 40px; margin-bottom: 18px; line-height: 1.25; }}
-  p {{ color: {t['muted']}; font-size: 16.5px; line-height: 1.8; margin-bottom: 24px; }}
-  .specs {{ border-top: {t['border_style']}; padding-top: 20px; font-size: 13.5px; color: {t['text']}; line-height: 1.95; }}
+  .tag {{ color: {t['primary']}; letter-spacing: 0.22em; font-size: 13px; font-weight: 800; margin-bottom: 14px; }}
+  h2 {{ font-family: {t['font_heading']}; font-size: 34px; margin-bottom: 16px; line-height: 1.3; }}
+  p {{ color: {t['muted']}; font-size: 15.5px; line-height: 1.8; margin-bottom: 22px; }}
+  .specs {{ border-top: {t['border_style']}; padding-top: 18px; font-size: 13px; color: {t['text']}; line-height: 1.9; }}
 </style>
 </head>
 <body>
   {left_stage}
   <div class="info-panel">
-    <div class="tag">GIFT PACKAGING &amp; POUCH DESIGN</div>
-    <h2>{b}<br><span style="font-size:22px; color:{t['primary']};">特製スライドボックス ＆ コットン巾着セット</span></h2>
+    <div class="tag">{pkg_tag}</div>
+    <h2>{b}<br><span style="font-size:20px; color:{t['primary']};">{pkg_subtitle}</span></h2>
     <p>{s}</p>
     <div class="specs">
-      ・デザインスタイル: {t['label']}<br>
-      ・構成: カラーマッチボックス型スライド箱 + コットン巾着ポーチ + 専用アクセサリー台紙<br>
-      ・サイズ仕様: 外箱 90×90×32mm / 台紙 65×65mm (リング・クリップ・ピアス兼用)<br>
-      ・納品データ: 高精細スタジオモックアップPNG + 印刷入稿用ダイラインSVG
+      {pkg_specs}
     </div>
   </div>
 </body>
