@@ -1,0 +1,291 @@
+{
+  "overall_passed": true,
+  "suite_dir": "/Users/jungosakamoto/Downloads/GENMAI_CLEANSE_PARTNER_SUITE_V3",
+  "total_html_files_checked": 14,
+  "qr_code_verification": {
+    "qr_file": "assets/qr_line_official.png",
+    "decoded_payload": "https://lin.ee/XOWYwEM",
+    "decoded_ok": true
+  },
+  "external_url_checks": [
+    {
+      "url": "https://lin.ee/XOWYwEM",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://line.me/R/ti/p/@532tekda"
+    }
+  ],
+  "files": [
+    {
+      "file": "ai_clone_qa_spec.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "flyer_a4_back.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "flyer_a4_double.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "flyer_a4_front.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "manuals_organized.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "production/flyer_a4_double_production.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "production/packaging_mockup_production.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "production/website_production.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 11,
+      "broken_images": [],
+      "links_total": 11,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#philosophy",
+          "clicked_ok": true
+        },
+        {
+          "href": "#specialist",
+          "clicked_ok": true
+        },
+        {
+          "href": "#support",
+          "clicked_ok": true
+        },
+        {
+          "href": "#delivery",
+          "clicked_ok": true
+        },
+        {
+          "href": "#agency",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "ai_clone_drawer_and_6_faqs": true,
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "promo_video_studio_9x16.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "uword_banner.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "uword_page_kit.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 11,
+      "broken_images": [],
+      "links_total": 11,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#philosophy",
+          "clicked_ok": true
+        },
+        {
+          "href": "#specialist",
+          "clicked_ok": true
+        },
+        {
+          "href": "#support",
+          "clicked_ok": true
+        },
+        {
+          "href": "#delivery",
+          "clicked_ok": true
+        },
+        {
+          "href": "#agency",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "ai_clone_drawer_and_6_faqs": true,
+        "image_swapper_toggle": true,
+        "review_production_mode_switcher": true
+      }
+    },
+    {
+      "file": "ycs_creative_brief_b1_b7.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    }
+  ]
+}

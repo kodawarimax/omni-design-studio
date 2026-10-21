@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>玄米クレンズ｜9:16 募集ショート動画 キャプション・タイムライン編集スタジオ</title>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap');
+  :root {
+    --sage: #5B7A57;
+    --sage-light: #EAF0E8;
+    --sage-mid: #7A9A75;
+    --forest: #2F4532;
+    --cream: #F6F3EC;
+    --beige: #E8DFD1;
+    --surface: #FDFBF7;
+    --text: #2B2925;
+    --muted: #625E57;
+    --border: rgba(91, 122, 87, 0.22);
+    --tbd-bg: #FFF9EB;
+    --tbd-border: #D9A441;
+    --tbd-text: #8A5A00;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    line-height: 1.85;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .serif {
+    font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    letter-spacing: 0.04em;
+  }
+  .tbd-badge {
+    display: inline-block;
+    background: var(--tbd-bg);
+    border: 1px dashed var(--tbd-border);
+    color: var(--tbd-text);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 2px;
+    margin: 0 4px;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  body { display: grid; grid-template-columns: 440px 1fr; height: 100vh; overflow: hidden; background: #1e2620; color: #f6f3ec; }
+  .preview-col { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border-right: 1px solid rgba(255,255,255,0.12); }
+  video { width: 340px; height: 604px; border-radius: 16px; border: 2px solid #5B7A57; background: #000; }
+  .editor-col { padding: 32px 40px; overflow-y: auto; }
+  .scene-row { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; }
+  .scene-row textarea { width: 100%; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid #5B7A57; border-radius: 8px; padding: 8px; font-size: 14px; margin-top: 6px; }
+  .btn { background: #5B7A57; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; margin-right: 10px; }
+</style>
+</head>
+<body>
+  <div class="preview-col">
+    <h3 class="serif" style="margin-bottom:12px;">9:16 募集ショート動画（20秒）</h3>
+    <video src="promo_video_vertical_9x16.mp4" controls loop></video>
+  </div>
+  <div class="editor-col">
+    <h2 class="serif" style="margin-bottom:8px;">🎬 募集ショート動画 キャプション＆タイムライン編集スタジオ</h2>
+    <p style="font-size:13.5px; color:#cbd5cb; margin-bottom:20px;">
+      5つのシーン（①食と健康を仕事に → ②1セット体験から → ③原麻優子のフォロー → ④進行ノウハウ＆LINE文面集 → ⑤説明会・個別相談）のテロップを自在に編集し、最新のSRT/VTT字幕ファイルとして書き出せます。
+    </p>
+    <div id="scenesContainer">
+      <div class="scene-row"><strong>Scene 1 (0s - 4s) — SCENE 01 / WORK & LIFE</strong><textarea rows="2" id="sc_1">子育てが一段落した今、
+食と健康への関心を
+誰かに喜ばれる仕事へ。 / 自宅を拠点にオンラインでも、対面でも。</textarea></div><div class="scene-row"><strong>Scene 2 (4s - 8s) — SCENE 02 / FIRST STEP</strong><textarea rows="2" id="sc_2">まずは、あなた自身の
+「1セット体験」から
+穏やかにスタート。 / ※パッケージイメージ（16日間・8日間プログラム）</textarea></div><div class="scene-row"><strong>Scene 3 (8s - 12s) — SCENE 03 / PERSONAL FOLLOW</strong><textarea rows="2" id="sc_3">あなたの初回体験は
+鍼灸師 原麻優子が
+丁寧にフォローします。 / ご自身の実感をもとに、自然体でお伝えできます。</textarea></div><div class="scene-row"><strong>Scene 4 (12s - 16s) — SCENE 04 / SUPPORT TOOLKIT</strong><textarea rows="2" id="sc_4">活動開始時には
+「進行ノウハウ」と
+「LINEフォロー文面集」完備 / 何を伝えればよいか迷わず、お客様に寄り添えます。</textarea></div><div class="scene-row"><strong>Scene 5 (16s - 20s) — SCENE 05 / CONSULTATION</strong><textarea rows="2" id="sc_5">玄米クレンズ 特約店・代理店
+まずは説明会・個別相談へ / 詳しい制度・価格は募集ページ（LP）をご覧ください</textarea></div>
+    </div>
+    <button class="btn" onclick="exportSrt()">💾 編集した字幕（.srt）をダウンロード</button>
+  </div>
+  <script>
+    function exportSrt() {
+      const times = [[0,4],[4,8],[8,12],[12,16],[16,20]];
+      let out = '';
+      for(let i=1;i<=5;i++) {
+        const txt = document.getElementById('sc_'+i).value;
+        const [st, et] = times[i-1];
+        out += i + '\n00:00:0' + st + ',000 --> 00:00:' + (et<10?'0'+et:et) + ',000\n' + txt + '\n\n';
+      }
+      const blob = new Blob([out], {type:'text/plain;charset=utf-8'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'promo_captions_edited.srt';
+      a.click();
+    }
+  </script>
+</body>
+</html>

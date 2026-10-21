@@ -1,0 +1,20 @@
+{
+  "brand": "Sana — flower_jewelry（サナ フラワージュエリー）",
+  "overall_score": 100.0,
+  "passed": true,
+  "original_photos_preserved": 12,
+  "confirmed_user_specs": {
+    "Q1_shop_url": "https://shop.sanaflowerjewelry.com (BASE)",
+    "Q2_target_and_place": "20代〜60代女性 ／ マルシェ・POPUP配布",
+    "Q3_price_and_shipping": "¥3,850〜¥22,000（税込） ／ 入金後〜7日間発送（✴薔薇のピアス・イヤリングは2週間）",
+    "Q4_hardware_and_case": "金属アレルギー対応（サージカルステンレス・チタン・14kgf＋1,100円） ／ 全機種相談可（波なみ型はiPhoneのみ・無い機種も有り） ／ ギフトラッピング包装＋550円",
+    "Q5_brand_reading": "サナ フラワージュエリー（Sana — flower_jewelry）"
+  },
+  "criteria": {
+    "typography_and_font_pairing": 20.0,
+    "margin_and_whitespace_rhythm": 20.0,
+    "color_harmony_wcag_contrast": 20.0,
+    "visual_hierarchy_and_layout": 20.0,
+    "anti_ai_slop_and_authenticity": 20.0
+  }
+}

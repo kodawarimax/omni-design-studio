@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>玄米クレンズ｜A4両面 募集チラシ（エディトリアル組版）</title>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+  :root {
+    --washi: #F5EFE4;
+    --washi-pure: #FAF7F2;
+    --sand: #EAE0D0;
+    --sage: #6D8C73;         /* Extracted from 玄米クレンズのコピー (11).png bottom band */
+    --sage-pale: #E9EFEA;
+    --forest: #2B3F2E;       /* Deep readable editorial green for headings & actions */
+    --ink: #23201C;
+    --muted: #655F56;
+    --rule: rgba(43, 63, 46, 0.20);
+    --rule-strong: rgba(43, 63, 46, 0.45);
+    --tbd-bg: #FBF5E6;
+    --tbd-border: #B8862D;
+    --tbd-ink: #7A5411;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: var(--washi);
+    color: var(--ink);
+    font-family: "YuGothic", "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    line-height: 2.05;
+    font-size: 15.5px;
+    letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .mincho {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+  .en-serif {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    letter-spacing: 0.16em;
+  }
+  .tategaki {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  }
+  .tbd-mark {
+    display: inline-block;
+    background: var(--tbd-bg);
+    border-bottom: 1px dashed var(--tbd-border);
+    color: var(--tbd-ink);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 1px 8px;
+    margin: 0 4px;
+    letter-spacing: 0.04em;
+  }
+  .editorial-index {
+    border-top: 1px solid var(--rule-strong);
+  }
+  .editorial-row {
+    display: grid;
+    grid-template-columns: 56px 260px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .row-kanji {
+    font-family: "Shippori Mincho", serif;
+    font-size: 16px;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+  }
+  .row-title {
+    font-family: "Shippori Mincho", serif;
+    font-size: 17.5px;
+    color: var(--forest);
+    font-weight: 600;
+  }
+  .row-body {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.95;
+  }
+  .three-col-ledger {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .ledger-cell {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+  }
+  .ledger-cell:last-child { border-right: none; }
+  .cell-kicker {
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .ledger-cell h3 {
+    font-size: 19px;
+    color: var(--forest);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .ledger-cell p {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.95;
+  }
+
+  body {
+    background: #D8D2C7;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .a4-sheet {
+    width: 1120px;
+    height: 1584px; /* A4 exact ratio */
+    background: var(--washi);
+    padding: 64px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    page-break-after: always;
+  }
+  .sheet-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid var(--forest);
+    padding-bottom: 16px;
+  }
+  .sheet-bottom-band {
+    background: var(--sage);
+    color: var(--washi-pure);
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .qr-sharp {
+    width: 108px;
+    height: 108px;
+    background: var(--washi-pure);
+    color: var(--forest);
+    border: 1px solid var(--forest);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+
+  :root {
+    --font-serif: YakuHanJP_Noto, "Shippori Mincho B1", "Shippori Mincho", serif;
+    --font-sans: YakuHanJP_Noto, "Noto Sans JP", sans-serif;
+    --font-display: "Cormorant Garamond", "Shippori Mincho B1", serif;
+  }
+  body {
+    font-family: var(--font-sans) !important;
+    word-break: auto-phrase;
+    line-break: strict;
+    hanging-punctuation: allow-end;
+  }
+  h1, h2, h3, .mincho, .row-title {
+    font-family: var(--font-serif) !important;
+    font-feature-settings: "palt" 1, "kern" 1;
+  }
+  .num-editorial {
+    font-family: var(--font-display) !important;
+    font-size: 1.22em;
+    font-weight: 600;
+  }
+  .price-nowrap { white-space: nowrap !important; display: inline-block; }
+  body.production-clean-mode .tbd-mark { display: none !important; }
+  body:not(.production-clean-mode) .prod-only-copy { display: none !important; }
+
+</style>
+</head>
+<body>
+
+  <!-- FRONT PAGE (表面：共感・仕事の魅力・始め方) -->
+  <div class="a4-sheet" id="flyer-front">
+    <div class="sheet-top">
+      <span class="mincho" style="font-size:24px; color:var(--forest); letter-spacing:0.24em; font-weight:600;">玄米クレンズ</span>
+      <span style="font-size:12.5px; color:var(--muted); letter-spacing:0.14em;">特約店・代理店パートナー募集のご案内 ｜ 表面</span>
+    </div>
+
+    <!-- Editorial Hero with Vertical Copy -->
+    <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; align-items:stretch; padding:28px 0; border-bottom:1px solid var(--rule-strong);">
+      <div style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <span style="font-size:12px; color:var(--sage); letter-spacing:0.18em; display:block; margin-bottom:14px; border-left:2px solid var(--sage); padding-left:10px;">
+            子育てが一段落し、これからの働き方を考える方へ
+          </span>
+          <h1 class="mincho" style="font-size:34px; line-height:1.62; color:var(--forest); margin-bottom:20px;">
+            家族のために大切にしてきた<br>
+            食と健康への関心を、<br>
+            これからは誰かの役に立つ仕事へ。
+          </h1>
+          <p style="font-size:15px; line-height:2.05; color:var(--ink);">
+            まずはご自身が1セットを購入し、<strong>鍼灸師 原麻優子</strong>のフォローで体験することから始まります。<br>
+            ご自身の体験をもとに、お客様の実践を丁寧に支えるお仕事です。自宅を拠点にオンラインでも、対面でのつながりでも活動いただけます。
+          </p>
+        </div>
+        <div style="border-top:1px solid var(--rule); padding-top:14px; font-size:13px; color:var(--muted);">
+          監修・初回体験フォロー：鍼灸師 原麻優子
+        </div>
+      </div>
+      <div style="position:relative; height:430px;">
+        <img src="assets/01_hero_genmai_bowl.png" data-asset-slot="01_hero_genmai_bowl.png" alt="玄米クレンズのある食卓と暮らし" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        <div class="tategaki" style="position:absolute; top:20px; right:20px; background:rgba(250,247,242,0.92); padding:20px 14px; height:310px; font-size:14.5px; line-height:2.1; letter-spacing:0.2em; color:var(--forest); border-top:2px solid var(--sage);">
+          体験から始まり、信頼でつながる。
+        </div>
+      </div>
+    </div>
+
+    <!-- Empathy & Starter Kit Split -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; padding:24px 0; border-bottom:1px solid var(--rule-strong); align-items:start;">
+      <div>
+        <h2 class="mincho" style="font-size:19px; color:var(--forest); margin-bottom:14px; border-bottom:1px solid var(--rule); padding-bottom:8px;">
+          このような働き方を希望される方へ
+        </h2>
+        <div style="display:grid; gap:10px; font-size:14px; line-height:1.85;">
+          <div><span class="mincho" style="color:var(--sage); margin-right:8px;">一、</span>人の役に立ち、喜んでもらえる仕事がしたい</div>
+          <div><span class="mincho" style="color:var(--sage); margin-right:8px;">二、</span>自分と家族の健康も大切にできる仕事を選びたい</div>
+          <div><span class="mincho" style="color:var(--sage); margin-right:8px;">三、</span>関心のある「食と健康」に関われる仕事がしたい</div>
+          <div><span class="mincho" style="color:var(--sage); margin-right:8px;">四、</span>電車通勤をせず、自宅を拠点にオンラインで取り組みたい</div>
+          <div><span class="mincho" style="color:var(--sage); margin-right:8px;">五、</span>家庭や趣味の時間と無理なく両立したい</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:165px 1fr; gap:18px; background:var(--washi-pure); border:1px solid var(--rule); padding:16px;">
+        <img src="assets/02_kit_fullset_authentic.png" data-asset-slot="02_kit_fullset_authentic.png" alt="スターターキット パッケージイメージ" style="width:165px; height:215px; object-fit:cover; display:block;" />
+        <div>
+          <span style="font-size:10.5px; color:var(--sage); letter-spacing:0.14em;">STARTER KIT IMAGE</span>
+          <h3 class="mincho" style="font-size:16.5px; color:var(--forest); margin:3px 0 6px;">大切なお客様へ届くスターターキット</h3>
+          <p style="font-size:12.5px; color:var(--ink); line-height:1.7; margin-bottom:6px;">
+            <strong>【商品の販売価格目安（税込）】</strong><br>
+            ・16日間（玄米なし／玄米48個付）：<span class="price-nowrap"><span class="num-editorial">55,000</span>円</span><br>
+            ・8日間（玄米なし／玄米24個付）：<span class="price-nowrap"><span class="num-editorial">33,000</span>円</span>
+          </p>
+          <p style="font-size:11px; color:var(--muted); line-height:1.58;">
+            ※上記は<strong>パッケージイメージ</strong>です。<br>
+            ※まずは1セットを購入してご自身で体験することから始めます（具体的な仕入価格や差額は説明会・個別相談でご案内／商品の販売価格と初回体験価格は区別）。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shortened 4-Phase Flow (Connecting to LP for full 7 steps per Q4-1) -->
+    <div style="padding:16px 0;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;">
+        <h2 class="mincho" style="font-size:18.5px; color:var(--forest);">活動開始までの流れ（詳しい7ステップ・条件は募集LPにてご案内）</h2>
+        <span style="font-size:11.5px; color:var(--muted);">※慣れてきたら希望に応じて「代理店」への移行も可能です（任意）</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); border-top:1px solid var(--forest); border-bottom:1px solid var(--forest); background:var(--washi-pure);">
+        <div style="padding:14px 16px; border-right:1px solid var(--rule);">
+          <span class="en-serif" style="color:var(--sage); font-size:14px;">STEP 01</span>
+          <h4 class="mincho" style="font-size:14.5px; color:var(--forest); margin:4px 0;">知る・相談申込</h4>
+          <p style="font-size:12px; color:var(--muted); line-height:1.6;">募集ページで仕事内容・支援を知り、説明会・個別相談へ申し込む</p>
+        </div>
+        <div style="padding:14px 16px; border-right:1px solid var(--rule);">
+          <span class="en-serif" style="color:var(--sage); font-size:14px;">STEP 02</span>
+          <h4 class="mincho" style="font-size:14.5px; color:var(--forest); margin:4px 0;">条件確認・体験</h4>
+          <p style="font-size:12px; color:var(--muted); line-height:1.6;">条件を確認し、1セット購入して鍼灸師 原麻優子のフォローで体験する</p>
+        </div>
+        <div style="padding:14px 16px; border-right:1px solid var(--rule);">
+          <span class="en-serif" style="color:var(--sage); font-size:14px;">STEP 03</span>
+          <h4 class="mincho" style="font-size:14.5px; color:var(--forest); margin:4px 0;">活動準備を行う</h4>
+          <p style="font-size:12px; color:var(--muted); line-height:1.6;">特約店スタート特典「進行ノウハウ」「フォロー文面集」で準備</p>
+        </div>
+        <div style="padding:14px 16px;">
+          <span class="en-serif" style="color:var(--sage); font-size:14px;">STEP 04</span>
+          <h4 class="mincho" style="font-size:14.5px; color:var(--forest); margin:4px 0;">特約店として開始</h4>
+          <p style="font-size:12px; color:var(--muted); line-height:1.6;">ご自身の体験をもとに、お客様への案内・販売・フォローを始める</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sage Band (Matching玄米クレンズのコピー (11).png) -->
+    <div class="sheet-bottom-band">
+      <span class="mincho" style="font-size:15.5px; letter-spacing:0.12em;">まずは1セットのご自身の体験から、穏やかに始めるお仕事です。</span>
+      <span style="font-size:12.5px; letter-spacing:0.1em;">裏面：支援体制・Q&amp;A・説明会／個別相談QRコード ⟶</span>
+    </div>
+  </div>
+
+  <!-- BACK PAGE (裏面：支援体制・Q&A・説明会／個別相談へのQRコード) -->
+  <div class="a4-sheet" id="flyer-back">
+    <div class="sheet-top">
+      <span class="mincho" style="font-size:22px; color:var(--forest); letter-spacing:0.18em; font-weight:600;">玄米クレンズ ｜ 支援体制とよくあるご質問</span>
+      <span style="font-size:12.5px; color:var(--muted); letter-spacing:0.14em;">特約店・代理店募集のご案内 ｜ 裏面</span>
+    </div>
+
+    <!-- 3 Startup Supports -->
+    <div style="padding:16px 0; border-bottom:1px solid var(--rule-strong);">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
+        <h2 class="mincho" style="font-size:20px; color:var(--forest);">
+          特約店向けのスタート特典・支援（三つの安心サポート）
+        </h2>
+        <span style="font-size:11.5px; color:var(--muted);">※説明会参加特典ではなく、特約店になった方へのスタート特典です</span>
+      </div>
+      <div class="three-col-ledger" style="background:var(--washi-pure);">
+        <div class="ledger-cell" style="padding:18px 20px;">
+          <span class="cell-kicker en-serif">SUPPORT 01</span>
+          <h3 class="mincho" style="font-size:16.5px; margin-bottom:8px;">本人の初回体験フォロー</h3>
+          <p style="font-size:12.5px; line-height:1.8;">特約店になる方が初めて実践する際は、<strong>鍼灸師 原麻優子</strong>がフォローします。ご自身の体験をもとにお客様へ伝えられます。</p>
+        </div>
+        <div class="ledger-cell" style="padding:18px 20px;">
+          <span class="cell-kicker en-serif">SUPPORT 02</span>
+          <h3 class="mincho" style="font-size:16.5px; margin-bottom:8px;">実務資料「進行ノウハウ」</h3>
+          <p style="font-size:12.5px; line-height:1.8;">16日間／8日間の全体像、相談から開始までの準備、期間中の案内方法、参加前の確認事項、中断時・終了後のフォローまで網羅。</p>
+        </div>
+        <div class="ledger-cell" style="padding:18px 20px;">
+          <span class="cell-kicker en-serif">SUPPORT 03</span>
+          <h3 class="mincho" style="font-size:16.5px; margin-bottom:8px;">LINE「フォロー文面集」</h3>
+          <p style="font-size:12.5px; line-height:1.8;">特約店がお客様へのLINEなどでそのまま活用できる文面集です。毎日の朝晩連絡やツボ案内など、伝える内容に迷いません。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logistics & Agency Step-up -->
+    <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:32px; padding:18px 0; border-bottom:1px solid var(--rule-strong);">
+      <div>
+        <h3 class="mincho" style="font-size:17.5px; color:var(--forest); margin-bottom:8px; border-bottom:1px solid var(--rule); padding-bottom:6px;">
+          取引・注文の流れと、選べる二つの配送先
+        </h3>
+        <p style="font-size:12px; color:var(--muted); margin-bottom:8px; line-height:1.65;">
+          <strong>【基本の取引関係】</strong> メーカー ➔ 代理店 ➔ 特約店 ➔ お客様<br>
+          <strong>【注文の流れ】</strong> 特約店から代理店へ注文・支払い ➔ 代理店からメーカーへ発注
+        </p>
+        <div style="font-size:12.5px; line-height:1.75; display:grid; gap:6px;">
+          <div>
+            <strong class="mincho" style="color:var(--forest);">① お客様へ直接配送（オンラインでの活動に対応）：</strong><br>
+            ※<strong>直送を利用する場合の条件として、ご自身での在庫保管や梱包作業が不要です。</strong>
+          </div>
+          <div>
+            <strong class="mincho" style="color:var(--forest);">② 特約店へ配送（対面での手渡し・ご説明に対応）：</strong><br>
+            お客様に取りに来ていただくことで、直接説明したりお話ししたりする接点を持てます。
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--sage-pale); padding:18px 22px; border-left:2px solid var(--sage);">
+        <h3 class="mincho" style="font-size:17.5px; color:var(--forest); margin-bottom:8px;">
+          慣れてきたら希望に応じて「代理店」へ（任意）
+        </h3>
+        <p style="font-size:12.5px; line-height:1.8; color:var(--ink);">
+          特約店として何人かのお客様に販売・フォローし、慣れてきたら希望に応じて<strong>「代理店（初回10セット購入・自己保管不要）」</strong>へ移行できます。<br>
+          <strong>・メリット①：</strong>特約店より仕入価格が低くなること<br>
+          <strong>・メリット②：</strong>原麻優子のもとへ来た購入・参加希望のお客様を優先的にご紹介する対象になること（※件数や売上を保証する表現ではありません。選定条件や初回10セット詳細は確認後にご案内）
+        </p>
+      </div>
+    </div>
+
+    <!-- Q&A Index (All 5 Anxieties from PDF Section 5) -->
+    <div style="padding:14px 0;">
+      <h3 class="mincho" style="font-size:17.5px; color:var(--forest); margin-bottom:8px;">よくあるご質問（想定される五つのご不安への回答）</h3>
+      <div class="editorial-index">
+        <div class="editorial-row" style="grid-template-columns:38px 250px 1fr; padding:7px 0;">
+          <span class="row-kanji" style="font-size:13.5px;">問一</span>
+          <span class="row-title" style="font-size:13.5px;">自分にもできるのか</span>
+          <span class="row-body" style="font-size:12px;">最初はご自身が1セットを購入し、鍼灸師 原麻優子のフォローで体験することから始まります。ご自身の体験をもとにお客様を支える仕事です。</span>
+        </div>
+        <div class="editorial-row" style="grid-template-columns:38px 250px 1fr; padding:7px 0;">
+          <span class="row-kanji" style="font-size:13.5px;">問二</span>
+          <span class="row-title" style="font-size:13.5px;">資格を取っただけで終わらないか</span>
+          <span class="row-body" style="font-size:12px;">ご自身の体験後、特約店スタート特典の「進行ノウハウ」「フォロー文面集」を使って具体的な活動準備から案内・フォローへと段階的に進めます。</span>
+        </div>
+        <div class="editorial-row" style="grid-template-columns:38px 250px 1fr; padding:7px 0;">
+          <span class="row-kanji" style="font-size:13.5px;">問三</span>
+          <span class="row-title" style="font-size:13.5px;">お客様へ何を伝えればよいのか</span>
+          <span class="row-body" style="font-size:12px;">相談から開始前の準備、期間中の朝晩LINE連絡、中断時・終了後の対応までそのまま活用できる「進行ノウハウ」と「フォロー文面集」があります。</span>
+        </div>
+        <div class="editorial-row" style="grid-template-columns:38px 250px 1fr; padding:7px 0;">
+          <span class="row-kanji" style="font-size:13.5px;">問四</span>
+          <span class="row-title" style="font-size:13.5px;">友人への売り込みにならないか</span>
+          <span class="row-body" style="font-size:12px;">自分を強く売り込む必要や販売ノルマはありません。ご自身の体験を通じて関心を持ってくださった方へ丁寧にご案内するスタイルです。</span>
+        </div>
+        <div class="editorial-row" style="grid-template-columns:38px 250px 1fr; padding:7px 0;">
+          <span class="row-kanji" style="font-size:13.5px;">問五</span>
+          <span class="row-title" style="font-size:13.5px;">どのくらい費用や作業が必要か</span>
+          <span class="row-body" style="font-size:12px;">まずは1セット体験購入から始まります（具体的な仕入価格・差額や、初回体験価格・登録料等の未決定条件は説明会・個別相談でご案内／直送利用時は在庫保管・梱包不要）。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Sage Band with QR Placeholder -->
+    <div class="sheet-bottom-band" style="padding:22px 32px;">
+      <div style="max-width:790px;">
+        <span class="en-serif" style="font-size:11px; letter-spacing:0.2em; display:block; margin-bottom:4px;">CONSULTATION &amp; BRIEFING SESSION</span>
+        <h3 class="mincho" style="font-size:21px; color:var(--washi-pure); margin-bottom:6px;">詳しい制度・価格のご案内、説明会／個別相談のお申込みはこちら</h3>
+        <p style="font-size:11.5px; line-height:1.7; color:var(--washi-pure);">
+          <span class="tbd-mark">【仮置き】説明会・個別相談の日時・形式・料金・参加特典</span><span class="prod-only-copy" style="color:var(--washi-pure); font-size:12px;">オンライン（Zoom等）および対面にて随時開催／具体的な仕入価格・体験条件は説明会にてご案内いたします</span>
+          <span class="tbd-mark">【仮置き】初回体験価格・登録料等（公開前に確定）</span>
+          <span class="tbd-mark">【仮置き】屋号・連絡先・申込URL</span><br>
+          ※健康効果や減量効果、また販売件数や収入を保証するものではありません。
+        </p>
+      </div>
+      <div class="qr-sharp">
+        <div class="tbd-mark" style="background:none; border:none; padding:0;">
+          <span style="font-size:10px; color:var(--muted); display:block;">【仮置き】</span>
+          <strong class="mincho" style="font-size:12.5px; margin:4px 0; display:block;">募集LP・相談<br>QRコード</strong>
+          <span style="font-size:9.5px; color:var(--muted); display:block;">URL確定後に差替</span>
+        </div>
+        <div class="prod-only-copy"><a href="https://lin.ee/XOWYwEM" target="_blank" rel="noopener noreferrer" style="display:inline-block; text-decoration:none;"><img src="assets/qr_line_official.png" data-asset-slot="qr_line_official.png" alt="WEB詳細・相談予約 QRコード" style="width:72px; height:72px; object-fit:contain; display:block; margin:0 auto;" /></a><span style="font-size:9px; color:#2B3F2E; display:block; margin-top:2px;">WEB詳細・相談予約</span></div>
+      </div>
+    </div>
+  </div>
+
+<!-- ===== EASY MANUAL IMAGE SWAPPER (Click or Drag & Drop any image + Save HTML) ===== -->
+<style id="easy-image-swapper-css">
+  .swappable-img-wrap {
+    position: relative;
+  }
+  body.img-swap-active img[data-asset-slot] {
+    outline: 3px dashed #2E4636 !important;
+    outline-offset: -3px;
+    cursor: pointer !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  body.img-swap-active img[data-asset-slot]:hover {
+    outline-color: #B68D4C !important;
+    box-shadow: 0 8px 26px rgba(46,70,54,0.22) !important;
+  }
+  .img-swap-toolbar {
+    position: fixed;
+    bottom: 22px;
+    left: 22px;
+    z-index: 99999;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: rgba(27, 42, 32, 0.95);
+    color: #F7F4EC;
+    padding: 10px 16px;
+    border-radius: 2px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .img-swap-toolbar button {
+    background: #F7F4EC;
+    color: #1F3528;
+    border: none;
+    border-radius: 2px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .img-swap-toolbar button.active {
+    background: #B68D4C;
+    color: #FFFFFF;
+  }
+  .img-swap-toolbar button.save-btn {
+    background: #3F5E48;
+    color: #FFFFFF;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  body.production-clean-view .img-swap-toolbar {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  body.production-clean-view .img-swap-toolbar:hover {
+    opacity: 1;
+  }
+  @media print {
+    .img-swap-toolbar, .mode-Switch-bar, #mode-toggle-banner {
+      display: none !important;
+    }
+  }
+</style>
+<div class="img-swap-toolbar" id="img-swap-toolbar">
+  <span>🖼️ 画像入替: <code>assets/</code> 上書き または</span>
+  <button type="button" id="toggle-img-swap-btn" onclick="toggleImageSwapMode()">クリック/D&amp;Dで画像差替: OFF</button>
+  <button type="button" class="save-btn" onclick="exportUpdatedHtml()">💾 差替後のHTMLを保存</button>
+  <input type="file" id="global-img-file-input" accept="image/*" style="display:none;" />
+</div>
+<script id="easy-image-swapper-js">
+(function(){
+  let activeImgEl = null;
+  const fileInput = document.getElementById('global-img-file-input');
+
+  // Automatically tag all images with data-asset-slot
+  function initSwappableImages() {
+    document.querySelectorAll('img').forEach((img, idx) => {
+      if (!img.getAttribute('data-asset-slot')) {
+        const src = img.getAttribute('src') || ('slot_' + (idx + 1));
+        img.setAttribute('data-asset-slot', src.split('/').pop().slice(0, 40));
+      }
+      img.setAttribute('title', '【画像差替】クリックまたは画像をドラッグ＆ドロップして入れ替え (' + img.getAttribute('data-asset-slot') + ')');
+
+      // Allow drag & drop at any time!
+      img.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        img.style.outline = '4px dashed #B68D4C';
+      });
+      img.addEventListener('dragleave', function(e) {
+        img.style.outline = '';
+      });
+      img.addEventListener('drop', function(e) {
+        e.preventDefault();
+        img.style.outline = '';
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+          loadFileIntoImg(e.dataTransfer.files[0], img);
+        }
+      });
+      img.addEventListener('click', function(e) {
+        if (!document.body.classList.contains('img-swap-active')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        activeImgEl = img;
+        fileInput.click();
+      });
+    });
+  }
+
+  function loadFileIntoImg(file, targetImg) {
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      targetImg.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  if (fileInput) {
+    fileInput.addEventListener('change', function(e) {
+      if (fileInput.files && fileInput.files[0] && activeImgEl) {
+        loadFileIntoImg(fileInput.files[0], activeImgEl);
+      }
+      fileInput.value = '';
+    });
+  }
+
+  window.toggleImageSwapMode = function() {
+    const on = document.body.classList.toggle('img-swap-active');
+    const btn = document.getElementById('toggle-img-swap-btn');
+    if (btn) {
+      btn.textContent = on ? '✨ 画像をクリックして差替中 (ON)' : 'クリック/D&Dで画像差替: OFF';
+      btn.classList.toggle('active', on);
+    }
+  };
+
+  window.exportUpdatedHtml = function() {
+    document.body.classList.remove('img-swap-active');
+    const clone = document.documentElement.cloneNode(true);
+    const htmlContent = '<!DOCTYPE html>\n' + clone.outerHTML;
+    const blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = document.location.pathname.split('/').pop() || 'updated_design.html';
+    a.click();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwappableImages);
+  } else {
+    initSwappableImages();
+  }
+})();
+</script>
+
+</body>
+</html>

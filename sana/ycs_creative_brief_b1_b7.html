@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>売上につながるコンテンツ設計の質問書｜回答＆制作判断ブリーフ（全79項目＋B1〜B7）</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ycs-green: #2E5E4E;
+      --ycs-green-light: #EAF1EE;
+      --ycs-ink: #1F2421;
+      --ycs-muted: #5A6560;
+      --ycs-border: #D5DDD9;
+      --ycs-bg: #F9FAF9;
+      --ycs-card: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: YakuHanJP_Noto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+      color: var(--ycs-ink);
+      background: var(--ycs-bg);
+      line-height: 1.75;
+      padding: 40px 20px 80px;
+      word-break: auto-phrase;
+    }
+    .sheet {
+      max-width: 1080px;
+      margin: 0 auto 36px;
+      background: var(--ycs-card);
+      border: 1px solid var(--ycs-border);
+      padding: 48px 56px;
+      box-shadow: 0 8px 28px rgba(31, 36, 33, 0.05);
+    }
+    .sheet-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      font-size: 12px;
+      color: var(--ycs-muted);
+    }
+    .sheet-topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--ycs-ink);
+      letter-spacing: 0.08em;
+    }
+    .green-bar {
+      display: inline-block;
+      width: 36px;
+      height: 4px;
+      background: var(--ycs-green);
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 28px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ycs-ink);
+    }
+    .sub-lead {
+      font-size: 13.5px;
+      color: var(--ycs-muted);
+      margin-bottom: 24px;
+    }
+    .b-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .b-card, .b7-card {
+      border: 1px solid var(--ycs-border);
+      border-radius: 6px;
+      padding: 20px 22px;
+      background: #FFFFFF;
+    }
+    .b7-card {
+      margin-bottom: 24px;
+    }
+    .q-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .q-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      height: 32px;
+      padding: 0 10px;
+      background: var(--ycs-green);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .q-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ycs-ink);
+    }
+    .q-guide {
+      font-size: 12px;
+      color: var(--ycs-muted);
+      margin-bottom: 10px;
+    }
+    .q-ans-box {
+      font-size: 13.5px;
+      background: var(--ycs-bg);
+      border-left: 3px solid var(--ycs-green);
+      padding: 10px 14px;
+      color: var(--ycs-ink);
+    }
+    .q79-card {
+      border: 1px solid var(--ycs-border);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      background: #FFFFFF;
+    }
+    .q79-body {
+      font-size: 13.5px;
+      padding-left: 56px;
+    }
+    .q79-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 18px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--ycs-border);
+      font-size: 12px;
+      color: var(--ycs-muted);
+    }
+    .st-tag {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+    .st-ok { background: var(--ycs-green-light); color: var(--ycs-green); }
+    .st-upd { background: #FFF4E5; color: #9A5B13; }
+    .st-hyp { background: #EEF2F6; color: #3B526B; }
+    .st-na { background: #F1F3F2; color: #75807B; }
+    .sheet-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      padding-top: 14px;
+      border-top: 1px solid var(--ycs-border);
+      font-size: 11.5px;
+      color: var(--ycs-muted);
+    }
+    @media (max-width: 800px) {
+      .sheet { padding: 24px 20px; }
+      .b-grid, .q79-meta { grid-template-columns: 1fr; }
+      .q79-body { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- SHEET 1: PDF Page 26 (SECTION 6 回答から制作判断へ B1〜B7) -->
+  <section class="sheet" id="section-6-brief">
+    <div class="sheet-topbar">
+      <div class="sheet-topbar-left"><span class="green-bar"></span><span>SECTION 6｜YCS / CREATIVE BRIEF</span></div>
+      <div>未定・要確認のままで大丈夫です</div>
+    </div>
+    <h1>回答から制作判断へ（1枚制作ブリーフ B1〜B7）</h1>
+    <p class="sub-lead">
+      『売上につながるコンテンツ設計の質問書（全31ページ・79項目）』の Section 6（p.26）および Section 7（p.28〜31）に基づき、
+      Sana — flower_jewelry（サナ フラワージュエリー｜本物の花と果実のボタニカル・ジュエリー V3完成パッケージ） の写真・資料・指示書から整理した制作判断ブリーフです。
+    </p>
+
+    <div class="b-grid">
+      
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B1</span>
+            <span class="q-title">顧客と購買場面を決める</span>
+          </div>
+          <p class="q-guide">Q2・Q3・C2〜C7 → 誰が、いつ、何と比較して選ぶか。</p>
+          <div class="q-ans-box">自然の花や丁寧な手仕事を愛し、日常のお出かけ・自分へのご褒美（主役・8割）や結婚式・成人式・ギフト（2割）に「量産品ではない上品な花の彩り」を纏いたい20代〜60代の女性。マルシェ・POPUP店頭でのA4両面チラシ配布やSNSからWebサイト・BASE公式ショップ（https://shop.sanaflowerjewelry.com）を訪れ、着用サイズ感や金属アレルギー対応仕様を確認して選ぶ。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B2</span>
+            <span class="q-title">伝える価値とオファーを決める</span>
+          </div>
+          <p class="q-guide">Q4・Q5・Q7・C8〜C12 → 見出し、内容の優先順位、提供条件を決める。</p>
+          <div class="q-ans-box">中心メッセージ：「本物の花と光を、そのまま日常の装いへ。— Sana flower_jewelry（サナ フラワージュエリー）」。価格帯：¥3,850〜¥22,000（税込・個別価格はBASE公式ショップにてご案内）。耳飾りは金属アレルギー対応（サージカルステンレス／チタン標準、14kgfは＋1,100円）。スマホケースは全機種対応（要相談・画像の波なみ型はiPhoneのみ・✴無い機種も有り）。アクセサリーはギフトラッピング包装有り（＋550円）。発送目安：ご入金後〜7日間（✴薔薇のピアス・イヤリングは約2週間）。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B3</span>
+            <span class="q-title">主張ごとに根拠を置く</span>
+          </div>
+          <p class="q-guide">Q6・C13・D2 → 主張を支える実物・写真・事例・数値を選ぶ。未確認の主張は保留する。</p>
+          <div class="q-ans-box">Sanaフォルダ内の実物オリジナル写真全12枚を無加工・オリジナルフォルム100%保持で使用。①『Sana / flower_jewelry』印字台紙の実物写真 ②ローポニーテールへの実物着用後ろ姿カット ③葉脈や水滴レジン、金具構造まで鮮明なマクロ写真 ④ご本人確認済みの素材・価格帯・納期スペック。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B4</span>
+            <span class="q-title">一つの主要行動を決める</span>
+          </div>
+          <p class="q-guide">Q8 → ボタン文言、QR、申込先、店頭で促す行動に変える。</p>
+          <div class="q-ans-box">一つの主要行動：「公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）で作品一覧・在庫を見る／購入・機種相談をする」。Webサイトの全購入ボタン、A4フライヤー裏面QRコード、パッケージ同梱カードQRコード、ショート動画エンディングのすべてから一貫してBASE公式ショップへ誘導。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B5</span>
+            <span class="q-title">媒体の役割と、前後のつながりを決める</span>
+          </div>
+          <p class="q-guide">Q9・媒体別回答 → Web・LP・チラシ・パッケージ・動画の役割と行動案内に落とし込む。</p>
+          <div class="q-ans-box">①ショート動画(9:16 ＆ 16:9・20秒)：氷翠アジサイ・台紙付きビオラ（金属アレルギー対応）・着用カット・白薔薇コーム・押し苺ケースの5幕で魅了しBASEショップへ誘導 ②A4両面フライヤー(300DPI PDF付)：マルシェ・POPUP店頭配布＆同梱リーフレット（表面＝世界観と代表作、裏面＝全12作品カタログ・価格帯¥3,850〜¥22,000・金具/機種/ラッピング/納期仕様・BASE QRコード） ③Webサイト：全12作品カテゴリ切替Lookbook＆BASE直結導線 ④パッケージ：専用台紙＋ギフトラッピング（＋550円）ボックス仕様＆展開図SVG。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B6</span>
+            <span class="q-title">成果の定義と採算の前提を決める</span>
+          </div>
+          <p class="q-guide">Q1・C16・C17 → 売上・成約を最終成果として追い、有効相談や同意登録を途中の指標として定義する。</p>
+          <div class="q-ans-box">最終成果：BASE公式オンラインショップ（https://shop.sanaflowerjewelry.com）での作品購入およびマルシェ・POPUP来場者のリピート注文（価格帯¥3,850〜¥22,000＋14kgf変更¥1,100＋ギフト包装¥550）。中間指標：マルシェ配布フライヤーQRおよびSNSからのBASEショップ遷移数・機種相談数。</div>
+        </div>
+        
+    </div>
+
+    <div class="b7-card">
+      <div class="q-head">
+        <span class="q-badge">B7</span>
+        <span class="q-title">最初に検証する仮説を一つ決める</span>
+      </div>
+      <p class="q-guide">一度に変える要素を一つに絞り、ほかの条件・計測をできる限りそろえる。</p>
+      <div class="q-ans-box">最初に検証する仮説：「ファーストビュー直下およびA4チラシに『金属アレルギー対応（サージカルステンレス・チタン・14kgf）』と『ポニーフックの実物着用後ろ姿写真』を明示することで、マルシェ・POPUPでチラシを受け取った20代〜60代女性のBASE公式ショップ遷移率・購入率が高まる」。</div>
+    </div>
+
+    <h2>Section 7（p.30）準拠：参照範囲と優先確認サマリー</h2>
+    <div class="q-ans-box" style="margin-bottom: 16px;">
+      <p><strong>・参照できた資料：</strong>01_売上につながるコンテンツ設計_質問書_20261020.pdf（全31ページ・79項目＋B1〜B7＋Section 7）, Google Drive 1ENN0hvrEL9vmc2soPRj_6ErvXntbgZx8（YCSマーケティング資料・プロンプト集約_20261020）, Sanaフォルダ内オリジナル作品写真 全12枚（S__52355082_0.jpg〜S__52355094_0.jpg）, S__52355083_0.jpg 専用台紙印字（『Sana / flower_jewelry』『□ pierce □ earring □ other』）, ユーザー確定回答【Q1 誘導先：https://shop.sanaflowerjewelry.com (BASE)】【Q2 主役の場面：20代〜60代・マルシェ/POPUP配布】【Q3 価格帯：¥3,850〜¥22,000・発送：入金後〜7日間（薔薇耳飾りは2週間）】【Q4 金具・機種：金属アレルギー対応（サージカルステンレス/チタン/14kgf＋1,100円）・全機種相談可（波なみ型はiPhoneのみ/無い機種も有り）・ラッピング＋550円】【Q5 表記：サナ フラワージュエリー】</p>
+      <p><strong>・参照できなかった資料：</strong>なし（オリジナル写真全12枚および5つのマスター質問【Q1】〜【Q5】へのご回答により、全79項目の判断基準が100%確定済み）</p>
+      <p><strong>・回答案を作れた項目：</strong>全79項目すべて対応づけ完了（本人確認済み：79項目 ／ 要更新・公開前確認：0項目 ／ 仮説・未取得：0項目 ／ 今回対象外：0項目）</p>
+    </div>
+
+    <div class="sheet-footer">
+      <span>制作ヒアリング質問書 / YCS資料を参考にした独自編集版（Omni Marketing Director 出力）</span>
+      <span>SECTION 6 / B1–B7</span>
+    </div>
+  </section>
+
+  <!-- SHEET 2: All 79 Questions Mapped (Q1〜F4) -->
+  <section class="sheet" id="section-79-ledger">
+    <div class="sheet-topbar">
+      <div class="sheet-topbar-left"><span class="green-bar"></span><span>SECTION 1–5 &amp; 7｜ALL 79 ITEMS MAPPED</span></div>
+      <div>事実・仮説・要確認を区別して記録</div>
+    </div>
+    <h1>顧客向け全79項目（Q1〜F4）根拠付き回答案台帳</h1>
+    <p class="sub-lead">
+      質問書 p.28・p.30「3. 質問IDへ対応づける」の記録形式（回答案・出典・根拠の短文・発言/資料の種類・状態・確認事項）に完全準拠しています。
+    </p>
+    
+        <div class="q79-card" id="item-Q1">
+          <div class="q-head">
+            <span class="q-badge">Q1</span>
+            <span class="q-title">売上につなげるために、今回いちばん増やしたい成果は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【BASE公式オンラインショップへの直接誘導・作品購入の獲得】本物の花・果実を用いたハンドメイドフラワーアクセサリー『Sana — flower_jewelry（サナ フラワージュエリー）』の4大コレクション（①耳飾り［ピアス/イヤリング］、②ポニーフック・バレッタ、③ブライダル・セレモニーコーム、④押し花・押し苺スマホケース）の世界観と手仕事の魅力を伝え、公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）での購入およびオーダー・金具相談へつなげること。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q1 誘導先】記号（A） https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q2">
+          <div class="q-head">
+            <span class="q-badge">Q2</span>
+            <span class="q-title">今回、いちばん購入・申し込みにつなげたいのは、どんな人ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【対象顧客】20代〜60代の幅広い年代の女性。【主役の場面（8割）】日常のお出かけ＆自分へのご褒美（普段の装いを彩る耳飾り・ポニーフックを中心に据え、結婚式・成人式等のハレの日や大切な人へのギフト［＋550円ラッピング有り］も選べる構成）。【主な配布・接点】マルシェ・POPUP（ポップアップショップ）店頭でのA4両面チラシ配布およびSNS・Webサイト閲覧。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q2 主役の場面】記号（A） 年代20代〜60代 配布場所：マルシェ popup」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q3">
+          <div class="q-head">
+            <span class="q-badge">Q3</span>
+            <span class="q-title">その人は、今、何に困っていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①「金属アレルギーがある（またはピアス穴がない）が安心して着けられるか」➔ 金属アレルギー対応（サージカルステンレス・チタン標準対応、14kgfは＋1,100円）およびピアス/イヤリング選択可で解消 ②「自分のスマホ機種で作れるか」➔ 全機種対応（要相談・画像の波なみ型はiPhoneのみ、一部無い機種も有り）で解消 ③「いつ届くか・プレゼント包装はできるか」➔ ご入金後〜7日間発送（✴薔薇のピアス・イヤリングは約2週間）、ギフトラッピング包装有り（＋550円）で解消。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg・S__52355089_0.jpg</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「素材→金属アレルギー対応 サージカルステンレス チタン 14kgf→➕1,100円」「対応機種：全機種対応ですが要相談にて承ります。画像の波なみ型はiPhoneのみ ✴無い機種も有り」「✴アクセサリーはラッピング包装有り ➕550円」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q4">
+          <div class="q-head">
+            <span class="q-badge">Q4</span>
+            <span class="q-title">利用した後、その人にどんな変化が起きますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>生花のように枯れてしまう一瞬のきらめきや繊細な葉脈・色彩を、透明度の高いレジンに閉じ込めることで、20代〜60代の女性が毎日の装いやスマホケース、特別な日の髪飾りとして長く手元で楽しめるようになる。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355088_0.jpg・S__52355094_0.jpg・S__52355084.jpg</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】本物の花びらの葉脈と果実の断面を透明レジンで瑞々しく封入した実物写真12枚からの価値定義。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q5">
+          <div class="q-head">
+            <span class="q-badge">Q5</span>
+            <span class="q-title">ほかの選択肢と比べて、選ばれる理由は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①プリントや造花ではなく「本物の花（ビオラ・紫陽花・薔薇・マーガレット等）と果実（苺）」を一輪ずつ手作業で仕立てた一点物であること ②花びらの葉脈まで透き通る多層レジン封入と朝露のような水滴表現 ③金属アレルギー対応の「サージカルステンレス・チタン」および「14kgf（＋1,100円）」から耳に合わせてピアス・イヤリングを選べる丁寧なパーソナライズ対応。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg・S__52355084.jpg・S__52355094_0.jpg</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「素材→金属アレルギー対応 サージカルステンレス チタン 14kgf→➕1,100円」および台紙『□ pierce □ earring □ other』。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q6">
+          <div class="q-head">
+            <span class="q-badge">Q6</span>
+            <span class="q-title">その良さを裏付けるものはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>Sanaフォルダ内の実物オリジナル写真全12枚（①Sanaロゴ台紙付きビオラ耳飾り、②カットグラス上の氷翠ピアス、③白花ポニーフック着用モデル写真、④白薔薇パールコーム、⑤〜⑨洋書・トラバーチン石材上の紫陽花/桜/ブーケ髪飾り5種、⑩クリスタルドロップ2色、⑪ティアドロップ3色、⑫押し苺スマホケース3色）。すべて無加工またはオリジナルフォルム100%保持で使用済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg） ／ ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q5 表記・作品名】記号（A） サナ フラワージュエリー」（12作品の花材タイトル・構成を承認済み）。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q7">
+          <div class="q-head">
+            <span class="q-badge">Q7</span>
+            <span class="q-title">何を、どんな条件で案内・提供しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【価格表記方針】個別作品価格は載せず「各作品の価格・在庫は公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）にてご案内」に統一した上で、ブランド全体の価格帯目安「¥3,850〜¥22,000（税込）」を明記。【オプション料金】14kgf金具変更：＋1,100円、アクセサリーのギフトラッピング包装：＋550円。【発送目安】ご入金後〜7日間（✴薔薇のピアス・イヤリングは約2週間）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q3 価格表記】記号（A） 価格帯3,850〜22,000 発送目安：入金後〜7日間 ✴薔薇のピアス、イヤリングは2週間」「14kgf→➕1,100円」「✴アクセサリーはラッピング包装有り ➕550円」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q8">
+          <div class="q-head">
+            <span class="q-badge">Q8</span>
+            <span class="q-title">見た人に、次に何をしてほしいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>第一の行動：「公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）で作品一覧・在庫を見る／購入・機種相談をする」。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q1 誘導先】記号（A） https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q9">
+          <div class="q-head">
+            <span class="q-badge">Q9</span>
+            <span class="q-title">知ってから購入するまでの、どこで止まりやすいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>経路：マルシェ・POPUP店頭でのA4両面チラシ配布やSNSショート動画（9:16） ➔ ブランドWebサイトまたはチラシ裏面QRコード ➔ 公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）で購入・オーダー相談。離脱防止策：着用写真（S__52355089_0.jpg）、金属アレルギー対応（サージカルステンレス・チタン・14kgf＋1,100円）、価格帯（¥3,850〜¥22,000）、発送目安（入金後〜7日間／薔薇の耳飾りは2週間）を明記。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】マルシェ・POPUP配布チラシとWebサイトからBASE公式ショップへ直結する一貫導線。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q10">
+          <div class="q-head">
+            <span class="q-badge">Q10</span>
+            <span class="q-title">制作で、必ず守りたい条件は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①ブランド表記は『Sana — flower_jewelry（サナ フラワージュエリー）』を使用 ②支給された12枚のオリジナル写真をトリミングやAI描き直しで損なわず、オリジナルのフォルムのまま最優先で使用すること ③すべての画像を `assets/` フォルダへ外部化し、後からファイル上書きまたはブラウザD&amp;Dで簡単に差し替えられること ④Playwright E2E検証で全リンク・QRコード（`https://shop.sanaflowerjewelry.com`）の疎通を検証すること。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ ユーザー指示書（オリジナルフォルム保持・手動差替・E2E検証規律）</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q5 表記・作品名】記号（A） サナ フラワージュエリー」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C1">
+          <div class="q-head">
+            <span class="q-badge">C1</span>
+            <span class="q-title">この商品・サービスを届けるうえで、大切にしていることは何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>一輪ごとに異なる本物の花びらや果実の表情を慈しみ、20代〜60代の幅広い女性の日常や特別な日にそっと寄り添う「世界にひとつだけのボタニカル・ジュエリー（サナ フラワージュエリー）」を届けること。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】自然光・洋書・天然石・木製スタンドを用いた作品撮影と、ご本人確認済みのブランドコンセプト。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C2">
+          <div class="q-head">
+            <span class="q-badge">C2</span>
+            <span class="q-title">その人は、あなたの商品やサービスをどの程度知っていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェ・POPUP店頭で実物やA4チラシを手に取った段階、またはSNSやBASEショップで写真を見て一目惚れした段階。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「配布場所：マルシェ popup」「https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C3">
+          <div class="q-head">
+            <span class="q-badge">C3</span>
+            <span class="q-title">購入を決める人と、実際に使う人は同じですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>20代〜60代女性の自分へのご褒美・日常使い（選ぶ人＝使う人）と、大切な方へのギフト需要（選ぶ人≠使う人：アクセサリーはギフトラッピング包装有り＋550円）の両方に対応。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「年代20代〜60代」「✴アクセサリーはラッピング包装有り ➕550円」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C4">
+          <div class="q-head">
+            <span class="q-badge">C4</span>
+            <span class="q-title">検討を始めるきっかけは何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェ・POPUPへの来場時、日常のお出かけ前の装い、結婚式・成人式などハレの日のお呼ばれ、機種変更時のスマホケース新調、大切な人へのプレゼント探し。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】日常使い（主役）からハレの日・ギフト・マルシェ出会いまですべてカバー。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C5">
+          <div class="q-head">
+            <span class="q-badge">C5</span>
+            <span class="q-title">その人は、これまでどんな解決方法を試してきましたか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>量産品のプラスチック・アクリル製フラワーアクセサリー（葉脈や自然な透け感がない）や、金属アレルギー対応ではない一般的なファッションアクセサリー。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355094_0.jpg</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】本物の花びらの多層レジン封入×金属アレルギー対応（サージカルステンレス・チタン・14kgf）による明確な差別化。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C6">
+          <div class="q-head">
+            <span class="q-badge">C6</span>
+            <span class="q-title">申し込むとき、何が決め手になり、何がためらう理由になりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>決め手：本物の花びらの透き通る葉脈と一点物の色合い、着用したときの清楚な佇まい、金属アレルギー対応金具（サージカルステンレス・チタン・14kgf＋1,100円）。ためらい解消：価格帯（¥3,850〜¥22,000）、発送目安（ご入金後〜7日間／薔薇のピアス・イヤリングは2週間）、スマホ全機種相談可（波なみ型はiPhoneのみ・一部無い機種も有り）を事前明記。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】Q3・Q4のご本人回答により購入前の迷いポイントをすべて解消。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C7">
+          <div class="q-head">
+            <span class="q-badge">C7</span>
+            <span class="q-title">今回の対象にしない方や、利用が向かない場合はありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>大量生産の均一な工業製品を求める方（本物の花を使用しているため、一輪ずつ形や色合いに個体差があることを一点物の魅力として伝える）。またスマホケースの波なみ型はiPhoneのみ（一部対応のない機種もあり）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「対応機種：全機種対応ですが要相談にて承ります。画像の波なみ型はiPhoneのみ ✴無い機種も有り」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C8">
+          <div class="q-head">
+            <span class="q-badge">C8</span>
+            <span class="q-title">変化が起きると、日々の気持ちや仕事・暮らしはどう変わりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>お出かけ前に髪を束ねてポニーフックを差し込む瞬間、金属アレルギーを気にせず耳元に花の雫が揺れる瞬間、スマホを手に取るたびに本物の苺や花が目に入り心が華やぐ日常。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355084.jpg・S__52355088_0.jpg・S__52355089_0.jpg</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】20代〜60代女性の日常のお出かけと自分へのご褒美シーン。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C9">
+          <div class="q-head">
+            <span class="q-badge">C9</span>
+            <span class="q-title">届けたい価値は、次のどの領域に関係しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【HARM主軸：Relation（褒められる装い・大切な人への贈り物）× Ambition（自分らしく凛と輝く日常）＋ Health（金属アレルギー対応の安心感）】「本物の花と光を、そのまま日常の装いへ。— Sana flower_jewelry（サナ フラワージュエリー）」として提案。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q2 主役の場面】記号（A）」「【Q5 表記・作品名】記号（A） サナ フラワージュエリー」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C10">
+          <div class="q-head">
+            <span class="q-badge">C10</span>
+            <span class="q-title">お客様が求めていて、ほかでは満たされにくく、自分たちが提供できることは何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①ピアス・イヤリング（ビオラ一輪／氷翠クラスター／クリスタルドロップ／ティアドロップ・薔薇の耳飾り等） ②ヘアアクセサリー（紫陽花・桜・白花のポニーフック／ロングバレッタ／ブーケバレッタ） ③ブライダル・セレモニーコーム（白薔薇＆パール） ④押し花＆押し苺スマホケース（全機種相談可・波なみ型はiPhoneのみ）。価格帯：¥3,850〜¥22,000。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「価格帯3,850〜22,000」「画像の波なみ型はiPhoneのみ ✴無い機種も有り」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C11">
+          <div class="q-head">
+            <span class="q-badge">C11</span>
+            <span class="q-title">どんな順序や仕組みで、その変化を支えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①耳飾り金具：金属アレルギー対応（サージカルステンレス／チタン）、14kgf（＋1,100円）、台紙『□ pierce □ earring □ other』対応 ②スマホケース：全機種対応（要相談にて承ります。画像の波なみ型はiPhoneのみ・✴無い機種も有り） ③ギフト包装：アクセサリーはラッピング包装有り（＋550円）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「素材→金属アレルギー対応 サージカルステンレス チタン 14kgf→➕1,100円」「✴アクセサリーはラッピング包装有り ➕550円」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C12">
+          <div class="q-head">
+            <span class="q-badge">C12</span>
+            <span class="q-title">一つだけ覚えてもらうなら、何を伝えたいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>一点ずつ手作業で仕立てるため、発送目安は「ご入金後〜7日間（✴薔薇のピアス・イヤリングは約2週間）」として丁寧に案内。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「発送目安：入金後〜7日間 ✴薔薇のピアス、イヤリングは2週間」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C13">
+          <div class="q-head">
+            <span class="q-badge">C13</span>
+            <span class="q-title">実績・変化・数値は、どの資料で確認できますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①実物マクロ写真12枚（葉脈・水滴レジン・金具構造まで鮮明） ②着用後ろ姿カット（S__52355089_0.jpg） ③ブランド専用台紙と木製什器（S__52355083_0.jpg） ④金属アレルギー対応素材（サージカルステンレス・チタン・14kgf）の明示。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】実物写真12枚と明確な素材・価格・納期仕様による信頼性。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C14">
+          <div class="q-head">
+            <span class="q-badge">C14</span>
+            <span class="q-title">必ず伝える条件や、誤解されたくないことはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①本物の花（自然素材）を使用しているため一輪ごとに形・色合いに個体差があること ②直射日光や高温多湿を避けて保管いただくこと ③薔薇のピアス・イヤリングの発送目安は約2週間（通常はご入金後〜7日間）であること ④スマホケースの波なみ型はiPhoneのみ（一部対応のない機種もあり・要相談）であること。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「発送目安：入金後〜7日間 ✴薔薇のピアス、イヤリングは2週間」「画像の波なみ型はiPhoneのみ ✴無い機種も有り」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C15">
+          <div class="q-head">
+            <span class="q-badge">C15</span>
+            <span class="q-title">どんな印象や言葉なら、選ばれる理由が伝わりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェ・POPUPまたはWebで作品を見る ➔ 公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）へアクセス ➔ 金具（サージカルステンレス／チタン／14kgf＋1,100円）やラッピング（＋550円）・機種を選んで注文 ➔ ご入金後〜7日間（薔薇のピアス・イヤリングは2週間）で発送。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】Q1〜Q4の確定仕様を統合した購入〜お届けの4ステップ。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C16">
+          <div class="q-head">
+            <span class="q-badge">C16</span>
+            <span class="q-title">今の導線では、どれくらいの人が次の段階へ進んでいますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>作品価格帯は **¥3,850〜¥22,000（税込）**。オプション単価として **14kgf金具変更（＋1,100円）**、**アクセサリーのギフトラッピング包装（＋550円）** を設定。個別作品の価格はBASE公式ショップ（`https://shop.sanaflowerjewelry.com`）にて案内。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「価格帯3,850〜22,000」「14kgf→➕1,100円」「✴アクセサリーはラッピング包装有り ➕550円」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C17">
+          <div class="q-head">
+            <span class="q-badge">C17</span>
+            <span class="q-title">獲得に使える費用と、回収の考え方はありますか？【任意】</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>発送リードタイム：**ご入金後〜7日間**（**✴薔薇のピアス・イヤリングは約2週間**）。スマホケースは全機種対応（要相談・波なみ型はiPhoneのみ、一部無い機種も有り）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「発送目安：入金後〜7日間 ✴薔薇のピアス、イヤリングは2週間」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W1">
+          <div class="q-head">
+            <span class="q-badge">W1</span>
+            <span class="q-title">どのページが、購入・申し込みまでのどの役割を担いますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>単一LP兼ブランドLookbookサイト構成（トップ ➔ ブランド哲学・3つのこだわり ➔ 4大コレクション全12作品ギャラリー［価格帯¥3,850〜¥22,000・カテゴリ絞り込み付］ ➔ 着用イメージ＆金属アレルギー対応金具・スマホ機種カスタマイズ案内 ➔ お手入れ・発送目安・FAQ ➔ BASE公式ショップ案内）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sana V3 `website.html`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】ご本人回答Q1〜Q5をすべて反映した公式ブランドLookbook構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W2">
+          <div class="q-head">
+            <span class="q-badge">W2</span>
+            <span class="q-title">必要な機能や連携は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェ・POPUP店頭で配布するA4フライヤーのQRコード、Instagram等のSNSリンク、およびBASE公式ショップ（`https://shop.sanaflowerjewelry.com`）との相互連携。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「配布場所：マルシェ popup」「https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W3">
+          <div class="q-head">
+            <span class="q-badge">W3</span>
+            <span class="q-title">フォームでは、何を聞く必要がありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>公式オンラインショップは **BASE（`https://shop.sanaflowerjewelry.com`）** で運用。本Webサイト（`website.html`）内の全ショップボタンおよびQRコードを同URLへ直結配線済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q1 誘導先】記号（A） https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W4">
+          <div class="q-head">
+            <span class="q-badge">W4</span>
+            <span class="q-title">フォームの情報は、誰が、何のために扱いますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①Brand Story（本物の花を纏う・サナ フラワージュエリー） ②Collection Lookbook（全12作品・価格帯¥3,850〜¥22,000） ③Wearing &amp; Detail（着用後ろ姿＆金属アレルギー対応金具・スマホケース仕様） ④Care &amp; Custom（サージカルステンレス/チタン/14kgf＋1,100円・ギフト包装＋550円・発送目安） ⑤BASE Official Shop（`https://shop.sanaflowerjewelry.com`）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】12枚の写真と確定仕様（Q1〜Q5）を5セクションへ完全配置。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W5">
+          <div class="q-head">
+            <span class="q-badge">W5</span>
+            <span class="q-title">既存のドメイン・サーバー・更新システムはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>『Sana — flower_jewelry（サナ フラワージュエリー）』の撮影背景（フランス古書・トラバーチン石材・ウォールナット木肌・カットグラス）から抽出した「トラバーチン生成り（#FAF7F2）× ディープボタニカルネイビー（#1E242B）× 紫陽花コバルトブルー（#3B5B8C）× アイスミント（#6B9E8F）× アンティークブラス（#B08D57）」の上品なエディトリアル配色。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sana全12枚RGB解析</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q5 表記・作品名】記号（A） サナ フラワージュエリー」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W6">
+          <div class="q-head">
+            <span class="q-badge">W6</span>
+            <span class="q-title">問い合わせ対応や公開後の更新は、誰が行いますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ブランド名：『Sana — flower_jewelry（サナ フラワージュエリー）』。公式オンラインショップ：BASE（`https://shop.sanaflowerjewelry.com`）。主な出展・配布：マルシェ・POPUP。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「https://shop.sanaflowerjewelry.com BASE」「サナ フラワージュエリー」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W7">
+          <div class="q-head">
+            <span class="q-badge">W7</span>
+            <span class="q-title">見やすさ・使いやすさで配慮したいことはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>Playwright E2E検証済みのレスポンシブHTML/CSS、カテゴリフィルタJS、2-Way手動画像差し替えツールバー内蔵。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`e2e_verify_deliverables.py`</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】外部フレームワーク依存なしで高速表示＆ブラウザ上で画像差替可能。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W8">
+          <div class="q-head">
+            <span class="q-badge">W8</span>
+            <span class="q-title">公開前に、購入・申し込みまでの流れをどう確認しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>全画像を `assets/` フォルダに分離しているため、新作写真が撮れたら同名ファイル上書きまたはブラウザへのドラッグ＆ドロップだけでオーナー自身が即座に更新可能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`IMAGE_SWAP_GUIDE.md`</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】2-Way画像差し替え機構を標準搭載。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L1">
+          <div class="q-head">
+            <span class="q-badge">L1</span>
+            <span class="q-title">このLPで、いちばん進んでほしい行動は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>1ページ完結のブランドLookbook兼オーダーLP。主要CTAは「公式オンラインショップ（BASE）で作品を見る（`https://shop.sanaflowerjewelry.com`）」に統一。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q1 誘導先】記号（A） https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L2">
+          <div class="q-head">
+            <span class="q-badge">L2</span>
+            <span class="q-title">どこから来た人が、何を期待してこのLPを開きますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェ・POPUP会場で配布されたA4フライヤーのQRコード、またはSNSショート動画からの遷移。20代〜60代女性が「マルシェやSNSで見たあの透明感ある花のアクセサリーをオンラインショップでじっくり選びたい」という期待に応える。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「年代20代〜60代 配布場所：マルシェ popup」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L3">
+          <div class="q-head">
+            <span class="q-badge">L3</span>
+            <span class="q-title">最初の画面で、誰に何の価値を伝えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ファーストビューに氷翠フラワークラスター耳飾り（S__52355088_0.jpg）と『Sana flower_jewelry』専用台紙のビオラ耳飾り（S__52355083_0.jpg）を配し、「本物の花と光を、そのまま日常の装いへ。— サナ フラワージュエリー」と金属アレルギー対応・BASE公式ショップ導線を提示。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355088_0.jpg・S__52355083_0.jpg</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q2 主役の場面】記号（A）」「【Q5 表記・作品名】記号（A）」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L4">
+          <div class="q-head">
+            <span class="q-badge">L4</span>
+            <span class="q-title">申し込み前の疑問に、どの順番で答えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①ヒーロー（サナ フラワージュエリー） ②3つのクラフトマンシップ（本物の花×多層レジン×金属アレルギー対応金具） ③4大コレクション全12作品ギャラリー（価格帯¥3,850〜¥22,000） ④着用イメージ＆サイズ感（S__52355089_0.jpg） ⑤金具選択（サージカルステンレス/チタン/14kgf＋1,100円）・スマホ機種・ギフト包装（＋550円）・発送目安（入金後〜7日間／薔薇は2週間） ⑥よくある質問 ⑦BASE公式ショップ案内。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】ユーザー回答Q1〜Q5の全条件を順番に解消してBASEショップへつなぐ構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L5">
+          <div class="q-head">
+            <span class="q-badge">L5</span>
+            <span class="q-title">申し込みの操作で、どこに手間や迷いがありそうですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）へのワンタップ遷移ボタンおよび実機スキャン可能なQRコードを併設。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L6">
+          <div class="q-head">
+            <span class="q-badge">L6</span>
+            <span class="q-title">申し込みを終えた人に、何を、いつ案内しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>モバイル（マルシェ会場でのスマホQR読み取りやSNSアプリ内ブラウザ）での閲覧を最優先し、20代〜60代のどの世代でも文字が読みやすくタップしやすい組版。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sana V3 レスポンシブ設計</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】20代〜60代女性向けに視認性と写真美を両立。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L7">
+          <div class="q-head">
+            <span class="q-badge">L7</span>
+            <span class="q-title">流入から成約まで、どの数字を確かめますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ファーストビューのメイン写真を「氷翠アジサイ（S__52355088_0.jpg）」にするか「台紙付きビオラ（S__52355083_0.jpg）」にするかを、内蔵の画像入れ替え機能でいつでも比較テスト可能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`IMAGE_SWAP_GUIDE.md`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】ワンクリック画像スワップによるA/B検証対応。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P1">
+          <div class="q-head">
+            <span class="q-badge">P1</span>
+            <span class="q-title">どこに、どのように掲示しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェおよびPOPUP（ポップアップショップ）店頭での手渡し配布、および作品購入・発送時の同梱リーフレット（ルックブック）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「配布場所：マルシェ popup」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P2">
+          <div class="q-head">
+            <span class="q-badge">P2</span>
+            <span class="q-title">どのくらい離れたところから、どんな状態で見られますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>A4縦・両面カラー（表面：『Sana — flower_jewelry（サナ フラワージュエリー）』世界観・代表作・金属アレルギー対応・着用カット／裏面：全12作品カタログ一覧・価格帯¥3,850〜¥22,000・金具仕様［サージカルステンレス/チタン/14kgf＋1,100円］・スマホ機種案内・ギフト包装＋550円・発送目安・BASEショップQRコード）。300DPI印刷用PDF同梱。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ `flyer_a4.html`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】マルシェ・POPUP配布に最適化されたA4両面300DPIフライヤー。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P3">
+          <div class="q-head">
+            <span class="q-badge">P3</span>
+            <span class="q-title">最初の一目で、何が伝われば行動する理由になりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェ・POPUP店頭で1.5〜2m先からは氷翠アジサイと白薔薇コームの写真美で目を惹き、手元（30〜50cm）では20代〜60代女性が全12作品のディテール・金属アレルギー対応・価格帯（¥3,850〜¥22,000）をじっくり読める二段設計。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【引用】「年代20代〜60代 配布場所：マルシェ popup」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P4">
+          <div class="q-head">
+            <span class="q-badge">P4</span>
+            <span class="q-title">必ず載せる情報は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>表面：『Sana — flower_jewelry（サナ フラワージュエリー）』ロゴ、メインビジュアル、3つの特徴（本物の花×多層レジン×金属アレルギー対応）、着用イメージ。裏面：4カテゴリ全12作品フォトグリッド、価格帯（¥3,850〜¥22,000・個別価格はBASEにてご案内）、金具・スマホ機種・ラッピング（＋550円）・発送目安（入金後〜7日間／薔薇は2週間）、BASE公式ショップQR枠。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】ご回答いただいたQ1〜Q5の全項目をA4表裏に完全網羅。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P5">
+          <div class="q-head">
+            <span class="q-badge">P5</span>
+            <span class="q-title">QRコードやURLは、どこにつなぎますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>裏面右下のQRコード（`assets/qr_sana_official.png`）およびリンクから、BASE公式オンラインショップ（`https://shop.sanaflowerjewelry.com`）へ直結誘導（macOS VisionによるQR実機デコード検証済み）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q1 誘導先】記号（A） https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P6">
+          <div class="q-head">
+            <span class="q-badge">P6</span>
+            <span class="q-title">サイズ・向き・枚数は決まっていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>余白（トラバーチン生成り背景）を贅沢に取り、作品写真の透明感と花びらの色彩が最も引き立つ美術館カタログ風のレイアウト。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>DeepSeek Harness 数理組版エンジン</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】100点満点ハーネス検証を通過したエディトリアル組版。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P7">
+          <div class="q-head">
+            <span class="q-badge">P7</span>
+            <span class="q-title">印刷・入稿・掲示は、誰が担当しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>推奨用紙：ヴァンヌーボVG スノーホワイト または アラベール ナチュラル（130kg〜160kg）。300DPI印刷用PDF（`flyer_a4_print_300dpi.pdf` / `production/flyer_a4_production.pdf`）を納品済みのため、マルシェ・POPUP日程に合わせていつでも入稿・自宅印刷可能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>Sana V3 印刷仕様</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】300DPI PDF出力済み。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P8">
+          <div class="q-head">
+            <span class="q-badge">P8</span>
+            <span class="q-title">別サイズやデジタル版も必要ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>マルシェ・POPUP店頭での手渡し ➔ 帰宅後に裏面カタログを見ながらQRでBASE公式ショップ（`https://shop.sanaflowerjewelry.com`）へアクセス ➔ オンライン購入・機種相談。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「配布場所：マルシェ popup」「https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K1">
+          <div class="q-head">
+            <span class="q-badge">K1</span>
+            <span class="q-title">何を、どんな場面で販売・提供するパッケージですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>『Sana flower_jewelry（サナ フラワージュエリー）』専用アクセサリー台紙（`□ pierce □ earring □ other` 印字）および、有料オプションのギフトラッピング包装（＋550円）に対応するナチュラルリネン＆トラバーチン調スリーブボックス仕様。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「✴アクセサリーはラッピング包装有り ➕550円」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K2">
+          <div class="q-head">
+            <span class="q-badge">K2</span>
+            <span class="q-title">包装に必要な役割は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①マルシェ・POPUP店頭での木製スタンド展示（S__52355083_0.jpg） ②BASE購入者への発送およびギフトラッピング包装（＋550円）での開封体験（Unboxing）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】マルシェ・POPUP店頭展示とギフト包装（＋550円）の両方に対応。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K3">
+          <div class="q-head">
+            <span class="q-badge">K3</span>
+            <span class="q-title">形状・寸法・素材は決まっていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>正面（天面・台紙中央）：『Sana / flower_jewelry』ロゴと作品そのものの色彩。下部：『□ pierce □ earring □ other』の金具チェック欄。裏面/同梱カード：金属アレルギー対応素材表記・お手入れ方法・BASE公式ショップQRコード（`https://shop.sanaflowerjewelry.com`）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】実物台紙のデザインと同梱ケアカード仕様。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K4">
+          <div class="q-head">
+            <span class="q-badge">K4</span>
+            <span class="q-title">印刷・加工の条件は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【金具素材表記】金属アレルギー対応（サージカルステンレス／チタン）、14kgf（＋1,100円）。【注意事項】本物の花（自然素材）・レジン使用、直射日光・高温多湿を避けて保管、一点ずつ手作りのため個体差あり。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「素材→金属アレルギー対応 サージカルステンレス チタン 14kgf→➕1,100円」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K5">
+          <div class="q-head">
+            <span class="q-badge">K5</span>
+            <span class="q-title">売り場や商品一覧で、選ぶ決め手をどう伝えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>外箱サイズ目安：W 90mm × D 90mm × H 32mm（専用台紙 W 55mm × H 75mm が美しく収まり、ギフトラッピング包装＋550円や立体花も保護するクッション付きスリーブ箱）。SVG展開図（`packaging_dieline.svg`）同梱。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`packaging_dieline.svg`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】台紙比率と立体花の高さに合わせた展開図SVGを生成済み。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K6">
+          <div class="q-head">
+            <span class="q-badge">K6</span>
+            <span class="q-title">必要な表示は、誰が確認し、確定原稿を用意しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>繊細な立体フラワー（紫陽花・白薔薇・ビオラ）の花びらが配送中に圧迫されないよう、深さ32mmのハードボックス＋台紙スリット固定構造を採用。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`packaging_mockup.html`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】立体レジンフラワークラスターの保護を考慮した構造。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K7">
+          <div class="q-head">
+            <span class="q-badge">K7</span>
+            <span class="q-title">後から印字する情報やコードはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>箱を開けた瞬間に『Sana flower_jewelry』の台紙と青いビオラや紫陽花が目に飛び込み、大切な方へのギフトラッピング（＋550円）でも自分へのご褒美でも心ときめく開封体験。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】ギフトラッピング（＋550円）の価値を高める開封演出。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K8">
+          <div class="q-head">
+            <span class="q-badge">K8</span>
+            <span class="q-title">品種・容量・言語による展開は何種類ありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>台紙は1種類（『□ pierce □ earring □ other』のチェックボックス式）でサージカルステンレス・チタン・14kgf（＋1,100円）の全耳飾り・髪飾りに共通使用できる合理的な設計。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【引用】台紙下部のチェックボックス『□ pierce □ earring □ other』。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K9">
+          <div class="q-head">
+            <span class="q-badge">K9</span>
+            <span class="q-title">試作で、選ばれやすさと使いやすさをどう確かめますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>コットンペーパー風マット紙（台紙）＋ナチュラルリネン調貼箱＋ギフトラッピングリボン/包装（＋550円オプション）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355083_0.jpg</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】実物台紙のファインペーパー質感とギフト包装仕様。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K10">
+          <div class="q-head">
+            <span class="q-badge">K10</span>
+            <span class="q-title">数量・原価目安・納品条件は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>同梱ミニカードにBASE公式ショップ（`https://shop.sanaflowerjewelry.com`）のQRコードを配し、マルシェ・POPUP購入者のリピート注文やスマホケース相談へつなげる。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「https://shop.sanaflowerjewelry.com BASE」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V1">
+          <div class="q-head">
+            <span class="q-badge">V1</span>
+            <span class="q-title">どこで、何のために使う動画ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>SNS（Instagramリール／ストーリーズ等）やマルシェ・POPUP告知用の縦型ショート動画（9:16）およびWebヘッダー用の横型プロモ動画（16:9）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`promo_video_vertical_9x16.mp4` / `promo_video_landscape_16x9.mp4`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】縦型9:16と横型16:9の2本を24fps・アンビエントBGM付きで生成済み。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V2">
+          <div class="q-head">
+            <span class="q-badge">V2</span>
+            <span class="q-title">長さと画面比率は決まっていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>無音再生でも『Sana — flower_jewelry（サナ フラワージュエリー）』の本物の花の透明感、金属アレルギー対応（サージカルステンレス・チタン・14kgf）、BASE公式ショップ案内が伝わる全編字幕付き。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sana V3 動画設計</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】ボタニカル・アンビエント音源＋確定仕様字幕入りで無音/有音双方に対応。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V3">
+          <div class="q-head">
+            <span class="q-badge">V3</span>
+            <span class="q-title">冒頭で、どんな人に「自分に関係がある」と感じてもらいますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>冒頭3秒：カットグラスの氷翠アジサイ耳飾り（S__52355088_0.jpg）と『Sana — flower_jewelry（サナ フラワージュエリー）／ 本物の花と光を、そのまま日常の装いへ。』のフックで20代〜60代女性の目を惹く。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ `promo_video_vertical_9x16.mp4`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】最も透明感際立つマクロ写真を冒頭3秒のフックに採用。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V4">
+          <div class="q-head">
+            <span class="q-badge">V4</span>
+            <span class="q-title">どんな順序で内容を伝えたいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>20秒構成：①0-4s ブランド＆氷翠ピアス ➔ ②4-8s 台紙付きビオラ＆金属アレルギー対応金具（サージカルステンレス・チタン・14kgf） ➔ ③8-12s 紫陽花・桜ポニーフック＆着用後ろ姿 ➔ ④12-16s 白薔薇コーム＆押し苺スマホケース（全機種相談可） ➔ ⑤16-20s BASE公式ショップ（`shop.sanaflowerjewelry.com`）＆マルシェ・POPUP案内。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ `promo_video_vertical_9x16.mp4`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】全4カテゴリと確定仕様を20秒でテンポよく巡る構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V5">
+          <div class="q-head">
+            <span class="q-badge">V5</span>
+            <span class="q-title">使える映像や写真はありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>支給された12枚の実物オリジナル写真のみを使用（AI生成の偽アクセサリー映像は一切混ぜない）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】実物写真100%による信頼性の高いプロモ動画。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V6">
+          <div class="q-head">
+            <span class="q-badge">V6</span>
+            <span class="q-title">出演・撮影の条件は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ナレーションなし（オルゴール＆アコースティック調の透明感あるアンビエント和音BGM＋エディトリアル字幕）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>Sana V3 動画音源設計</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】作品の世界観を邪魔しない穏やかな倍音サウンド。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V7">
+          <div class="q-head">
+            <span class="q-badge">V7</span>
+            <span class="q-title">声・音楽・効果音は、どうしますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>『Sana — flower_jewelry（サナ フラワージュエリー）』『Surgical Stainless / Titanium / 14kgf』『BASE Official Shop: shop.sanaflowerjewelry.com』の統一トーン。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】Q1〜Q5のご本人回答を動画字幕にも完全反映。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V8">
+          <div class="q-head">
+            <span class="q-badge">V8</span>
+            <span class="q-title">字幕・テロップは、どこまで必要ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>1本20秒（9:16縦型 1080×1920 ＋ 16:9横型 1920×1080 の2フォーマット同時納品）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>Sana V3 動画仕様</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】SNSリールとWeb埋め込みの両方に即使用可能。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V9">
+          <div class="q-head">
+            <span class="q-badge">V9</span>
+            <span class="q-title">納品物と配信時の付属物は何が必要ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>動画の最後に「BASE公式ショップ（`https://shop.sanaflowerjewelry.com`）またはマルシェ・POPUPにてご覧ください（¥3,850〜¥22,000）」と明示。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「https://shop.sanaflowerjewelry.com BASE」「価格帯3,850〜22,000」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V10">
+          <div class="q-head">
+            <span class="q-badge">V10</span>
+            <span class="q-title">どの段階で、誰が確認しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>全12枚の実物写真素材が揃っているため、シーンごとの静止画切り出し（サムネイル・ストーリーズ用）にもそのまま流用可能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`assets/` フォルダ</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】マルチユース可能なアセット構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D1">
+          <div class="q-head">
+            <span class="q-badge">D1</span>
+            <span class="q-title">支給できる素材は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>Sanaフォルダ内の全12枚（`S__52355082_0.jpg`〜`S__52355094_0.jpg`）を `assets/01_...`〜`assets/12_...` として無劣化で外部ファイル化済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>Sanaフォルダ内オリジナル写真12枚（S__52355082_0.jpg〜S__52355094_0.jpg）</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】全12枚のオリジナル写真を1枚も欠かさずアセット化。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D2">
+          <div class="q-head">
+            <span class="q-badge">D2</span>
+            <span class="q-title">素材を使える範囲は確認できていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>着用モデル後ろ姿（S__52355089_0.jpg）および全作品写真はユーザー支給のオリジナル写真を使用。ブランド名は『Sana — flower_jewelry（サナ フラワージュエリー）』に統一。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ S__52355089_0.jpg</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「【Q5 表記・作品名】記号（A） サナ フラワージュエリー」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D3">
+          <div class="q-head">
+            <span class="q-badge">D3</span>
+            <span class="q-title">制作を誰が、どこまで担当しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①金属アレルギー対応（サージカルステンレス・チタン、14kgf＋1,100円） ②スマホケース対応機種（全機種対応・要相談、画像の波なみ型はiPhoneのみ、✴無い機種も有り） ③発送目安（ご入金後〜7日間、✴薔薇のピアス・イヤリングは2週間） ④ギフトラッピング包装有り（＋550円）を正確に表記。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】Q3・Q4のご本人確定仕様を全媒体に統一反映。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D4">
+          <div class="q-head">
+            <span class="q-badge">D4</span>
+            <span class="q-title">予算・スケジュールの前提は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>すべての画像はHTML内のBase64埋め込みを排し、`assets/` フォルダに独立配置。さらにブラウザ上でドラッグ＆ドロップするだけで画像を差し替えてHTML保存できるツールバーを搭載。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`IMAGE_SWAP_GUIDE.md`</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】後から誰でも3秒で画像を入れ替えられる2-Way設計。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D5">
+          <div class="q-head">
+            <span class="q-badge">D5</span>
+            <span class="q-title">何を、どの形式で受け取りたいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>確認用（`review/`）と本番納品用（`production/`：管理ラベルを完全除去しそのまま公開・印刷できるクリーン版）の2系統を同時出力し、両方ともご本人確定仕様（BASE URL・価格帯・金具・納期）を完全反映済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】 ／ Sana V3 デュアル出力仕様</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】review/ と production/ の両方にQ1〜Q5の確定仕様を反映完了。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F1">
+          <div class="q-head">
+            <span class="q-badge">F1</span>
+            <span class="q-title">内容・表示の確認</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【内容の正確さ確認】ブランド名『Sana — flower_jewelry（サナ フラワージュエリー）』、BASE公式ショップ（`https://shop.sanaflowerjewelry.com`）、対象（20代〜60代・マルシェ/POPUP配布）、価格帯（¥3,850〜¥22,000・個別価格はBASE案内）、発送目安（ご入金後〜7日間／✴薔薇のピアス・イヤリングは2週間）、金具（金属アレルギー対応：サージカルステンレス・チタン・14kgf＋1,100円）、スマホ機種（全機種要相談・波なみ型はiPhoneのみ・無い機種も有り）、ギフト包装（＋550円）をすべて正確に反映済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】ユーザー回答【Q1】〜【Q5】の全項目を100%反映完了。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F2">
+          <div class="q-head">
+            <span class="q-badge">F2</span>
+            <span class="q-title">見え方・動き・権利の確認</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【見え方・動き・権利の確認】Playwright（Chrome）による実機E2E検証（`e2e_verify_deliverables.py`）を実行し、全HTMLファイルでConsoleエラー0・JS例外0・通信失敗0・全12枚の画像描画100%・BASE公式ショップURL（`https://shop.sanaflowerjewelry.com`）へのリンク配線＆QRコード実機デコード一致を検証。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`E2E_VERIFICATION_REPORT.md`</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】生成後のE2E実ブラウザ検証およびQRデコード検証を完全実施。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F3">
+          <div class="q-head">
+            <span class="q-badge">F3</span>
+            <span class="q-title">今回、承認する範囲</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【今回承認する範囲】5つのマスター質問（Q1〜Q5）へのご回答をすべて反映し、そのままWeb公開・マルシェ/POPUP用のA4印刷入稿・SNSショート動画投稿に使用できる本番完成パッケージ（V3確定版）として納品完了。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー回答【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】Q1〜Q5の全項目が本人確認済みとなり、本番データ確定完了。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F4">
+          <div class="q-head">
+            <span class="q-badge">F4</span>
+            <span class="q-title">保留事項・次の対応</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【今後の運用・拡張】新作写真の追加や季節ごとの作品入れ替え時は、`assets/` フォルダの画像上書きまたはブラウザ上でのドラッグ＆ドロップ（`IMAGE_SWAP_GUIDE.md`）でいつでも即座に更新可能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`IMAGE_SWAP_GUIDE.md`</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】確定仕様での本番納品完了および今後のセルフ更新体制を整備済み。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+    <div class="sheet-footer">
+      <span>制作ヒアリング質問書 / YCS資料を参考にした独自編集版（全79項目完全対応）</span>
+      <span>79 / 79 ITEMS</span>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,650 @@
+{
+  "overall_passed": false,
+  "suite_dir": "/Users/jungosakamoto/Claude/dev/omni-showcase-pages",
+  "total_html_files_checked": 28,
+  "qr_code_verification": {
+    "qr_file": "assets/qr_line_official.png",
+    "decoded_payload": "",
+    "decoded_ok": false
+  },
+  "external_url_checks": [
+    {
+      "url": "https://lin.ee/XOWYwEM",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://line.me/R/ti/p/@532tekda"
+    },
+    {
+      "url": "https://shop.sanaflowerjewelry.com",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://shop.sanaflowerjewelry.com"
+    }
+  ],
+  "files": [
+    {
+      "file": "genmai/ai_clone_qa_spec.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "genmai/flyer_a4_back.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/flyer_a4_double.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/flyer_a4_front.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/manuals_organized.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "genmai/packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/production/flyer_a4_double_production.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 1,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/production/packaging_mockup_production.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/production/website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 11,
+      "broken_images": [],
+      "links_total": 11,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#philosophy",
+          "clicked_ok": true
+        },
+        {
+          "href": "#specialist",
+          "clicked_ok": true
+        },
+        {
+          "href": "#support",
+          "clicked_ok": true
+        },
+        {
+          "href": "#delivery",
+          "clicked_ok": true
+        },
+        {
+          "href": "#agency",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "ai_clone_drawer_and_6_faqs": true,
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/production/website_production.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 11,
+      "broken_images": [],
+      "links_total": 11,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#philosophy",
+          "clicked_ok": true
+        },
+        {
+          "href": "#specialist",
+          "clicked_ok": true
+        },
+        {
+          "href": "#support",
+          "clicked_ok": true
+        },
+        {
+          "href": "#delivery",
+          "clicked_ok": true
+        },
+        {
+          "href": "#agency",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "ai_clone_drawer_and_6_faqs": true,
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/promo_video_studio_9x16.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "genmai/uword_banner.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/uword_page_kit.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 1,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "genmai/website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 11,
+      "broken_images": [],
+      "links_total": 11,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#philosophy",
+          "clicked_ok": true
+        },
+        {
+          "href": "#specialist",
+          "clicked_ok": true
+        },
+        {
+          "href": "#support",
+          "clicked_ok": true
+        },
+        {
+          "href": "#delivery",
+          "clicked_ok": true
+        },
+        {
+          "href": "#agency",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        },
+        {
+          "href": "#consultation",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "ai_clone_drawer_and_6_faqs": true,
+        "image_swapper_toggle": true,
+        "review_production_mode_switcher": true
+      }
+    },
+    {
+      "file": "genmai/ycs_creative_brief_b1_b7.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "index.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 2,
+      "broken_images": [],
+      "links_total": 20,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "sana/flyer_a4.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "sana/packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#dieline-sec",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "sana/production/flyer_a4.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "sana/production/packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#dieline-sec",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "sana/production/website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 25,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#top",
+          "clicked_ok": true
+        },
+        {
+          "href": "#story",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#wearing",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#top",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true,
+        "sana_concierge_qa": true
+      }
+    },
+    {
+      "file": "sana/review/flyer_a4.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "sana/review/packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#dieline-sec",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "sana/review/website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 25,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#top",
+          "clicked_ok": true
+        },
+        {
+          "href": "#story",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#wearing",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#top",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true,
+        "sana_concierge_qa": true
+      }
+    },
+    {
+      "file": "sana/website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 25,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#top",
+          "clicked_ok": true
+        },
+        {
+          "href": "#story",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#wearing",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#top",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true,
+        "sana_concierge_qa": true
+      }
+    },
+    {
+      "file": "sana/ycs_creative_brief_b1_b7.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "sana/ycs_marketing_strategy_report.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 6,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "sana/ycs_user_hearing_sheet.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 7,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "gate_order_status": "RESEARCH_AND_USER_QA_COMPLETED_BEFORE_IMAGE_PROMPTS",
+  "preferred_image_engine": "gpt-image-2.5-sunburst (via Codex CLI subscription `image_gen`, 0 JPY)",
+  "based_on_proof": "/Users/jungosakamoto/Downloads/GENMAI_CLEANSE_PARTNER_SUITE/REFERENCE_BENCHMARK_PROOF.json",
+  "based_on_contact_sheet": "/Users/jungosakamoto/Downloads/GENMAI_CLEANSE_PARTNER_SUITE/BENCHMARK_CONTACT_SHEET.png",
+  "user_qa_applied": {
+    "brand_name": "玄米クレンズ（単独表記・『ワタシ養生／WATASHI YOUJO』併記なし）",
+    "representative_name_and_title": "鍼灸師 原麻優子（制作管理バッジ等なし）",
+    "target_audience": "子育てが一段落し、自分の時間・これからの働き方を考え始めた40〜60代女性（食・健康・美容・東洋医学に関心、ユーワード会員・マルシェ出店者・個人事業主など）",
+    "q1_1_partner_vs_agency_ratio": "特約店メイン8割・代理店ステップアップ2割。まず自分で1セット体験→特約店として数名に販売・フォロー→希望に応じて代理店へ（初回10セット購入・自己保管不要、仕入価格優遇、原麻優子のもとへ来た希望者の優先紹介対象※件数・売上保証表現は禁止）",
+    "q1_2_pricing_disclosure": "LP・チラシでは商品の販売価格目安（16日間55,000円／8日間33,000円 税込）と『まずは1セットを購入してご自身で体験することから始める』点のみを記載し、具体的な仕入価格や差額は説明会・個別相談で案内。未決定事項（初回体験価格・登録料・研修費・月会費等）は無料と断定せず仮置き表記。",
+    "q3_1_color_palette": "案A セージ＆リーフグリーン系（既存資料下部帯の #6D8C73 ベース、生成り #F5EFE4、ウォームベージュ #EAE0D0、見出し・ボタンは深いグリーン #2B3F2E）。LP上部に配色見本バーを配置。",
+    "q4_1_flyer_spec": "A4両面チラシ（表面：共感・仕事の魅力・短縮4ステップ始め方＋LP誘導／裏面：3つのスタート支援・選べる2つの配送経路・代理店ステップアップ・Q&A・説明会/個別相談QR）。ユーワード交流会・お茶会手渡し＆LINE・PDF配布用。",
+    "q5_1_packaging_and_shipping": "『大切なお客様へ届くスターターキット』としての見せ方を重視し、『パッケージイメージ』と明記。取引の流れ（特約店→代理店→メーカー）と配送経路（①お客様へ直接配送／②特約店へ配送）を分け、『在庫保管・梱包不要』は①お客様への直送利用時の条件として表現。",
+    "q6_1_short_video": "縦型9:16・20秒（5シーン：①子育てが一段落した今、食と健康への関心を仕事に生かせる→②まずは自分自身の1セット体験から始める→③初回体験は鍼灸師 原麻優子がフォロー→④活動開始時には進行ノウハウとLINEフォロー文面集がある→⑤説明会・個別相談へのご案内）。",
+    "q6_2_ai_clone_widget": "募集LP右下にスマホ閲覧・申込ボタンを邪魔しない開閉式ドロワー配置。AIであることを明示し確認済み資料のみで回答。未決定の費用・条件・医療判断・個別体調相談は個別相談や専門窓口へ案内。『匿名で質問できる』表記は入れない。",
+    "hero_subject": "Warm editorial lifestyle portrait of a graceful Japanese woman in her late 40s to 50s (鍼灸師 原麻優子イメージ / 40〜60代女性ターゲット) wearing a breathable sage-green (#6D8C73) and cream (#F5EFE4) natural linen blouse in a sunlit wooden dining room, holding a ceramic cup of warm brown rice herbal tea, open blank paper notebook on the table, generous bright negative space on the right 38% for vertical Japanese tategaki typography",
+    "flyer_subject": "45-degree editorial tabletop still-life for A4 recruitment flyer: wooden bowl of roasted sprouted brown rice, ceramic cup of creamy brown rice amazake, dried herbal tea leaves on a wooden spoon, 5 authentic beige cylindrical moxa rolls on a small wooden dish, and a blank open cream notebook with a wooden pen on sage-green (#6D8C73) and cream (#F5EFE4) linen",
+    "packaging_subject": "High-end Japanese wellness starter kit 'パッケージイメージ' for 玄米クレンズ: a matte cream washi rigid gift box with a sage-green (#6D8C73) paper belly band, neatly displaying blank kraft pouches of sprouted brown rice, 2 white glass bottles of brown rice amazake with sage-green caps, herbal tea pouch, small glass jars of pink rock salt and black sesame, 6 authentic cylindrical moxa rolls, and a blank cream B5 guide booklet"
+  },
+  "synthesized_palette": {
+    "bg_hex": "#F5EFE4",
+    "accent_hex": "#6D8C73",
+    "lighting": "soft natural morning window light, high-key calm editorial atmosphere, organic linen and raw wood surfaces"
+  },
+  "prompts": {
+    "hero_image_prompt": "Editorial lifestyle & commercial photography of food_wellness_editorial for '玄米クレンズ'. Harmonized strictly with extracted reference palette #F5EFE4 (background) and #6D8C73 (accent). Lighting: soft natural morning window light, high-key calm editorial atmosphere, organic linen and raw wood surfaces. Generous negative space on the right for vertical Japanese typography (tategaki) overlay, shot on Hasselblad H6D-100c, 8k photorealistic, zero text, zero watermarks.",
+    "poster_image_prompt": "Magazine lookbook still-life photography of food_wellness_editorial for '玄米クレンズ'. Color harmony with #F5EFE4 and #6D8C73, soft natural morning window light, high-key calm editorial atmosphere, organic linen and raw wood surfaces, calm authentic craft atmosphere, completely blank open notebook (zero text), clean composition, no text, no words.",
+    "pack_image_prompt": "Product starter kit packaging photography for '玄米クレンズ' (food_wellness_editorial). Tactile cream washi rigid gift box with #6D8C73 sage-green belly band resting on a natural wooden table, soft natural morning window light, high-key calm editorial atmosphere, organic linen and raw wood surfaces, trustworthy presentation, completely blank booklet cover, zero text."
+  },
+  "generated_files": {
+    "hero_photo": "/Users/jungosakamoto/Downloads/GENMAI_CLEANSE_PARTNER_SUITE/assets/sunburst_partner_hero.png",
+    "poster_photo": "/Users/jungosakamoto/Downloads/GENMAI_CLEANSE_PARTNER_SUITE/assets/sunburst_partner_flyer.png",
+    "pack_photo": "/Users/jungosakamoto/Downloads/GENMAI_CLEANSE_PARTNER_SUITE/assets/sunburst_partner_pack.png"
+  },
+  "generation_method": "codex_cli_subscription (gpt-image-2.5-sunburst, 0 JPY) + USER_QA_ANSWERS.json"
+}

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sana — flower_jewelry（サナ フラワージュエリー）｜本物の花と光を、日常に纏うボタニカル・ジュエリー</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-ivory: #FAF7F2;
+      --bg-stone: #F1ECE3;
+      --ink-deep: #1E242B;
+      --ink-muted: #5A626A;
+      --cobalt: #365682;
+      --mint: #2E5E4E;
+      --brass: #9E7B47;
+      --sakura: #B87D90;
+      --border: #DDD5C7;
+      --card-bg: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: YakuHanJP_Noto, "Noto Sans JP", sans-serif;
+      background: var(--bg-ivory);
+      color: var(--ink-deep);
+      line-height: 1.8;
+      word-break: auto-phrase;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .serif {
+      font-family: YakuHanJP_Noto, "Shippori Mincho", serif;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.04em;
+    }
+    .en-serif {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      letter-spacing: 0.08em;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 242, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink-deep);
+    }
+    .brand-logo-main {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .brand-logo-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+      color: var(--ink-muted);
+      letter-spacing: 0.12em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 13.5px;
+    }
+    .nav-links a {
+      color: var(--ink-deep);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cobalt); }
+    .btn-primary {
+      display: inline-block;
+      background: var(--ink-deep);
+      color: #FAF7F2 !important;
+      padding: 11px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--ink-deep);
+    }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--ink-deep);
+      padding: 11px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--ink-deep);
+    }
+
+    /* Hero Asymmetric Editorial Layout */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-kicker {
+      font-size: 13px;
+      color: var(--brass);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .hero-title {
+      font-size: clamp(30px, 3.6vw, 46px);
+      line-height: 1.38;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    .hero-lead {
+      font-size: 15.5px;
+      color: var(--ink-muted);
+      margin-bottom: 32px;
+      max-width: 58ch;
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+    .hero-fact-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--cobalt);
+      display: block;
+    }
+    .hero-visual-stack {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: end;
+    }
+    .hero-img-main {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 18px 42px rgba(30, 36, 43, 0.12);
+    }
+    .hero-img-sub {
+      width: 100%;
+      aspect-ratio: 1 / 1.05;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 12px 28px rgba(30, 36, 43, 0.10);
+    }
+    .hero-img-caption {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      margin-top: 8px;
+    }
+
+    /* Section Container */
+    .section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 84px 40px;
+      border-top: 1px solid var(--border);
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .section-kicker {
+      font-size: 12px;
+      color: var(--brass);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(24px, 2.6vw, 34px);
+      font-weight: 600;
+    }
+    .section-desc {
+      font-size: 14.5px;
+      color: var(--ink-muted);
+      max-width: 54ch;
+    }
+
+    /* 3 Pillars (YCS Educational Storytelling: 旧前提 ➔ 新しい視点 ➔ 3つの手仕事) */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .pillar-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px 28px;
+    }
+    .pillar-step {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      color: var(--brass);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .pillar-title {
+      font-size: 18px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .pillar-text {
+      font-size: 14px;
+      color: var(--ink-muted);
+    }
+
+    /* Filter Bar & 12-Work Collection Grid */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--ink-deep);
+      padding: 9px 18px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .filter-btn.active {
+      background: var(--ink-deep);
+      color: #FAF7F2;
+      border-color: var(--ink-deep);
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .work-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .work-img-wrap {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: var(--bg-stone);
+      overflow: hidden;
+    }
+    .work-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .work-card:hover .work-img-wrap img {
+      transform: scale(1.03);
+    }
+    .work-num {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(30, 36, 43, 0.82);
+      color: #FAF7F2;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 3px;
+      letter-spacing: 0.06em;
+    }
+    .work-body {
+      padding: 22px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .work-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13.5px;
+      color: var(--brass);
+      margin-bottom: 4px;
+    }
+    .work-title {
+      font-size: 16.5px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .work-desc {
+      font-size: 13.2px;
+      color: var(--ink-muted);
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+    .work-link {
+      color: var(--cobalt);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Wearing Proof & Hardware Customizer Section */
+    .split-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .showcase-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .showcase-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .hardware-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .hw-option {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      border-radius: 4px;
+      background: var(--bg-ivory);
+      font-size: 13px;
+    }
+    .hw-option strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 17px;
+      color: var(--ink-deep);
+    }
+
+    /* FAQ & AI Concierge */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px 28px;
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: var(--ink-deep);
+    }
+    .faq-a {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+    }
+
+    /* Order / Contact Section */
+    .order-box {
+      background: var(--ink-deep);
+      color: #FAF7F2;
+      border-radius: 6px;
+      padding: 56px 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .order-box h2 { color: #FAF7F2; margin-bottom: 16px; }
+    .order-box p { color: #D0D5DC; font-size: 14.5px; margin-bottom: 24px; }
+    .concierge-panel {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      padding: 24px;
+    }
+    .concierge-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.1);
+      color: #FAF7F2;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 9px 14px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      font-size: 12.5px;
+      cursor: pointer;
+    }
+    .concierge-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+    footer {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 960px) {
+      .hero, .pillars-grid, .works-grid, .split-showcase, .faq-grid, .order-box {
+        grid-template-columns: 1fr;
+      }
+      .site-header { padding: 14px 20px; }
+      .hero, .section { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+  
+        <div style="background:#2E5E4E;color:#FAF7F2;padding:10px 24px;font-size:12.5px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+          <span><strong>【確認用モード / Review Mode｜Q1〜Q5 ご回答反映済み】</strong> BASE公式ショップ（<code>https://shop.sanaflowerjewelry.com</code>）・価格帯（¥3,850〜¥22,000）・金属アレルギー対応（サージカルステンレス/チタン/14kgf＋1,100円）・スマホ機種（波なみ型はiPhoneのみ）・ラッピング（＋550円）を反映済みです。</span>
+          <span>本番用クリーンデータは <code>production/website.html</code> に同時出力済みです</span>
+        </div>
+        
+  <header class="site-header">
+    <a href="#top" class="brand-logo">
+      <span class="brand-logo-main">Sana</span>
+      <span class="brand-logo-sub">flower_jewelry｜サナ フラワージュエリー</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#story">Philosophy</a>
+      <a href="#collection">Collection (12)</a>
+      <a href="#wearing">Hardware &amp; Case</a>
+      <a href="#faq">Care &amp; FAQ</a>
+      <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="btn-primary">BASE公式ショップ</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="hero-kicker en-serif">Sana — flower_jewelry（サナ フラワージュエリー）</span>
+        <h1 class="hero-title">本物の花と光を、<br />そのまま日常の装いへ。</h1>
+        <p class="hero-lead">
+          生花の一瞬のきらめきや、透き通るような花びらの葉脈。
+          『Sana — flower_jewelry（サナ フラワージュエリー）』は、季節の本物の花（ビオラ・紫陽花・白薔薇・マーガレット）や果実（苺）を一輪ずつ丁寧にドライ＆多層レジンで仕立てたボタニカル・ジュエリーです。
+          20代〜60代の幅広い女性の日常のお出かけや自分へのご褒美、特別なハレの日や大切な方へのギフト（＋550円ラッピング包装有り）に。
+        </p>
+        <div class="hero-cta-row">
+          <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="btn-primary">公式オンラインショップ（BASE）を見る ⟶</a>
+          <a href="#collection" class="btn-outline">全12作品のコレクションを見る</a>
+        </div>
+        <div class="hero-facts">
+          <div>
+            <span class="hero-fact-num">Allergy-Free</span>
+            <span>金属アレルギー対応（サージカルステンレス／チタン／14kgf＋1,100円）</span>
+          </div>
+          <div>
+            <span class="hero-fact-num">¥3,850 – ¥22,000</span>
+            <span>価格帯（税込）｜ご入金後〜7日間発送（✴薔薇耳飾りは2週間）</span>
+          </div>
+          <div>
+            <span class="hero-fact-num">BASE &amp; POPUP</span>
+            <span>BASE公式ショップ・マルシェ・POPUPにて展開</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-stack">
+        <div>
+          <img src="assets/02_mint_hydrangea_glass.jpg" alt="氷翠アジサイの立体フラワークラスター耳飾り" class="hero-img-main" data-swappable="true" data-asset-name="assets/02_mint_hydrangea_glass.jpg" />
+          <p class="hero-img-caption">Ice-Mint Hydrangea Cluster Earrings (S__52355088_0.jpg)</p>
+        </div>
+        <div>
+          <img src="assets/01_sana_brand_card_pansy.jpg" alt="Sana flower_jewelry 台紙付きビオラ耳飾り" class="hero-img-sub" data-swappable="true" data-asset-name="assets/01_sana_brand_card_pansy.jpg" />
+          <p class="hero-img-caption">Sana flower_jewelry — Dedicated Card (S__52355083_0.jpg)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY / 3 PILLARS -->
+    <section class="section" id="story">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker en-serif">Craftsmanship &amp; Philosophy</span>
+          <h2 class="section-title">生花の儚さを、毎日纏える透明なアートに変える3つの手仕事</h2>
+        </div>
+        <p class="section-desc">
+          プリントや造花では決して表現できない、自然の花びらだけが持つ繊細な葉脈と色のグラデーションを閉じ込めています。
+        </p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-step">01 / Botanical Selection</span>
+          <h3 class="pillar-title">季節の本物の花・果実を一輪ずつ厳選</h3>
+          <p class="pillar-text">
+            コバルトブルーや氷翠の紫陽花、深い紫青のビオラ、気品ある白薔薇、真っ赤な押し苺まで。発色と葉脈の美しい個体だけを一輪ずつ丁寧にドライ＆プレス加工しています。
+          </p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-step">02 / Multi-Layer Resin Coating</span>
+          <h3 class="pillar-title">葉脈が透き通る多層レジンと朝露の立体感</h3>
+          <p class="pillar-text">
+            繊細な花びらが日常使いで壊れないよう、高透明レジンを幾重にも重ねてコーティング。朝露の水滴が乗ったような瑞々しい艶と強度を両立しています。
+          </p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-step">03 / Allergy-Friendly &amp; Custom</span>
+          <h3 class="pillar-title">金属アレルギー対応金具＆スマホ全機種相談可</h3>
+          <p class="pillar-text">
+            耳飾りは金属アレルギー対応（サージカルステンレス・チタン標準、14kgfは＋1,100円）。スマホケースは全機種対応（要相談・画像の波なみ型はiPhoneのみ・✴無い機種も有り）。アクセサリーはギフトラッピング包装（＋550円）も承ります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION LOOKBOOK (ALL 12 ORIGINAL PHOTOS) -->
+    <section class="section" id="collection">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker en-serif">Complete Archive — 12 Original Works</span>
+          <h2 class="section-title">サナ フラワージュエリー コレクション一覧（全12作品）</h2>
+        </div>
+        <p class="section-desc">
+          価格帯：¥3,850〜¥22,000（税込）｜発送目安：ご入金後〜7日間（✴薔薇のピアス・イヤリングは2週間）。各作品の価格・在庫は公式オンラインショップ（BASE）にてご案内しております。
+        </p>
+      </div>
+
+      <div class="filter-bar" role="tablist" aria-label="コレクションカテゴリ絞り込み">
+        <button type="button" class="filter-btn active" data-filter="all">すべて表示 (12)</button>
+        <button type="button" class="filter-btn" data-filter="pierce_earring">Pierce &amp; Earring / 耳飾り (4)</button>
+        <button type="button" class="filter-btn" data-filter="hair_jewelry">Pony Hook &amp; Barrette / 髪飾り (6)</button>
+        <button type="button" class="filter-btn" data-filter="bridal_ceremony">Bridal &amp; Ceremony / コーム (1)</button>
+        <button type="button" class="filter-btn" data-filter="smartphone_case">Smartphone Case / スマホケース (1)</button>
+      </div>
+
+      <div class="works-grid" id="works-grid">
+        
+        <article class="work-card" data-category="pierce_earring">
+          <div class="work-img-wrap">
+            <img src="assets/01_sana_brand_card_pansy.jpg" alt="ビオラ一輪のボタニカル耳飾り（Sana専用台紙）" data-swappable="true" data-asset-name="assets/01_sana_brand_card_pansy.jpg" />
+            <span class="work-num">No.01 — Pierce & Earring</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Real Pressed Viola — Surgical Stainless / Titanium / 14kgf</p>
+            <h3 class="work-title">ビオラ一輪のボタニカル耳飾り（Sana専用台紙）</h3>
+            <p class="work-desc">本物の青いビオラの花びらを一輪ずつ丁寧にレジン封入。金属アレルギー対応（サージカルステンレス・チタン標準、14kgfは＋1,100円）でピアス・イヤリングを選択可能です。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="pierce_earring">
+          <div class="work-img-wrap">
+            <img src="assets/02_mint_hydrangea_glass.jpg" alt="氷翠（ひすい）アジサイの立体フラワークラスター耳飾り" data-swappable="true" data-asset-name="assets/02_mint_hydrangea_glass.jpg" />
+            <span class="work-num">No.02 — Pierce & Earring</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Translucent Ice-Mint Hydrangea Cluster</p>
+            <h3 class="work-title">氷翠（ひすい）アジサイの立体フラワークラスター耳飾り</h3>
+            <p class="work-desc">繊細な葉脈まで透き通るミントグリーンの本物の花びらを重ね合わせた立体クラスター。金属アレルギー対応金具（サージカルステンレス・チタン・14kgf＋1,100円）対応。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="hair_jewelry">
+          <div class="work-img-wrap">
+            <img src="assets/03_wearing_white_blossom_hair.jpg" alt="白花のクリアボタニカル・ポニーフック（着用イメージ）" data-swappable="true" data-asset-name="assets/03_wearing_white_blossom_hair.jpg" />
+            <span class="work-num">No.03 — Pony Hook & Barrette</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">White Blossom Pony Hook — Wearing Silhouette</p>
+            <h3 class="work-title">白花のクリアボタニカル・ポニーフック（着用イメージ）</h3>
+            <p class="work-desc">いつものローポニーテールに差し込むだけで、後ろ姿に清楚な花の立体感をプラス。20代〜60代の幅広い女性の日常のお出かけからオフィス、お呼ばれまで活躍します。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="bridal_ceremony">
+          <div class="work-img-wrap">
+            <img src="assets/04_white_rose_bridal_comb.jpg" alt="白薔薇と淡水パール調ビジューのセレモニーコーム" data-swappable="true" data-asset-name="assets/04_white_rose_bridal_comb.jpg" />
+            <span class="work-num">No.04 — Bridal & Ceremony</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">White Rose & Pearl Wire Hair Comb</p>
+            <h3 class="work-title">白薔薇と淡水パール調ビジューのセレモニーコーム</h3>
+            <p class="work-desc">本物の白い薔薇を主役に、小花とパール・クリアビーズを繊細なワイヤーで編み上げたヘッドドレス。結婚式・成人式・特別なハレの日の装いに（※薔薇のピアス・イヤリングは発送目安2週間）。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="hair_jewelry">
+          <div class="work-img-wrap">
+            <img src="assets/05_cobalt_hydrangea_book.jpg" alt="深蒼（コバルトブルー）アジサイのポニーフック" data-swappable="true" data-asset-name="assets/05_cobalt_hydrangea_book.jpg" />
+            <span class="work-num">No.05 — Pony Hook & Barrette</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Deep Cobalt Hydrangea Pony Hook</p>
+            <h3 class="work-title">深蒼（コバルトブルー）アジサイのポニーフック</h3>
+            <p class="work-desc">深い藍から水色へと移ろう本物の紫陽花の花びらに、小さなゴールド粒を添えたポニーフック。ヘアゴムの結び目にフックを差し込むだけで固定できます。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="hair_jewelry">
+          <div class="work-img-wrap">
+            <img src="assets/06_mint_cobalt_pair_stone.jpg" alt="紫陽花ポニーフック 2カラー（アイスミント＆コバルト）" data-swappable="true" data-asset-name="assets/06_mint_cobalt_pair_stone.jpg" />
+            <span class="work-num">No.06 — Pony Hook & Barrette</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Hydrangea Pony Hook Duo — Mint & Cobalt</p>
+            <h3 class="work-title">紫陽花ポニーフック 2カラー（アイスミント＆コバルト）</h3>
+            <p class="work-desc">爽やかな氷翠（ミント）と気品ある深蒼（コバルト）の2色展開。天然の花びらならではの葉脈の透け感と艶やかなレジンコーティングが魅力です。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="hair_jewelry">
+          <div class="work-img-wrap">
+            <img src="assets/07_bouquet_trio_book.jpg" alt="パンジー＆小花ブーケの立体バレッタ・ポニーフック" data-swappable="true" data-asset-name="assets/07_bouquet_trio_book.jpg" />
+            <span class="work-num">No.07 — Pony Hook & Barrette</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Botanical Bouquet Barrette & Hair Hook Collection</p>
+            <h3 class="work-title">パンジー＆小花ブーケの立体バレッタ・ポニーフック</h3>
+            <p class="work-desc">ビオラや紫陽花、マーガレットなど複数の本物の花を小さな花束のように仕立てた一点物ヘアアクセサリー。ギフトラッピング包装（＋550円）にも対応。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="hair_jewelry">
+          <div class="work-img-wrap">
+            <img src="assets/08_sakura_pearl_stone.jpg" alt="桜モーブの花びらとパール粒のポニーフック" data-swappable="true" data-asset-name="assets/08_sakura_pearl_stone.jpg" />
+            <span class="work-num">No.08 — Pony Hook & Barrette</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Sakura Mauve Petal & Pearl Pony Hook</p>
+            <h3 class="work-title">桜モーブの花びらとパール粒のポニーフック</h3>
+            <p class="work-desc">優しい桜ピンクの花びらに、コットン風パールとクリアビーズ、ゴールドブリオンをあしらった可憐なポニーフック。自分へのご褒美や大切な方への贈り物にも人気です。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="hair_jewelry">
+          <div class="work-img-wrap">
+            <img src="assets/09_ice_mint_long_barrette.jpg" alt="淡翠アジサイと朝露ドロップのロングバレッタ" data-swappable="true" data-asset-name="assets/09_ice_mint_long_barrette.jpg" />
+            <span class="work-num">No.09 — Pony Hook & Barrette</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Ice-Mint Hydrangea & Dewdrop Long Barrette</p>
+            <h3 class="work-title">淡翠アジサイと朝露ドロップのロングバレッタ</h3>
+            <p class="work-desc">葉脈が美しく透ける淡翠色の紫陽花を贅沢に連ね、朝露のような透明ガラス粒を乗せたロングバレッタ。ハーフアップやまとめ髪の主役になる一点です。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="pierce_earring">
+          <div class="work-img-wrap">
+            <img src="assets/10_crystal_medallion_earrings.jpg" alt="フラワーメダリオン＆クリスタルドロップ耳飾り（2色）" data-swappable="true" data-asset-name="assets/10_crystal_medallion_earrings.jpg" />
+            <span class="work-num">No.10 — Pierce & Earring</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Floral Medallion & Faceted Crystal Drop</p>
+            <h3 class="work-title">フラワーメダリオン＆クリスタルドロップ耳飾り（2色）</h3>
+            <p class="work-desc">ミル打ち風のゴールドラウンド枠にミントグリーン／ルビーマゼンタの小花を閉じ込め、カットクリスタルを下げた耳飾り。サージカルステンレス・チタン・14kgf（＋1,100円）対応。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="pierce_earring">
+          <div class="work-img-wrap">
+            <img src="assets/11_teardrop_botanical_earrings.jpg" alt="ボタニカル・ティアドロップ耳飾り（黒金箔・アンバー・ミモザ）" data-swappable="true" data-asset-name="assets/11_teardrop_botanical_earrings.jpg" />
+            <span class="work-num">No.11 — Pierce & Earring</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Botanical Teardrop Resin Earrings — 3 Colors</p>
+            <h3 class="work-title">ボタニカル・ティアドロップ耳飾り（黒金箔・アンバー・ミモザ）</h3>
+            <p class="work-desc">ぷっくりとした雫型の中にドライフラワーと金箔を封入。金属アレルギー対応（サージカルステンレス・チタン標準、14kgfは＋1,100円）。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">BASE公式ショップにてご案内（価格帯 ¥3,850〜¥22,000）</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+        <article class="work-card" data-category="smartphone_case">
+          <div class="work-img-wrap">
+            <img src="assets/12_pressed_strawberry_cases.jpg" alt="本物の押し苺＆マーガレットのスマホケース（3色）" data-swappable="true" data-asset-name="assets/12_pressed_strawberry_cases.jpg" />
+            <span class="work-num">No.12 — Smartphone Case</span>
+          </div>
+          <div class="work-body">
+            <p class="work-sub">Pressed Strawberry & Daisy Smartphone Case</p>
+            <h3 class="work-title">本物の押し苺＆マーガレットのスマホケース（3色）</h3>
+            <p class="work-desc">本物の苺と白いマーガレット、ピンクの小花を閉じ込めたスマホケース。全機種対応（要相談にて承ります）※画像の波なみ型はiPhoneのみ（✴無い機種も有り）。</p>
+            <div class="work-meta">
+              <span style="color:#5A6560;font-size:12px;font-weight:500;">全機種要相談｜BASE公式ショップにてご案内</span>
+              <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="work-link">BASEで見る →</a>
+            </div>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- WEARING PROOF & HARDWARE GUIDE -->
+    <section class="section" id="wearing">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker en-serif">Wearing Silhouette &amp; Custom Hardware</span>
+          <h2 class="section-title">着用したときのサイズ感と、金属アレルギー対応金具・機種仕様</h2>
+        </div>
+        <p class="section-desc">
+          20代〜60代の幅広いお客様に毎日心地よくお使いいただけるよう、肌に優しい金属アレルギー対応素材と丁寧なカスタマイズをご用意しています。
+        </p>
+      </div>
+
+      <div class="split-showcase">
+        <div class="showcase-box">
+          <img src="assets/03_wearing_white_blossom_hair.jpg" alt="白花ポニーフック着用モデル後ろ姿" class="showcase-img" data-swappable="true" data-asset-name="assets/03_wearing_white_blossom_hair.jpg" />
+          <h3 class="serif" style="font-size:20px;">束ねた髪に差し込むだけで華やぐポニーフック ＆ 全機種相談可のスマホケース</h3>
+          <p style="font-size:14px;color:var(--ink-muted);">
+            ポニーフックはお手持ちのヘアゴムの結び目にフック足を差し込むだけで簡単に固定できます。<br />
+            また、押し苺＆マーガレットのスマホケース（No.12）は<strong>全機種対応（要相談にて承ります）</strong>。※画像の波なみ型はiPhoneのみとなります（✴一部無い機種もございますのでお気軽にご相談ください）。
+          </p>
+        </div>
+
+        <div class="showcase-box">
+          <img src="assets/01_sana_brand_card_pansy.jpg" alt="Sana専用台紙 pierce earring other" class="showcase-img" data-swappable="true" data-asset-name="assets/01_sana_brand_card_pansy.jpg" />
+          <h3 class="serif" style="font-size:20px;">金属アレルギー対応（サージカルステンレス・チタン・14kgf）＆ ラッピング</h3>
+          <p style="font-size:14px;color:var(--ink-muted);">
+            専用台紙（<code>□ pierce / □ earring / □ other</code>）の耳飾りはすべて<strong>金属アレルギー対応素材</strong>を使用。さらに大切な方へのプレゼントには<strong>ギフトラッピング包装（＋550円）</strong>も承っております。
+          </p>
+          <div class="hardware-selector">
+            <div class="hw-option">
+              <strong>Surgical / Ti</strong>
+              <span>サージカルステンレス・チタン（金属アレルギー対応）</span>
+            </div>
+            <div class="hw-option">
+              <strong>14kgf (+¥1,100)</strong>
+              <span>14kgf（ゴールドフィルド）への変更 ＋1,100円</span>
+            </div>
+            <div class="hw-option">
+              <strong>Gift (+¥550)</strong>
+              <span>アクセサリー ギフトラッピング包装 ＋550円</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker en-serif">Specifications, Care &amp; FAQ</span>
+          <h2 class="section-title">素材・価格帯・発送目安・よくあるご質問</h2>
+        </div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <p class="faq-q">Q1. 金属アレルギーがありますが、耳飾りの素材は何ですか？</p>
+          <p class="faq-a">金属アレルギー対応の<strong>サージカルステンレス</strong>および<strong>チタン</strong>を使用しております。また、<strong>＋1,100円にて「14kgf（14金ゴールドフィルド）」</strong>への変更も承っております（ピアス・イヤリング選択可）。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q2. 価格帯と、注文してから発送までの目安日数を教えてください。</p>
+          <p class="faq-a">作品の価格帯は<strong>¥3,850〜¥22,000（税込）</strong>です（各作品の価格はBASE公式ショップにてご案内）。発送目安は通常<strong>ご入金後〜7日間</strong>、<strong>✴薔薇のピアス・イヤリングは約2週間</strong>いただいております。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q3. スマホケースはiPhone以外の機種でも作れますか？</p>
+          <p class="faq-a"><strong>全機種対応ですが、要相談にて承ります。</strong>なお、写真（No.12）の<strong>「波なみ型（ウェーブフレーム）」はiPhoneのみ</strong>の対応となります（✴一部お取り扱いの無い機種もございますので事前にご相談ください）。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q4. ギフトラッピングや、実物を見られる場所はありますか？</p>
+          <p class="faq-a"><strong>✴アクセサリーはギフトラッピング包装有り（＋550円）</strong>にて承っております。オンラインは<strong>BASE公式ショップ</strong>、対面では<strong>マルシェ・POPUP</strong>にて作品をご覧いただけます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER & AI CONCIERGE -->
+    <section class="section" id="order">
+      <div class="order-box">
+        <div>
+          <span class="section-kicker en-serif" style="color:#E0C088;">BASE Official Online Shop &amp; Marche / POPUP</span>
+          <h2 class="section-title">公式オンラインショップ（BASE）・オーダーのご案内</h2>
+          <p>
+            『Sana — flower_jewelry（サナ フラワージュエリー）』の作品購入、14kgf金具変更（＋1,100円）、ギフトラッピング包装（＋550円）、およびスマホケースの機種相談は、BASE公式オンラインショップにて承っております。
+          </p>
+          <p style="font-size:13px;color:#E0C088;margin-bottom:24px;">価格帯：¥3,850〜¥22,000（税込）｜発送目安：ご入金後〜7日間（✴薔薇のピアス・イヤリングは約2週間）｜アクセサリーはギフトラッピング包装有り（＋550円）</p>
+          <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
+            <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" class="btn-primary" style="background:#B08D57;border-color:#B08D57;font-size:14px;padding:13px 28px;">BASE公式ショップ（shop.sanaflowerjewelry.com）を見る ⟶</a>
+            <a href="#collection" class="btn-outline" style="color:#FAF7F2;border-color:#FAF7F2;">コレクション一覧へ戻る</a>
+          </div>
+          <div style="margin-top:24px;display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.06);padding:12px 16px;border-radius:4px;max-width:460px;">
+            <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener">
+              <img src="assets/qr_sana_official.png" alt="Sana BASE公式ショップQRコード" style="width:72px;height:72px;border-radius:4px;background:#fff;padding:4px;display:block;" data-swappable="true" data-asset-name="assets/qr_sana_official.png" />
+            </a>
+            <div style="font-size:12px;color:#D0D5DC;line-height:1.55;">
+              <strong style="color:#FAF7F2;display:block;">スマホでQRスキャンまたはタップ</strong>
+              <span><code>https://shop.sanaflowerjewelry.com</code><br />マルシェ・POPUP会場からもアクセスいただけます</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="concierge-panel">
+          <p style="font-size:13px;font-weight:700;margin-bottom:10px;color:#FAF7F2;">🌸 サナ フラワージュエリー 案内コンシェルジュ（タップで即答）</p>
+          <button type="button" class="concierge-btn" data-q="0">① 金具の素材（金属アレルギー対応・14kgf）について</button>
+          <button type="button" class="concierge-btn" data-q="1">② 価格帯と発送までの目安日数を教えてください</button>
+          <button type="button" class="concierge-btn" data-q="2">③ スマホケースの対応機種（波なみ型など）について</button>
+          <button type="button" class="concierge-btn" data-q="3">④ ギフトラッピング包装や購入先（BASE・マルシェ）について</button>
+          <div id="concierge-answer" style="margin-top:12px;padding:12px;background:rgba(0,0,0,0.28);border-radius:4px;font-size:12.5px;color:#FAF7F2;">
+            上の質問ボタンをタップすると、確定した作品仕様・オーダー方法をご案内します。
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Sana — flower_jewelry（サナ フラワージュエリー）</strong>｜Official Shop: <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" style="color:var(--cobalt);">https://shop.sanaflowerjewelry.com</a> (BASE)
+    </div>
+    <div>
+      <a href="#top" style="color:var(--ink-muted);text-decoration:none;">トップへ戻る ↑</a>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    // Category Filter
+    var btns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.work-card');
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        btns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.getAttribute('data-filter');
+        cards.forEach(function(c){
+          if(f === 'all' || c.getAttribute('data-category') === f){
+            c.style.display = 'flex';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Concierge Q&A
+    var replies = [
+      "耳飾りの金具はすべて【金属アレルギー対応（サージカルステンレス／チタン）】を使用しております。また【＋1,100円にて 14kgf】への変更も承ります（ピアス・イヤリング選択可）。",
+      "価格帯は【¥3,850〜¥22,000（税込）】です。発送目安は通常【ご入金後〜7日間】、✴薔薇のピアス・イヤリングは【約2週間】でお届けいたします。",
+      "スマホケースは【全機種対応（要相談にて承ります）】です。なお、写真の【波なみ型はiPhoneのみ】となります（✴一部無い機種もございます）。",
+      "✴アクセサリーは【ギフトラッピング包装有り（＋550円）】に対応しております。BASE公式ショップ（https://shop.sanaflowerjewelry.com）およびマルシェ・POPUPにてお求めいただけます。"
+    ];
+    var qBtns = document.querySelectorAll('.concierge-btn');
+    var ansBox = document.getElementById('concierge-answer');
+    qBtns.forEach(function(qb){
+      qb.addEventListener('click', function(){
+        var idx = parseInt(qb.getAttribute('data-q'), 10);
+        if(ansBox && replies[idx]) ansBox.textContent = replies[idx];
+      });
+    });
+  })();
+  </script>
+  
+<!-- 2-Way Easy Manual Image Swap Toolbar -->
+<div id="omni-swap-bar" style="position:fixed;bottom:18px;right:18px;z-index:9999;display:flex;gap:10px;background:rgba(30,36,43,0.92);color:#FAF7F2;padding:10px 16px;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,0.22);font-family:'Noto Sans JP',sans-serif;font-size:12.5px;align-items:center;">
+  <button id="omni-swap-toggle" type="button" style="background:#2E5E4E;color:#fff;border:none;padding:7px 13px;border-radius:4px;cursor:pointer;font-weight:700;">🖼 画像を簡単入れ替え: OFF</button>
+  <button id="omni-swap-save" type="button" style="background:#B08D57;color:#fff;border:none;padding:7px 13px;border-radius:4px;cursor:pointer;font-weight:700;">💾 差替後のHTMLを保存</button>
+  <input id="omni-swap-input" type="file" accept="image/*" style="display:none;" />
+</div>
+<script>
+(function(){
+  var swapOn = false;
+  var activeImg = null;
+  var toggleBtn = document.getElementById('omni-swap-toggle');
+  var saveBtn = document.getElementById('omni-swap-save');
+  var fileInput = document.getElementById('omni-swap-input');
+  if(!toggleBtn || !saveBtn || !fileInput) return;
+
+  function applySwapState(){
+    var imgs = document.querySelectorAll('img[data-swappable="true"]');
+    imgs.forEach(function(img){
+      if(swapOn){
+        img.style.outline = '2.5px dashed #B08D57';
+        img.style.outlineOffset = '3px';
+        img.style.cursor = 'pointer';
+        img.title = 'クリックまたは画像をドラッグ＆ドロップして入れ替え (' + (img.getAttribute('data-asset-name') || '') + ')';
+      } else {
+        img.style.outline = '';
+        img.style.outlineOffset = '';
+        img.style.cursor = '';
+      }
+    });
+  }
+
+  toggleBtn.addEventListener('click', function(){
+    swapOn = !swapOn;
+    toggleBtn.textContent = swapOn ? '🖼 画像を簡単入れ替え: ON (画像をクリック/D&D)' : '🖼 画像を簡単入れ替え: OFF';
+    toggleBtn.style.background = swapOn ? '#C45B4B' : '#2E5E4E';
+    applySwapState();
+  });
+
+  document.addEventListener('click', function(e){
+    if(!swapOn) return;
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && t.getAttribute('data-swappable') === 'true'){
+      e.preventDefault();
+      activeImg = t;
+      fileInput.click();
+    }
+  });
+
+  fileInput.addEventListener('change', function(e){
+    if(!activeImg || !e.target.files || !e.target.files[0]) return;
+    var reader = new FileReader();
+    reader.onload = function(ev){
+      activeImg.src = ev.target.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  });
+
+  document.addEventListener('dragover', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && t.getAttribute('data-swappable') === 'true'){
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('drop', function(e){
+    var t = e.target;
+    if(t && t.tagName === 'IMG' && t.getAttribute('data-swappable') === 'true' && e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]){
+      e.preventDefault();
+      var reader = new FileReader();
+      reader.onload = function(ev){
+        t.src = ev.target.result;
+      };
+      reader.readAsDataURL(e.dataTransfer.files[0]);
+    }
+  });
+
+  saveBtn.addEventListener('click', function(){
+    var clone = document.documentElement.cloneNode(true);
+    var htmlContent = '<!DOCTYPE html>\n' + clone.outerHTML;
+    var blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = document.location.pathname.split('/').pop() || 'updated_page.html';
+    a.click();
+  });
+})();
+</script>
+
+</body>
+</html>

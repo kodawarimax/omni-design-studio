@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>玄米クレンズ｜スターターキット パッケージイメージ</title>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+  :root {
+    --washi: #F5EFE4;
+    --washi-pure: #FAF7F2;
+    --sand: #EAE0D0;
+    --sage: #6D8C73;         /* Extracted from 玄米クレンズのコピー (11).png bottom band */
+    --sage-pale: #E9EFEA;
+    --forest: #2B3F2E;       /* Deep readable editorial green for headings & actions */
+    --ink: #23201C;
+    --muted: #655F56;
+    --rule: rgba(43, 63, 46, 0.20);
+    --rule-strong: rgba(43, 63, 46, 0.45);
+    --tbd-bg: #FBF5E6;
+    --tbd-border: #B8862D;
+    --tbd-ink: #7A5411;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: var(--washi);
+    color: var(--ink);
+    font-family: "YuGothic", "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    line-height: 2.05;
+    font-size: 15.5px;
+    letter-spacing: 0.04em;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .mincho {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+  .en-serif {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    letter-spacing: 0.16em;
+  }
+  .tategaki {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  }
+  .tbd-mark {
+    display: inline-block;
+    background: var(--tbd-bg);
+    border-bottom: 1px dashed var(--tbd-border);
+    color: var(--tbd-ink);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 1px 8px;
+    margin: 0 4px;
+    letter-spacing: 0.04em;
+  }
+  .editorial-index {
+    border-top: 1px solid var(--rule-strong);
+  }
+  .editorial-row {
+    display: grid;
+    grid-template-columns: 56px 260px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .row-kanji {
+    font-family: "Shippori Mincho", serif;
+    font-size: 16px;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+  }
+  .row-title {
+    font-family: "Shippori Mincho", serif;
+    font-size: 17.5px;
+    color: var(--forest);
+    font-weight: 600;
+  }
+  .row-body {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.95;
+  }
+  .three-col-ledger {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .ledger-cell {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+  }
+  .ledger-cell:last-child { border-right: none; }
+  .cell-kicker {
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .ledger-cell h3 {
+    font-size: 19px;
+    color: var(--forest);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .ledger-cell p {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.95;
+  }
+
+  body {
+    width: 1400px;
+    height: 1000px;
+    background: var(--washi);
+    padding: 64px 76px;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 56px;
+    align-items: stretch;
+    overflow: hidden;
+  }
+  .visual-frame {
+    position: relative;
+    background: var(--sand);
+    border: 1px solid var(--rule-strong);
+  }
+  .visual-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .spec-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 2px solid var(--forest);
+    border-bottom: 2px solid var(--forest);
+    padding: 36px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="visual-frame">
+    <img src="../assets/05_packaging_starter_kit.png" data-asset-slot="05_packaging_starter_kit.png" alt="玄米クレンズ スターターキット パッケージイメージ" />
+    <div class="tategaki" style="position:absolute; top:28px; left:28px; background:rgba(250,247,242,0.94); padding:24px 16px; height:320px; font-size:15px; line-height:2.15; letter-spacing:0.2em; color:var(--forest); border-top:2px solid var(--sage);">
+      丁寧な手仕事と信頼を届ける一箱。
+    </div>
+    <div style="position:absolute; bottom:0; left:0; right:0; background:var(--sage); color:var(--washi-pure); padding:14px 24px; font-size:13px; display:flex; justify-content:space-between;">
+      <span class="mincho">玄米クレンズ ｜ スターターキット（パッケージイメージ）</span>
+      <span>※実際の箱・配送仕様は確定後に反映</span>
+    </div>
+  </div>
+
+  <div class="spec-col">
+    <div>
+      <span class="en-serif" style="font-size:12px; color:var(--sage); letter-spacing:0.22em; display:block; margin-bottom:12px;">STARTER KIT PACKAGING IMAGE</span>
+      <h1 class="mincho" style="font-size:29px; color:var(--forest); line-height:1.55; margin-bottom:20px;">
+        ご自身の初回体験にも、<br>
+        大切なお客様へのお届けにも。<br>
+        信頼感が伝わるスターターキット。
+      </h1>
+      <p style="font-size:14.5px; color:var(--ink); line-height:2.0; margin-bottom:24px;">
+        ご自身の最初の1セット体験や、お客様が受け取った瞬間に安心していただけるよう、生成り和紙とセージグリーンの穏やかな佇まいで統一したパッケージイメージです。
+      </p>
+
+      <div class="editorial-index">
+        <div class="editorial-row" style="grid-template-columns:44px 150px 1fr; padding:14px 0;">
+          <span class="row-kanji">内容</span>
+          <span class="row-title" style="font-size:15px;">同梱セット一式</span>
+          <span class="row-body" style="font-size:13.5px;">熟成酵素玄米（16日間48食／8日間24食 ※玄米なしも選択可）、玄米甘酒・黒米甘酒、五種のめぐみ茶、還元岩塩、有機黒すりごま、煙の出ないお灸、HOW TO ガイドブック</span>
+        </div>
+        <div class="editorial-row" style="grid-template-columns:44px 150px 1fr; padding:14px 0;">
+          <span class="row-kanji">目安</span>
+          <span class="row-title" style="font-size:15px;">販売価格の目安</span>
+          <span class="row-body" style="font-size:13.5px;">16日間プログラム：55,000円（税込）／ 8日間プログラム：33,000円（税込）<br>※具体的な仕入価格・差額は説明会・個別相談でご案内します。</span>
+        </div>
+        <div class="editorial-row" style="grid-template-columns:44px 150px 1fr; padding:14px 0;">
+          <span class="row-kanji">配送</span>
+          <span class="row-title" style="font-size:15px;">選べる配送経路</span>
+          <span class="row-body" style="font-size:13.5px;">
+            ① <strong>お客様へ直接配送：</strong>メーカーから直送されるため、<strong>直送を利用する場合は特約店側での在庫保管や梱包・発送の手間がかかりません。</strong><br>
+            ② <strong>特約店へ配送：</strong>お客様に取りに来ていただき、直接ご説明・お渡しすることも可能です。
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:12px; color:var(--muted);">
+      ※本ビジュアルはLP・チラシ・動画用の「パッケージイメージ」です。 
+    </div>
+  </div>
+
+<!-- ==================== OMNI-CMS WORDPRESS-LIKE VISUAL EDITOR ==================== -->
+<style id="omni-cms-styles">
+  @media print {
+    #omni-cms-root, .omni-block-toolbar { display: none !important; }
+    [data-omni-selected] { outline: none !important; }
+  }
+  html.omni-headless #omni-cms-root,
+  html.omni-headless .omni-block-toolbar {
+    display: none !important;
+  }
+  #omni-cms-root {
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    user-select: none;
+  }
+  .omni-cms-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(20, 20, 23, 0.94);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 2px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.14);
+    backdrop-filter: blur(16px);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .omni-cms-brand {
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #E5C158;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .omni-cms-btn {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.16);
+    padding: 5px 11px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .omni-cms-btn:hover { background: rgba(255,255,255,0.22); }
+  .omni-cms-btn.active { background: #E5C158; color: #141417; border-color: #E5C158; font-weight: 700; }
+  .omni-cms-btn.primary { background: #2563EB; border-color: #3B82F6; font-weight: 600; }
+  .omni-cms-btn.primary:hover { background: #1D4ED8; }
+  .omni-cms-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.18); margin: 0 2px; }
+  .omni-color-input {
+    width: 22px; height: 22px; border: none; padding: 0; border-radius: 50%;
+    overflow: hidden; cursor: pointer; background: transparent;
+  }
+  .omni-cms-select {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 2px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .omni-cms-select option { background: #1c1c21; color: #fff; }
+
+  /* Floating Inspector for Selected Element */
+  .omni-inspector {
+    margin-top: 8px;
+    background: rgba(24, 24, 28, 0.95);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.14);
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .omni-inspector.visible { display: flex; }
+
+  /* Edit Mode Outlines */
+  body.omni-edit-mode [data-omni-editable]:hover {
+    outline: 2px dashed rgba(59, 130, 246, 0.75) !important;
+    outline-offset: 3px;
+    cursor: pointer;
+  }
+  body.omni-edit-mode [data-omni-selected="true"] {
+    outline: 2px solid #2563EB !important;
+    outline-offset: 4px;
+  }
+  body.omni-edit-mode img:hover {
+    outline: 3px solid #E5C158 !important;
+    cursor: pointer;
+  }
+</style>
+
+<div id="omni-cms-root">
+  <div class="omni-cms-bar">
+    <span class="omni-cms-brand">✦ OMNI WP-STUDIO</span>
+    <button class="omni-cms-btn active" id="omniToggleEditBtn" title="編集モードとプレビューを切り替えます">✏️ 編集モード ON</button>
+    <div class="omni-cms-sep"></div>
+
+    <label title="背景色を変更" style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span>背景</span><input type="color" id="omniBgColor" class="omni-color-input" value="#F6F3EC" />
+    </label>
+    <label title="文字色を変更" style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span>文字</span><input type="color" id="omniTextColor" class="omni-color-input" value="#1C1A17" />
+    </label>
+    <select id="omniFontSelect" class="omni-cms-select" title="全体のフォントテイストを変更">
+      <option value="">フォント切替...</option>
+      <option value="'Cormorant Garamond', 'Noto Serif JP', serif">エレガント明朝 (Editorial Serif)</option>
+      <option value="'Shippori Mincho', 'Hiragino Mincho ProN', serif">和モダン明朝 (Japanese Luxury)</option>
+      <option value="'Plus Jakarta Sans', 'Inter', 'Hiragino Sans', sans-serif">モダンゴシック (Bento Sans)</option>
+      <option value="'Space Grotesk', 'Arial Black', sans-serif">ストリート太ゴシック (Neo-Brutal)</option>
+      <option value="'Helvetica Neue', 'Arial', sans-serif">スイスグリッド (Swiss Grid)</option>
+    </select>
+
+    <div class="omni-cms-sep"></div>
+    <button class="omni-cms-btn" id="omniAddTextBtn" title="新しいテキストブロックを追加">＋ 文字追加</button>
+    <button class="omni-cms-btn" id="omniAddImgBtn" title="新しい画像ブロックを追加">🖼️ 画像追加</button>
+    <button class="omni-cms-btn" id="omniFlipLayoutBtn" title="左右レイアウトを反転">⇄ レイアウト反転</button>
+
+    <div class="omni-cms-sep"></div>
+    <button class="omni-cms-btn primary" id="omniSaveHtmlBtn" title="編集した内容をHTMLファイルとして保存">💾 HTML保存</button>
+    <button class="omni-cms-btn" id="omniPrintPdfBtn" title="PDFまたは高解像度印刷">🖨️ PDF出力</button>
+  </div>
+
+  <!-- Selected Element Inspector Bar -->
+  <div class="omni-inspector" id="omniInspector">
+    <span id="omniSelectedTag" style="color:#93C5FD;font-weight:700;">選択中: 要素</span>
+    <button class="omni-cms-btn" id="omniMoveUpBtn">↑ 前へ</button>
+    <button class="omni-cms-btn" id="omniMoveDownBtn">↓ 次へ</button>
+    <button class="omni-cms-btn" id="omniMoveLeftBtn">← 左</button>
+    <button class="omni-cms-btn" id="omniMoveRightBtn">→ 右</button>
+    <button class="omni-cms-btn" id="omniFontDecBtn">A-</button>
+    <button class="omni-cms-btn" id="omniFontIncBtn">A+</button>
+    <label style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+      <span>要素色</span><input type="color" id="omniElemColor" class="omni-color-input" value="#1C1A17" />
+    </label>
+    <select id="omniShapeSelect" class="omni-cms-select" title="画像や枠の形状を変更">
+      <option value="">枠の形状...</option>
+      <option value="999px 999px 18px 18px">アーチ窓 (Arch)</option>
+      <option value="28px">角丸カード (Bento 28px)</option>
+      <option value="0px">直角ボックス (Sharp 0px)</option>
+      <option value="9999px">円形・ピル型 (Circle)</option>
+    </select>
+    <button class="omni-cms-btn" id="omniReplaceImgBtn" style="display:none;background:#D97706;">📷 画像を差し替え</button>
+    <button class="omni-cms-btn" id="omniDupBtn">⧉ 複製</button>
+    <button class="omni-cms-btn" id="omniDelBtn" style="background:#DC2626;border-color:#EF4444;">🗑️ 削除</button>
+  </div>
+  <input type="file" id="omniFileInput" accept="image/*" style="display:none;" />
+</div>
+
+<script id="omni-cms-script">
+(function() {
+  if (navigator.webdriver || window.location.search.includes('export=1')) {
+    document.documentElement.classList.add('omni-headless');
+    return;
+  }
+
+  let editMode = true;
+  let selectedEl = null;
+  let pendingImgTarget = null;
+  const fileInput = document.getElementById('omniFileInput');
+  const inspector = document.getElementById('omniInspector');
+  const selectedTag = document.getElementById('omniSelectedTag');
+  const replaceImgBtn = document.getElementById('omniReplaceImgBtn');
+
+  function initEditableNodes() {
+    document.body.classList.add('omni-edit-mode');
+    const selectors = 'h1, h2, h3, h4, p, span, a, button, li, div, section, article, figure, img';
+    document.querySelectorAll(selectors).forEach(el => {
+      if (el.closest('#omni-cms-root')) return;
+      el.setAttribute('data-omni-editable', 'true');
+      const tag = el.tagName.toLowerCase();
+      if (['h1','h2','h3','h4','p','span','li','a','button'].includes(tag) || (tag === 'div' && el.children.length === 0 && el.textContent.trim())) {
+        el.setAttribute('contenteditable', 'true');
+        el.style.outline = 'none';
+      }
+    });
+  }
+
+  initEditableNodes();
+
+  // Select element on click
+  document.addEventListener('click', function(e) {
+    if (!editMode) return;
+    if (e.target.closest('#omni-cms-root')) return;
+    const target = e.target.closest('[data-omni-editable]');
+    if (!target) return;
+
+    if (selectedEl && selectedEl !== target) {
+      selectedEl.removeAttribute('data-omni-selected');
+    }
+    selectedEl = target;
+    selectedEl.setAttribute('data-omni-selected', 'true');
+    const tag = selectedEl.tagName.toLowerCase();
+    selectedTag.textContent = '選択中: <' + tag + '>';
+    inspector.classList.add('visible');
+
+    if (tag === 'img') {
+      replaceImgBtn.style.display = 'inline-flex';
+    } else {
+      replaceImgBtn.style.display = 'none';
+    }
+  }, true);
+
+  // Double click image to replace immediately
+  document.addEventListener('dblclick', function(e) {
+    if (!editMode) return;
+    if (e.target.tagName && e.target.tagName.toLowerCase() === 'img') {
+      pendingImgTarget = e.target;
+      fileInput.click();
+    }
+  });
+
+  // Drag & Drop image replacement from desktop
+  document.addEventListener('dragover', function(e) { e.preventDefault(); });
+  document.addEventListener('drop', function(e) {
+    if (!editMode) return;
+    if (!e.dataTransfer || !e.dataTransfer.files || !e.dataTransfer.files.length) return;
+    const file = e.dataTransfer.files[0];
+    if (!file.type.startsWith('image/')) return;
+    e.preventDefault();
+    const imgEl = e.target.closest('img') || (selectedEl && selectedEl.tagName === 'IMG' ? selectedEl : null);
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      if (imgEl) {
+        imgEl.src = ev.target.result;
+      } else {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'max-width:420px;margin:24px auto;border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,0.15);';
+        wrap.setAttribute('data-omni-editable', 'true');
+        wrap.innerHTML = '<img src="' + ev.target.result + '" style="width:100%;height:auto;display:block;" data-omni-editable="true" />';
+        (selectedEl ? selectedEl.parentNode : document.body).appendChild(wrap);
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+
+  fileInput.addEventListener('change', function() {
+    if (!fileInput.files || !fileInput.files[0]) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      if (pendingImgTarget) {
+        pendingImgTarget.src = ev.target.result;
+        pendingImgTarget = null;
+      } else {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'max-width:420px;margin:24px auto;border-radius:16px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,0.15);';
+        wrap.setAttribute('data-omni-editable', 'true');
+        wrap.innerHTML = '<img src="' + ev.target.result + '" style="width:100%;height:auto;display:block;" data-omni-editable="true" />';
+        (selectedEl ? selectedEl.parentNode : document.body).appendChild(wrap);
+      }
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+    fileInput.value = '';
+  });
+
+  // Toggle Edit / Preview Mode
+  document.getElementById('omniToggleEditBtn').addEventListener('click', function() {
+    editMode = !editMode;
+    this.classList.toggle('active', editMode);
+    this.textContent = editMode ? '✏️ 編集モード ON' : '👁️ プレビュー中';
+    document.body.classList.toggle('omni-edit-mode', editMode);
+    document.querySelectorAll('[contenteditable]').forEach(el => {
+      el.setAttribute('contenteditable', editMode ? 'true' : 'false');
+    });
+    if (!editMode && selectedEl) {
+      selectedEl.removeAttribute('data-omni-selected');
+      inspector.classList.remove('visible');
+    }
+  });
+
+  // Global Theme Controls
+  document.getElementById('omniBgColor').addEventListener('input', function(e) {
+    document.body.style.background = e.target.value;
+    document.documentElement.style.background = e.target.value;
+  });
+  document.getElementById('omniTextColor').addEventListener('input', function(e) {
+    document.body.style.color = e.target.value;
+  });
+  document.getElementById('omniFontSelect').addEventListener('change', function(e) {
+    if (!e.target.value) return;
+    document.body.style.fontFamily = e.target.value;
+    document.querySelectorAll('h1, h2, h3, .headline, .brand').forEach(el => {
+      el.style.fontFamily = e.target.value;
+    });
+  });
+
+  // Add Text / Image / Flip Layout
+  document.getElementById('omniAddTextBtn').addEventListener('click', function() {
+    const p = document.createElement('div');
+    p.setAttribute('contenteditable', 'true');
+    p.setAttribute('data-omni-editable', 'true');
+    p.style.cssText = 'padding:16px 24px;margin:16px auto;max-width:680px;font-size:20px;line-height:1.6;border:1px dashed rgba(150,150,150,0.4);border-radius:8px;';
+    p.textContent = '新しいテキストブロック（クリックして自由に文字を編集・移動できます）';
+    (selectedEl ? selectedEl.parentNode : document.body).appendChild(p);
+  });
+
+  document.getElementById('omniAddImgBtn').addEventListener('click', function() {
+    pendingImgTarget = null;
+    fileInput.click();
+  });
+
+  document.getElementById('omniFlipLayoutBtn').addEventListener('click', function() {
+    document.querySelectorAll('section, .hero, .grid, main, .split').forEach(el => {
+      const st = window.getComputedStyle(el);
+      if (st.display === 'grid' || st.display === 'flex') {
+        const children = Array.from(el.children);
+        if (children.length >= 2) {
+          children.reverse().forEach(c => el.appendChild(c));
+        }
+      }
+    });
+  });
+
+  // Selected Element Inspector Actions
+  function nudgeSelected(dx, dy) {
+    if (!selectedEl) return;
+    const curX = parseFloat(selectedEl.getAttribute('data-ox') || '0') + dx;
+    const curY = parseFloat(selectedEl.getAttribute('data-oy') || '0') + dy;
+    selectedEl.setAttribute('data-ox', curX);
+    selectedEl.setAttribute('data-oy', curY);
+    selectedEl.style.transform = `translate(${curX}px, ${curY}px)`;
+  }
+
+  document.getElementById('omniMoveUpBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    if (selectedEl.previousElementSibling && selectedEl.previousElementSibling.id !== 'omni-cms-root') {
+      selectedEl.parentNode.insertBefore(selectedEl, selectedEl.previousElementSibling);
+    } else {
+      nudgeSelected(0, -16);
+    }
+  });
+  document.getElementById('omniMoveDownBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    if (selectedEl.nextElementSibling) {
+      selectedEl.parentNode.insertBefore(selectedEl.nextElementSibling, selectedEl);
+    } else {
+      nudgeSelected(0, 16);
+    }
+  });
+  document.getElementById('omniMoveLeftBtn').addEventListener('click', function() { nudgeSelected(-16, 0); });
+  document.getElementById('omniMoveRightBtn').addEventListener('click', function() { nudgeSelected(16, 0); });
+
+  document.getElementById('omniFontIncBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const cur = parseFloat(window.getComputedStyle(selectedEl).fontSize) || 18;
+    selectedEl.style.fontSize = (cur + 3) + 'px';
+  });
+  document.getElementById('omniFontDecBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const cur = parseFloat(window.getComputedStyle(selectedEl).fontSize) || 18;
+    selectedEl.style.fontSize = Math.max(10, cur - 3) + 'px';
+  });
+  document.getElementById('omniElemColor').addEventListener('input', function(e) {
+    if (!selectedEl) return;
+    selectedEl.style.color = e.target.value;
+  });
+  document.getElementById('omniShapeSelect').addEventListener('change', function(e) {
+    if (!selectedEl || !e.target.value) return;
+    const box = selectedEl.tagName === 'IMG' && selectedEl.parentElement ? selectedEl.parentElement : selectedEl;
+    box.style.borderRadius = e.target.value;
+    box.style.overflow = 'hidden';
+  });
+  replaceImgBtn.addEventListener('click', function() {
+    if (selectedEl && selectedEl.tagName === 'IMG') {
+      pendingImgTarget = selectedEl;
+      fileInput.click();
+    }
+  });
+  document.getElementById('omniDupBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const clone = selectedEl.cloneNode(true);
+    clone.removeAttribute('data-omni-selected');
+    selectedEl.parentNode.insertBefore(clone, selectedEl.nextSibling);
+  });
+  document.getElementById('omniDelBtn').addEventListener('click', function() {
+    if (!selectedEl) return;
+    const toRemove = selectedEl;
+    selectedEl = null;
+    inspector.classList.remove('visible');
+    toRemove.remove();
+  });
+
+  // Save edited HTML
+  document.getElementById('omniSaveHtmlBtn').addEventListener('click', function() {
+    if (selectedEl) selectedEl.removeAttribute('data-omni-selected');
+    const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    const pageName = (window.location.pathname.split('/').pop() || 'edited_design.html').replace(/\.html?$/i, '') + '_edited.html';
+    a.download = pageName;
+    a.click();
+  });
+
+  // Print / Save PDF
+  document.getElementById('omniPrintPdfBtn').addEventListener('click', function() {
+    window.print();
+  });
+})();
+</script>
+<!-- ==================== /OMNI-CMS WORDPRESS-LIKE VISUAL EDITOR ==================== -->
+
+
+<!-- ===== EASY MANUAL IMAGE SWAPPER (Click or Drag & Drop any image + Save HTML) ===== -->
+<style id="easy-image-swapper-css">
+  .swappable-img-wrap {
+    position: relative;
+  }
+  body.img-swap-active img[data-asset-slot] {
+    outline: 3px dashed #2E4636 !important;
+    outline-offset: -3px;
+    cursor: pointer !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  body.img-swap-active img[data-asset-slot]:hover {
+    outline-color: #B68D4C !important;
+    box-shadow: 0 8px 26px rgba(46,70,54,0.22) !important;
+  }
+  .img-swap-toolbar {
+    position: fixed;
+    bottom: 22px;
+    left: 22px;
+    z-index: 99999;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: rgba(27, 42, 32, 0.95);
+    color: #F7F4EC;
+    padding: 10px 16px;
+    border-radius: 2px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .img-swap-toolbar button {
+    background: #F7F4EC;
+    color: #1F3528;
+    border: none;
+    border-radius: 2px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .img-swap-toolbar button.active {
+    background: #B68D4C;
+    color: #FFFFFF;
+  }
+  .img-swap-toolbar button.save-btn {
+    background: #3F5E48;
+    color: #FFFFFF;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  body.production-clean-view .img-swap-toolbar {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  body.production-clean-view .img-swap-toolbar:hover {
+    opacity: 1;
+  }
+  @media print {
+    .img-swap-toolbar, .mode-Switch-bar, #mode-toggle-banner {
+      display: none !important;
+    }
+  }
+</style>
+<div class="img-swap-toolbar" id="img-swap-toolbar">
+  <span>🖼️ 画像入替: <code>assets/</code> 上書き または</span>
+  <button type="button" id="toggle-img-swap-btn" onclick="toggleImageSwapMode()">クリック/D&amp;Dで画像差替: OFF</button>
+  <button type="button" class="save-btn" onclick="exportUpdatedHtml()">💾 差替後のHTMLを保存</button>
+  <input type="file" id="global-img-file-input" accept="image/*" style="display:none;" />
+</div>
+<script id="easy-image-swapper-js">
+(function(){
+  let activeImgEl = null;
+  const fileInput = document.getElementById('global-img-file-input');
+
+  // Automatically tag all images with data-asset-slot
+  function initSwappableImages() {
+    document.querySelectorAll('img').forEach((img, idx) => {
+      if (!img.getAttribute('data-asset-slot')) {
+        const src = img.getAttribute('src') || ('slot_' + (idx + 1));
+        img.setAttribute('data-asset-slot', src.split('/').pop().slice(0, 40));
+      }
+      img.setAttribute('title', '【画像差替】クリックまたは画像をドラッグ＆ドロップして入れ替え (' + img.getAttribute('data-asset-slot') + ')');
+
+      // Allow drag & drop at any time!
+      img.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        img.style.outline = '4px dashed #B68D4C';
+      });
+      img.addEventListener('dragleave', function(e) {
+        img.style.outline = '';
+      });
+      img.addEventListener('drop', function(e) {
+        e.preventDefault();
+        img.style.outline = '';
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+          loadFileIntoImg(e.dataTransfer.files[0], img);
+        }
+      });
+      img.addEventListener('click', function(e) {
+        if (!document.body.classList.contains('img-swap-active')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        activeImgEl = img;
+        fileInput.click();
+      });
+    });
+  }
+
+  function loadFileIntoImg(file, targetImg) {
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      targetImg.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  if (fileInput) {
+    fileInput.addEventListener('change', function(e) {
+      if (fileInput.files && fileInput.files[0] && activeImgEl) {
+        loadFileIntoImg(fileInput.files[0], activeImgEl);
+      }
+      fileInput.value = '';
+    });
+  }
+
+  window.toggleImageSwapMode = function() {
+    const on = document.body.classList.toggle('img-swap-active');
+    const btn = document.getElementById('toggle-img-swap-btn');
+    if (btn) {
+      btn.textContent = on ? '✨ 画像をクリックして差替中 (ON)' : 'クリック/D&Dで画像差替: OFF';
+      btn.classList.toggle('active', on);
+    }
+  };
+
+  window.exportUpdatedHtml = function() {
+    document.body.classList.remove('img-swap-active');
+    const clone = document.documentElement.cloneNode(true);
+    const htmlContent = '<!DOCTYPE html>\n' + clone.outerHTML;
+    const blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = document.location.pathname.split('/').pop() || 'updated_design.html';
+    a.click();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwappableImages);
+  } else {
+    initSwappableImages();
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>売上につながるコンテンツ設計の質問書｜回答＆制作判断ブリーフ（全79項目＋B1〜B7）</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ycs-green: #2E5E4E;
+      --ycs-green-light: #EAF1EE;
+      --ycs-ink: #1F2421;
+      --ycs-muted: #5A6560;
+      --ycs-border: #D5DDD9;
+      --ycs-bg: #F9FAF9;
+      --ycs-card: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: YakuHanJP_Noto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+      color: var(--ycs-ink);
+      background: var(--ycs-bg);
+      line-height: 1.75;
+      padding: 40px 20px 80px;
+      word-break: auto-phrase;
+    }
+    .sheet {
+      max-width: 1080px;
+      margin: 0 auto 36px;
+      background: var(--ycs-card);
+      border: 1px solid var(--ycs-border);
+      padding: 48px 56px;
+      box-shadow: 0 8px 28px rgba(31, 36, 33, 0.05);
+    }
+    .sheet-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      font-size: 12px;
+      color: var(--ycs-muted);
+    }
+    .sheet-topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--ycs-ink);
+      letter-spacing: 0.08em;
+    }
+    .green-bar {
+      display: inline-block;
+      width: 36px;
+      height: 4px;
+      background: var(--ycs-green);
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 28px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ycs-ink);
+    }
+    .sub-lead {
+      font-size: 13.5px;
+      color: var(--ycs-muted);
+      margin-bottom: 24px;
+    }
+    .b-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .b-card, .b7-card {
+      border: 1px solid var(--ycs-border);
+      border-radius: 6px;
+      padding: 20px 22px;
+      background: #FFFFFF;
+    }
+    .b7-card {
+      margin-bottom: 24px;
+    }
+    .q-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .q-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      height: 32px;
+      padding: 0 10px;
+      background: var(--ycs-green);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .q-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ycs-ink);
+    }
+    .q-guide {
+      font-size: 12px;
+      color: var(--ycs-muted);
+      margin-bottom: 10px;
+    }
+    .q-ans-box {
+      font-size: 13.5px;
+      background: var(--ycs-bg);
+      border-left: 3px solid var(--ycs-green);
+      padding: 10px 14px;
+      color: var(--ycs-ink);
+    }
+    .q79-card {
+      border: 1px solid var(--ycs-border);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      background: #FFFFFF;
+    }
+    .q79-body {
+      font-size: 13.5px;
+      padding-left: 56px;
+    }
+    .q79-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 18px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--ycs-border);
+      font-size: 12px;
+      color: var(--ycs-muted);
+    }
+    .st-tag {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+    .st-ok { background: var(--ycs-green-light); color: var(--ycs-green); }
+    .st-upd { background: #FFF4E5; color: #9A5B13; }
+    .st-hyp { background: #EEF2F6; color: #3B526B; }
+    .st-na { background: #F1F3F2; color: #75807B; }
+    .sheet-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      padding-top: 14px;
+      border-top: 1px solid var(--ycs-border);
+      font-size: 11.5px;
+      color: var(--ycs-muted);
+    }
+    @media (max-width: 800px) {
+      .sheet { padding: 24px 20px; }
+      .b-grid, .q79-meta { grid-template-columns: 1fr; }
+      .q79-body { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- SHEET 1: PDF Page 26 (SECTION 6 回答から制作判断へ B1〜B7) -->
+  <section class="sheet" id="section-6-brief">
+    <div class="sheet-topbar">
+      <div class="sheet-topbar-left"><span class="green-bar"></span><span>SECTION 6｜YCS / CREATIVE BRIEF</span></div>
+      <div>未定・要確認のままで大丈夫です</div>
+    </div>
+    <h1>回答から制作判断へ（1枚制作ブリーフ B1〜B7）</h1>
+    <p class="sub-lead">
+      『売上につながるコンテンツ設計の質問書（全31ページ・79項目）』の Section 6（p.26）および Section 7（p.28〜31）に基づき、
+      玄米クレンズ（監修：鍼灸師 原麻優子）の写真・PDF・指示書から整理した制作判断ブリーフです。
+    </p>
+
+    <div class="b-grid">
+      
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B1</span>
+            <span class="q-title">顧客と購買場面を決める</span>
+          </div>
+          <p class="q-guide">Q2・Q3・C2〜C7 → 誰が、いつ、何と比較して選ぶか。</p>
+          <div class="q-ans-box">子育てが一段落し、食と健康への関心を活かして自宅拠点で無理なく人の役に立つ仕事を始めたい女性。ユーワード交流会・お茶会でのチラシ手渡しやLINE案内から募集LPを閲覧し、「自分にも無理なく続けられるか・売り込みにならないか」を確認して選んでいる。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B2</span>
+            <span class="q-title">伝える価値とオファーを決める</span>
+          </div>
+          <p class="q-guide">Q4・Q5・Q7・C8〜C12 → 見出し、内容の優先順位、提供条件を決める。</p>
+          <div class="q-ans-box">中心メッセージ：「まずは1セット、自分自身の体験から始める食と健康のお仕事」。構成比重は特約店8割（メイン）・代理店2割（希望者のステップアップ：初回10セット購入・自己保管不要・仕入優遇・優先紹介対象※保証表現なし）。商品の販売価格目安（55,000円／33,000円）は公開し、具体的な仕入価格・差額は説明会・個別相談で案内する。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B3</span>
+            <span class="q-title">主張ごとに根拠を置く</span>
+          </div>
+          <p class="q-guide">Q6・C13・D2 → 主張を支える実物・写真・事例・数値を選ぶ。未確認の主張は保留する。</p>
+          <div class="q-ans-box">①実物商品の透過切り抜き写真（オリジナルのフォルム100%保持） ②監修・初回体験を直接フォローする「鍼灸師 原麻優子」本人写真 ③特約店スタート特典「進行ノウハウ」「LINEフォロー文面集」 ④未決定の費用・条件は無料と断定せず、確認モードでは【仮置き】、本番モードでは説明会案内として分離。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B4</span>
+            <span class="q-title">一つの主要行動を決める</span>
+          </div>
+          <p class="q-guide">Q8 → ボタン文言、QR、申込先、店頭で促す行動に変える。</p>
+          <div class="q-ans-box">一つの主要行動：「説明会・個別相談へ申し込む（公式LINE）」。実際の行き先：`https://lin.ee/XOWYwEM`（`https://line.me/R/ti/p/@532tekda`）。LPの申込ボタンおよびチラシ裏面のQRコードから1タップ/スキャンで遷移可能（E2E疎通検証済み）。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B5</span>
+            <span class="q-title">媒体の役割と、前後のつながりを決める</span>
+          </div>
+          <p class="q-guide">Q9・媒体別回答 → Web・LP・チラシ・パッケージ・動画の役割と行動案内に落とし込む。</p>
+          <div class="q-ans-box">①ショート動画(9:16・20秒)：共感・1セット体験開始・原麻優子フォロー・支援文面集・相談案内を簡潔に伝えLPへ誘導 ②A4両面チラシ：交流会/お茶会での手渡し＆LINE PDF配布用（表面＝共感・魅力・4段階の始め方、裏面＝支援体制・5大Q&amp;A・QRコード） ③募集LP：全制度・配送2経路SVG図解・スターターキット詳細・AIクローン窓口で疑問を解消し個別相談へ接続。</div>
+        </div>
+        
+        <div class="b-card">
+          <div class="q-head">
+            <span class="q-badge">B6</span>
+            <span class="q-title">成果の定義と採算の前提を決める</span>
+          </div>
+          <p class="q-guide">Q1・C16・C17 → 売上・成約を最終成果として追い、有効相談や同意登録を途中の指標として定義する。</p>
+          <div class="q-ans-box">最終成果：特約店としての参加・初回体験セット購入。中間指標：LPおよびチラシQRからの「説明会・個別相談」有効申込数。閲覧数や動画再生数と、実際の相談申込数を分けて計測する。</div>
+        </div>
+        
+    </div>
+
+    <div class="b7-card">
+      <div class="q-head">
+        <span class="q-badge">B7</span>
+        <span class="q-title">最初に検証する仮説を一つ決める</span>
+      </div>
+      <p class="q-guide">一度に変える要素を一つに絞り、ほかの条件・計測をできる限りそろえる。</p>
+      <div class="q-ans-box">最初に検証する仮説：「ファーストビューと導入部で『いきなり販売するのではなく、まず自分が1セットを原麻優子のフォローで体験することから始まる』と明示することで、未経験層の相談申込率が上がる」。</div>
+    </div>
+
+    <h2>Section 7（p.30）準拠：参照範囲と優先確認サマリー</h2>
+    <div class="q-ans-box" style="margin-bottom: 16px;">
+      <p><strong>・参照できた資料：</strong>01_売上につながるコンテンツ設計_質問書_20261020.pdf（全31ページ・79項目＋B1〜B7＋Section 7）, Google Drive 1ENN0hvrEL9vmc2soPRj_6ErvXntbgZx8（YCSマーケティング資料・プロンプト集約_20261020）, 玄米クレンズハーフ (1).pdf ／ 玄米クレンズ（後半） (2).pdf, 玄米クレンズまとめフォルダ内オリジナル画像（01_hero〜qr_line_official.png）, 本会話内のユーザー指示書（【1】〜【6】・全体指示・画像フォルム保持・手動差替・E2E検証指示）</p>
+      <p><strong>・参照できなかった資料：</strong>なし（指定されたGoogle Driveフォルダ・質問書PDF全31ページ・ローカル素材フォルダをすべて参照済み。ただし未取得の過去実数や未決定の費用条件は推測で埋めず『未取得』『要更新』として分離）</p>
+      <p><strong>・回答案を作れた項目：</strong>全79項目すべて対応づけ完了（本人確認済み：65項目 ／ 要更新・公開前確認：7項目 ／ 仮説・未取得：4項目 ／ 今回対象外：3項目）</p>
+    </div>
+
+    <div class="sheet-footer">
+      <span>制作ヒアリング質問書 / YCS資料を参考にした独自編集版（Omni Marketing Director 出力）</span>
+      <span>SECTION 6 / B1–B7</span>
+    </div>
+  </section>
+
+  <!-- SHEET 2: All 79 Questions Mapped (Q1〜F4) -->
+  <section class="sheet" id="section-79-ledger">
+    <div class="sheet-topbar">
+      <div class="sheet-topbar-left"><span class="green-bar"></span><span>SECTION 1–5 &amp; 7｜ALL 79 ITEMS MAPPED</span></div>
+      <div>事実・仮説・要確認を区別して記録</div>
+    </div>
+    <h1>顧客向け全79項目（Q1〜F4）根拠付き回答案台帳</h1>
+    <p class="sub-lead">
+      質問書 p.28・p.30「3. 質問IDへ対応づける」の記録形式（回答案・出典・根拠の短文・発言/資料の種類・状態・確認事項）に完全準拠しています。
+    </p>
+    
+        <div class="q79-card" id="item-Q1">
+          <div class="q-head">
+            <span class="q-badge">Q1</span>
+            <span class="q-title">売上につなげるために、今回いちばん増やしたい成果は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【条件に合う相談・商談】玄米クレンズ「特約店（メイン8割）」の活動を具体的にイメージしていただき、「説明会・個別相談」への申込みを増やすこと（そこから初回1セット体験購入・特約店活動開始へつなげる）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>本会話内 ユーザー指示書【全体について】【1. Q1-1】（2026-10-20）</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「今回の募集制作は、特約店としての活動を具体的にイメージしていただき、説明会・個別相談につなげることを優先したいです。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし（目標件数や期限を設定する場合は別途任意で確認）</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q2">
+          <div class="q-head">
+            <span class="q-badge">Q2</span>
+            <span class="q-title">今回、いちばん購入・申し込みにつなげたいのは、どんな人ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>子育てが一段落し、「これからの時間を誰かに喜ばれることにも使いたい」「食と健康への関心を仕事に生かしたい」「電車通勤をせず自宅を拠点にオンラインで、家庭や趣味と両立したい」女性。見る場面：ユーワード交流会・お茶会でのA4両面チラシ手渡し、LINE・PDF配布、ショート動画からの募集LP閲覧。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズ（後半） (2).pdf セクション1・2 ／ 本会話内 ユーザー指示書【4. Q4-1】【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】子育てが一段落した時期に、食と健康への関心を活かし自宅拠点で無理なく働きたい層。ユーワード交流会・お茶会手渡しとLINE・PDF配布を想定。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q3">
+          <div class="q-head">
+            <span class="q-badge">Q3</span>
+            <span class="q-title">その人は、今、何に困っていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>「自分にもできるか」「資格を取っただけで終わらないか」「お客様へ何を伝えればよいか」「友人への売り込みにならないか」「どのくらい費用や作業が必要か」という5つの不安・ためらい。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズ（後半） (2).pdf セクション2・5</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】募集資料セクション5で整理された参加前の5大不安（自分にもできるか／資格だけで終わらないか／何を伝えるか／売り込みにならないか／費用と作業）。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q4">
+          <div class="q-head">
+            <span class="q-badge">Q4</span>
+            <span class="q-title">利用した後、その人にどんな変化が起きますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>まず自分自身が1セットを体験して身体と食習慣を整える実感を持ち、その体験をもとに身近な方へ「食べて胃腸を休ませる」習慣を案内・フォローして喜ばれる働き方ができる。直送を選べば自宅での在庫保管や梱包作業も不要。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズ（後半） (2).pdf セクション2・6 ／ ユーザー指示書【1. Q1-1】【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「まず自分で1セット体験する → 特約店として何人かのお客様に販売・フォローする → 慣れてきたら、希望に応じて代理店へ」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q5">
+          <div class="q-head">
+            <span class="q-badge">Q5</span>
+            <span class="q-title">ほかの選択肢と比べて、選ばれる理由は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①断食のように我慢するのではなく「玄米を食べて胃腸を休ませる」プログラムであること ②最初から大量在庫を持たず「まず自分の1セット体験」から始められること ③初回体験は鍼灸師 原麻優子が直接フォローし、活動開始時は「進行ノウハウ」と朝晩使える「LINEフォロー文面集」があること。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズハーフ (1).pdf ／ 玄米クレンズ（後半） (2).pdf ／ ユーザー指示書【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「まずは自分自身の体験から始めること・初回体験は原麻優子がフォローすること・活動開始時には、進行ノウハウとLINEフォロー文面集があること」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q6">
+          <div class="q-head">
+            <span class="q-badge">Q6</span>
+            <span class="q-title">その良さを裏付けるものはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①実物商品の写真・切り抜き（焙煎玄米パウチ・酵素ボトル・ガイド冊子等）②監修・初回フォローを行う「鍼灸師 原麻優子」本人の写真 ③「進行ノウハウ」「フォロー文面集」の支援体系。※公開可（経験年数や追加肩書きは確認後に追加）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズまとめフォルダ内画像・PDF ／ ユーザー指示書【2. Q2-1】【7. 画像優先指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「名前は『原麻優子』に統一してください。肩書きは、まずは『鍼灸師』でお願いします。経験年数やその他の肩書きは、確認後に追加します。」</span>
+              <span><strong>本人に確認したいこと：</strong>原麻優子様の経験年数や追加肩書きを記載する場合は公開前に確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q7">
+          <div class="q-head">
+            <span class="q-badge">Q7</span>
+            <span class="q-title">何を、どんな条件で案内・提供しますか？</span>
+            <span class="st-tag st-upd">要更新</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【確定】商品の販売価格目安：16日間 55,000円（税込）／8日間 33,000円（税込）。特約店（メイン8割：1セット自己体験から開始）と代理店（任意ステップアップ2割：初回10セット購入・自己保管不要・仕入優遇・優先紹介対象※保証表現なし）。具体的な仕入価格・差額は説明会・個別相談で案内。【未決定（仮置き）】初回体験価格、登録料・研修費・月会費。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1, Q1-2】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「登録料・研修費・月会費・初回体験価格などは、まだ未決定です。無料と確定した表現にはせず、制作中は仮置きと分かる形にして、公開前に確認させてください。」</span>
+              <span><strong>本人に確認したいこと：</strong>初回体験価格・登録料・研修費・月会費の有無と金額を公開前に確定</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q8">
+          <div class="q-head">
+            <span class="q-badge">Q8</span>
+            <span class="q-title">見た人に、次に何をしてほしいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>第一の行動：「説明会・個別相談」への申込み。実際の行き先：公式LINE窓口（`https://lin.ee/XOWYwEM` ➔ `https://line.me/R/ti/p/@532tekda`）。補助の行動：募集LP内のAI案内クローンでの事前疑問解消。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【全体について】【6. Q6-2】 ／ PDF原本内の公式LINE QRコード</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】LP申込ボタンおよびチラシ裏面QRコードから公式LINE（`https://lin.ee/XOWYwEM`）へ接続し、説明会・個別相談へ案内する。</span>
+              <span><strong>本人に確認したいこと：</strong>別フォームURLへ変更する場合は公開前に指定</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q9">
+          <div class="q-head">
+            <span class="q-badge">Q9</span>
+            <span class="q-title">知ってから購入するまでの、どこで止まりやすいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>経路：交流会/お茶会チラシ・ショート動画・ユーワード ➔ 募集LP ➔ 説明会・個別相談 ➔ 初回1セット体験（原麻優子フォロー） ➔ 特約店活動開始。止まりやすい箇所：「自分にもフォローできるか」「売り込みにならないか」「初期費用・仕入条件」。対策：5大Q&amp;A・進行ノウハウ/文面集の明示・AIクローン窓口で解消。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズ（後半） (2).pdf セクション5・6 ／ ユーザー指示書【4. Q4-1】【6. Q6-2】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】体験から特約店開始までの流れを明示し、5つの不安への回答とAIチャット窓口で相談予約前の離脱を防ぐ設計。</span>
+              <span><strong>本人に確認したいこと：</strong>現在の実数（閲覧数・相談数等）は未取得</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-Q10">
+          <div class="q-head">
+            <span class="q-badge">Q10</span>
+            <span class="q-title">制作で、必ず守りたい条件は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①名前は「原麻優子」、肩書きは「鍼灸師」に統一（公開画面に制作管理バッジを残さない） ②ブランド表記は「玄米クレンズ」のみ（「ワタシ養生／WATASHI YOUJO」は併記しない） ③配色は案A（セージ＆リーフグリーン＋生成り・ウォームベージュ＋深緑） ④フォルダ内オリジナル画像をフォルム保持のまま最優先使用し、後から手動で簡単に入れ替え可能にすること ⑤売上保証・医療的断定・未決定費用の無料断定をしないこと。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1〜6】【全体について】【画像・差替指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「ブランド表記：『玄米クレンズ』のみでお願いします。『ワタシ養生／WATASHI YOUJO』は、今回は併記しません。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C1">
+          <div class="q-head">
+            <span class="q-badge">C1</span>
+            <span class="q-title">この商品・サービスを届けるうえで、大切にしていることは何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>我慢や無理な断食ではなく「食べて胃腸を休ませる」ことで、自分と家族の健康を大切にしながら、身近な方へ丁寧な伴走を届けること。強い売り込みやノルマを課さない誠実な働き方。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズハーフ (1).pdf ／ 玄米クレンズ（後半） (2).pdf</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】自分の体験から始め、家族や周りの方の健康に寄り添い喜ばれる仕事を大切にする姿勢。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C2">
+          <div class="q-head">
+            <span class="q-badge">C2</span>
+            <span class="q-title">その人は、あなたの商品やサービスをどの程度知っていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>「初めて知る」または「ユーワード交流会・お茶会・知人紹介で名前を聞いて関心を持った」段階。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】ユーワードの交流会やお茶会での手渡し、LINE・PDF配布で初めて詳しく知る層が中心。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C3">
+          <div class="q-head">
+            <span class="q-badge">C3</span>
+            <span class="q-title">購入を決める人と、実際に使う人は同じですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>特約店として参加を決める人と、初回1セットを体験して活動する人は同じ（ご本人）。また、特約店が案内する最終顧客（購入者）はご自身またはご家族のために利用する。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】まず参加者本人が1セットを購入・体験し、その後お客様へ販売・フォローする構造。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C4">
+          <div class="q-head">
+            <span class="q-badge">C4</span>
+            <span class="q-title">検討を始めるきっかけは何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>きっかけ：子育てが一段落し、自分の時間やこれからの働き方を考え始めたこと。今のままで避けたいこと：資格を取っただけで仕事にならず終わることや、通勤・ノルマで家庭や自分の健康を犠牲にすること。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズ（後半） (2).pdf セクション1・2・5</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「子育てが一段落した今、食と健康への関心を仕事に生かせること」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C5">
+          <div class="q-head">
+            <span class="q-badge">C5</span>
+            <span class="q-title">その人は、これまでどんな解決方法を試してきましたか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>食べないファスティング（空腹やリバウンドで挫折しやすい）や、知識だけを学ぶ健康資格（取得後に何をどう案内すればよいか分からず活動できない）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズハーフ (1).pdf ／ 玄米クレンズ（後半） (2).pdf セクション5</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】既存の断食のつらさや、「資格を取っただけで終わらないか」という懸念に対する解決策として設計。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C6">
+          <div class="q-head">
+            <span class="q-badge">C6</span>
+            <span class="q-title">申し込むとき、何が決め手になり、何がためらう理由になりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>決め手：①自分の1セット体験から始められること ②原麻優子の初回体験フォロー ③進行ノウハウと朝晩LINEフォロー文面集の存在 ④直送なら在庫保管・梱包不要。ためらい：初期費用・仕入条件・自分にできるか（➔説明会・個別相談と5大Q&amp;Aで解消）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】【5. Q5-1】【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】体験フォローと実践文面集が決め手となり、費用詳細は説明会・個別相談で解消する導線。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C7">
+          <div class="q-head">
+            <span class="q-badge">C7</span>
+            <span class="q-title">今回の対象にしない方や、利用が向かない場合はありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ご自身で体験せずに販売だけを行いたい方や、短期的な売上保証・医療的効果の断定を求める方は対象外。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】【6. Q6-2】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】まず自身の1セット体験を前提とし、売上保証や医療判断は行わない方針。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C8">
+          <div class="q-head">
+            <span class="q-badge">C8</span>
+            <span class="q-title">変化が起きると、日々の気持ちや仕事・暮らしはどう変わりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>日々の変化：自分の食習慣と体調管理の軸ができ、自宅からオンライン（LINE等）でお客様の16日間/8日間プログラムに寄り添い感謝される。その先の理想：家庭や趣味の時間と両立しながら、長く誇りを持てるライフワークになる。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズ（後半） (2).pdf セクション2・3</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】自分と家族の健康を守りながら、自宅で人の役に立つ仕事ができる日常の変化。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C9">
+          <div class="q-head">
+            <span class="q-badge">C9</span>
+            <span class="q-title">届けたい価値は、次のどの領域に関係しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>HARMの主軸は【H：健康・身体・食習慣】と【A：子育て一段落後の自己実現・自宅拠点の仕事】の2領域（補助としてR：喜ばれる人間関係、M：段階的な収入機会※保証表現なし）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】【6. Q6-1】 ／ YCSコンセプトGPT HARM基準</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】食と健康への関心（H）を、子育て後の新しい仕事・役割（A）に生かす構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C10">
+          <div class="q-head">
+            <span class="q-badge">C10</span>
+            <span class="q-title">お客様が求めていて、ほかでは満たされにくく、自分たちが提供できることは何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>「自分自身が体験して納得した健康プログラムを、鍼灸師の伴走と完成済みのLINEフォロー文面集を使って、在庫リスクや梱包負担なし（直送時）に案内できる仕組み」。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】【5. Q5-1】【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】実体験＋専門家フォロー＋文面集＋選べる配送（直送/手渡し）の組み合わせ。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C11">
+          <div class="q-head">
+            <span class="q-badge">C11</span>
+            <span class="q-title">どんな順序や仕組みで、その変化を支えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>3つのステップ：①まず自分が1セットを購入し、鍼灸師 原麻優子のフォローのもとで体験する ②特約店スタート特典「進行ノウハウ」「LINEフォロー文面集」で準備する ③特約店としてお客様への案内・フォローを始める（希望者は将来代理店へステップアップ可）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「まず自分で1セット体験する → 特約店として何人かのお客様に販売・フォローする → 慣れてきたら、希望に応じて代理店へ」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C12">
+          <div class="q-head">
+            <span class="q-badge">C12</span>
+            <span class="q-title">一つだけ覚えてもらうなら、何を伝えたいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>中心メッセージ：「まずは1セット、ご自身の体験から始める『食と健康』のお仕事（玄米クレンズ 特約店）」。次に伝えたい情報：原麻優子の初回フォローと「進行ノウハウ・LINEフォロー文面集」の支援体制。その次：選べる配送方法と説明会・個別相談の案内。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1, Q1-2】【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】1セット体験開始を最優先メッセージとし、支援体制➔説明会案内へつなぐ優先順位。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C13">
+          <div class="q-head">
+            <span class="q-badge">C13</span>
+            <span class="q-title">実績・変化・数値は、どの資料で確認できますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>商品の販売価格（16日間55,000円／8日間33,000円）およびプログラム構成は「玄米クレンズハーフ (1).pdf」「玄米クレンズ（後半） (2).pdf」で確認済み。架空の実績・感想・医療効果断定は一切記載しない。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズハーフ (1).pdf ／ 玄米クレンズ（後半） (2).pdf</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】PDF原本の価格・セット内容のみを使用し、未確認の数値や体験談の一般化を行わない。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C14">
+          <div class="q-head">
+            <span class="q-badge">C14</span>
+            <span class="q-title">必ず伝える条件や、誤解されたくないことはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①代理店への移行は任意であり、お客様紹介の件数や売上を保証する表現にしないこと ②商品の販売価格と特約店になる方の初回体験価格を混同しないこと ③「梱包不要」はお客様への直送を利用する場合の条件として表現すること ④未決定の費用（登録料・研修費・月会費・初回体験価格）を無料と断定しないこと ⑤医療的判断や好転反応の決めつけをしないこと。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1, Q1-2】【5. Q5-1】【6. Q6-2】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「お客様のご紹介については、件数や売上を保証する表現にはしないでください。」「『梱包不要』などの説明は、直送を利用する場合の条件として表現してください。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C15">
+          <div class="q-head">
+            <span class="q-badge">C15</span>
+            <span class="q-title">どんな印象や言葉なら、選ばれる理由が伝わりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>印象：柔らかさと上品さ、誠実で落ち着いた和のエディトリアル感。カラー：案A（セージ＆リーフグリーンをベースに、生成り・ウォームベージュ、見出しやボタンに深いグリーン）。避けたい表現：煽り表現、ギラついたビジネス勧誘調、「ワタシ養生」の併記。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【2. Q2-2】【3. Q3-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「柔らかさと上品さを大切にしたいので、案Aのセージ＆リーフグリーン系をベースに、生成り・ウォームベージュを組み合わせた案を見せていただきたいです。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C16">
+          <div class="q-head">
+            <span class="q-badge">C16</span>
+            <span class="q-title">今の導線では、どれくらいの人が次の段階へ進んでいますか？</span>
+            <span class="st-tag st-hyp">未取得</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>今回の募集パッケージは新規制作のため、接触・閲覧・相談・成約の実数は現在「すべて未取得」。公開後、LP訪問数 ➔ 公式LINE登録/相談申込数 ➔ 説明会参加数 ➔ 特約店開始数を同じ期間で計測する。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>本会話内の新規制作要件</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】新規募集制作のため過去実数は未取得。公開後に相談申込数を中間指標として計測。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-C17">
+          <div class="q-head">
+            <span class="q-badge">C17</span>
+            <span class="q-title">獲得に使える費用と、回収の考え方はありますか？【任意】</span>
+            <span class="st-tag st-hyp">未取得</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【任意項目・未定】商品販売価格の目安は16日間55,000円／8日間33,000円（税込）。特約店・代理店の具体的な仕入価格・差額、および広告費・獲得費上限は現時点では非公開・未設定（説明会・個別相談にて案内）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-2】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「具体的な仕入価格や差額は、説明会・個別相談でご案内する構成を希望します。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし（任意項目）</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W1">
+          <div class="q-head">
+            <span class="q-badge">W1</span>
+            <span class="q-title">どのページが、購入・申し込みまでのどの役割を担いますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>単一募集LP（`website.html` / `production/website_production.html`）およびユーワード掲載用ページキット（`uword_page_kit.html`）で構成。主要な出口は「説明会・個別相談のお申込み（公式LINE `https://lin.ee/XOWYwEM`）」。スマートフォンおよびPC両対応。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1〜6】</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】募集LPを中心に、制度理解から説明会・個別相談申込へ導く1ページ完結＋ユーワード連携構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W2">
+          <div class="q-head">
+            <span class="q-badge">W2</span>
+            <span class="q-title">必要な機能や連携は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①説明会・個別相談への申込導線（公式LINEリンク＆QRコード） ②募集LP内蔵の「AI案内クローン」チャットウィジェット（スマホで閲覧や申込ボタンを邪魔しない開閉式） ③ブラウザ上での画像ドラッグ＆ドロップ差し替え機能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-2】【8. 手動画像差替指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「募集LPにチャットウィジェットとして組み込む形でお願いします。スマートフォンでは閲覧や申込みボタンを邪魔しないよう、必要なときに開ける形を希望します。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W3">
+          <div class="q-head">
+            <span class="q-badge">W3</span>
+            <span class="q-title">フォームでは、何を聞く必要がありますか？</span>
+            <span class="st-tag st-upd">要更新</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>LP上の申込ボタンからは公式LINE（`https://lin.ee/XOWYwEM`）へ遷移して日程調整を行うため、LP内の重い入力フォームは設けない。別途専用フォームを設ける場合の取得項目は公開前に決定。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【全体について】 ／ E2E配線仕様</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】公式LINE窓口へのワンタップ遷移を基本とし、専用フォーム項目は要検討。</span>
+              <span><strong>本人に確認したいこと：</strong>公式LINE以外のWeb申込フォームを併用する場合は必須項目を確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W4">
+          <div class="q-head">
+            <span class="q-badge">W4</span>
+            <span class="q-title">フォームの情報は、誰が、何のために扱いますか？</span>
+            <span class="st-tag st-upd">要更新</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>AI案内クローンにおける「匿名で質問できる」等の表記や、個人情報の入力要否・会話保存方法は公開前に確認して決定する（現時点では「匿名で質問できる」という表記は入れていない）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-2】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「『匿名で質問できる』という表記は、個人情報の入力要否や会話の保存方法などを確認してから決めたいです。」</span>
+              <span><strong>本人に確認したいこと：</strong>AIチャットの会話保存方法・プライバシー表記を公開前に確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W5">
+          <div class="q-head">
+            <span class="q-badge">W5</span>
+            <span class="q-title">既存のドメイン・サーバー・更新システムはありますか？</span>
+            <span class="st-tag st-hyp">未取得</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>公開先ドメイン・サーバーは未指定（単一HTML＋`assets/`フォルダ構成のため、任意のレンタルサーバー・Vercel・Netlify・WordPress固定ページ・ユーワード等へそのまま配置可能）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>制作パッケージ仕様</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】依存ライブラリ不要の静的HTML＋`assets/`構成で納品。</span>
+              <span><strong>本人に確認したいこと：</strong>公開先サーバー・ドメインが決まり次第確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W6">
+          <div class="q-head">
+            <span class="q-badge">W6</span>
+            <span class="q-title">問い合わせ対応や公開後の更新は、誰が行いますか？</span>
+            <span class="st-tag st-upd">要更新</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>申込後の日程調整および初回体験フォローは鍼灸師 原麻優子（および運営窓口）が担当。掲載する正式な屋号・連絡先・運営への相談範囲は公開前に確定。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-1】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】初回体験フォローは原麻優子が担当し、運営連絡先の詳細は公開前に確定。</span>
+              <span><strong>本人に確認したいこと：</strong>フッター等に記載する屋号・連絡先・相談範囲を公開前に確定</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W7">
+          <div class="q-head">
+            <span class="q-badge">W7</span>
+            <span class="q-title">見やすさ・使いやすさで配慮したいことはありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①スマホ閲覧時にAIチャットウィジェットが本文や申込ボタンを邪魔しない開閉式タブ設計 ②`YakuHanJP`＋`BudouX`（文節改行）＋`.price-nowrap` による金額・ブランド名の途中改行防止 ③高コントラストな深緑見出しと十分な行間（サイズ逆比例行間式）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【3. Q3-1】【6. Q6-2】【組版強化指示】</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】スマホ操作性と日本語組版（約物・文節改行・余白階層）を数理ルールで実装済み。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-W8">
+          <div class="q-head">
+            <span class="q-badge">W8</span>
+            <span class="q-title">公開前に、購入・申し込みまでの流れをどう確認しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>生成後に必ずPlaywright（Chrome）によるE2E自動検査（`e2e_verify_deliverables.py`）を実行し、Consoleエラー0・JS例外0・画像読込100%・全`#`アンカー遷移・公式LINE外部URL（`200 OK`）疎通・AIクローン6問応答を検証済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【E2Eチェック指示】 ／ `E2E_VERIFICATION_REPORT.md`</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「また、必ず生成後にE2Eチェックをして、エラーやリンク先に飛べるかなど検証して」</span>
+              <span><strong>本人に確認したいこと：</strong>なし（E2E全13ファイルPASS確認済み）</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L1">
+          <div class="q-head">
+            <span class="q-badge">L1</span>
+            <span class="q-title">このLPで、いちばん進んでほしい行動は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>一つの主要行動：「説明会・個別相談」への申込み（そこから初回1セット体験 ➔ 特約店スタートへ接続）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「特約店としての活動を具体的にイメージしていただき、説明会・個別相談につなげることを優先したいです。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L2">
+          <div class="q-head">
+            <span class="q-badge">L2</span>
+            <span class="q-title">どこから来た人が、何を期待してこのLPを開きますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>流入元：①ユーワード交流会・お茶会で配布されたA4両面チラシのQRコード ②LINE・PDF配布 ③縦型9:16ショート動画。訪問者の期待：「どんな仕事なのか」「自分にも無理なくできるか」「どんな商品・パッケージなのか」を知りたい。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】【6. Q6-1】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】交流会チラシ・LINE・ショート動画から流入し、詳しい制度や商品・パッケージの魅力を確認する。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L3">
+          <div class="q-head">
+            <span class="q-badge">L3</span>
+            <span class="q-title">最初の画面で、誰に何の価値を伝えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>最初の画面（Hero）で「子育てが一段落した今、食と健康への関心を、誰かに喜ばれるお仕事に。まずは1セット、ご自身の体験から始める『玄米クレンズ』特約店パートナー募集」と伝え、オリジナル実写（玄米ボウル写真）と監修者・鍼灸師 原麻優子の名を提示。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】【2. Q2-1, Q2-2】【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】チラシ・ショート動画のメッセージと完全一致させたファーストビュー設計。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L4">
+          <div class="q-head">
+            <span class="q-badge">L4</span>
+            <span class="q-title">申し込み前の疑問に、どの順番で答えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>読む順序：①共感と働き方の魅力（Chapter 01）➔ ②商品ラインナップ・販売価格目安とスターターキット実物写真（Chapter 02）➔ ③特約店制度（メイン8割）と7つのステップ（Chapter 03）➔ ④原麻優子の初回フォロー＆進行ノウハウ・LINEフォロー文面集（Chapter 04）➔ ⑤注文と選べる2つの配送経路SVG図解（Chapter 05）➔ ⑥ステップアップとしての代理店制度（任意・2割）（Chapter 06）➔ ⑦5大不安に答えるQ&amp;A（Chapter 07）➔ ⑧説明会・個別相談申込（Chapter 08）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1〜6】 ／ `website.html` 構成</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】特約店8割・代理店2割の比重を守り、疑問を順番に解消して相談申込へ導く8章構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L5">
+          <div class="q-head">
+            <span class="q-badge">L5</span>
+            <span class="q-title">申し込みの操作で、どこに手間や迷いがありそうですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>画像内のダミーボタンではなく、実際にクリック可能なHTMLボタン（`説明会・個別相談へ申し込む（公式LINE） ⟶`）と実機スキャン可能な公式LINE QRコードを併設し、スマホからは1タップ、PCからはQRスキャンまたはクリックで即座に公式LINE（`https://lin.ee/XOWYwEM`）へ進める設計。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>YCS LP画像プロンプト規律 ／ `e2e_verify_deliverables.py`</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】実動HTMLボタン＋デコード検証済みQRコードを併設し、操作の迷いをゼロ化。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L6">
+          <div class="q-head">
+            <span class="q-badge">L6</span>
+            <span class="q-title">申し込みを終えた人に、何を、いつ案内しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>公式LINE追加・メッセージ送信後、担当者（原麻優子・運営事務局）より説明会または個別相談の日程調整を案内し、具体的な仕入価格・差額や初回体験セットの条件を説明する。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-2】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】申込後に日程調整を行い、説明会・個別相談にて仕入条件等の詳細を案内する流れ。</span>
+              <span><strong>本人に確認したいこと：</strong>説明会・個別相談の具体的な開催日時・形式を公開前に確定</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-L7">
+          <div class="q-head">
+            <span class="q-badge">L7</span>
+            <span class="q-title">流入から成約まで、どの数字を確かめますか？</span>
+            <span class="st-tag st-hyp">仮説</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>計測段階：①LP訪問数 ②AI案内クローン開封・質問クリック数 ③申込ボタンタップ／QR読取数 ④公式LINEでの有効相談予約数 ⑤特約店スタート（初回1セット体験購入）数。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>質問書 L7 ／ B6 制作判断ブリーフ</span>
+              <span><strong>種類：</strong>AI提案</span>
+              <span><strong>根拠の短文：</strong>【要約】まず現状の実数を測り、有効相談予約数と特約店開始数を主要指標として追跡する。</span>
+              <span><strong>本人に確認したいこと：</strong>公開時にGA4やLINE計測タグを入れる場合は確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P1">
+          <div class="q-head">
+            <span class="q-badge">P1</span>
+            <span class="q-title">どこに、どのように掲示しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>今回は掲示用大判ポスターよりも先に「A4・両面の募集チラシ」を最優先で制作。ユーワードの交流会やお茶会での手渡し、およびLINE・PDFでのデジタル配布に使用する（掲示用ポスターはチラシ完成後に必要に応じて展開）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「ご提案の『A4・両面の募集チラシ』でお願いします。ユーワードの交流会やお茶会での手渡しと、LINE・PDFでの配布を想定しています。掲示用ポスターは、まずチラシを仕上げた後、必要に応じて展開したいです。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P2">
+          <div class="q-head">
+            <span class="q-badge">P2</span>
+            <span class="q-title">どのくらい離れたところから、どんな状態で見られますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>手元の読書距離（30〜50cm：交流会・お茶会での対面手渡し、自宅での読み返し、およびスマホ/タブレットでのPDF閲覧）。文字が小さくなりすぎないよう、7ステップは4フェーズに整理して詳細はLPへ接続。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「始め方の7ステップは、文字が小さくなる場合は短く整理し、詳しい説明をLPへつなげてください。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P3">
+          <div class="q-head">
+            <span class="q-badge">P3</span>
+            <span class="q-title">最初の一目で、何が伝われば行動する理由になりますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>表面の最初の一目で「子育てが一段落した今、食と健康への関心を仕事に生かせること」「まずは自分が1セット体験することから穏やかに始められる『玄米クレンズ』特約店募集」と伝わること。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】表面は「共感・仕事の魅力・始め方」に絞り、一目で自分向けの働き方だと伝わる構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P4">
+          <div class="q-head">
+            <span class="q-badge">P4</span>
+            <span class="q-title">必ず載せる情報は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【表面】共感・5つの仕事の魅力・商品の販売価格目安（55,000円／33,000円・パッケージイメージ明記）・4段階に整理した始め方。【裏面】原麻優子の初回体験フォロー・進行ノウハウ＆LINEフォロー文面集・選べる配送方法・代理店ステップアップ（2割）・5つのQ&amp;A・説明会/個別相談へのQRコード。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「表面：共感・仕事の魅力・始め方 ／ 裏面：支援体制・Q&amp;A・説明会／個別相談へのQRコード」</span>
+              <span><strong>本人に確認したいこと：</strong>説明会日時・屋号・連絡先の仮置き箇所を公開前に確定</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P5">
+          <div class="q-head">
+            <span class="q-badge">P5</span>
+            <span class="q-title">QRコードやURLは、どこにつなぎますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>裏面右下のQRコード（`assets/qr_line_official.png`）を公式LINE（`https://lin.ee/XOWYwEM`）へ接続。macOS VisionによるQR実機デコード検証済み、かつLINE・PDF配布時にQR画像をタップしても直接遷移できるようリンク配線済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】 ／ `E2E_VERIFICATION_REPORT.md`</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】印刷時のカメラ読取とPDF閲覧時のタップ遷移の両方に対応し、HTTP 200 OKを確認済み。</span>
+              <span><strong>本人に確認したいこと：</strong>募集LPの公開URL確定後にLP用QRを併設するか確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P6">
+          <div class="q-head">
+            <span class="q-badge">P6</span>
+            <span class="q-title">サイズ・向き・枚数は決まっていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>仕上がりサイズ：A4（210mm × 297mm）・縦向き・両面（表面1ページ＋裏面1ページ）。300DPI PNGおよび印刷用PDF（`flyer_a4_double_print.pdf` / `production/flyer_a4_double_production.pdf`）で出力済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「ご提案の『A4・両面の募集チラシ』でお願いします。」</span>
+              <span><strong>本人に確認したいこと：</strong>印刷部数・用紙種類（マットコート等）は入稿時に決定</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P7">
+          <div class="q-head">
+            <span class="q-badge">P7</span>
+            <span class="q-title">印刷・入稿・掲示は、誰が担当しますか？</span>
+            <span class="st-tag st-upd">要更新</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>印刷会社・入稿日・納品先は公開前確認事項（現在は自宅・オフィス印刷およびLINE/PDF配布にそのまま使えるA4 PDFと、確認用/本番用の両モードを納品済み）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】まずデジタル配布・手渡し用のA4両面デザインを完成させ、印刷会社入稿仕様は確定後に調整。</span>
+              <span><strong>本人に確認したいこと：</strong>印刷会社へ入稿する場合は塗り足し・入稿日を確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-P8">
+          <div class="q-head">
+            <span class="q-badge">P8</span>
+            <span class="q-title">別サイズやデジタル版も必要ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①A4両面チラシのLINE・PDF配布版（`production/flyer_a4_double_production.pdf`） ②ユーワード掲載用バナー（`uword_banner.png` / `uword_page_kit.html`）を同梱済み。掲示用ポスターはチラシ確定後に必要に応じ展開。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【4. Q4-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】LINE・PDF配布版とユーワード用バナーを同梱し、ポスターは必要時展開。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K1">
+          <div class="q-head">
+            <span class="q-badge">K1</span>
+            <span class="q-title">何を、どんな場面で販売・提供するパッケージですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>「大切なお客様へ届くスターターキット」としてのパッケージイメージ（16日間／8日間プログラム一式：焙煎玄米パウチ、酵素ドリンク、ガイドブック、スケジュール表、メジャー等）。今回は実製造入稿よりもLP・チラシ・動画で使う視覚イメージを優先。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「『大切なお客様へ届くスターターキット』としての見せ方を重視したいです。今回は、実製造・印刷入稿の仕様策定よりも、LP・チラシ・動画で使うイメージを優先してください。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K2">
+          <div class="q-head">
+            <span class="q-badge">K2</span>
+            <span class="q-title">包装に必要な役割は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ご自身の初回体験や、お客様が受け取った際に「丁寧さや信頼感が伝わる」こと。配送は「①お客様への直送（特約店の在庫保管・梱包不要）」と「②特約店への配送（手渡し・対面説明用）」の2通りから選べる。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「ご自身の初回体験や、お客様が受け取った際に、丁寧さや信頼感が伝わるデザインを希望します。配送は、お客様への直送・特約店への配送を選べます。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K3">
+          <div class="q-head">
+            <span class="q-badge">K3</span>
+            <span class="q-title">形状・寸法・素材は決まっていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>実際の箱や配送仕様が確定するまでは、LP・チラシ・パッケージ画面上で必ず「パッケージイメージ」と分かる表記を付与する。参考用の展開図SVG（`packaging_dieline.svg`）も同梱。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「ただし、実際の箱や配送仕様が確定するまでは、『パッケージイメージ』と分かる形にしてください。」</span>
+              <span><strong>本人に確認したいこと：</strong>実製造を行う段階で外寸・内寸・材質を確定</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K4">
+          <div class="q-head">
+            <span class="q-badge">K4</span>
+            <span class="q-title">印刷・加工の条件は何ですか？</span>
+            <span class="st-tag st-na">対象外</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>今回はLP・チラシ・動画用の「パッケージイメージ」制作を優先するため、実製造の印刷方式・箔押し等の入稿条件は対象外（実製造時に別途策定）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】実製造・印刷入稿の仕様策定よりもLP・チラシ・動画で使うイメージを優先。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K5">
+          <div class="q-head">
+            <span class="q-badge">K5</span>
+            <span class="q-title">売り場や商品一覧で、選ぶ決め手をどう伝えますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>箱を開けた瞬間に、PDF原本から抽出した実物商品（焙煎玄米パウチ・酵素ボトル・ガイドブック等）がオリジナルのフォルムのまま美しく収まっている視覚イメージ（4点透視ホモグラフィ合成による `05_packaging_starter_kit.png`）で信頼感を伝える。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】【7. オリジナルフォルム保持指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「基本的には読み込ませたフォルダに入っている画像をそのまま使うか、用途によって多少加工する（オリジナルのフォルムをもったまま）を最優先としてください。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K6">
+          <div class="q-head">
+            <span class="q-badge">K6</span>
+            <span class="q-title">必要な表示は、誰が確認し、確定原稿を用意しますか？</span>
+            <span class="st-tag st-na">対象外</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>各商品の食品表示・原材料・内容量等は実物商品パッケージ側のメーカー法定表示に準拠（今回はLP・チラシ掲載用の外箱・スターターキットイメージのため、外箱法定表示の入稿原稿は対象外）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】今回はLP・チラシ・動画用のパッケージイメージ制作のため実製造表示原稿は対象外。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K7">
+          <div class="q-head">
+            <span class="q-badge">K7</span>
+            <span class="q-title">後から印字する情報やコードはありますか？</span>
+            <span class="st-tag st-na">対象外</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>実製造時の賞味期限・ロット印字設計は今回のスコープ外（対象外）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】LP・チラシ用のパッケージイメージ優先のため対象外。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K8">
+          <div class="q-head">
+            <span class="q-badge">K8</span>
+            <span class="q-title">品種・容量・言語による展開は何種類ありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>商品構成は全4種：①16日間プログラム（玄米なし）55,000円 ②16日間プログラム（玄米48個付）55,000円 ③8日間プログラム（玄米なし）33,000円 ④8日間プログラム（玄米24個付）33,000円（すべて税込販売価格目安）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>玄米クレンズハーフ (1).pdf p.4–5 ／ ユーザー指示書【1. Q1-2】</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】PDF原本に記載された16日間（玄米なし/48個付）と8日間（玄米なし/24個付）の4ラインナップ。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K9">
+          <div class="q-head">
+            <span class="q-badge">K9</span>
+            <span class="q-title">試作で、選ばれやすさと使いやすさをどう確かめますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>LP・チラシ上で「お客様が受け取った際の丁寧さ・信頼感」が伝わるか、および実物商品のフォルムが崩れていないかを視覚検証済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5. Q5-1】【7. オリジナルフォルム保持指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】オリジナル商品切り抜きを用いたパッケージイメージとして検証済み。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-K10">
+          <div class="q-head">
+            <span class="q-badge">K10</span>
+            <span class="q-title">数量・原価目安・納品条件は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>特約店は初回1セット体験から開始。代理店になる際は初回10セットを購入（ご自身で在庫を保管する必要はなし）。外箱自体の製造ロット・原価は今回対象外。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-1】【5. Q5-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「代理店になる際は、初回に10セットを購入していただきます。ご自身で在庫を保管する必要はありません。」</span>
+              <span><strong>本人に確認したいこと：</strong>代理店の初回10セットの具体的な組み合わせ・出荷条件は別途整理</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V1">
+          <div class="q-head">
+            <span class="q-badge">V1</span>
+            <span class="q-title">どこで、何のために使う動画ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>SNS（Instagramリール・LINE配信・ユーワード案内等）から募集LP・説明会へ興味を持っていただくための「募集ショート動画」。音声あり・なし両方で内容が伝わる全編字幕付き。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「まずは①の『縦型9:16・15〜30秒の募集ショート動画』を優先してお願いします。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V2">
+          <div class="q-head">
+            <span class="q-badge">V2</span>
+            <span class="q-title">長さと画面比率は決まっていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>縦型 9:16（1080×1920）・20秒（15〜30秒枠内）を最優先で制作・納品済み（`promo_video_vertical_9x16.mp4`）。横型コンセプト動画はLP確定後に必要に応じて追加。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「まずは①の『縦型9:16・15〜30秒の募集ショート動画』を優先してお願いします。②の横型コンセプト動画は、LPの内容が固まった後、必要に応じて追加したいです。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V3">
+          <div class="q-head">
+            <span class="q-badge">V3</span>
+            <span class="q-title">冒頭で、どんな人に「自分に関係がある」と感じてもらいますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>冒頭（Scene 1）で「子育てが一段落した今、食と健康への関心を、誰かに喜ばれるお仕事に生かしませんか？」と問いかけ、対象女性に「まさに自分のことだ」と感じてもらう。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「伝えたい内容は、以下です。・子育てが一段落した今、食と健康への関心を仕事に生かせること」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V4">
+          <div class="q-head">
+            <span class="q-badge">V4</span>
+            <span class="q-title">どんな順序で内容を伝えたいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>5つの伝達順序：①子育てが一段落した今、食と健康への関心を仕事に生かせること ➔ ②まずは自分自身の1セット体験から始めること ➔ ③初回体験は鍼灸師 原麻優子がフォローすること ➔ ④活動開始時には進行ノウハウとLINEフォロー文面集があること ➔ ⑤詳しい制度・価格は募集LPおよび説明会・個別相談へ。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-1】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「短い動画に詰め込みすぎず、詳しい制度や価格はLPで伝える形にしてください。」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V5">
+          <div class="q-head">
+            <span class="q-badge">V5</span>
+            <span class="q-title">使える映像や写真はありますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>フォルダ内のオリジナル写真（玄米ボウル写真・商品フルセット実物画像・原麻優子本人写真・スターターキット画像）を中心に構成。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【7. オリジナル画像最優先指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】支給されたオリジナル写真をそのまま動画スライドにも使用。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V6">
+          <div class="q-head">
+            <span class="q-badge">V6</span>
+            <span class="q-title">出演・撮影の条件は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>新規ロケ撮影なし（支給済みの写真・PDF素材を使用して制作）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【6. Q6-1】【7. オリジナル画像最優先指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】既存の支給写真・資料素材から構成。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V7">
+          <div class="q-head">
+            <span class="q-badge">V7</span>
+            <span class="q-title">声・音楽・効果音は、どうしますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>穏やかで上品なアンビエントBGM・チャイム音源（`promo_audio_track.wav`）を同梱。ナレーション音声を追加したい場合は後から差し替え可能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>制作パッケージ動画仕様</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】世界観に合う穏やかなBGMトラックを自動合成して同梱。</span>
+              <span><strong>本人に確認したいこと：</strong>本人の声やナレーションを追加する場合は音源支給を確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V8">
+          <div class="q-head">
+            <span class="q-badge">V8</span>
+            <span class="q-title">字幕・テロップは、どこまで必要ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>日本語の全編字幕（テロップ）入りに加え、後からPremiere ProやCapCut、ブラウザスタジオ（`promo_video_studio_9x16.html`）で自在に書き換えられる字幕ファイル（`promo_captions.srt` / `.vtt`）を同梱。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>制作パッケージ動画仕様</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】全編字幕焼き込みMP4＋編集用SRT/VTTファイル＋ブラウザ字幕スタジオを同梱。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V9">
+          <div class="q-head">
+            <span class="q-badge">V9</span>
+            <span class="q-title">納品物と配信時の付属物は何が必要ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>①完成動画（`promo_video_vertical_9x16.mp4`） ②字幕ファイル（`promo_captions.srt` / `.vtt`） ③音声トラック（`promo_audio_track.wav`） ④ブラウザ字幕編集スタジオ（`promo_video_studio_9x16.html`）を一式納品済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>制作パッケージ動画仕様</span>
+              <span><strong>種類：</strong>本人が採用した案</span>
+              <span><strong>根拠の短文：</strong>【要約】MP4本編と事後編集用データをすべてパッケージ内に同梱。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-V10">
+          <div class="q-head">
+            <span class="q-badge">V10</span>
+            <span class="q-title">どの段階で、誰が確認しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>原麻優子様（およびご担当者様）にて初稿映像と字幕を確認し、公開前に未決定事項の反映有無を最終承認。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】公開前にご本人確認を経て配信開始。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D1">
+          <div class="q-head">
+            <span class="q-badge">D1</span>
+            <span class="q-title">支給できる素材は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>支給素材：`/Users/jungosakamoto/Downloads/玄米クレンズまとめ` 内の写真（`ChatGPT Image 2026年7月16日 10_19_09.png`, `玄米クレンズのコピー (11).png`）およびPDF2本（`玄米クレンズハーフ (1).pdf`, `玄米クレンズ（後半） (2).pdf` 内の商品透過切り抜き・原麻優子本人写真・公式LINE QRコード）。すべて `assets/` フォルダへ整理済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【7. オリジナル画像最優先指示】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「基本的には読み込ませたフォルダに入っている画像をそのまま使うか、用途によって多少加工する（オリジナルのフォルムをもったまま）を最優先としてください。その上で足らない部分は補うようにして」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D2">
+          <div class="q-head">
+            <span class="q-badge">D2</span>
+            <span class="q-title">素材を使える範囲は確認できていますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ご本人支給の既存LP/チラシPDFおよび画像素材を使用。名前は「原麻優子」、肩書きは「鍼灸師」、ブランド名は「玄米クレンズ」のみを使用（「ワタシ養生」は不使用）。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【2. Q2-1, Q2-2】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】支給素材のみを使用し、表記ルールを厳守。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D3">
+          <div class="q-head">
+            <span class="q-badge">D3</span>
+            <span class="q-title">制作を誰が、どこまで担当しますか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>企画整理（YCSマーケティング担当エージェントによるB1〜B7ブリーフ＆79問整理）、コピー・原稿構成、Web/LP・A4両面チラシ・スターターキット箱イメージ・9:16ショート動画・AIクローン窓口の実装、およびPlaywright E2E検証まで一括担当。また、納品後にユーザー自身で画像や文字を簡単に手動差し替えできる仕組み（`assets/`＋ブラウザD&amp;D＋`IMAGE_SWAP_GUIDE.md`）を実装済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1〜10】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「またあとで画像は簡単に手動で入れ替えできるようにして」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D4">
+          <div class="q-head">
+            <span class="q-badge">D4</span>
+            <span class="q-title">予算・スケジュールの前提は何ですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>初稿パッケージ（確認モード＆本番クリーンモード同時出力）は納品済み。公開前に「未決定の費用・日時・連絡先」を確定して最終公開へ進む。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】制作中は仮置き箇所を明示し、公開前に確定値を反映するスケジュール。</span>
+              <span><strong>本人に確認したいこと：</strong>公開予定日が決まり次第確認</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-D5">
+          <div class="q-head">
+            <span class="q-badge">D5</span>
+            <span class="q-title">何を、どの形式で受け取りたいですか？</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>ダウンロードフォルダ（`GENMAI_CLEANSE_PARTNER_SUITE_V3` および `玄米クレンズ_V3_完成パッケージ` ＋ 各ZIP）にて、①確認用HTML/PNG/PDF ②本番納品用（`production/`）HTML/PNG/PDF ③`assets/` 画像フォルダ ④9:16ショート動画MP4＆SRT字幕 ⑤マーケティング戦略ブリーフ＆E2E検証レポートを一式納品済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【5, 6, 8, 9】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【引用】「まるでデザインをやったことのないエンジニアが超一流のデザイナーに瞬時になれるためのパッケージにするためのアルゴリズムを考えて。またそれぞれサンプル出なくて、本番として収めるものも出力できる機能を追加して」「こちらをV3としてダウンロードフォルダにダウンロードして」</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F1">
+          <div class="q-head">
+            <span class="q-badge">F1</span>
+            <span class="q-title">内容・表示の確認</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【内容・表示の確認】ブランド名「玄米クレンズ」、監修者「鍼灸師 原麻優子」、販売価格目安（55,000円／33,000円）、特約店8割・代理店2割の比重、売上保証や医療断定の排除を確認済み。本番納品ディレクトリ（`production/`）では制作管理バッジ（`【仮置き】`）や配色見本バーをすべて除去済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1〜6】 ／ `design_harness_engine.py` (98/100点)</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】指示書の全条件とコンプライアンス表現を確認し、確認用と本番用を分離出力済み。</span>
+              <span><strong>本人に確認したいこと：</strong>未決定の費用（初回体験価格・登録料等）の確定値のみ公開前に反映</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F2">
+          <div class="q-head">
+            <span class="q-badge">F2</span>
+            <span class="q-title">見え方・動き・権利の確認</span>
+            <span class="st-tag st-ok">本人確認済み</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【見え方・動き・権利の確認】Playwright（Chrome）による実機E2E検証（`e2e_verify_deliverables.py`）を実行し、全13 HTMLファイルでConsoleエラー0・JS例外0・通信失敗0・画像描画100%・ページ内アンカー遷移OK・公式LINE QR/リンク（`https://lin.ee/XOWYwEM` ➔ `200 OK`）疎通・AIクローン6問応答OKを証明済み。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>`E2E_VERIFICATION_REPORT.md` / `.json`（2026-10-20）</span>
+              <span><strong>種類：</strong>資料</span>
+              <span><strong>根拠の短文：</strong>【要約】E2E実ブラウザ検査により全リンク・QR・ウィジェット・画像の動作を100%検証済み。</span>
+              <span><strong>本人に確認したいこと：</strong>なし</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F3">
+          <div class="q-head">
+            <span class="q-badge">F3</span>
+            <span class="q-title">今回、承認する範囲</span>
+            <span class="st-tag st-upd">要更新</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【今回承認する範囲】現在は「V3制作パッケージ（確認用＋本番用データ一式）の納品・確認」段階。Web本番公開・印刷入稿・価格の最終決定・販売開始は、未決定事項の確定後にご本人の別途承認を得て実施する。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>質問書 F3 規律 ／ ユーザー指示書【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】内容確認とWeb公開・印刷入稿・価格決定の承認を明確に分離。</span>
+              <span><strong>本人に確認したいこと：</strong>公開・印刷入稿の前に未決定事項（費用・日時・連絡先）の最終承認を実施</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="q79-card" id="item-F4">
+          <div class="q-head">
+            <span class="q-badge">F4</span>
+            <span class="q-title">保留事項・次の対応</span>
+            <span class="st-tag st-upd">要更新</span>
+          </div>
+          <div class="q79-body">
+            <div><strong>回答案：</strong>【保留事項・次の対応】①特約店の初回体験価格・登録料・研修費・月会費の確定 ②原麻優子様の経験年数・追加肩書きの確認 ③説明会・個別相談の日時・形式・参加特典・屋号連絡先の確定。確定次第、HTMLまたはテキストで即座に差し替え可能。</div>
+            <div class="q79-meta">
+              <span><strong>出典：</strong>ユーザー指示書【1. Q1-2】【2. Q2-1】【全体について】</span>
+              <span><strong>種類：</strong>本人発言</span>
+              <span><strong>根拠の短文：</strong>【要約】公開前に確定させる保留事項を一覧化し、いつでも差し替えられる状態に整備済み。</span>
+              <span><strong>本人に確認したいこと：</strong>上記3点の確定後に本番反映</span>
+            </div>
+          </div>
+        </div>
+        
+    <div class="sheet-footer">
+      <span>制作ヒアリング質問書 / YCS資料を参考にした独自編集版（全79項目完全対応）</span>
+      <span>79 / 79 ITEMS</span>
+    </div>
+  </section>
+</body>
+</html>

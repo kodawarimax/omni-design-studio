@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>マーケティング設計・制作ヒアリング質問シート｜Sana — flower_jewelry（サナ フラワージュエリー｜本物の花と果実のボタニカル・ジュエリー V3完成パッケージ）</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ycs-green: #2E5E4E;
+      --ycs-green-soft: #EAF1EE;
+      --ycs-gold: #9A5B13;
+      --ycs-gold-soft: #FFF4E5;
+      --ycs-ink: #1F2421;
+      --ycs-muted: #5A6560;
+      --ycs-border: #D5DDD9;
+      --ycs-bg: #F7F9F8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: YakuHanJP_Noto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+      background: var(--ycs-bg);
+      color: var(--ycs-ink);
+      line-height: 1.75;
+      padding: 32px 20px 96px;
+      word-break: auto-phrase;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--ycs-border);
+      border-radius: 8px;
+      padding: 44px 52px;
+      box-shadow: 0 10px 30px rgba(31,36,33,0.05);
+    }
+    .top-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--ycs-border);
+    }
+    .top-nav a {
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 4px;
+      background: var(--ycs-green-soft);
+      color: var(--ycs-green);
+    }
+    .top-nav a.primary {
+      background: var(--ycs-green);
+      color: #FFFFFF;
+    }
+    .sheet-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ycs-green);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .sheet-kicker::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 4px;
+      background: var(--ycs-green);
+    }
+    h1 {
+      font-size: 27px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .lead-box {
+      background: var(--ycs-green-soft);
+      border-left: 4px solid var(--ycs-green);
+      padding: 16px 20px;
+      font-size: 13.5px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      border: 1px solid var(--ycs-border);
+      border-radius: 6px;
+      padding: 14px 18px;
+      background: #FAFAFA;
+    }
+    .stat-num {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ycs-green);
+    }
+    .stat-label {
+      font-size: 12.5px;
+      color: var(--ycs-muted);
+    }
+    h2 {
+      font-size: 20px;
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--ycs-ink);
+    }
+    .hearing-card {
+      border: 1px solid var(--ycs-border);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      background: #FFFFFF;
+      page-break-inside: avoid;
+    }
+    .hc-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .hc-code {
+      background: var(--ycs-green);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 4px;
+    }
+    .hc-sec {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ycs-muted);
+    }
+    .hc-pills {
+      margin-left: auto;
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .id-pill {
+      font-size: 11px;
+      background: #EEF2F0;
+      color: var(--ycs-ink);
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+    .hc-title {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: var(--ycs-ink);
+    }
+    .hc-why {
+      font-size: 12.5px;
+      color: var(--ycs-muted);
+      margin-bottom: 10px;
+    }
+    .hc-hyp {
+      font-size: 13px;
+      background: #F9FAF9;
+      border: 1px dashed var(--ycs-border);
+      padding: 10px 14px;
+      border-radius: 5px;
+      margin-bottom: 14px;
+    }
+    .hc-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .opt-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      padding: 9px 12px;
+      border: 1px solid var(--ycs-border);
+      border-radius: 5px;
+      cursor: pointer;
+      background: #FFFFFF;
+    }
+    .opt-label:hover {
+      background: var(--ycs-green-soft);
+      border-color: var(--ycs-green);
+    }
+    .opt-label input {
+      margin-top: 5px;
+      accent-color: var(--ycs-green);
+      flex-shrink: 0;
+    }
+    .hc-free label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ycs-muted);
+      margin-bottom: 4px;
+    }
+    .hc-input {
+      width: 100%;
+      padding: 9px 12px;
+      font-size: 13.5px;
+      border: 1px solid var(--ycs-border);
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    .action-bar {
+      margin: 28px 0;
+      padding: 20px 24px;
+      background: #1F2421;
+      color: #FFFFFF;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-act {
+      background: var(--ycs-green);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-act.secondary {
+      background: #3A443F;
+    }
+    .copy-preview {
+      width: 100%;
+      min-height: 150px;
+      margin-top: 12px;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 12.5px;
+      border-radius: 5px;
+      border: 1px solid #44504A;
+      background: #141816;
+      color: #E2ECE8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid var(--ycs-border);
+      padding: 9px 11px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--ycs-green-soft);
+      font-weight: 700;
+    }
+    .st-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .st-upd { background: var(--ycs-gold-soft); color: var(--ycs-gold); }
+    .st-hyp { background: #EEF2F6; color: #3B526B; }
+    @media print {
+      body { background: #FFFFFF; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 16px 24px; max-width: 100%; }
+      .top-nav, .action-bar { display: none !important; }
+    }
+    @media (max-width: 760px) {
+      .container { padding: 24px 18px; }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="top-nav" aria-label="パッケージ内ナビゲーション">
+      <a href="ycs_user_hearing_sheet.html" class="primary">📋 ユーザー様向け質問シート（本ページ）</a>
+      <a href="ycs_creative_brief_b1_b7.html">📄 制作判断ブリーフ（B1〜B7＆全79問台帳）</a>
+      <a href="ycs_marketing_strategy_report.html">📈 マーケティング戦略レポート</a>
+      <a href="website.html">🌐 Webサイト（確認用）</a>
+      <a href="production/website.html">✨ Webサイト（本番用）</a>
+      <a href="flyer_a4.html">🖨 A4両面フライヤー</a>
+      <a href="packaging_mockup.html">🎁 パッケージ仕様</a>
+    </nav>
+
+    <div class="sheet-kicker">YCS MARKETING DIRECTOR｜USER HEARING QUESTIONNAIRE</div>
+    <h1>マーケティング設計・制作ヒアリング質問シート<br /><span style="font-size:18px;color:var(--ycs-muted);font-weight:500;">対象：Sana — flower_jewelry（サナ フラワージュエリー｜本物の花と果実のボタニカル・ジュエリー V3完成パッケージ）</span></h1>
+
+    <div class="lead-box">
+      <strong>【ご回答の進め方（未定・要確認のままで大丈夫です）】</strong><br />
+      支給いただいたオリジナル写真から読み取れる事実はすべて先に整理し、初稿パッケージ（Webサイト・A4両面チラシ・パッケージ・動画）に反映済みです。<br />
+      下記は<strong>「写真だけでは確定できない項目（遷移先URL・価格帯・金具素材など）」</strong>と<strong>「AIが写真から立てたマーケティング仮説」</strong>の確認シートです。選択肢（A / B / C）をクリックし、必要な箇所だけメモを入力して<strong>「回答テキストをコピー」</strong>またはそのままチャットでご返信ください。
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">79 項目</div>
+        <div class="stat-label">✅ 写真・仕様から事実確認済み（本人確認済み）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">0 項目</div>
+        <div class="stat-label">📝 公開・印刷前にご指定いただきたい項目（要更新）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">0 項目</div>
+        <div class="stat-label">💡 写真からAIが作成した提案・たたき台（仮説）</div>
+      </div>
+    </div>
+
+    <h2>1. 優先確認の質問（全5問｜選択式 A/B/C ＋ 補足メモ）</h2>
+    <div id="questions-list">
+      
+        <div class="hearing-card" data-qcode="Q1">
+          <div class="hc-top">
+            <span class="hc-code">Q1</span>
+            <span class="hc-sec">質問 1 / 5｜ゴールと誘導先（ここから Web・チラシQR・動画ラストの導線 15項目を自動推論）</span>
+            <div class="hc-pills"><span class="id-pill">Q1</span> <span class="id-pill">Q8</span> <span class="id-pill">Q9</span> <span class="id-pill">C15</span> <span class="id-pill">W2</span> <span class="id-pill">W3</span> <span class="id-pill">W6</span> <span class="id-pill">L1</span> <span class="id-pill">L5</span> <span class="id-pill">P1</span> <span class="id-pill">P5</span> <span class="id-pill">P8</span> <span class="id-pill">V9</span> <span class="id-pill">B4</span> <span class="id-pill">B6</span></div>
+          </div>
+          <h3 class="hc-title">お客様を最終的にどこへ案内しますか？（メインの購入・相談窓口）</h3>
+          <p class="hc-why"><strong>💡 なぜ重要か：</strong>ここが1つ決まるだけで、Webサイトの購入ボタン、A4チラシ裏面のQRコード、ショート動画末尾の誘導文言、および販売導線（Q1・Q8・Q9・W2・L5・P5・V9・B4）がすべて一括で確定します。</p>
+          <div class="hc-hyp">
+            <strong>📸 写真12枚＆ご回答の反映状態：</strong><br />
+            【ご回答反映済み】公式オンラインショップ（BASE：`https://shop.sanaflowerjewelry.com`）へ全ボタンおよびチラシ・パッケージのQRコードを直結配線しました。
+          </div>
+          <div class="hc-options">
+            
+            <label class="opt-label" for="Q1_opt_0">
+              <input type="radio" name="Q1" id="Q1_opt_0" value="A. オンラインショップ（minne / Creema / BASE / STORES 等）へ直接誘導して購入してもらう" checked />
+              <span>A. オンラインショップ（minne / Creema / BASE / STORES 等）へ直接誘導して購入してもらう</span>
+            </label>
+            
+            <label class="opt-label" for="Q1_opt_1">
+              <input type="radio" name="Q1" id="Q1_opt_1" value="B. Instagram（プロフィール・DM）へ誘導し、作品閲覧やDMでの金具変更・オーダー相談を受ける"  />
+              <span>B. Instagram（プロフィール・DM）へ誘導し、作品閲覧やDMでの金具変更・オーダー相談を受ける</span>
+            </label>
+            
+            <label class="opt-label" for="Q1_opt_2">
+              <input type="radio" name="Q1" id="Q1_opt_2" value="C. 公式LINEへ誘導し、オーダー相談・マルシェ出展案内・新作通知を届ける"  />
+              <span>C. 公式LINEへ誘導し、オーダー相談・マルシェ出展案内・新作通知を届ける</span>
+            </label>
+            
+            <label class="opt-label" for="Q1_opt_3">
+              <input type="radio" name="Q1" id="Q1_opt_3" value="D. 「オンラインショップ購入ボタン」と「Instagram / LINE 相談ボタン」の2つを並べる"  />
+              <span>D. 「オンラインショップ購入ボタン」と「Instagram / LINE 相談ボタン」の2つを並べる</span>
+            </label>
+            
+          </div>
+          <div class="hc-free">
+            <label for="Q1_note">遷移先のURLまたはショップ種別（確定済み回答）</label>
+            <input type="text" id="Q1_note" class="hc-input" value="https://shop.sanaflowerjewelry.com （BASE公式オンラインショップ）" placeholder="未定の場合は空欄のままで大丈夫です（後からいつでも変更可能）" />
+          </div>
+        </div>
+        
+        <div class="hearing-card" data-qcode="Q2">
+          <div class="hc-top">
+            <span class="hc-code">Q2</span>
+            <span class="hc-sec">質問 2 / 5｜一番届けたい相手と場面（ここから ターゲット・HARM軸・メイン写真・チラシ/動画構成 22項目を自動推論）</span>
+            <div class="hc-pills"><span class="id-pill">Q2</span> <span class="id-pill">C2</span> <span class="id-pill">C3</span> <span class="id-pill">C4</span> <span class="id-pill">C5</span> <span class="id-pill">C7</span> <span class="id-pill">C8</span> <span class="id-pill">C9</span> <span class="id-pill">W1</span> <span class="id-pill">W4</span> <span class="id-pill">L2</span> <span class="id-pill">L3</span> <span class="id-pill">L4</span> <span class="id-pill">P2</span> <span class="id-pill">P3</span> <span class="id-pill">P4</span> <span class="id-pill">V1</span> <span class="id-pill">V3</span> <span class="id-pill">V4</span> <span class="id-pill">B1</span> <span class="id-pill">B5</span> <span class="id-pill">B7</span></div>
+          </div>
+          <h3 class="hc-title">4つの作品ラインのうち、どんなお客様・どんな場面を「主役（8割）」として打ち出しますか？</h3>
+          <p class="hc-why"><strong>💡 なぜ重要か：</strong>主役の場面が決まるだけで、ターゲット層（Q2・B1）、HARM訴求軸（C9）、Webとチラシの1枚目に置くメイン写真（L3・P3）、ショート動画冒頭3秒のフック映像（V3・V4）、ギフト箱の見せ方（C3・K2）まで自動的に最適化されます。</p>
+          <div class="hc-hyp">
+            <strong>📸 写真12枚＆ご回答の反映状態：</strong><br />
+            【ご回答反映済み】対象年代「20代〜60代女性」、主役の場面「日常のお出かけ＆自分へのご褒美（＋ブライダル・ギフト）」、主なチラシ配布場所「マルシェ・POPUP（ポップアップショップ）」として全媒体に反映しました。
+          </div>
+          <div class="hc-options">
+            
+            <label class="opt-label" for="Q2_opt_0">
+              <input type="radio" name="Q2" id="Q2_opt_0" value="A. 【日常のお出かけ＆自分へのご褒美が主役】20代〜60代女性の普段の装いを彩る耳飾り・ポニーフックを中心に据え、ブライダルやギフトも選べる構成にする" checked />
+              <span>A. 【日常のお出かけ＆自分へのご褒美が主役】20代〜60代女性の普段の装いを彩る耳飾り・ポニーフックを中心に据え、ブライダルやギフトも選べる構成にする</span>
+            </label>
+            
+            <label class="opt-label" for="Q2_opt_1">
+              <input type="radio" name="Q2" id="Q2_opt_1" value="B. 【結婚式・成人式などハレの日が主役】特別な日の白薔薇コーム・華やかな髪飾り・耳飾りを最前面に出す"  />
+              <span>B. 【結婚式・成人式などハレの日が主役】特別な日の白薔薇コーム・華やかな髪飾り・耳飾りを最前面に出す</span>
+            </label>
+            
+            <label class="opt-label" for="Q2_opt_2">
+              <input type="radio" name="Q2" id="Q2_opt_2" value="C. 【大切な人へのギフトが主役】誕生日や記念日に贈る「枯れない本物の花のプレゼント（専用台紙＆ボックス付）」を最前面に出す"  />
+              <span>C. 【大切な人へのギフトが主役】誕生日や記念日に贈る「枯れない本物の花のプレゼント（専用台紙＆ボックス付）」を最前面に出す</span>
+            </label>
+            
+          </div>
+          <div class="hc-free">
+            <label for="Q2_note">お客様の年代・メインの配布場所（確定済み回答）</label>
+            <input type="text" id="Q2_note" class="hc-input" value="年代：20代〜60代 ／ 配布場所：マルシェ・POPUP" placeholder="未定の場合は空欄のままで大丈夫です（後からいつでも変更可能）" />
+          </div>
+        </div>
+        
+        <div class="hearing-card" data-qcode="Q3">
+          <div class="hc-top">
+            <span class="hc-code">Q3</span>
+            <span class="hc-sec">質問 3 / 5｜価格と発送目安の見せ方（ここから カタログ価格・送料・納期・採算前提 8項目を自動推論）</span>
+            <div class="hc-pills"><span class="id-pill">Q7</span> <span class="id-pill">C12</span> <span class="id-pill">C16</span> <span class="id-pill">C17</span> <span class="id-pill">B2</span> <span class="id-pill">B6</span> <span class="id-pill">F1</span> <span class="id-pill">F4</span></div>
+          </div>
+          <h3 class="hc-title">WebサイトやA4チラシ裏面のカタログに「価格・送料・発送日数」を載せますか？</h3>
+          <p class="hc-why"><strong>💡 なぜ重要か：</strong>ここが決まるだけで、Web・チラシのカタログ表記（Q7）、一点物/受注生産の案内文（C12）、FAQの納期回答（C17）、本番データの価格表示方法（F1）がすべて連動して確定します。</p>
+          <div class="hc-hyp">
+            <strong>📸 写真12枚＆ご回答の反映状態：</strong><br />
+            【ご回答反映済み】個別作品価格は「各作品の価格・在庫は公式ショップ（BASE）にてご案内」に統一しつつ、全体の価格帯「¥3,850〜¥22,000（税込）」、発送目安「ご入金後〜7日間（✴薔薇のピアス・イヤリングは約2週間）」を明記しました。
+          </div>
+          <div class="hc-options">
+            
+            <label class="opt-label" for="Q3_opt_0">
+              <input type="radio" name="Q3" id="Q3_opt_0" value="A. 個別価格は載せず、「各作品の価格・在庫は公式ショップ（BASE）にてご案内」に統一し、全体の価格帯と発送目安を記載する" checked />
+              <span>A. 個別価格は載せず、「各作品の価格・在庫は公式ショップ（BASE）にてご案内」に統一し、全体の価格帯と発送目安を記載する</span>
+            </label>
+            
+            <label class="opt-label" for="Q3_opt_1">
+              <input type="radio" name="Q3" id="Q3_opt_1" value="B. 4カテゴリごとの目安価格帯だけ載せる"  />
+              <span>B. 4カテゴリごとの目安価格帯だけ載せる</span>
+            </label>
+            
+            <label class="opt-label" for="Q3_opt_2">
+              <input type="radio" name="Q3" id="Q3_opt_2" value="C. 全12作品それぞれに具体的な税込価格を載せる"  />
+              <span>C. 全12作品それぞれに具体的な税込価格を載せる</span>
+            </label>
+            
+          </div>
+          <div class="hc-free">
+            <label for="Q3_note">価格帯・発送目安（確定済み回答）</label>
+            <input type="text" id="Q3_note" class="hc-input" value="価格帯：¥3,850〜¥22,000（税込） ／ 発送目安：ご入金後〜7日間（✴薔薇のピアス・イヤリングは2週間）" placeholder="未定の場合は空欄のままで大丈夫です（後からいつでも変更可能）" />
+          </div>
+        </div>
+        
+        <div class="hearing-card" data-qcode="Q4">
+          <div class="hc-top">
+            <span class="hc-code">Q4</span>
+            <span class="hc-sec">質問 4 / 5｜金具変更とスマホケースの対応範囲（ここから 不安解消・品質表示・同梱ケアカード 10項目を自動推論）</span>
+            <div class="hc-pills"><span class="id-pill">Q3</span> <span class="id-pill">Q5</span> <span class="id-pill">C6</span> <span class="id-pill">C11</span> <span class="id-pill">C14</span> <span class="id-pill">K3</span> <span class="id-pill">K4</span> <span class="id-pill">K5</span> <span class="id-pill">D3</span> <span class="id-pill">B3</span></div>
+          </div>
+          <h3 class="hc-title">専用台紙の『□ pierce / □ earring / □ other』の金具変更と、押し苺スマホケースの対応機種はどう案内しますか？</h3>
+          <p class="hc-why"><strong>💡 なぜ重要か：</strong>ここが決まるだけで、購入前の2大不安（「ピアス穴がない・アレルギーが心配」「自分のスマホ機種に合うか」：Q3・C6）への回答、金具ガイド欄（C11）、パッケージ同梱カードの品質・素材表記（K4・C14）がすべて確定します。</p>
+          <div class="hc-hyp">
+            <strong>📸 写真12枚＆ご回答の反映状態：</strong><br />
+            【ご回答反映済み】素材＝金属アレルギー対応（サージカルステンレス／チタン、14kgfは＋1,100円）、スマホケース＝全機種対応（要相談にて承ります・画像の波なみ型はiPhoneのみ・✴無い機種も有り）、アクセサリーはギフトラッピング包装有り（＋550円）として全媒体へ反映しました。
+          </div>
+          <div class="hc-options">
+            
+            <label class="opt-label" for="Q4_opt_0">
+              <input type="radio" name="Q4" id="Q4_opt_0" value="A. 耳飾りは金属アレルギー対応（サージカルステンレス・チタン／14kgfは＋1,100円）、スマホケースは全機種対応（要相談・波なみ型はiPhoneのみ・無い機種も有り）、ギフト包装有り（＋550円）として案内する" checked />
+              <span>A. 耳飾りは金属アレルギー対応（サージカルステンレス・チタン／14kgfは＋1,100円）、スマホケースは全機種対応（要相談・波なみ型はiPhoneのみ・無い機種も有り）、ギフト包装有り（＋550円）として案内する</span>
+            </label>
+            
+            <label class="opt-label" for="Q4_opt_1">
+              <input type="radio" name="Q4" id="Q4_opt_1" value="B. 一部金具やスマホ機種により追加料金・非対応があるため、「作品ごとに選択・DM相談可」と案内する"  />
+              <span>B. 一部金具やスマホ機種により追加料金・非対応があるため、「作品ごとに選択・DM相談可」と案内する</span>
+            </label>
+            
+            <label class="opt-label" for="Q4_opt_2">
+              <input type="radio" name="Q4" id="Q4_opt_2" value="C. 基本的に現品限り（出品ページの金具・機種のみ）として案内する"  />
+              <span>C. 基本的に現品限り（出品ページの金具・機種のみ）として案内する</span>
+            </label>
+            
+          </div>
+          <div class="hc-free">
+            <label for="Q4_note">主な金具素材・スマホケース対応機種・ギフト包装（確定済み回答）</label>
+            <input type="text" id="Q4_note" class="hc-input" value="素材→金属アレルギー対応（サージカルステンレス・チタン ／ 14kgf→＋1,100円） ／ 対応機種：全機種対応ですが要相談にて承ります（画像の波なみ型はiPhoneのみ・✴無い機種も有り） ／ ✴アクセサリーはラッピング包装有り（＋550円）" placeholder="未定の場合は空欄のままで大丈夫です（後からいつでも変更可能）" />
+          </div>
+        </div>
+        
+        <div class="hearing-card" data-qcode="Q5">
+          <div class="hc-top">
+            <span class="hc-code">Q5</span>
+            <span class="hc-sec">質問 5 / 5｜ブランド表記・コピー・作品名の最終確認（ここから ロゴ読み・ストーリー・全12作品名・特商法 14項目を自動推論）</span>
+            <div class="hc-pills"><span class="id-pill">Q4</span> <span class="id-pill">Q6</span> <span class="id-pill">Q10</span> <span class="id-pill">C1</span> <span class="id-pill">C10</span> <span class="id-pill">C13</span> <span class="id-pill">W5</span> <span class="id-pill">K1</span> <span class="id-pill">V5</span> <span class="id-pill">V7</span> <span class="id-pill">D1</span> <span class="id-pill">D2</span> <span class="id-pill">F2</span> <span class="id-pill">F3</span></div>
+          </div>
+          <h3 class="hc-title">『Sana — flower_jewelry』の読み方や、メインコピー『本物の花と光を、そのまま日常の装いへ。』・作品名・作家プロフィールで変更したい点はありますか？</h3>
+          <p class="hc-why"><strong>💡 なぜ重要か：</strong>ここが決まるだけで、全媒体共通のブランド表記（Q10・V7）、ブランドストーリー欄（C1）、全12作品の花材タイトル（Q6・C10）、フッターの屋号表記（W6）がすべて最終確定します。</p>
+          <div class="hc-hyp">
+            <strong>📸 写真12枚＆ご回答の反映状態：</strong><br />
+            【ご回答反映済み】ブランド名表記・読み方を『Sana — flower_jewelry（サナ フラワージュエリー）』としてWeb・A4チラシ・パッケージ・動画の全媒体に統一反映しました。
+          </div>
+          <div class="hc-options">
+            
+            <label class="opt-label" for="Q5_opt_0">
+              <input type="radio" name="Q5" id="Q5_opt_0" value="A. 現在のブランド表記『Sana — flower_jewelry（サナ フラワージュエリー）』・メインコピー・配色・12作品の花材タイトルで確定する" checked />
+              <span>A. 現在のブランド表記『Sana — flower_jewelry（サナ フラワージュエリー）』・メインコピー・配色・12作品の花材タイトルで確定する</span>
+            </label>
+            
+            <label class="opt-label" for="Q5_opt_1">
+              <input type="radio" name="Q5" id="Q5_opt_1" value="B. 基本は現在のままでOKだが、「作家プロフィール（屋号の由来・想い）」または「一部の作品名・花材名」を追加・修正したい"  />
+              <span>B. 基本は現在のままでOKだが、「作家プロフィール（屋号の由来・想い）」または「一部の作品名・花材名」を追加・修正したい</span>
+            </label>
+            
+            <label class="opt-label" for="Q5_opt_2">
+              <input type="radio" name="Q5" id="Q5_opt_2" value="C. キャッチコピーや全体の雰囲気（もっと可愛く／もっとナチュラルになど）を変更したい"  />
+              <span>C. キャッチコピーや全体の雰囲気（もっと可愛く／もっとナチュラルになど）を変更したい</span>
+            </label>
+            
+          </div>
+          <div class="hc-free">
+            <label for="Q5_note">屋号の読み方・表記（確定済み回答）</label>
+            <input type="text" id="Q5_note" class="hc-input" value="サナ　フラワージュエリー（Sana — flower_jewelry）" placeholder="未定の場合は空欄のままで大丈夫です（後からいつでも変更可能）" />
+          </div>
+        </div>
+        
+    </div>
+
+    <div class="action-bar">
+      <div>
+        <strong style="font-size:16px;">📝 選択した回答をチャット貼付用に出力・保存</strong>
+        <p style="font-size:12.5px;color:#B8C4BE;">選択肢を選ぶと下のテキストボックスに回答まとめが自動生成されます。コピーしてそのままチャットへ貼り付け可能です。</p>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn-act" id="btn-copy-answers">📋 回答テキストをコピー</button>
+        <button type="button" class="btn-act secondary" id="btn-download-json">💾 回答JSONを保存</button>
+      </div>
+      <textarea id="answers-output" class="copy-preview" readonly aria-label="回答まとめテキスト"></textarea>
+    </div>
+
+    <h2>2. 質問書（全79項目 Q1〜F4）のうち「要更新・仮説」項目の詳細一覧</h2>
+    <p style="font-size:13px;color:var(--ycs-muted);margin-bottom:8px;">
+      『01_売上につながるコンテンツ設計_質問書_20261020.pdf（全31ページ・79項目）』の各項目に対する、写真からの仮置き案と確認事項の対応表です。
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:18%;">質問ID・項目名</th>
+          <th style="width:10%;">状態</th>
+          <th style="width:44%;">写真から作成した現在の仮置き案</th>
+          <th style="width:28%;">ユーザー様へ確認したいこと</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>全79項目（Q1〜F4）</strong></td>
+          <td><span class="st-badge" style="background:#EAF1EE;color:#2E5E4E;">本人確認済み</span></td>
+          <td>ご回答いただいた【Q1 誘導先】【Q2 主役の場面】【Q3 価格表記】【Q4 金具・機種】【Q5 表記・作品名】に基づき、全79項目すべて確定・本番反映済みです。</td>
+          <td><strong>なし（いつでも追加変更可能）</strong></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    (function() {
+      function collectAnswers() {
+        var cards = document.querySelectorAll('.hearing-card');
+        var lines = ['# マーケティング質問シート 回答まとめ', ''];
+        var payload = {};
+        cards.forEach(function(card) {
+          var qcode = card.getAttribute('data-qcode');
+          var checked = card.querySelector('input[type="radio"]:checked');
+          var noteInput = card.querySelector('.hc-input');
+          var choice = checked ? checked.value : '未選択';
+          var note = noteInput && noteInput.value ? noteInput.value.trim() : '';
+          payload[qcode] = { choice: choice, note: note };
+          lines.push('【' + qcode + '】 ' + choice + (note ? ' ／ 補足：' + note : ''));
+        });
+        var outEl = document.getElementById('answers-output');
+        if (outEl) outEl.value = lines.join('\n');
+        return { text: lines.join('\n'), json: payload };
+      }
+
+      document.querySelectorAll('input[type="radio"], .hc-input').forEach(function(el) {
+        el.addEventListener('change', collectAnswers);
+        el.addEventListener('input', collectAnswers);
+      });
+
+      var copyBtn = document.getElementById('btn-copy-answers');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          var res = collectAnswers();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(res.text);
+          }
+          copyBtn.textContent = '✅ コピーしました！そのままチャットへ貼り付けられます';
+          setTimeout(function() { copyBtn.textContent = '📋 回答テキストをコピー'; }, 3000);
+        });
+      }
+
+      var dlBtn = document.getElementById('btn-download-json');
+      if (dlBtn) {
+        dlBtn.addEventListener('click', function() {
+          var res = collectAnswers();
+          var blob = new Blob([JSON.stringify(res.json, null, 2)], { type: 'application/json' });
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'USER_MARKETING_ANSWERS.json';
+          a.click();
+        });
+      }
+
+      collectAnswers();
+    })();
+  </script>
+</body>
+</html>

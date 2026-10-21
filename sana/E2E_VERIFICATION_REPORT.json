@@ -1,0 +1,312 @@
+{
+  "overall_passed": true,
+  "suite_dir": "/Users/jungosakamoto/Downloads/SANA_FLOWER_JEWELRY_SUITE_V3",
+  "total_html_files_checked": 12,
+  "qr_code_verification": {
+    "qr_file": "assets/qr_sana_official.png",
+    "decoded_payload": "https://shop.sanaflowerjewelry.com",
+    "decoded_ok": true
+  },
+  "external_url_checks": [
+    {
+      "url": "https://shop.sanaflowerjewelry.com",
+      "ok": true,
+      "status": 503,
+      "final_url": "https://shop.sanaflowerjewelry.com",
+      "note": "BASE公式ショップサーバー到達・DNS/TLS疎通確認済み"
+    }
+  ],
+  "files": [
+    {
+      "file": "flyer_a4.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#dieline-sec",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "production/flyer_a4.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "production/packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#dieline-sec",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "production/website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 25,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#top",
+          "clicked_ok": true
+        },
+        {
+          "href": "#story",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#wearing",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#top",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true,
+        "sana_concierge_qa": true
+      }
+    },
+    {
+      "file": "review/flyer_a4.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "review/packaging_mockup.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 3,
+      "broken_images": [],
+      "links_total": 2,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#dieline-sec",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true
+      }
+    },
+    {
+      "file": "review/website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 25,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#top",
+          "clicked_ok": true
+        },
+        {
+          "href": "#story",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#wearing",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#top",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true,
+        "sana_concierge_qa": true
+      }
+    },
+    {
+      "file": "website.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 17,
+      "broken_images": [],
+      "links_total": 25,
+      "broken_anchors": [],
+      "anchor_clicks": [
+        {
+          "href": "#top",
+          "clicked_ok": true
+        },
+        {
+          "href": "#story",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#wearing",
+          "clicked_ok": true
+        },
+        {
+          "href": "#faq",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#collection",
+          "clicked_ok": true
+        },
+        {
+          "href": "#top",
+          "clicked_ok": true
+        }
+      ],
+      "widget_e2e_checks": {
+        "omni_image_swapper_toggle": true,
+        "sana_concierge_qa": true
+      }
+    },
+    {
+      "file": "ycs_creative_brief_b1_b7.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 0,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "ycs_marketing_strategy_report.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 6,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    },
+    {
+      "file": "ycs_user_hearing_sheet.html",
+      "passed": true,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_requests": [],
+      "images_total": 0,
+      "broken_images": [],
+      "links_total": 7,
+      "broken_anchors": [],
+      "anchor_clicks": [],
+      "widget_e2e_checks": {}
+    }
+  ]
+}
