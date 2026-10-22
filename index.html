@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Omni Design Studio V3 — Live Web Showcase (Sana &amp; 玄米クレンズ)</title>
+  <title>Omni Design Studio V3 — Live Web &amp; Promo Video Showcase (Sana &amp; 玄米クレンズ)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
       --muted: #665E57;
       --gold: #B69156;
       --sana-accent: #9E6B7B;
-      --genmai-accent: #7A5C3E;
+      --genmai-accent: #5B7A57;
       --border: #E6DFD5;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,7 +29,7 @@
     header {
       background: linear-gradient(135deg, #1E1916 0%, #2F2621 100%);
       color: #FAF7F2;
-      padding: 56px 24px 48px;
+      padding: 52px 24px 44px;
       text-align: center;
       border-bottom: 3px solid var(--gold);
     }
@@ -47,23 +47,23 @@
     }
     h1 {
       font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1.65rem, 3.5vw, 2.5rem);
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
       font-weight: 600;
       letter-spacing: 0.06em;
       margin-bottom: 12px;
     }
     header p {
       color: #D5CCC2;
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       font-size: 0.95rem;
     }
     .container {
-      max-width: 1240px;
-      margin: 40px auto 0;
+      max-width: 1280px;
+      margin: 36px auto 0;
       padding: 0 24px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
       gap: 32px;
     }
     @media (max-width: 640px) {
@@ -80,7 +80,7 @@
     }
     .preview-banner {
       position: relative;
-      height: 280px;
+      height: 250px;
       overflow: hidden;
       background: #231F1C;
       border-bottom: 1px solid var(--border);
@@ -108,27 +108,27 @@
       backdrop-filter: blur(6px);
     }
     .card-body {
-      padding: 28px;
+      padding: 26px;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
     .project-title {
       font-family: 'Shippori Mincho', serif;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       margin-bottom: 8px;
       color: var(--ink);
     }
     .project-desc {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--muted);
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
     .primary-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .btn {
       display: inline-flex;
@@ -136,39 +136,64 @@
       justify-content: center;
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.9rem;
-      padding: 13px 16px;
+      font-size: 0.88rem;
+      padding: 12px 14px;
       border-radius: 10px;
       transition: all 0.2s ease;
       text-align: center;
     }
-    .btn-sana {
-      background: var(--sana-accent);
-      color: #FFF;
-    }
+    .btn-sana { background: var(--sana-accent); color: #FFF; }
     .btn-sana:hover { background: #875766; }
-    .btn-genmai {
-      background: var(--genmai-accent);
-      color: #FFF;
-    }
-    .btn-genmai:hover { background: #61472E; }
+    .btn-genmai { background: var(--genmai-accent); color: #FFF; }
+    .btn-genmai:hover { background: #466143; }
     .btn-outline {
       background: #FAF7F2;
       color: var(--ink);
       border: 1px solid var(--border);
     }
-    .btn-outline:hover {
-      background: #F0EAE1;
+    .btn-outline:hover { background: #F0EAE1; }
+    .video-showcase-box {
+      background: #1B2220;
+      color: #FAF7F2;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(182, 145, 86, 0.4);
+    }
+    .video-showcase-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #DFC394;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .video-pair {
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    @media (max-width: 520px) {
+      .video-pair { grid-template-columns: 1fr; }
+    }
+    .video-pair video {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(223, 195, 148, 0.45);
+      background: #000;
+      display: block;
     }
     .sub-heading {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
       margin-bottom: 10px;
       border-top: 1px solid var(--border);
-      padding-top: 16px;
+      padding-top: 14px;
     }
     .link-grid {
       display: grid;
@@ -185,31 +210,74 @@
       border: 1px solid var(--border);
       padding: 9px 12px;
       border-radius: 8px;
-      font-size: 0.83rem;
+      font-size: 0.82rem;
       transition: background 0.15s ease;
     }
-    .link-item:hover {
-      background: #EFE9DF;
-    }
-    .link-item span.arrow {
-      color: var(--gold);
-      font-weight: 700;
-    }
+    .link-item:hover { background: #EFE9DF; }
+    .link-item span.arrow { color: var(--gold); font-weight: 700; }
   </style>
 </head>
 <body>
   <header>
-    <div class="badge">Omni Design Studio V3 — GitHub Pages Showcase</div>
+    <div class="badge">Omni Design Studio V3 — GitHub Pages Live Showcase</div>
     <h1>Sana フラワージュエリー ＆ 玄米クレンズ ライブプレビュー</h1>
-    <p>生成・E2E検証済みのWebサイト（本番公開用・レビュー用）、A4両面チラシ、3Dパッケージモックアップ、プロモーション動画、YCS 79問マーケティング設計書の全成果物を一覧で閲覧・動作確認できます。</p>
+    <p>Webサイト（本番公開用・レビュー用）、プロモーション動画（9:16 縦型リール ＆ 16:9 横型ワイド）、A4両面チラシ、3Dパッケージモックアップ、YCS 79問マーケティング戦略ブリーフをこのページから直接再生・閲覧できます。</p>
   </header>
 
   <main class="container">
+    <!-- GENMAI CARD -->
+    <section class="project-card">
+      <div class="preview-banner">
+        <img src="genmai/website_preview.png" alt="玄米クレンズ Webサイトプレビュー" />
+        <span class="preview-tag">Project 01 · Enzyme Brown Rice Partner LP</span>
+      </div>
+      <div class="card-body">
+        <h2 class="project-title">玄米クレンズ（酵素玄米 特約店・代理店パートナー募集）</h2>
+        <p class="project-desc">
+          北海道産・残留農薬ゼロ「ゆめぴりか」使用の酵素玄米クレンズ7点フルセット（定価32,500円・卸22,750円・粗利9,750円）。サロン・整体院・パーソナルジム向け特約店募集LP＆販促スイート。
+        </p>
+        <div class="primary-actions">
+          <a class="btn btn-genmai" href="genmai/production/website_production.html">🌐 本番用Webサイトを見る</a>
+          <a class="btn btn-outline" href="genmai/promo_video_studio_9x16.html">🎞 プロモ動画スタジオを開く</a>
+        </div>
+
+        <!-- Inline Playable Promo Videos -->
+        <div class="video-showcase-box">
+          <div class="video-showcase-title">
+            <span>🎬 玄米クレンズ プロモ動画（その場で再生可能）</span>
+            <a href="genmai/promo_video_studio_9x16.html" style="color:#DFC394; font-size:0.76rem;">全画面スタジオ ⟶</a>
+          </div>
+          <div class="video-pair">
+            <div>
+              <video src="genmai/promo_video_vertical_9x16.mp4" controls preload="metadata" playsinline style="aspect-ratio:9/16;"></video>
+              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">📱 9:16 縦型リール</div>
+            </div>
+            <div>
+              <video src="genmai/promo_video_landscape_16x9.mp4" controls preload="metadata" playsinline style="aspect-ratio:16/9;"></video>
+              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">🖥 16:9 横型ワイド</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-heading">同梱クリエイティブ・マーケティング成果物</div>
+        <div class="link-grid">
+          <a class="link-item" href="genmai/website.html"><span>🛠 統合レビュー版Web</span><span class="arrow">→</span></a>
+          <a class="link-item" href="genmai/production/flyer_a4_double_production.html"><span>📄 A4両面チラシ（本番用）</span><span class="arrow">→</span></a>
+          <a class="link-item" href="genmai/flyer_a4_front.html"><span>📄 A4チラシ 表面（単体）</span><span class="arrow">→</span></a>
+          <a class="link-item" href="genmai/flyer_a4_back.html"><span>📄 A4チラシ 裏面（単体）</span><span class="arrow">→</span></a>
+          <a class="link-item" href="genmai/production/packaging_mockup_production.html"><span>🎁 3Dパッケージ（本番用）</span><span class="arrow">→</span></a>
+          <a class="link-item" href="genmai/uword_page_kit.html"><span>🛍 U-word特設ページキット</span><span class="arrow">→</span></a>
+          <a class="link-item" href="genmai/manuals_organized.html"><span>📘 パートナー業務マニュアル</span><span class="arrow">→</span></a>
+          <a class="link-item" href="genmai/ycs_creative_brief_b1_b7.html"><span>📊 YCS 79問戦略ブリーフ</span><span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
     <!-- SANA CARD -->
     <section class="project-card">
       <div class="preview-banner">
         <img src="sana/website_preview.png" alt="サナ フラワージュエリー Webサイトプレビュー" />
-        <span class="preview-tag">Project 01 · Artisan Botanical Jewelry</span>
+        <span class="preview-tag">Project 02 · Artisan Botanical Jewelry</span>
       </div>
       <div class="card-body">
         <h2 class="project-title">Sana — flower_jewelry（サナ フラワージュエリー）</h2>
@@ -220,6 +288,25 @@
           <a class="btn btn-sana" href="sana/production/website.html">🌐 本番用Webサイトを見る</a>
           <a class="btn btn-outline" href="sana/website.html">🛠 統合レビュー版Webを見る</a>
         </div>
+
+        <!-- Inline Playable Promo Videos -->
+        <div class="video-showcase-box">
+          <div class="video-showcase-title">
+            <span>🎬 Sana フラワージュエリー プロモ動画（その場で再生可能）</span>
+            <a href="sana/promo_video_vertical_9x16.mp4" style="color:#DFC394; font-size:0.76rem;">MP4直リンク ⟶</a>
+          </div>
+          <div class="video-pair">
+            <div>
+              <video src="sana/promo_video_vertical_9x16.mp4" controls preload="metadata" playsinline style="aspect-ratio:9/16;"></video>
+              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">📱 9:16 縦型リール</div>
+            </div>
+            <div>
+              <video src="sana/promo_video_landscape_16x9.mp4" controls preload="metadata" playsinline style="aspect-ratio:16/9;"></video>
+              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">🖥 16:9 横型ワイド</div>
+            </div>
+          </div>
+        </div>
+
         <div class="sub-heading">同梱クリエイティブ・マーケティング成果物</div>
         <div class="link-grid">
           <a class="link-item" href="sana/production/flyer_a4.html"><span>📄 A4両面チラシ（本番用）</span><span class="arrow">→</span></a>
@@ -230,37 +317,6 @@
           <a class="link-item" href="sana/promo_video_landscape_16x9.mp4"><span>🎬 横型プロモ動画 (16:9)</span><span class="arrow">→</span></a>
           <a class="link-item" href="sana/ycs_creative_brief_b1_b7.html"><span>📊 YCS 79問戦略ブリーフ</span><span class="arrow">→</span></a>
           <a class="link-item" href="sana/ycs_user_hearing_sheet.html"><span>📝 5問厳選ヒアリングシート</span><span class="arrow">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GENMAI CARD -->
-    <section class="project-card">
-      <div class="preview-banner">
-        <img src="genmai/website_preview.png" alt="玄米クレンズ Webサイトプレビュー" />
-        <span class="preview-tag">Project 02 · Enzyme Brown Rice Partner LP</span>
-      </div>
-      <div class="card-body">
-        <h2 class="project-title">玄米クレンズ（酵素玄米 特約店・代理店パートナー募集）</h2>
-        <p class="project-desc">
-          北海道産・残留農薬ゼロ「ゆめぴりか」使用の酵素玄米クレンズ7点フルセット（定価32,500円・卸22,750円・粗利9,750円）。サロン・整体院・パーソナルジム向け在庫リスク最小の特約店募集LP＆販促スイート。
-        </p>
-        <div class="primary-actions">
-          <a class="btn btn-genmai" href="genmai/production/website_production.html">🌐 本番用Webサイトを見る</a>
-          <a class="btn btn-outline" href="genmai/website.html">🛠 統合レビュー版Webを見る</a>
-        </div>
-        <div class="sub-heading">同梱クリエイティブ・マーケティング成果物</div>
-        <div class="link-grid">
-          <a class="link-item" href="genmai/production/flyer_a4_double_production.html"><span>📄 A4両面チラシ（本番用）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/flyer_a4_front.html"><span>📄 A4チラシ 表面（単体）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/flyer_a4_back.html"><span>📄 A4チラシ 裏面（単体）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/production/packaging_mockup_production.html"><span>🎁 3Dパッケージ（本番用）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/promo_video_vertical_9x16.mp4"><span>🎬 縦型プロモ動画 (9:16)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/promo_video_landscape_16x9.mp4"><span>🎬 横型プロモ動画 (16:9)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/promo_video_studio_9x16.html"><span>🎞 動画キャプション編集スタジオ</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/uword_page_kit.html"><span>🛍 U-word特設ページキット</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/manuals_organized.html"><span>📘 パートナー業務マニュアル</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/ycs_creative_brief_b1_b7.html"><span>📊 YCS 79問戦略ブリーフ</span><span class="arrow">→</span></a>
         </div>
       </div>
     </section>
