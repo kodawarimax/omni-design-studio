@@ -2,83 +2,173 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>玄米クレンズ｜9:16 募集ショート動画 キャプション・タイムライン編集スタジオ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>玄米クレンズ｜プロモーション動画（9:16 縦型リール ＆ 16:9 横型ワイド）スタジオ</title>
 <style>
-
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap');
-  :root {
-    --sage: #5B7A57;
-    --sage-light: #EAF0E8;
-    --sage-mid: #7A9A75;
-    --forest: #2F4532;
-    --cream: #F6F3EC;
-    --beige: #E8DFD1;
-    --surface: #FDFBF7;
-    --text: #2B2925;
-    --muted: #625E57;
-    --border: rgba(91, 122, 87, 0.22);
-    --tbd-bg: #FFF9EB;
-    --tbd-border: #D9A441;
-    --tbd-text: #8A5A00;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: var(--cream);
-    color: var(--text);
-    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
-    line-height: 1.85;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3, .serif {
-    font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
-    letter-spacing: 0.04em;
-  }
-  .tbd-badge {
-    display: inline-block;
-    background: var(--tbd-bg);
-    border: 1px dashed var(--tbd-border);
-    color: var(--tbd-text);
-    font-size: 12px;
-    font-weight: 700;
-    padding: 2px 10px;
-    border-radius: 2px;
-    margin: 0 4px;
+    background: #1B241E;
+    color: #F6F3EC;
     font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.75;
+    padding: 36px 24px 64px;
   }
-
-  body { display: grid; grid-template-columns: 440px 1fr; height: 100vh; overflow: hidden; background: #1e2620; color: #f6f3ec; }
-  .preview-col { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border-right: 1px solid rgba(255,255,255,0.12); }
-  video { width: 340px; height: 604px; border-radius: 16px; border: 2px solid #5B7A57; background: #000; }
-  .editor-col { padding: 32px 40px; overflow-y: auto; }
-  .scene-row { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; }
-  .scene-row textarea { width: 100%; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid #5B7A57; border-radius: 8px; padding: 8px; font-size: 14px; margin-top: 6px; }
-  .btn { background: #5B7A57; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; margin-right: 10px; }
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(223, 195, 148, 0.25);
+  }
+  .kicker {
+    color: #DFC394;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+    margin-bottom: 10px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (max-width: 960px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(223, 195, 148, 0.28);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .card h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+    color: #DFC394;
+  }
+  .video-vertical {
+    width: 100%;
+    max-width: 330px;
+    aspect-ratio: 9 / 16;
+    border-radius: 12px;
+    border: 2px solid #B69156;
+    background: #000;
+    display: block;
+    margin: 0 auto 16px;
+  }
+  .video-landscape {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    border: 2px solid #B69156;
+    background: #000;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #5B7A57;
+    color: #FFF;
+    text-decoration: none;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13.5px;
+    cursor: pointer;
+  }
+  .btn-gold {
+    background: #B69156;
+    color: #1B241E;
+  }
+  .scene-row {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .scene-row strong {
+    display: block;
+    color: #DFC394;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .scene-row textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #FFF;
+    border: 1px solid #5B7A57;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 13.5px;
+  }
 </style>
 </head>
 <body>
-  <div class="preview-col">
-    <h3 class="serif" style="margin-bottom:12px;">9:16 募集ショート動画（20秒）</h3>
-    <video src="promo_video_vertical_9x16.mp4" controls loop></video>
-  </div>
-  <div class="editor-col">
-    <h2 class="serif" style="margin-bottom:8px;">🎬 募集ショート動画 キャプション＆タイムライン編集スタジオ</h2>
-    <p style="font-size:13.5px; color:#cbd5cb; margin-bottom:20px;">
-      5つのシーン（①食と健康を仕事に → ②1セット体験から → ③原麻優子のフォロー → ④進行ノウハウ＆LINE文面集 → ⑤説明会・個別相談）のテロップを自在に編集し、最新のSRT/VTT字幕ファイルとして書き出せます。
-    </p>
-    <div id="scenesContainer">
-      <div class="scene-row"><strong>Scene 1 (0s - 4s) — SCENE 01 / WORK & LIFE</strong><textarea rows="2" id="sc_1">子育てが一段落した今、
-食と健康への関心を
-誰かに喜ばれる仕事へ。 / 自宅を拠点にオンラインでも、対面でも。</textarea></div><div class="scene-row"><strong>Scene 2 (4s - 8s) — SCENE 02 / FIRST STEP</strong><textarea rows="2" id="sc_2">まずは、あなた自身の
-「1セット体験」から
-穏やかにスタート。 / ※パッケージイメージ（16日間・8日間プログラム）</textarea></div><div class="scene-row"><strong>Scene 3 (8s - 12s) — SCENE 03 / PERSONAL FOLLOW</strong><textarea rows="2" id="sc_3">あなたの初回体験は
-鍼灸師 原麻優子が
-丁寧にフォローします。 / ご自身の実感をもとに、自然体でお伝えできます。</textarea></div><div class="scene-row"><strong>Scene 4 (12s - 16s) — SCENE 04 / SUPPORT TOOLKIT</strong><textarea rows="2" id="sc_4">活動開始時には
-「進行ノウハウ」と
-「LINEフォロー文面集」完備 / 何を伝えればよいか迷わず、お客様に寄り添えます。</textarea></div><div class="scene-row"><strong>Scene 5 (16s - 20s) — SCENE 05 / CONSULTATION</strong><textarea rows="2" id="sc_5">玄米クレンズ 特約店・代理店
-まずは説明会・個別相談へ / 詳しい制度・価格は募集ページ（LP）をご覧ください</textarea></div>
+  <div class="container">
+    <header>
+      <div class="kicker">GENMAI CLEANSE — Promotional Video Suite</div>
+      <h1>🎬 玄米クレンズ 特約店・代理店パートナー募集 プロモ動画（9:16 ＆ 16:9）</h1>
+      <p style="color:#CBD5CB; font-size:14px;">Instagramリール・TikTok・公式LINE配信用の縦型動画（9:16）と、LP埋め込み・説明会用の横型動画（16:9）の2フォーマットを完備。</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h2>📱 9:16 縦型ショート動画（リール / LINE用・20秒）</h2>
+        <video class="video-vertical" src="promo_video_vertical_9x16.mp4" controls loop playsinline></video>
+        <div class="btn-row" style="justify-content:center;">
+          <a class="btn btn-gold" href="promo_video_vertical_9x16.mp4" download>⬇ 縦型MP4 (9:16) を保存</a>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <div class="card">
+          <h2>🖥 16:9 横型ワイド動画（Web LP / 説明会スライド用・20秒）</h2>
+          <video class="video-landscape" src="promo_video_landscape_16x9.mp4" controls loop playsinline></video>
+          <div class="btn-row">
+            <a class="btn btn-gold" href="promo_video_landscape_16x9.mp4" download>⬇ 横型MP4 (16:9) を保存</a>
+            <a class="btn" href="production/website_production.html">🌐 本番用Webサイトへ戻る</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>📝 5シーン構成＆SRT字幕エクスポート</h2>
+          <div id="scenesContainer">
+            <div class="scene-row"><strong>Scene 1 (0s - 4s) — SCENE 01 / PARTNER PROGRAM</strong><textarea rows="2" id="sc_1">玄米クレンズ 特約店・代理店パートナー募集
+北海道産・残留農薬ゼロ「ゆめぴりか」使用｜食べて整える16日間・8日間プログラム</textarea></div>
+            <div class="scene-row"><strong>Scene 2 (4s - 8s) — SCENE 02 / 7-PIECE KIT</strong><textarea rows="2" id="sc_2">充実の7点フルセット（定価 32,500円 税込）
+酵素玄米14食・玄米甘酒3本・めぐみ茶・黒すりごま・マグマ塩・お灸・ガイドブック</textarea></div>
+            <div class="scene-row"><strong>Scene 3 (8s - 12s) — SCENE 03 / HIGH MARGIN</strong><textarea rows="2" id="sc_3">特約店卸 22,750円（1セット粗利 9,750円・卸70%）
+最小ロット5セット〜｜サロン・整体院・パーソナルジム・自宅起業に最適</textarea></div>
+            <div class="scene-row"><strong>Scene 4 (12s - 16s) — SCENE 04 / DIRECT SUPPORT</strong><textarea rows="2" id="sc_4">鍼灸師 原麻優子による初回体験フォロー＆LINE文面集完備
+ご自身の1セット体験からスタート。お客様への案内・進行ノウハウもすべて提供</textarea></div>
+            <div class="scene-row"><strong>Scene 5 (16s - 20s) — SCENE 05 / OFFICIAL LINE</strong><textarea rows="2" id="sc_5">まずは公式LINEから「個別説明会・体験相談」へ
+U-word加盟店連携・販促チラシ・専用マニュアル一式をすぐにご活用いただけます</textarea></div>
+          </div>
+          <button class="btn" onclick="exportSrt()">💾 編集した字幕（.srt）をダウンロード</button>
+        </div>
+      </div>
     </div>
-    <button class="btn" onclick="exportSrt()">💾 編集した字幕（.srt）をダウンロード</button>
   </div>
   <script>
     function exportSrt() {
