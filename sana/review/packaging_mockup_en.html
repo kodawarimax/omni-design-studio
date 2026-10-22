@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sana — flower_jewelry | Gift Box &amp; Backing Card Packaging Specification (English)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #FAF7F2;
+      --ink: #1E242B;
+      --muted: #5A626A;
+      --mint: #2E5E4E;
+      --brass: #9E7B47;
+      --border: #DFD8CC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      padding: 64px 24px 80px;
+      line-height: 1.75;
+    }
+    .lang-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: #1E242B;
+      color: #FAF7F2;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      border-bottom: 2px solid var(--brass);
+    }
+    .lang-bar a {
+      color: #FAF7F2;
+      text-decoration: none;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      font-weight: 700;
+      margin-left: 6px;
+    }
+    .lang-bar a.active {
+      background: var(--brass);
+      border-color: var(--brass);
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      margin: 28px 0;
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 16px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 12px; }
+    th, td { border-bottom: 1px solid var(--border); padding: 10px 8px; text-align: left; }
+    th { width: 36%; color: var(--muted); font-weight: 500; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="lang-bar">
+    <div>🎁 <strong>Sana — flower_jewelry｜Gift Box &amp; Backing Card Specification (Inbound English)</strong></div>
+    <div>
+      <a href="packaging_mockup.html">🇯🇵 日本語仕様書</a>
+      <a href="packaging_mockup_en.html" class="active">🌍 English Spec</a>
+      <a href="website_en.html">🌐 English Website</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p style="font-family:'Cormorant Garamond',serif;color:var(--mint);letter-spacing:0.14em;text-transform:uppercase;">Packaging &amp; Souvenir Presentation Specification</p>
+    <h1 style="font-size:34px;margin:6px 0 12px;">Sana — flower_jewelry Gift Box &amp; Signature Card</h1>
+    <p style="color:var(--muted);font-size:14.5px;">
+      Designed to protect delicate 3D botanical resin petals in luggage while presenting a refined Japanese artisan unboxing experience for international travelers and gift recipients.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="assets/13_sana_packaging_showcase.png" alt="Sana Packaging Showcase" />
+        <h2 style="font-size:22px;margin-bottom:8px;">Original Signature Card + 32mm Deep Rigid Gift Box</h2>
+        <p style="font-size:13.5px;color:var(--muted);">
+          Preserves the minimalist aesthetic of the authentic <code>Sana / flower_jewelry</code> cotton card (with <code>□ pierce □ earring □ other</code> checkboxes at the bottom) inside a 32mm-deep cushioned rigid box ideal for Marche/Pop-up takeaways, international travel, and +¥550 JPY gift wrapping.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="assets/01_sana_brand_card_pansy.jpg" alt="Sana Backing Card Close-up" />
+        <h3 style="font-size:20px;margin-bottom:8px;">Dimensions, Materials &amp; Gift Specs</h3>
+        <table>
+          <tr><th>Brand Name</th><td>Sana — flower_jewelry (サナ フラワージュエリー)</td></tr>
+          <tr><th>Backing Card Size</th><td>W 55mm × H 75mm (Warm Cotton Matte Stock with Precision Slits)</td></tr>
+          <tr><th>Hardware &amp; Checkboxes</th><td>Hypoallergenic (Surgical Stainless Steel / Titanium), 14K Gold-Filled (+¥1,100 JPY) | □ pierce / □ earring / □ other</td></tr>
+          <tr><th>Gift Wrapping</th><td>Luxury Gift Wrapping Available for Jewelry (+¥550 JPY)</td></tr>
+          <tr><th>Dispatch Lead Time</th><td>Within 7 days of payment (*Rose earrings: approx. 2 weeks)</td></tr>
+          <tr><th>Official Online Shop</th><td><a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener" style="color:var(--mint);font-weight:700;">https://shop.sanaflowerjewelry.com</a> (BASE)</td></tr>
+          <tr><th>Vector Dieline</th><td><a href="#dieline-sec" style="color:var(--mint);">See 1:1 SVG Dieline Below (packaging_dieline.svg)</a></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" id="dieline-sec">
+      <h2 style="font-size:22px;margin-bottom:8px;">Gift Box &amp; Backing Card 1:1 Vector Dieline (SVG)</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Solid Line (#1E242B) = Cut Line / Dashed Line (#2E5E4E) = Crease &amp; Fold Line</p>
+      <div style="text-align:center;background:#FAF7F2;padding:24px;border:1px solid var(--border);border-radius:4px;">
+        <img src="packaging_dieline.svg" alt="Sana Gift Box SVG Dieline" style="max-width:760px;width:100%;margin:0 auto;" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>

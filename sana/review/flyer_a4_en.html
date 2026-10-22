@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sana — flower_jewelry | A4 Double-Sided Inbound English Lookbook &amp; Flyer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #FAF7F2;
+      --ink: #1E242B;
+      --muted: #5A626A;
+      --cobalt: #365682;
+      --mint: #2E5E4E;
+      --brass: #9E7B47;
+      --border: #DDD5C7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      background: #E5E0D8;
+      color: var(--ink);
+      padding: 56px 0 80px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .lang-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: #1E242B;
+      color: #FAF7F2;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      border-bottom: 2px solid var(--brass);
+    }
+    .lang-bar a {
+      color: #FAF7F2;
+      text-decoration: none;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      font-weight: 700;
+      margin-left: 6px;
+    }
+    .lang-bar a.active {
+      background: var(--brass);
+      border-color: var(--brass);
+    }
+    @media print {
+      .lang-bar { display: none !important; }
+      body { padding: 0; }
+    }
+    .a4-page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 24px;
+      background: var(--ivory);
+      padding: 13mm 15mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+      overflow: hidden;
+      page-break-after: always;
+    }
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3mm;
+    }
+    .logo-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26pt;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .logo-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 10.5pt;
+      color: var(--muted);
+      margin-left: 8px;
+      letter-spacing: 0.08em;
+    }
+    .front-hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 6mm;
+      margin: 4mm 0;
+      align-items: center;
+    }
+    .front-hero-img {
+      width: 100%;
+      height: 84mm;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+    .front-copy h1 {
+      font-size: 21pt;
+      line-height: 1.25;
+      margin-bottom: 3mm;
+    }
+    .front-copy p {
+      font-size: 8.6pt;
+      line-height: 1.62;
+      color: var(--muted);
+      margin-bottom: 3mm;
+    }
+    .front-sub-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4.5mm;
+      margin-bottom: 3.5mm;
+    }
+    .front-sub-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 3mm;
+      border-radius: 3px;
+    }
+    .front-sub-card img {
+      width: 100%;
+      height: 43mm;
+      object-fit: cover;
+      border-radius: 2px;
+      margin-bottom: 2mm;
+    }
+    .front-sub-card h3 {
+      font-size: 11pt;
+      margin-bottom: 1mm;
+    }
+    .front-sub-card p {
+      font-size: 7.5pt;
+      color: var(--muted);
+      line-height: 1.48;
+    }
+    .front-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 3.8mm;
+      border-radius: 3px;
+    }
+    .fp-box strong {
+      display: block;
+      font-size: 8.5pt;
+      color: var(--mint);
+      margin-bottom: 1mm;
+    }
+    .fp-box span {
+      font-size: 7.4pt;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3.5mm;
+      margin: 3mm 0;
+    }
+    .cat-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2mm;
+    }
+    .cat-item img {
+      width: 100%;
+      height: 35mm;
+      object-fit: cover;
+      border-radius: 2px;
+      margin-bottom: 1.5mm;
+    }
+    .cat-meta strong {
+      display: block;
+      font-size: 7.2pt;
+      line-height: 1.3;
+      margin-bottom: 0.8mm;
+    }
+    .cat-meta span {
+      display: block;
+      font-size: 6.6pt;
+      color: var(--muted);
+    }
+    .spec-footer {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 4mm;
+      background: #1E242B;
+      color: #FAF7F2;
+      padding: 4.5mm 5mm;
+      border-radius: 4px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-bar">
+    <div>🌸 <strong>Sana — flower_jewelry｜A4 Lookbook &amp; Flyer (Inbound English Edition)</strong></div>
+    <div>
+      <a href="flyer_a4.html">🇯🇵 日本語版チラシ</a>
+      <a href="flyer_a4_en.html" class="active">🌍 English Flyer</a>
+      <a href="website_en.html">🌐 Back to English Website</a>
+    </div>
+  </div>
+
+  <!-- PAGE 1: FRONT (ENGLISH INBOUND EDITION) -->
+  <section class="a4-page">
+    <header class="top-bar">
+      <div>
+        <span class="logo-title">Sana</span>
+        <span class="logo-sub">flower_jewelry — Handcrafted Botanical Resin Jewelry Japan</span>
+      </div>
+      <span style="background:#EAF1EE;color:#2E5E4E;padding:2px 8px;border-radius:3px;font-size:8.5pt;font-weight:700;">Inbound Visitor &amp; Souvenir Guide | Official BASE Shop</span>
+    </header>
+
+    <div class="front-hero">
+      <img class="front-hero-img" src="assets/02_mint_hydrangea_glass.jpg" alt="Ice-Mint Hydrangea Cluster Earrings" />
+      <div class="front-copy">
+        <div style="font-size:8.5pt;color:var(--mint);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2mm;">100% Real Flowers Preserved in Japan</div>
+        <h1>Wear the Living Light of Japanese Blossoms.</h1>
+        <p>
+          <strong>Sana — flower_jewelry</strong> handcrafts one-of-a-kind botanical jewelry in Japan using real seasonal flowers—hydrangea, blue viola, white rose, sakura petals, and pressed strawberries—delicately sealed in multi-layer crystal resin.
+        </p>
+        <p>
+          Designed for women from their 20s to 60s. Whether as a daily wearable art piece or an unforgettable souvenir &amp; gift from Japan (<strong>+¥550 JPY gift wrapping available</strong>), each blossom is uniquely yours.
+        </p>
+        <div style="background:#FFFFFF;border:1px solid var(--border);padding:2.5mm 3mm;border-radius:3px;font-size:8pt;">
+          <strong style="color:var(--cobalt);">Price Range: ¥3,850 – ¥22,000 JPY (Tax Included)</strong><br />
+          <span>Ships within 7 days of payment (*Rose earrings take approx. 2 weeks)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="front-sub-grid">
+      <div class="front-sub-card">
+        <img src="assets/01_sana_brand_card_pansy.jpg" alt="Hypoallergenic Earrings" />
+        <h3>Hypoallergenic Ear Jewelry</h3>
+        <p>Standard Surgical Stainless Steel or Titanium hardware. Optional 14K Gold-Filled (+¥1,100 JPY) upgrade. Pierced &amp; clip-on available.</p>
+      </div>
+      <div class="front-sub-card">
+        <img src="assets/03_wearing_white_blossom_hair.jpg" alt="Botanical Pony Hook" />
+        <h3>3-Second Botanical Hair Hooks</h3>
+        <p>Simply slide the hook into any tied ponytail knot. Effortless, non-twisting floral silhouette for daily &amp; formal styling.</p>
+      </div>
+      <div class="front-sub-card">
+        <img src="assets/04_white_rose_bridal_comb.jpg" alt="White Rose Ceremony Comb" />
+        <h3>Bridal &amp; Ceremony Hair Combs</h3>
+        <p>Real preserved white rose hand-wired with pearls &amp; crystal beads. Ideal for weddings, parties, and kimono styling.</p>
+      </div>
+    </div>
+
+    <div class="front-points">
+      <div class="fp-box">
+        <strong>01. Skin-Safe Metals</strong>
+        <span>All ear findings use Surgical Stainless Steel or Titanium (14kgf +¥1,100 JPY). Safe for metal allergies.</span>
+      </div>
+      <div class="fp-box">
+        <strong>02. Souvenir Gift Wrapping</strong>
+        <span>Luxury gift wrapping available for +¥550 JPY. Handed on our signature Sana botanical card.</span>
+      </div>
+      <div class="fp-box">
+        <strong>03. Custom Phone Cases</strong>
+        <span>Pressed-strawberry cases available for all models on inquiry (*Wavy case shown is iPhone only).</span>
+      </div>
+    </div>
+
+    <footer style="display:flex;justify-content:space-between;font-size:7.8pt;color:var(--muted);border-top:1px solid var(--border);padding-top:2.5mm;">
+      <span>Sana — flower_jewelry (サナ フラワージュエリー) | Handcrafted in Japan</span>
+      <span>Official Online Store (BASE): https://shop.sanaflowerjewelry.com</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 2: BACK (12-ITEM ENGLISH CATALOG & ORDER GUIDE) -->
+  <section class="a4-page">
+    <header class="top-bar">
+      <div>
+        <span class="logo-title" style="font-size:20pt;">Complete 12-Piece Botanical Collection</span>
+        <span class="logo-sub">All pieces handcrafted from real natural blossoms &amp; pressed fruit</span>
+      </div>
+      <span style="font-size:8.5pt;color:var(--cobalt);font-weight:700;">¥3,850 – ¥22,000 JPY</span>
+    </header>
+
+    <div class="catalog-grid">
+      
+        <div class="cat-item">
+          <img src="assets/01_sana_brand_card_pansy.jpg" alt="Single Pressed Blue Viola Earrings" />
+          <div class="cat-meta">
+            <strong>No.01 Single Pressed Blue Viola Earrings</strong>
+            <span>¥3,850–¥22,000 JPY | Stainless / Titanium / 14kgf</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/02_mint_hydrangea_glass.jpg" alt="Ice-Mint Hydrangea 3D Cluster Earrings" />
+          <div class="cat-meta">
+            <strong>No.02 Ice-Mint Hydrangea 3D Cluster Earrings</strong>
+            <span>¥3,850–¥22,000 JPY | Stainless / Titanium / 14kgf</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/03_wearing_white_blossom_hair.jpg" alt="White Blossom Clear Botanical Pony Hook" />
+          <div class="cat-meta">
+            <strong>No.03 White Blossom Clear Botanical Pony Hook</strong>
+            <span>¥3,850–¥22,000 JPY | Effortless 3-Sec Hair Hook</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/04_white_rose_bridal_comb.jpg" alt="Real White Rose & Pearl Ceremony Comb" />
+          <div class="cat-meta">
+            <strong>No.04 Real White Rose & Pearl Ceremony Comb</strong>
+            <span>¥3,850–¥22,000 JPY | Bridal & Special Occasion</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/05_cobalt_hydrangea_hook.jpg" alt="Deep Cobalt Hydrangea & Gold Pony Hook" />
+          <div class="cat-meta">
+            <strong>No.05 Deep Cobalt Hydrangea & Gold Pony Hook</strong>
+            <span>¥3,850–¥22,000 JPY | Japanese Indigo Gradation</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/06_mint_cobalt_pair_stone.jpg" alt="Hydrangea Pony Hook Duo (Mint & Cobalt)" />
+          <div class="cat-meta">
+            <strong>No.06 Hydrangea Pony Hook Duo (Mint & Cobalt)</strong>
+            <span>¥3,850–¥22,000 JPY | Real Petal Veining</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/07_bouquet_trio_book.jpg" alt="Pansy & Wildflower Bouquet Hair Barrette" />
+          <div class="cat-meta">
+            <strong>No.07 Pansy & Wildflower Bouquet Hair Barrette</strong>
+            <span>¥3,850–¥22,000 JPY | Gift Wrapping +¥550 JPY</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/08_sakura_pearl_stone.jpg" alt="Sakura Mauve Petal & Pearl Pony Hook" />
+          <div class="cat-meta">
+            <strong>No.08 Sakura Mauve Petal & Pearl Pony Hook</strong>
+            <span>¥3,850–¥22,000 JPY | Iconic Japan Keepsake</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/09_ice_mint_long_barrette.jpg" alt="Ice-Mint Hydrangea & Dewdrop Long Barrette" />
+          <div class="cat-meta">
+            <strong>No.09 Ice-Mint Hydrangea & Dewdrop Long Barrette</strong>
+            <span>¥3,850–¥22,000 JPY | Statement Hair Jewelry</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/10_crystal_medallion_earrings.jpg" alt="Floral Medallion & Faceted Crystal Earrings" />
+          <div class="cat-meta">
+            <strong>No.10 Floral Medallion & Faceted Crystal Earrings</strong>
+            <span>¥3,850–¥22,000 JPY | Stainless / Titanium / 14kgf</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/11_teardrop_botanical_earrings.jpg" alt="Botanical Teardrop & Gold Leaf Earrings" />
+          <div class="cat-meta">
+            <strong>No.11 Botanical Teardrop & Gold Leaf Earrings</strong>
+            <span>¥3,850–¥22,000 JPY | 3 Colors | Hypoallergenic</span>
+          </div>
+        </div>
+        
+        <div class="cat-item">
+          <img src="assets/12_pressed_strawberry_cases.jpg" alt="Real Pressed Strawberry & Daisy Phone Case" />
+          <div class="cat-meta">
+            <strong>No.12 Real Pressed Strawberry & Daisy Phone Case</strong>
+            <span>All Models on Inquiry (*Wavy Frame: iPhone Only)</span>
+          </div>
+        </div>
+        
+    </div>
+
+    <div class="spec-footer">
+      <div>
+        <div style="font-size:8pt;color:#DFC394;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1mm;">How to Order &amp; Customization Guide</div>
+        <h3 style="font-size:13pt;color:#FAF7F2;margin-bottom:2mm;">Shop at Marches / Pop-ups or Online via BASE</h3>
+        <p style="font-size:7.6pt;color:#D0D5DC;line-height:1.55;">
+          • <strong>Hardware Options</strong>: Surgical Stainless Steel / Titanium (Standard) | 14K Gold-Filled (+¥1,100 JPY)<br />
+          • <strong>Gift Wrapping</strong>: Available for jewelry (+¥550 JPY) — ready to gift as a Japanese keepsake<br />
+          • <strong>Smartphone Cases</strong>: Custom orders accepted for all models upon inquiry (*Wavy frame is iPhone only; some models unavailable)<br />
+          • <strong>Dispatch Lead Time</strong>: Within 7 days after payment confirmation (*Rose pierced/clip-on earrings: approx. 2 weeks)
+        </p>
+      </div>
+      <div style="display:flex;align-items:center;gap:3.5mm;background:rgba(255,255,255,0.08);padding:3mm;border-radius:4px;">
+        <a href="https://shop.sanaflowerjewelry.com" target="_blank" rel="noopener">
+          <img src="assets/qr_sana_official.png" alt="QR Code to Official BASE Shop" style="width:22mm;height:22mm;background:#fff;padding:1.5mm;border-radius:2px;display:block;" />
+        </a>
+        <div style="font-size:7.2pt;line-height:1.45;color:#FAF7F2;">
+          <strong style="color:#DFC394;display:block;font-size:8pt;">Scan to Open BASE Shop</strong>
+          <span>shop.sanaflowerjewelry.com</span><br />
+          <span style="color:#CBD5CB;">Check live inventory &amp; custom options</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

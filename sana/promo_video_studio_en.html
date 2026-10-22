@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sana — flower_jewelry | Promotional Video Studio (English &amp; Japanese Narrated Editions)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #1B2026;
+    color: #FAF7F2;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    padding: 36px 24px 64px;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+  header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(223, 195, 148, 0.25);
+  }
+  .kicker { color: #DFC394; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); margin-bottom: 10px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  @media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(223, 195, 148, 0.28);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .card h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; margin-bottom: 14px; color: #DFC394; }
+  .pair { display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: center; }
+  @media (max-width: 600px) { .pair { grid-template-columns: 1fr; } }
+  video { width: 100%; border-radius: 10px; border: 1px solid #B08D57; background: #000; display: block; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #B08D57; color: #1B2026; text-decoration: none;
+    padding: 9px 16px; border-radius: 8px; font-weight: 700; font-size: 13px;
+  }
+  .btn-sub { background: rgba(255,255,255,0.12); color: #FAF7F2; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="kicker">Sana — flower_jewelry | Bilingual Promotional Film Suite</div>
+      <h1>🎬 Sana Promotional Videos (English Inbound &amp; Japanese Voiceover)</h1>
+      <p style="color:#CBD5CB; font-size:14px;">Both 9:16 Vertical Reels and 16:9 Landscape Widescreen films with full English neural narration and Japanese neural narration.</p>
+      <div class="btn-row" style="justify-content:center; margin-top:16px;">
+        <a class="btn" href="production/website_en.html">🌍 Open English Website</a>
+        <a class="btn btn-sub" href="production/website.html">🇯🇵 日本語Webサイトを開く</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h2>🌍 Inbound English Voiceover Edition (en-US-AriaNeural + BGM)</h2>
+        <div class="pair">
+          <div>
+            <video src="promo_video_vertical_9x16_en.mp4" controls preload="metadata" playsinline style="aspect-ratio:9/16;"></video>
+            <div style="text-align:center; font-size:12px; margin-top:6px;">9:16 Vertical Reel (EN)</div>
+          </div>
+          <div>
+            <video src="promo_video_landscape_16x9_en.mp4" controls preload="metadata" playsinline style="aspect-ratio:16/9;"></video>
+            <div style="text-align:center; font-size:12px; margin-top:6px;">16:9 Landscape Film (EN)</div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="promo_video_vertical_9x16_en.mp4" download>⬇ Download 9:16 (English)</a>
+          <a class="btn" href="promo_video_landscape_16x9_en.mp4" download>⬇ Download 16:9 (English)</a>
+          <a class="btn btn-sub" href="promo_captions_en.srt" download>📝 English Captions (.srt)</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🇯🇵 Japanese Voiceover Edition (ja-JP-NanamiNeural + BGM)</h2>
+        <div class="pair">
+          <div>
+            <video src="promo_video_vertical_9x16.mp4" controls preload="metadata" playsinline style="aspect-ratio:9/16;"></video>
+            <div style="text-align:center; font-size:12px; margin-top:6px;">9:16 縦型リール (日本語)</div>
+          </div>
+          <div>
+            <video src="promo_video_landscape_16x9.mp4" controls preload="metadata" playsinline style="aspect-ratio:16/9;"></video>
+            <div style="text-align:center; font-size:12px; margin-top:6px;">16:9 横型ワイド (日本語)</div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="promo_video_vertical_9x16.mp4" download>⬇ 縦型 9:16 (日本語) 保存</a>
+          <a class="btn" href="promo_video_landscape_16x9.mp4" download>⬇ 横型 16:9 (日本語) 保存</a>
+          <a class="btn btn-sub" href="promo_captions.srt" download>📝 日本語字幕 (.srt)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
