@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECBOT（kodawarimax.net）— 不動産・EC特化AI導入支援 販促クリエイティブ＆プロモ動画スイート | Works by Kyoworks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #F6F3EE;
+      --paper: #FDFBF7;
+      --navy: #18222F;
+      --navy-deep: #0F1722;
+      --slate: #334155;
+      --terra: #C86D51;
+      --terra-dark: #A85238;
+      --sage: #2E5E4E;
+      --gold: #C59B5F;
+      --border: #E2DDD5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--ivory);
+      color: var(--navy);
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* KYOWORKS GLOBAL PORTFOLIO SIGNATURE BAR */
+    .kyoworks-signature-bar {
+      background: linear-gradient(90deg, #0D141F 0%, #1E2C3F 50%, #0D141F 100%);
+      color: #F6F3EE;
+      border-bottom: 2px solid var(--gold);
+      padding: 10px 24px;
+      font-size: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    .kw-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .kw-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #F6D399;
+    }
+    .kw-pill {
+      background: var(--terra);
+      color: #fff;
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.1em;
+    }
+    .kw-nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .kw-nav a {
+      color: #E2E8F0;
+      text-decoration: none;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: all 0.2s;
+    }
+    .kw-nav a:hover {
+      background: var(--terra);
+      border-color: var(--terra);
+      color: #fff;
+    }
+
+    /* Main Site Nav */
+    .site-header {
+      background: rgba(246, 243, 238, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+    }
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      color: var(--navy);
+    }
+    .logo-sub {
+      font-size: 12px;
+      color: var(--slate);
+      padding-left: 12px;
+      border-left: 1.5px solid #CBD5E1;
+      font-weight: 600;
+    }
+    .header-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--navy);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(24,34,47,0.08); }
+    .btn-terra { background: var(--terra); color: #fff; border-color: var(--terra); }
+    .btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 56px 24px 48px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200, 109, 81, 0.12);
+      border: 1px solid rgba(200, 109, 81, 0.35);
+      color: var(--terra-dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 44px;
+      line-height: 1.26;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+    .hero h1 span {
+      color: var(--terra);
+      border-bottom: 4px solid rgba(200, 109, 81, 0.3);
+    }
+    .hero-lead {
+      font-size: 15.5px;
+      color: var(--slate);
+      margin-bottom: 24px;
+      line-height: 1.85;
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .hero-meta-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .hm-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .hm-card strong {
+      display: block;
+      font-size: 11px;
+      color: var(--terra);
+      font-family: 'Inter', sans-serif;
+    }
+    .hm-card span {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .hero-visual-panel {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 24px 60px rgba(24, 34, 47, 0.22);
+      border: 2px solid rgba(197, 155, 95, 0.4);
+    }
+    .hv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .hv-grid img {
+      width: 100%;
+      height: 155px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hv-caption {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #E2E8F0;
+    }
+    .hv-caption strong { color: #FFD2C2; }
+
+    /* Section Container */
+    .section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .sec-header {
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sec-kicker {
+      font-family: 'Inter', monospace;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--terra);
+      letter-spacing: 0.14em;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .sec-header h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 30px;
+      color: var(--navy);
+    }
+
+    /* Video Showcase Section (Nogachan Voice) */
+    .video-stage {
+      background: var(--navy-deep);
+      color: #fff;
+      border-radius: 22px;
+      padding: 36px;
+      border: 1px solid rgba(197, 155, 95, 0.35);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-top: 24px;
+    }
+    .video-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .video-card h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: #F6D399;
+    }
+    .video-card p {
+      font-size: 12px;
+      color: #CBD5E1;
+      margin-bottom: 12px;
+    }
+    .video-card video {
+      width: 100%;
+      border-radius: 10px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: block;
+    }
+    .script-box {
+      margin-top: 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--terra);
+      padding: 14px 16px;
+      border-radius: 0 10px 10px 0;
+      font-size: 12.5px;
+      color: #E2E8F0;
+    }
+
+    /* Print & Packaging Suite Cards */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .deliv-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 26px rgba(24,34,47,0.05);
+    }
+    .deliv-thumb {
+      height: 210px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .deliv-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+    .deliv-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--navy);
+      color: #F6D399;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(246,211,153,0.4);
+    }
+    .deliv-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .deliv-body h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .deliv-body p {
+      font-size: 13px;
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+
+    /* Website Analysis & Dual Verticals Section */
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .a-box {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+    }
+    .a-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+    .a-box ul {
+      padding-left: 18px;
+      font-size: 13.5px;
+      color: var(--slate);
+    }
+    .a-box ul li { margin-bottom: 8px; }
+
+    footer.site-footer {
+      background: var(--navy-deep);
+      color: #CBD5E1;
+      padding: 44px 24px;
+      margin-top: 40px;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    @media (max-width: 960px) {
+      .hero, .video-grid, .deliverables-grid, .analysis-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- KYOWORKS OFFICIAL PORTFOLIO BAR -->
+  <div class="kyoworks-signature-bar">
+    <div class="kw-inner">
+      <div class="kw-brand">
+        <span class="kw-pill">WORKS BY KYOWORKS</span>
+        <span>KYOWORKS CREATIVE &amp; AI DESIGN STUDIO — OFFICIAL PORTFOLIO WORK</span>
+      </div>
+      <nav class="kw-nav">
+        <a href="../index.html">🏛️ Kyoworks 全作品ポータルへ</a>
+        <a href="../sana/website.html">🌸 作品01: Sana フラワージュエリー</a>
+        <a href="../genmai/website.html">🌾 作品02: 玄米クレンズ</a>
+        <a href="https://kodawarimax.net/" target="_blank">🔗 解析元サイト: kodawarimax.net ↗</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <span class="logo-mark">RECBOT</span>
+        <span class="logo-sub">不動産・ECに特化したAI導入支援（kodawarimax.net 販促スイート ｜ 制作：Kyoworks）</span>
+      </div>
+      <div class="header-links">
+        <a class="btn" href="flyer_a4.html">📄 A4両面フライヤー</a>
+        <a class="btn" href="poster_b2.html">🖼️ B2大判ポスター</a>
+        <a class="btn" href="packaging_mockup.html">📦 導入スターターBOX</a>
+        <a class="btn" href="ycs_creative_brief_b1_b7.html">📊 サイト解析＆79問ブリーフ</a>
+        <a class="btn btn-terra" href="#promo-videos">🎬 のがちゃん音声プロモ動画</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div>
+      <div class="hero-kicker">✨ KYOWORKS CLIENT WORK #03 ｜ https://kodawarimax.net/ 完全解析＆制作</div>
+      <h1>現場の仕事に、<br><span>頼れる相棒</span>を。</h1>
+      <p class="hero-lead">
+        いつもの入力、返信、集計。その繰り返しにAIを。<br>
+        <strong>『RECBOT（レックボット）』</strong>（<a href="https://kodawarimax.net/" target="_blank" style="color:var(--terra);font-weight:700;">kodawarimax.net</a>）のWebサイトを徹底解析し、<strong>Kyoworks</strong>が展示会・商談・現場導入で即戦力となる<strong>「A4両面フライヤー」「B2大判ポスター」「現場AI導入スターターBOX（パッケージ＆展開図）」「のがちゃん音声プロモ動画（9:16 &amp; 16:9）」</strong>を一気通貫でデザイン・制作しました。
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn btn-terra" href="flyer_a4.html">🖨️ A4両面フライヤーを開く</a>
+        <a class="btn btn-navy" href="poster_b2.html">🖼️ B2展示会ポスターを開く</a>
+        <a class="btn" href="packaging_mockup.html">📦 導入キット箱＆展開図を見る</a>
+      </div>
+      <div class="hero-meta-cards">
+        <div class="hm-card">
+          <strong>CREATIVE STUDIO</strong>
+          <span>Kyoworks（作品クレジット）</span>
+        </div>
+        <div class="hm-card">
+          <strong>VOICE NARRATION</strong>
+          <span>🎙️ のがちゃん (Fish Audio)</span>
+        </div>
+        <div class="hm-card">
+          <strong>TARGET DOMAIN</strong>
+          <span>不動産管理 × EC・AIO支援</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual-panel">
+      <div class="hv-grid">
+        <img src="assets/real-estate.jpg" alt="不動産向けAI支援" />
+        <img src="assets/commerce.jpg" alt="EC向けAI支援" />
+      </div>
+      <img src="assets/site_hero_capture.png" alt="kodawarimax.net サイトキャプチャ" style="width:100%; height:145px; object-fit:cover; border-radius:10px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.2);" />
+      <div class="hv-caption">
+        <strong>■ RECBOTのコア設計思想（kodawarimax.net 解析）</strong><br>
+        「文章案はAI」「金額は計算ルール」「最終確認は人」の3役割分担で、不動産の改修案件管理とEC（Shopee出品・AIO対策）を現場に定着させます。
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: PROMO VIDEOS WITH NOGACHAN VOICE -->
+  <section class="section" id="promo-videos">
+    <div class="video-stage">
+      <div class="sec-header" style="margin-bottom:12px;">
+        <div>
+          <span class="sec-kicker" style="color:#FF9E80;">PROMOTIONAL VIDEOS — NARRATED BY NOGACHAN</span>
+          <h2 style="color:#fff;">🎬 プロモーション動画（声：のがちゃん × Kyoworks制作）</h2>
+        </div>
+        <a class="btn btn-terra" href="promo_video_studio_9x16.html">📱 動画スタジオ全画面モードで開く</a>
+      </div>
+      <p style="font-size:13.5px; color:#CBD5E1;">
+        フィットネスYouTuber・元UIデザイナーの<strong>「のがちゃん」音声クローン（Fish Audio S2-Pro: <code>496903bb3d64410f8373d58bf97e8f5b</code>）</strong>で全5シーンのナレーションを収録し、BGMとミックスした完成版MP4プロモーション動画です。
+      </p>
+
+      <div class="video-grid">
+        <!-- 9:16 Vertical Video -->
+        <div class="video-card">
+          <h3>📱 9:16 縦型ショート動画 (Reels / Shorts / TikTok)</h3>
+          <p>1080×1920px ｜ 約54秒 ｜ 声：のがちゃん ＋ BGM</p>
+          <video controls playsinline preload="metadata" src="promo_video_vertical_9x16.mp4"></video>
+          <div style="margin-top:10px; display:flex; gap:8px;">
+            <a class="btn btn-terra" style="font-size:11px; padding:6px 12px;" href="promo_video_vertical_9x16.mp4" download>⬇️ 縦型MP4を保存</a>
+          </div>
+        </div>
+
+        <!-- 16:9 Landscape Video -->
+        <div class="video-card">
+          <h3>🖥️ 16:9 横型プロモ動画 (YouTube / 展示会ブースモニター / LP埋め込み用)</h3>
+          <p>1920×1080px ｜ 約54秒 ｜ 声：のがちゃん ＋ BGM ｜ Produced by Kyoworks</p>
+          <video controls playsinline preload="metadata" src="promo_video_landscape_16x9.mp4"></video>
+          <div class="script-box">
+            <strong>🎙️ のがちゃん ナレーション全文（5シーン構成）：</strong><br>
+            ①「こんにちは、のがです！毎日の物件入力、問い合わせ返信、ECの出品や集計作業。同じことの繰り返しで、現場が疲れていませんか？」<br>
+            ②「そんな現場の仕事に、頼れる相棒を！不動産とECに特化したAI導入支援、レックボットなら、業務の整理から導入、運用まで、現場に合った仕組みを一緒に作れます！」<br>
+            ③「不動産の現場では、物件紹介文の作成から、管理会社の改修提案、現地写真の整理、見積り管理までを一つの流れに！文章の下書きはAI、最終確認は人だから安心です。」<br>
+            ④「さらにECでは、ショッピーの初期出品や自動化、AI検索に選ばれる、AIO対策までしっかりサポート！」<br>
+            ⑤「まずは小さく試して、現場で確かめるところから。詳細と無料相談は、こだわりマックス・ドットネットへ！一緒に現場をアップデートしましょう！」
+          </div>
+          <div style="margin-top:12px;">
+            <a class="btn btn-terra" style="font-size:11px; padding:6px 12px;" href="promo_video_landscape_16x9.mp4" download>⬇️ 横型16:9 MP4を保存</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PRINT & PACKAGING DESIGN DELIVERABLES -->
+  <section class="section" id="print-suite">
+    <div class="sec-header">
+      <div>
+        <span class="sec-kicker">PRINT &amp; PACKAGING SUITE BY KYOWORKS</span>
+        <h2>🖨️ 販促用印刷物・ポスター・パッケージデザイン一式</h2>
+      </div>
+      <span style="font-size:13px; color:var(--slate);">すべての制作物に Kyoworks の作品クレジットと入稿仕様（トンボ・展開図）を完備</span>
+    </div>
+
+    <div class="deliverables-grid">
+      <!-- Card 1: A4 Flyer -->
+      <article class="deliv-card">
+        <div class="deliv-thumb">
+          <img src="assets/site_hero_capture.png" alt="A4両面フライヤー" />
+          <span class="deliv-tag">PRINT 01 ｜ A4 DOUBLE-SIDED FLYER</span>
+        </div>
+        <div class="deliv-body">
+          <div>
+            <h3>📄 A4両面 販促フライヤー＆パンフレット</h3>
+            <p>
+              <strong>表面</strong>：RECBOTのブランドメッセージと「不動産管理（改修提案4ステップ）」「EC（Shopee初期出品・AIO対策）」の2大領域を図解。<br>
+              <strong>裏面</strong>：3つの支援領域、導入4ステップ、商談でそのまま使える「現場の繰り返し業務 自己診断チェックシート（8項目）」＋QR導線。
+            </p>
+          </div>
+          <a class="btn btn-terra" href="flyer_a4.html">📄 A4両面フライヤーを見る →</a>
+        </div>
+      </article>
+
+      <!-- Card 2: B2 Poster -->
+      <article class="deliv-card">
+        <div class="deliv-thumb">
+          <img src="assets/real-estate.jpg" alt="B2大判ポスター" />
+          <span class="deliv-tag">PRINT 02 ｜ B2 EXHIBITION POSTERS</span>
+        </div>
+        <div class="deliv-body">
+          <div>
+            <h3>🖼️ B2大判 展示会＆オフィス掲示ポスター（2種）</h3>
+            <p>
+              <strong>Edition A（Dark Slate）</strong>：不動産テック展・EC展示会ブースで遠目から視線を奪うエグゼクティブ仕様。<br>
+              <strong>Edition B（Warm Ivory）</strong>：「文章案はAI・金額は計算ルール・最終確定は人」のハイブリッド運用構造を伝えるオフィス掲示仕様。
+            </p>
+          </div>
+          <a class="btn btn-navy" href="poster_b2.html">🖼️ B2ポスター2種を見る →</a>
+        </div>
+      </article>
+
+      <!-- Card 3: Packaging -->
+      <article class="deliv-card">
+        <div class="deliv-thumb">
+          <img src="packaging_dieline.svg" alt="スターターBOXパッケージ展開図" />
+          <span class="deliv-tag">PACKAGING 03 ｜ ONBOARDING BOX &amp; DIELINE</span>
+        </div>
+        <div class="deliv-body">
+          <div>
+            <h3>📦 現場AI導入スターターBOX ＆ 1:1展開図</h3>
+            <p>
+              無形のAI導入支援を「現場で愛着を持って使い続けられる体験」に変えるオンボーディングパッケージ。<br>
+              <strong>マグネット貼箱（W260×D190×H45mm）＋ 銅箔押し ＋ A5運用プレイブック ＋ NFC起動カード</strong>の3Dモックと実寸SVG展開図。
+            </p>
+          </div>
+          <a class="btn btn-terra" href="packaging_mockup.html">📦 パッケージ＆展開図を見る →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 3: WEBSITE ANALYSIS SUMMARY -->
+  <section class="section">
+    <div class="sec-header">
+      <div>
+        <span class="sec-kicker">WEBSITE DEEP ANALYSIS — https://kodawarimax.net/</span>
+        <h2>🔍 解析レポート＆マーケティング戦略（Kyoworks Audit）</h2>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="ycs_creative_brief_b1_b7.html">📊 YCS 79問戦略ブリーフ全文</a>
+        <a class="btn" href="ycs_user_hearing_sheet.html">📝 5問要件抽出シート</a>
+      </div>
+    </div>
+
+    <div class="analysis-grid">
+      <div class="a-box">
+        <h3>🏢 01. 不動産向け支援の訴求ポイント</h3>
+        <ul>
+          <li><strong>日常業務の効率化</strong>：物件紹介文の作成、反響対応の整理、社内情報の検索をAIで高速化。</li>
+          <li><strong>管理会社向け「改修提案・案件管理の仕組みづくり」</strong>：オーナー・施工会社・入居者の間で散らばる情報を、現地記録（写真・メモ）➔ 提案整理 ➔ 承認・見積・発注 ➔ 施工・完了確認まで1つの案件で統合。</li>
+          <li><strong>安全なAI連携</strong>：文章案はAI、金額は計算ルール、最終確認は人が担うことで誤案内を防止。</li>
+        </ul>
+      </div>
+      <div class="a-box">
+        <h3>🌏 02. EC向け支援の訴求ポイント</h3>
+        <ul>
+          <li><strong>Shopeeの初期出品・自動化</strong>：越境EC参入時のハードルとなる多言語商品情報整備・属性入力・初期出品作業を自動化。</li>
+          <li><strong>EC向けAIO（AI検索に向けた商品情報最適化）</strong>：生成AI検索やレコメンドエンジンに正しく理解・推薦されるための構造化商品データ整備。</li>
+          <li><strong>運用定着</strong>：問い合わせ回答の下書き作成や定例売上レポート集計を仕組み化。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div style="font-family:'Inter',sans-serif; font-weight:900; font-size:18px; color:#F6D399; letter-spacing:0.12em;">PRODUCED &amp; DESIGNED BY KYOWORKS</div>
+        <div style="font-size:12.5px; margin-top:4px;">Client: RECBOT — 不動産・ECに特化したAI導入支援（https://kodawarimax.net/） ｜ Voice Narration: のがちゃん</div>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <a class="btn" href="../index.html">🏛️ Kyoworks 全作品ポータルへ戻る</a>
+        <a class="btn btn-terra" href="https://kodawarimax.net/" target="_blank">🔗 kodawarimax.net 公式サイト ↗</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

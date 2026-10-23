@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECBOT（kodawarimax.net）— B2大判 展示会・オフィス掲示用プロモーションポスター | Works by Kyoworks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #18222F;
+      --navy-deep: #0D1520;
+      --ivory: #F6F3EE;
+      --terra: #C86D51;
+      --sage: #2E5E4E;
+      --gold: #C59B5F;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #090E17;
+      color: #F6F3EE;
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      padding: 28px 20px 72px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .kyoworks-bar {
+      max-width: 1280px;
+      margin: 0 auto 14px;
+      background: linear-gradient(90deg, #18222F 0%, #26354A 50%, #18222F 100%);
+      border: 1px solid rgba(197, 155, 95, 0.45);
+      border-radius: 10px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+    .kw-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #F6D399;
+    }
+    .kw-badge span {
+      background: #C86D51;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+    .toolbar {
+      max-width: 1280px;
+      margin: 0 auto 32px;
+      background: rgba(24, 34, 47, 0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 16px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .toolbar h1 { font-size: 16px; font-weight: 700; }
+    .toolbar p { font-size: 12px; color: #94A3B8; margin-top: 4px; }
+    .toolbar-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 15px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #F6F3EE;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.16);
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--terra); border-color: var(--terra); color: #fff; }
+
+    .posters-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+      gap: 40px;
+      align-items: start;
+    }
+
+    .poster-col-label {
+      font-family: 'Inter', monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: #94A3B8;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* B2 Aspect Ratio (515mm x 728mm -> 1 : 1.414) */
+    .b2-poster {
+      width: 100%;
+      aspect-ratio: 515 / 728;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.65);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* EDITION A: EXECUTIVE DARK SLATE (Exhibition Booth Poster) */
+    .poster-dark {
+      background: radial-gradient(circle at 80% 15%, rgba(200,109,81,0.22) 0%, transparent 45%),
+                  linear-gradient(165deg, #111926 0%, #18222F 55%, #0F1722 100%);
+      border: 2px solid rgba(197, 155, 95, 0.35);
+      color: #F6F3EE;
+      padding: 36px;
+    }
+    .pd-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 16px;
+    }
+    .pd-brand {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+    }
+    .pd-sub {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #F6D399;
+      font-weight: 700;
+    }
+    .pd-hero {
+      margin: 26px 0 20px;
+    }
+    .pd-kicker {
+      display: inline-block;
+      background: var(--terra);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+    .pd-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 42px;
+      line-height: 1.24;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .pd-title em {
+      font-style: normal;
+      color: #FF9E80;
+    }
+    .pd-desc {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #CBD5E1;
+    }
+
+    .pd-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .pd-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .pd-card img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--terra);
+    }
+    .pd-card-body {
+      padding: 14px;
+    }
+    .pd-card-tag {
+      font-family: 'Inter', monospace;
+      font-size: 10px;
+      color: #FF9E80;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+    .pd-card-body h3 {
+      font-size: 16px;
+      margin: 4px 0 8px;
+      color: #fff;
+    }
+    .pd-card-body ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.65;
+      color: #CBD5E1;
+    }
+    .pd-card-body ul li::before {
+      content: "▸ ";
+      color: var(--terra);
+      font-weight: bold;
+    }
+
+    .pd-flow-strip {
+      background: rgba(200, 109, 81, 0.14);
+      border: 1px solid rgba(200, 109, 81, 0.45);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .pd-footer {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pd-qr-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: 10px;
+    }
+    .pd-qr-box img { width: 64px; height: 64px; }
+
+    /* EDITION B: WARM EDITORIAL IVORY (Office & Seminar Poster) */
+    .poster-ivory {
+      background: var(--ivory);
+      color: var(--navy);
+      border: 2px solid #D6CFC2;
+      padding: 36px;
+    }
+    .pi-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 14px;
+    }
+    .pi-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 38px;
+      line-height: 1.28;
+      font-weight: 900;
+      color: var(--navy);
+      margin: 22px 0 12px;
+    }
+    .pi-title span { color: var(--terra); }
+    .pi-architecture {
+      background: #fff;
+      border: 1.5px solid #DCD5C7;
+      border-radius: 12px;
+      padding: 18px;
+      margin: 16px 0;
+      box-shadow: 0 10px 24px rgba(24,34,47,0.06);
+    }
+    .pi-arch-head {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--terra);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .pi-arch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .pi-step {
+      background: var(--ivory);
+      border-radius: 8px;
+      padding: 10px;
+      border-top: 3px solid var(--navy);
+    }
+    .pi-step:nth-child(2) { border-top-color: var(--terra); }
+    .pi-step:nth-child(3) { border-top-color: var(--sage); }
+    .pi-step strong {
+      display: block;
+      font-size: 10px;
+      color: var(--terra);
+      font-family: 'Inter', sans-serif;
+    }
+    .pi-step h4 {
+      font-size: 12.5px;
+      margin: 3px 0 5px;
+    }
+    .pi-step p {
+      font-size: 10.5px;
+      line-height: 1.45;
+      color: #475569;
+    }
+    .pi-roles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .pi-role {
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    .pi-role strong {
+      display: block;
+      color: #FFD2C2;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    .pi-photo-banner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .pi-photo-banner img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .pi-footer {
+      border-top: 2px solid var(--navy);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kyoworks-bar">
+    <div class="kw-badge">
+      <span>KYOWORKS PORTFOLIO</span>
+      PRODUCED &amp; ART DIRECTED BY KYOWORKS — OMNI-CHANNEL DESIGN STUDIO
+    </div>
+    <div style="color:#CBD5E1;">Client Work: <strong>RECBOT (https://kodawarimax.net/)</strong></div>
+  </div>
+
+  <div class="toolbar">
+    <div>
+      <h1>🖼️ RECBOT（kodawarimax.net）— B2大判 プロモーションポスター（2エディション収録）</h1>
+      <p>規格: B2正寸 (515mm × 728mm) / 展示会ブース背面パネル用（Dark Slate）＆ オフィス・セミナー会場掲示用（Warm Ivory） / 制作：Kyoworks</p>
+    </div>
+    <div class="toolbar-actions">
+      <a class="btn" href="website.html">🌐 Webショーケース</a>
+      <a class="btn" href="flyer_a4.html">📄 A4両面フライヤー</a>
+      <a class="btn" href="packaging_mockup.html">📦 導入スターターBOX</a>
+      <button class="btn btn-primary" onclick="window.print()">🖨️ ポスターPDF出力 (Cmd+P)</button>
+    </div>
+  </div>
+
+  <div class="posters-grid">
+    <!-- POSTER A: DARK SLATE EXHIBITION EDITION -->
+    <div>
+      <div class="poster-col-label">
+        <span>EDITION A — B2 EXHIBITION BOOTH POSTER (DARK SLATE)</span>
+        <span>DESIGNED BY KYOWORKS</span>
+      </div>
+      <section class="b2-poster poster-dark">
+        <div>
+          <header class="pd-top">
+            <div class="pd-brand">RECBOT</div>
+            <div class="pd-sub">REAL ESTATE × E-COMMERCE AI PARTNER</div>
+          </header>
+
+          <div class="pd-hero">
+            <span class="pd-kicker">不動産・EC特化型 AI導入支援サービス</span>
+            <h2 class="pd-title">いつもの入力、返信、集計。<br>その繰り返しに<em>頼れる相棒</em>を。</h2>
+            <p class="pd-desc">
+              業務の整理からツール試作・導入・マニュアル定着まで。<br>
+              RECBOTが、現場スタッフの手を止めない「本当に使えるAIの仕組みづくり」を伴走支援します。
+            </p>
+          </div>
+
+          <div class="pd-cards">
+            <div class="pd-card">
+              <img src="assets/real-estate.jpg" alt="不動産向けAI導入支援" />
+              <div class="pd-card-body">
+                <div class="pd-card-tag">01 REAL ESTATE</div>
+                <h3>不動産仲介・管理会社向け支援</h3>
+                <ul>
+                  <li>物件紹介文の自動作成・反響対応の整理</li>
+                  <li>管理会社向け「改修提案・案件管理」構築</li>
+                  <li>現地記録→AI提案下書き→見積・完了まで一元化</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pd-card">
+              <img src="assets/commerce.jpg" alt="EC向けAI導入支援" />
+              <div class="pd-card-body">
+                <div class="pd-card-tag">02 E-COMMERCE &amp; AIO</div>
+                <h3>EC運営・越境EC・AIO支援</h3>
+                <ul>
+                  <li>Shopee初期出品・多言語商品登録の自動化</li>
+                  <li>EC向けAIO（AI検索・比較エンジン最適化）</li>
+                  <li>問い合わせ回答の下書き・売上集計の自動化</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="pd-flow-strip">
+            <span>導入4ステップ：</span>
+            <span>01 現状を聞く ➔</span>
+            <span>02 小さく試作する ➔</span>
+            <span>03 現場で確かめる ➔</span>
+            <span style="color:#FFD2C2;">04 導入し、育てる</span>
+          </div>
+        </div>
+
+        <footer class="pd-footer">
+          <div>
+            <div style="font-size:15px; font-weight:800; color:#fff;">まずは「1つの業務の試作」からご相談ください</div>
+            <div style="font-size:12px; color:#94A3B8; margin-top:4px;">公式サイト：https://kodawarimax.net/ ｜ Creative Direction by Kyoworks</div>
+          </div>
+          <div class="pd-qr-box">
+            <img src="assets/qr_kodawarimax.png" alt="QR" />
+            <div style="font-size:10.5px; line-height:1.4; font-weight:700;">
+              <span style="color:#C86D51; display:block;">SCAN FOR DEMO</span>
+              無料相談・詳細<br>kodawarimax.net
+            </div>
+          </div>
+        </footer>
+      </section>
+    </div>
+
+    <!-- POSTER B: WARM IVORY EDITORIAL EDITION -->
+    <div>
+      <div class="poster-col-label">
+        <span>EDITION B — B2 OFFICE &amp; SEMINAR POSTER (WARM IVORY)</span>
+        <span>DESIGNED BY KYOWORKS</span>
+      </div>
+      <section class="b2-poster poster-ivory">
+        <div>
+          <header class="pi-top">
+            <div style="font-family:'Inter',sans-serif; font-weight:900; font-size:26px; letter-spacing:0.16em;">RECBOT</div>
+            <div style="font-size:11px; font-weight:700; color:#C86D51;">FIELD WORKFLOW &amp; AI IMPLEMENTATION</div>
+          </header>
+
+          <h2 class="pi-title">「AIに丸投げ」しないから、<br><span>現場でずっと使い続けられる。</span></h2>
+          <p style="font-size:13.5px; line-height:1.75; color:#334155;">
+            現場に合わない大規模システムではなく、今ある業務を丁寧にほどき、小さく試して育てる。<br>
+            不動産管理とEC運営の現場を知り尽くしたRECBOTのハイブリッドAI設計。
+          </p>
+
+          <div class="pi-architecture">
+            <div class="pi-arch-head">■ 管理会社向け「改修提案・案件管理」× AI連携モデル</div>
+            <div class="pi-arch-grid">
+              <div class="pi-step">
+                <strong>STEP 01</strong>
+                <h4>現地で記録する</h4>
+                <p>写真・メモ・不具合箇所をスマホから案件単位で記録</p>
+              </div>
+              <div class="pi-step">
+                <strong>STEP 02</strong>
+                <h4>提案・判断整理</h4>
+                <p>原状回復＋バリューアップ改修案の比較材料を整理</p>
+              </div>
+              <div class="pi-step">
+                <strong>STEP 03</strong>
+                <h4>承認・見積・発注</h4>
+                <p>オーナー承認・施工会社見積・発注を1画面で追跡</p>
+              </div>
+              <div class="pi-step">
+                <strong>STEP 04</strong>
+                <h4>施工〜完了確認</h4>
+                <p>完了報告と修繕履歴を蓄積し次回提案に活用</p>
+              </div>
+            </div>
+
+            <div class="pi-roles">
+              <div class="pi-role">
+                <strong>🤖 文章案は「AI」</strong>
+                現地メモや写真からオーナー提案文・案内文の下書きを即座に生成
+              </div>
+              <div class="pi-role">
+                <strong>📐 金額は「計算ルール」</strong>
+                見積集計や単価計算は決定論的なルールで正確に処理し誤差ゼロへ
+              </div>
+              <div class="pi-role">
+                <strong>👤 最終確定は「人」</strong>
+                担当者が内容を確認・調整してから送信するため現場の信頼を担保
+              </div>
+            </div>
+          </div>
+
+          <div class="pi-photo-banner">
+            <img src="assets/real-estate.jpg" alt="Real Estate" />
+            <img src="assets/commerce.jpg" alt="E-Commerce" />
+          </div>
+        </div>
+
+        <footer class="pi-footer">
+          <div>
+            <div style="font-size:15px; font-weight:800;">RECBOT — 不動産・ECに特化したAI導入支援</div>
+            <div style="font-size:11.5px; color:#475569; margin-top:3px;">https://kodawarimax.net/ ｜ Produced by Kyoworks</div>
+          </div>
+          <div class="pd-qr-box" style="border:1.5px solid #18222F;">
+            <img src="assets/qr_kodawarimax.png" alt="QR" />
+            <div style="font-size:10.5px; line-height:1.4; font-weight:700;">
+              <span style="color:#C86D51; display:block;">OFFICIAL WEB</span>
+              kodawarimax.net
+            </div>
+          </div>
+        </footer>
+      </section>
+    </div>
+  </div>
+
+</body>
+</html>

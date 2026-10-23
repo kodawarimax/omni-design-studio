@@ -3,335 +3,570 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Omni Design Studio V3 — Live Web &amp; Promo Video Showcase (Sana &amp; 玄米クレンズ)</title>
+  <title>KYOWORKS CREATIVE WORKS SHOWCASE — 制作実績ポートフォリオ（Sana / 玄米クレンズ / RECBOT）</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FAF7F2;
-      --card: #FFFFFF;
-      --ink: #1F1B18;
-      --muted: #665E57;
-      --gold: #B69156;
-      --sana-accent: #9E6B7B;
-      --genmai-accent: #5B7A57;
-      --border: #E6DFD5;
+      --bg-dark: #090D16;
+      --bg-card: #121A28;
+      --bg-card-alt: #172234;
+      --gold: #D4AF37;
+      --gold-soft: #F6D399;
+      --terra: #C86D51;
+      --rose: #D98A9C;
+      --sage: #3B7A57;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: rgba(255,255,255,0.12);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'Noto Sans JP', sans-serif;
-      line-height: 1.65;
+      background: radial-gradient(circle at 50% 0%, #1A2639 0%, #090D16 65%);
+      color: var(--text-main);
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
       padding-bottom: 80px;
     }
-    header {
-      background: linear-gradient(135deg, #1E1916 0%, #2F2621 100%);
-      color: #FAF7F2;
-      padding: 52px 24px 44px;
-      text-align: center;
-      border-bottom: 3px solid var(--gold);
+
+    /* KYOWORKS TOP SIGNATURE RIBBON */
+    .kyoworks-ribbon {
+      background: linear-gradient(90deg, #0D131F 0%, #233248 50%, #0D131F 100%);
+      border-bottom: 2px solid var(--gold);
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
     }
-    .badge {
-      display: inline-block;
-      font-family: 'Cormorant Garamond', serif;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      color: #DFC394;
-      border: 1px solid rgba(223, 195, 148, 0.4);
-      padding: 4px 16px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-    h1 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      margin-bottom: 12px;
-    }
-    header p {
-      color: #D5CCC2;
-      max-width: 760px;
+    .ribbon-inner {
+      max-width: 1280px;
       margin: 0 auto;
-      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
-    .container {
+    .kw-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 0.18em;
+      color: var(--gold-soft);
+    }
+    .kw-logo-badge {
+      background: var(--gold);
+      color: #090D16;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 3px 9px;
+      border-radius: 4px;
+      letter-spacing: 0.12em;
+    }
+    .ribbon-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .ribbon-nav a {
+      color: #E2E8F0;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: all 0.2s;
+    }
+    .ribbon-nav a:hover {
+      background: var(--gold);
+      color: #090D16;
+      border-color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 56px 24px 40px;
+      text-align: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.14);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: var(--gold-soft);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 44px;
+      line-height: 1.28;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #F6D399, #D4AF37, #F6D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 860px;
+      margin: 0 auto 28px;
+      font-size: 15px;
+      color: #CBD5E1;
+      line-height: 1.8;
+    }
+    .stats-bar {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .stat-box strong {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      color: var(--gold-soft);
+    }
+    .stat-box span {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    /* PROJECT SUITE SECTIONS */
+    .suite-container {
       max-width: 1280px;
       margin: 36px auto 0;
       padding: 0 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
-      gap: 32px;
-    }
-    @media (max-width: 640px) {
-      .container { grid-template-columns: 1fr; }
-    }
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 14px 36px rgba(31, 27, 24, 0.06);
       display: flex;
       flex-direction: column;
+      gap: 44px;
     }
-    .preview-banner {
+    .suite-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      padding: 36px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
       position: relative;
-      height: 250px;
       overflow: hidden;
-      background: #231F1C;
-      border-bottom: 1px solid var(--border);
     }
-    .preview-banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 0.5s ease;
-    }
-    .project-card:hover .preview-banner img {
-      transform: scale(1.03);
-    }
-    .preview-tag {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(25, 21, 18, 0.85);
-      color: #FFF;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      backdrop-filter: blur(6px);
-    }
-    .card-body {
-      padding: 26px;
-      flex: 1;
+    .suite-card.recbot { border-top: 4px solid var(--terra); }
+    .suite-card.sana { border-top: 4px solid var(--rose); }
+    .suite-card.genmai { border-top: 4px solid var(--sage); }
+
+    .suite-head {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 26px;
     }
-    .project-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-      color: var(--ink);
-    }
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-    .primary-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .btn {
+    .work-label {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.88rem;
-      padding: 12px 14px;
-      border-radius: 10px;
-      transition: all 0.2s ease;
-      text-align: center;
+      gap: 8px;
+      font-family: 'Inter', monospace;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--gold-soft);
+      margin-bottom: 6px;
     }
-    .btn-sana { background: var(--sana-accent); color: #FFF; }
-    .btn-sana:hover { background: #875766; }
-    .btn-genmai { background: var(--genmai-accent); color: #FFF; }
-    .btn-genmai:hover { background: #466143; }
-    .btn-outline {
-      background: #FAF7F2;
-      color: var(--ink);
+    .work-label em {
+      font-style: normal;
+      background: rgba(212,175,55,0.2);
+      border: 1px solid rgba(212,175,55,0.5);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .suite-head h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .suite-head p {
+      font-size: 13.5px;
+      color: #CBD5E1;
+      max-width: 780px;
+    }
+
+    .suite-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .item-link {
+      background: var(--bg-card-alt);
       border: 1px solid var(--border);
-    }
-    .btn-outline:hover { background: #F0EAE1; }
-    .video-showcase-box {
-      background: #1B2220;
-      color: #FAF7F2;
       border-radius: 12px;
       padding: 16px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(182, 145, 86, 0.4);
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
     }
-    .video-showcase-title {
-      font-size: 0.82rem;
+    .item-link:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-soft);
+      background: rgba(255,255,255,0.07);
+    }
+    .item-link-tag {
+      font-family: 'Inter', monospace;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--gold-soft);
+      letter-spacing: 0.1em;
+    }
+    .item-link h3 {
+      font-size: 15px;
       font-weight: 700;
-      color: #DFC394;
+      color: #fff;
+    }
+    .item-link p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .video-preview-panel {
+      background: rgba(0,0,0,0.35);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .video-preview-panel h4 {
+      font-size: 13.5px;
+      color: var(--gold-soft);
       margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .video-pair {
+    .vp-pair {
       display: grid;
       grid-template-columns: 135px 1fr;
       gap: 12px;
       align-items: center;
     }
-    @media (max-width: 520px) {
-      .video-pair { grid-template-columns: 1fr; }
-    }
-    .video-pair video {
+    .vp-pair video {
       width: 100%;
       border-radius: 8px;
-      border: 1px solid rgba(223, 195, 148, 0.45);
       background: #000;
-      display: block;
+      border: 1px solid rgba(255,255,255,0.18);
     }
-    .sub-heading {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 10px;
-      border-top: 1px solid var(--border);
-      padding-top: 14px;
-    }
-    .link-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .link-item {
-      display: flex;
+
+    .btn {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      color: var(--ink);
-      background: #FAF7F2;
-      border: 1px solid var(--border);
-      padding: 9px 12px;
+      gap: 6px;
+      padding: 10px 18px;
       border-radius: 8px;
-      font-size: 0.82rem;
-      transition: background 0.15s ease;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      background: var(--terra);
+      transition: all 0.2s;
     }
-    .link-item:hover { background: #EFE9DF; }
-    .link-item span.arrow { color: var(--gold); font-weight: 700; }
+    .btn:hover { opacity: 0.92; transform: translateY(-1px); }
+    .btn-gold { background: var(--gold); color: #090D16; }
+
+    footer {
+      max-width: 1280px;
+      margin: 60px auto 0;
+      padding: 28px 24px 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+    @media (max-width: 960px) {
+      .suite-grid, .links-grid, .stats-bar, .vp-pair { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="badge">Omni Design Studio V3 — GitHub Pages Live Showcase</div>
-    <h1>Sana フラワージュエリー ＆ 玄米クレンズ ライブプレビュー</h1>
-    <p>Webサイト（本番公開用・レビュー用）、プロモーション動画（9:16 縦型リール ＆ 16:9 横型ワイド）、A4両面チラシ、3Dパッケージモックアップ、YCS 79問マーケティング戦略ブリーフをこのページから直接再生・閲覧できます。</p>
+
+  <!-- KYOWORKS TOP SIGNATURE RIBBON -->
+  <header class="kyoworks-ribbon">
+    <div class="ribbon-inner">
+      <div class="kw-logo">
+        <span class="kw-logo-badge">KYOWORKS OFFICIAL</span>
+        <span>KYOWORKS CREATIVE &amp; AI DESIGN STUDIO — WORKS PORTFOLIO</span>
+      </div>
+      <nav class="ribbon-nav">
+        <a href="#work-recbot">🤖 Work 03: RECBOT (kodawarimax.net)</a>
+        <a href="#work-sana">🌸 Work 01: Sana フラワージュエリー (JP/EN)</a>
+        <a href="#work-genmai">🌾 Work 02: 玄米クレンズ (販売店＆製造元LP)</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <!-- GENMAI CARD -->
-    <section class="project-card">
-      <div class="preview-banner">
-        <img src="genmai/website_preview.png" alt="玄米クレンズ Webサイトプレビュー" />
-        <span class="preview-tag">Project 01 · Enzyme Brown Rice Partner LP</span>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-pill">🏛️ ALL WORKS PRODUCED &amp; ART DIRECTED BY KYOWORKS</div>
+    <h1><span>Kyoworks</span> Creative Works Showcase</h1>
+    <p>
+      本ポータルおよび収録されているすべてのWebサイト・LP・A4両面販促フライヤー・B2大判ポスター・パッケージ立体モックアップ・1:1ベクター展開図・AI音声プロモーション動画は、<strong>Kyoworks</strong>による制作実績（Works by Kyoworks）です。
+    </p>
+    <div class="stats-bar">
+      <div class="stat-box">
+        <strong>3 Brand Suites</strong>
+        <span>Sana / 玄米クレンズ / RECBOT</span>
       </div>
-      <div class="card-body">
-        <h2 class="project-title">玄米クレンズ（酵素玄米 特約店・代理店パートナー募集）</h2>
-        <p class="project-desc">
-          北海道産・残留農薬ゼロ「ゆめぴりか」使用の酵素玄米クレンズ7点フルセット（定価32,500円・卸22,750円・粗利9,750円）。サロン・整体院・パーソナルジム向け特約店募集LP＆販促スイート。
-        </p>
-        <div class="primary-actions">
-          <a class="btn btn-genmai" href="genmai/production/website_production.html">① 販売店（特約店・代理店）LP</a>
-          <a class="btn btn-genmai" style="background:#8C4A32;" href="genmai/maker_partner_sample.html">② 製造元パートナー募集LP (NEW)</a>
+      <div class="stat-box">
+        <strong>Web + Print + Box</strong>
+        <span>LP・A4チラシ・B2ポスター・化粧箱展開図</span>
+      </div>
+      <div class="stat-box">
+        <strong>AI Voice Videos</strong>
+        <span>のがちゃん音声ほか 9:16 &amp; 16:9 動画完備</span>
+      </div>
+      <div class="stat-box">
+        <strong>JP ⇄ EN Bilingual</strong>
+        <span>インバウンド英語完全対応（Sana）</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="suite-container">
+
+    <!-- ==================== WORK 03: RECBOT (kodawarimax.net) ==================== -->
+    <section class="suite-card recbot" id="work-recbot">
+      <div class="suite-head">
+        <div>
+          <div class="work-label"><em>KYOWORKS WORK #03</em> CLIENT: RECBOT (https://kodawarimax.net/)</div>
+          <h2>🤖 RECBOT（レックボット）— 不動産・ECに特化したAI導入支援</h2>
+          <p>
+            公式サイト（<code>https://kodawarimax.net/</code>）を徹底解析し、不動産管理（改修提案・案件管理4ステップ）とEC（Shopee初期出品・自動化／EC向けAIO対策）の2大領域を訴求する販促印刷物・スターターBOXパッケージ・<strong>「のがちゃん」音声ナレーション付きプロモ動画</strong>をKyoworksが一括制作。
+          </p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="kodawarimax/website.html">🌐 RECBOT Webショーケースを開く →</a>
+          <a class="btn btn-gold" href="kodawarimax/flyer_a4.html">🖨️ A4両面フライヤー</a>
+        </div>
+      </div>
+
+      <div class="suite-grid">
+        <div class="links-grid">
+          <a class="item-link" href="kodawarimax/website.html">
+            <span class="item-link-tag">WEB SHOWCASE ｜ KYOWORKS</span>
+            <h3>🌐 RECBOT 販促クリエイティブ＆動画ハブ</h3>
+            <p>サイト解析・不動産×EC訴求・動画プレイヤー・印刷プレビュー統合LP</p>
+          </a>
+          <a class="item-link" href="kodawarimax/flyer_a4.html">
+            <span class="item-link-tag">PRINT 01 ｜ A4 DOUBLE-SIDED</span>
+            <h3>📄 A4両面 販促フライヤー＆自己診断シート</h3>
+            <p>表面：不動産管理＆EC/AIO訴求 ／ 裏面：導入4ステップ＆現場課題チェック表</p>
+          </a>
+          <a class="item-link" href="kodawarimax/poster_b2.html">
+            <span class="item-link-tag">PRINT 02 ｜ B2 POSTER (2 EDITIONS)</span>
+            <h3>🖼️ B2大判 展示会＆オフィス掲示用ポスター</h3>
+            <p>ダークスレート展示会ブース版 ＆ ウォームアイボリー「AI×計算×人」図解版</p>
+          </a>
+          <a class="item-link" href="kodawarimax/packaging_mockup.html">
+            <span class="item-link-tag">PACKAGING ｜ 3D BOX &amp; SVG DIELINE</span>
+            <h3>📦 現場AI導入スターターBOX ＆ 1:1展開図</h3>
+            <p>マグネット貼箱＋銅箔押し＋A5運用プレイブック＋NFC起動カード設計仕様書</p>
+          </a>
+          <a class="item-link" href="kodawarimax/ycs_creative_brief_b1_b7.html">
+            <span class="item-link-tag">STRATEGY ｜ 79-QUESTION BRIEF</span>
+            <h3>📊 Webサイト解析＆YCS 79問戦略ブリーフ</h3>
+            <p>kodawarimax.net 構造解析・Devil's Advocate課題検証・オムニチャネル設計</p>
+          </a>
+          <a class="item-link" href="kodawarimax/ycs_user_hearing_sheet.html">
+            <span class="item-link-tag">REQUIREMENTS ｜ 5Q SHEET</span>
+            <h3>📝 RECBOT 5問要件定義＆抽出シート</h3>
+            <p>誘導先・展示会/商談シーン・不動産/EC重点機能・のがちゃん音声仕様</p>
+          </a>
         </div>
 
-        <!-- Inline Playable Promo Videos -->
-        <div class="video-showcase-box">
-          <div class="video-showcase-title">
-            <span>🎬 玄米クレンズ プロモ動画（🔊ナレーション音声＆BGM付き・その場で再生可能）</span>
-            <a href="genmai/promo_video_studio_9x16.html" style="color:#DFC394; font-size:0.76rem;">全画面スタジオ ⟶</a>
-          </div>
-          <div class="video-pair">
+        <div class="video-preview-panel">
+          <h4>
+            <span>🎬 プロモ動画（🎙️ 声：のがちゃん / Fish Audio）</span>
+            <span style="font-size:11px; color:#94A3B8;">Produced by Kyoworks</span>
+          </h4>
+          <div class="vp-pair">
+            <video controls playsinline preload="metadata" src="kodawarimax/promo_video_vertical_9x16.mp4"></video>
             <div>
-              <video src="genmai/promo_video_vertical_9x16.mp4" controls preload="metadata" playsinline style="aspect-ratio:9/16;"></video>
-              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">📱 9:16 縦型リール</div>
-            </div>
-            <div>
-              <video src="genmai/promo_video_landscape_16x9.mp4" controls preload="metadata" playsinline style="aspect-ratio:16/9;"></video>
-              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">🖥 16:9 横型ワイド</div>
+              <video controls playsinline preload="metadata" src="kodawarimax/promo_video_landscape_16x9.mp4"></video>
+              <p style="font-size:11.5px; color:#CBD5E1; margin-top:8px;">
+                ▲ 左：9:16 縦型ショート動画 ／ 上：16:9 横型プロモ動画（約54秒・のがちゃんナレーション＋BGM収録）
+              </p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="sub-heading">同梱クリエイティブ・マーケティング成果物</div>
-        <div class="link-grid">
-          <a class="link-item" href="genmai/website.html"><span>🛠 統合レビュー版Web</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/production/flyer_a4_double_production.html"><span>📄 A4両面チラシ（本番用）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/flyer_a4_front.html"><span>📄 A4チラシ 表面（単体）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/flyer_a4_back.html"><span>📄 A4チラシ 裏面（単体）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/production/packaging_mockup_production.html"><span>🎁 3Dパッケージ（本番用）</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/uword_page_kit.html"><span>🛍 U-word特設ページキット</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/manuals_organized.html"><span>📘 パートナー業務マニュアル</span><span class="arrow">→</span></a>
-          <a class="link-item" href="genmai/ycs_creative_brief_b1_b7.html"><span>📊 YCS 79問戦略ブリーフ</span><span class="arrow">→</span></a>
+    <!-- ==================== WORK 01: SANA FLOWER JEWELRY (JP / EN) ==================== -->
+    <section class="suite-card sana" id="work-sana">
+      <div class="suite-head">
+        <div>
+          <div class="work-label"><em>KYOWORKS WORK #01</em> CLIENT: Sana — flower_jewelry（サナ フラワージュエリー）</div>
+          <h2>🌸 Sana — flower_jewelry（日英バイリンガル・インバウンド完全対応スイート）</h2>
+          <p>
+            本物の薔薇・紫陽花・かすみ草を閉じ込めたボタニカルジュエリー＆波なみ型スマホケース。<strong>🇯🇵 日本語 ⇄ 🌍 英語（Inbound English）言語切替機能付きWebサイト</strong>、A4両面フライヤー、パッケージ仕様書、日英プロモ動画をKyoworksが制作。
+          </p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" style="background:#B86B7D;" href="sana/website.html">🇯🇵 日本語版 Webサイト →</a>
+          <a class="btn btn-gold" href="sana/website_en.html">🌍 English Inbound Website →</a>
+        </div>
+      </div>
+
+      <div class="suite-grid">
+        <div class="links-grid">
+          <a class="item-link" href="sana/website.html">
+            <span class="item-link-tag">BILINGUAL WEB ｜ JP ⇄ EN SWITCHER</span>
+            <h3>🌸 公式ブランドWebサイト（日本語 / 英語切替）</h3>
+            <p>マルシェ・POPUP・インバウンド対応ルックブック＆BASE公式ショップ導線</p>
+          </a>
+          <a class="item-link" href="sana/flyer_a4.html">
+            <span class="item-link-tag">PRINT ｜ JP &amp; EN A4 FLYER</span>
+            <h3>📄 A4両面フライヤー（日本語版 / 英語版）</h3>
+            <p>価格帯（¥3,850〜¥22,000）・金属アレルギー対応・機種対応表（<a href="sana/flyer_a4_en.html" style="color:var(--gold-soft);">英語版はこちら</a>）</p>
+          </a>
+          <a class="item-link" href="sana/packaging_mockup.html">
+            <span class="item-link-tag">PACKAGING ｜ JEWELRY &amp; CASE BOX</span>
+            <h3>📦 パッケージ＆台紙モックアップ（日/英）</h3>
+            <p>ピアス台紙・スマホケース箱・ギフトラッピング仕様（<a href="sana/packaging_mockup_en.html" style="color:var(--gold-soft);">英語版はこちら</a>）</p>
+          </a>
+          <a class="item-link" href="sana/ycs_creative_brief_b1_b7.html">
+            <span class="item-link-tag">STRATEGY ｜ JP &amp; EN 79Q BRIEF</span>
+            <h3>📊 YCS 79問マーケティング戦略ブリーフ</h3>
+            <p>ブランド設計・マルシェ導線（<a href="sana/ycs_creative_brief_b1_b7_en.html" style="color:var(--gold-soft);">English Brief</a> / <a href="sana/ycs_user_hearing_sheet_en.html" style="color:var(--gold-soft);">5Q Sheet</a>）</p>
+          </a>
+        </div>
+
+        <div class="video-preview-panel">
+          <h4>
+            <span>🎬 日英プロモ動画（日本語ナレーション版 ＆ 英語インバウンド版）</span>
+            <span style="font-size:11px; color:#94A3B8;">Works by Kyoworks</span>
+          </h4>
+          <div class="vp-pair">
+            <video controls playsinline preload="metadata" src="sana/promo_video_vertical_9x16.mp4"></video>
+            <div>
+              <video controls playsinline preload="metadata" src="sana/promo_video_landscape_16x9_en.mp4"></video>
+              <p style="font-size:11.5px; color:#CBD5E1; margin-top:8px;">
+                ▲ 左：日本語版 9:16 ショート動画 ／ 上：英語インバウンド版 16:9 動画
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SANA CARD -->
-    <section class="project-card">
-      <div class="preview-banner">
-        <img src="sana/website_preview.png" alt="サナ フラワージュエリー Webサイトプレビュー" />
-        <span class="preview-tag">Project 02 · Artisan Botanical Jewelry</span>
+    <!-- ==================== WORK 02: GENMAI CLEANSE ==================== -->
+    <section class="suite-card genmai" id="work-genmai">
+      <div class="suite-head">
+        <div>
+          <div class="work-label"><em>KYOWORKS WORK #02</em> CLIENT: 玄米クレンズ（酵素玄米 パートナー＆製造元募集プロジェクト）</div>
+          <h2>🌾 玄米クレンズ — ①販売店 ②製造元パートナー（京子さん認定講座） ③体験者の3導線スイート</h2>
+          <p>
+            特約店・代理店募集LPに加え、<strong>京子さんから酵素玄米の炊き方を学び、製造スターターセット（真空パック機・食品ラベル機・許認可マニュアル）で製品を製造・発送する「製造元パートナー募集LP」</strong>、A4両面チラシ、パッケージ、音声付きプロモ動画をKyoworksが制作。
+          </p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" style="background:#3B7A57;" href="genmai/maker_partner_sample.html">👩‍🍳 製造元パートナー募集LP（New）→</a>
+          <a class="btn btn-gold" href="genmai/website.html">🌾 特約店・総合LPを開く →</a>
+        </div>
       </div>
-      <div class="card-body">
-        <h2 class="project-title">Sana — flower_jewelry（サナ フラワージュエリー）</h2>
-        <p class="project-desc">
-          本物の自然花（パンジー・紫陽花・薔薇・かすみ草）を一輪ずつ封じ込めたボタニカルレジンジュエリー＆全機種相談対応スマホケース。20代〜60代向け・マルシェ／POPUP配布＆BASE公式ショップ連動。
-        </p>
-        <div class="primary-actions">
-          <a class="btn btn-sana" href="sana/production/website.html">🇯🇵 日本語Web (JP⇄EN切替付)</a>
-          <a class="btn btn-sana" style="background:#2E5E4E;" href="sana/production/website_en.html">🌍 English Website (Inbound)</a>
+
+      <div class="suite-grid">
+        <div class="links-grid">
+          <a class="item-link" href="genmai/maker_partner_sample.html">
+            <span class="item-link-tag">NEW LP ｜ MAKER PARTNER RECRUITMENT</span>
+            <h3>👩‍🍳 製造元になりませんか？（京子さん認定講師×スターターセット）</h3>
+            <p>①販売する人 ②製造する人 ③体験する人の3つの関わり方＆製造スターターセット構想LP</p>
+          </a>
+          <a class="item-link" href="genmai/website.html">
+            <span class="item-link-tag">BRAND LP ｜ AGENCY &amp; PRODUCT</span>
+            <h3>🌾 玄米クレンズ 総合ブランド＆特約店募集LP</h3>
+            <p>無農薬酵素玄米×無添加冷凍パウチ・利益シミュレーター・プロモ動画搭載</p>
+          </a>
+          <a class="item-link" href="genmai/flyer_a4_double.html">
+            <span class="item-link-tag">PRINT ｜ A4 DOUBLE-SIDED FLYER</span>
+            <h3>📄 A4両面 販促・パートナー募集フライヤー</h3>
+            <p>マルシェ・サロン店頭配布用の表面ビジュアル＆裏面3プラン比較シート</p>
+          </a>
+          <a class="item-link" href="genmai/packaging_mockup.html">
+            <span class="item-link-tag">PACKAGING &amp; U-WORD KIT</span>
+            <h3>📦 パウチ・ギフト箱モックアップ ＆ U-word埋め込みキット</h3>
+            <p>パッケージ仕様書＋<a href="genmai/uword_page_kit.html" style="color:var(--gold-soft);">U-word店舗ページ埋め込みHTMLキット</a></p>
+          </a>
         </div>
 
-        <!-- Inline Playable Promo Videos (JP & Inbound EN) -->
-        <div class="video-showcase-box">
-          <div class="video-showcase-title">
-            <span>🎬 Sana プロモ動画（🇯🇵 日本語ナレーション ＆ 🌍 英語インバウンド音声版）</span>
-            <a href="sana/promo_video_studio_en.html" style="color:#DFC394; font-size:0.76rem;">日英動画スタジオ ⟶</a>
-          </div>
-          <div class="video-pair" style="margin-bottom:12px;">
+        <div class="video-preview-panel">
+          <h4>
+            <span>🎬 玄米クレンズ 音声ナレーション付きプロモ動画</span>
+            <span style="font-size:11px; color:#94A3B8;">Works by Kyoworks</span>
+          </h4>
+          <div class="vp-pair">
+            <video controls playsinline preload="metadata" src="genmai/promo_video_vertical_9x16.mp4"></video>
             <div>
-              <video src="sana/promo_video_vertical_9x16.mp4" controls preload="metadata" playsinline style="aspect-ratio:9/16;"></video>
-              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">🇯🇵 9:16 縦型 (日本語音声)</div>
-            </div>
-            <div>
-              <video src="sana/promo_video_landscape_16x9.mp4" controls preload="metadata" playsinline style="aspect-ratio:16/9;"></video>
-              <div style="text-align:center; font-size:11px; color:#CBD5CB; margin-top:4px;">🇯🇵 16:9 横型 (日本語音声)</div>
+              <video controls playsinline preload="metadata" src="genmai/promo_video_landscape_16x9.mp4"></video>
+              <p style="font-size:11.5px; color:#CBD5E1; margin-top:8px;">
+                ▲ 左：9:16 縦型ショート動画 ／ 上：16:9 横型プロモ動画（ナレーション＋和モダンBGM収録）
+              </p>
             </div>
           </div>
-          <div class="video-pair" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:12px;">
-            <div>
-              <video src="sana/promo_video_vertical_9x16_en.mp4" controls preload="metadata" playsinline style="aspect-ratio:9/16;"></video>
-              <div style="text-align:center; font-size:11px; color:#DFC394; margin-top:4px;">🌍 9:16 Vertical (English Voice)</div>
-            </div>
-            <div>
-              <video src="sana/promo_video_landscape_16x9_en.mp4" controls preload="metadata" playsinline style="aspect-ratio:16/9;"></video>
-              <div style="text-align:center; font-size:11px; color:#DFC394; margin-top:4px;">🌍 16:9 Landscape (English Voice)</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="sub-heading">🇯🇵 日本語版 ＆ 🌍 インバウンド英語版 全制作物一覧</div>
-        <div class="link-grid">
-          <a class="link-item" href="sana/production/flyer_a4.html"><span>🇯🇵 A4両面チラシ (日本語)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/production/flyer_a4_en.html"><span>🌍 A4 Lookbook Flyer (English)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/production/packaging_mockup.html"><span>🇯🇵 3Dパッケージ仕様 (日本語)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/production/packaging_mockup_en.html"><span>🌍 3D Packaging Spec (English)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/promo_video_studio_en.html"><span>🎞 日・英プロモ動画スタジオ</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/packaging_dieline.svg"><span>📐 パッケージ展開図 (SVG)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/ycs_creative_brief_b1_b7.html"><span>🇯🇵 YCS 79問戦略ブリーフ (日本語)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/ycs_creative_brief_b1_b7_en.html"><span>🌍 YCS Strategy Brief (English)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/ycs_user_hearing_sheet.html"><span>🇯🇵 5問ヒアリングシート (日本語)</span><span class="arrow">→</span></a>
-          <a class="link-item" href="sana/ycs_user_hearing_sheet_en.html"><span>🌍 5-Question Sheet (English)</span><span class="arrow">→</span></a>
         </div>
       </div>
     </section>
-  </main>
+
+  </div>
+
+  <footer>
+    <div>
+      <strong style="color:var(--gold-soft); letter-spacing:0.1em;">PRODUCED &amp; DESIGNED BY KYOWORKS</strong> — Omni-Channel Brand, Print, Packaging &amp; AI Video Studio
+    </div>
+    <div>
+      © 2026 Kyoworks All Rights Reserved. ｜ Hosted on GitHub Pages (<code>kodawarimax.github.io/omni-design-studio</code>)
+    </div>
+  </footer>
+
 </body>
 </html>
