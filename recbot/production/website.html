@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECBOT（レックボット）— 現場の仕事に、頼れる相棒を。</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --washi: #F7F4EC;
+      --washi-deep: #EDE6D8;
+      --cream-card: rgba(255, 253, 249, 0.90);
+      --forest: #212B24;
+      --forest-soft: #4F5E53;
+      --sage: #3F6D52;
+      --sage-pale: #DFECE3;
+      --terra: #C66B4E;
+      --terra-pale: #F6E3DC;
+      --ochre: #B68B4C;
+      --line-organic: rgba(63, 109, 82, 0.16);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--washi);
+      color: var(--forest);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      line-height: 1.85;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Organic Breathing Background Shapes */
+    .organic-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      filter: blur(70px);
+      opacity: 0.52;
+      animation: breatheOrb 20s ease-in-out infinite alternate;
+    }
+    .orb-1 {
+      width: 580px; height: 580px;
+      top: -140px; right: -100px;
+      background: radial-gradient(circle, rgba(135, 179, 150, 0.48), transparent 72%);
+      border-radius: 58% 42% 38% 62% / 54% 38% 62% 46%;
+    }
+    .orb-2 {
+      width: 620px; height: 620px;
+      top: 35%; left: -180px;
+      background: radial-gradient(circle, rgba(218, 146, 120, 0.36), transparent 72%);
+      border-radius: 42% 58% 64% 36% / 48% 56% 44% 52%;
+      animation-delay: -7s;
+    }
+    .orb-3 {
+      width: 520px; height: 520px;
+      bottom: -100px; right: 15%;
+      background: radial-gradient(circle, rgba(208, 180, 128, 0.36), transparent 72%);
+      border-radius: 50% 50% 42% 58% / 56% 44% 56% 44%;
+      animation-delay: -13s;
+    }
+    @keyframes breatheOrb {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); border-radius: 58% 42% 38% 62% / 54% 38% 62% 46%; }
+      50% { transform: translate(-25px, 28px) rotate(6deg) scale(1.06); border-radius: 40% 60% 58% 42% / 45% 58% 42% 55%; }
+      100% { transform: translate(20px, -22px) rotate(-5deg) scale(0.96); border-radius: 54% 46% 45% 55% / 58% 42% 58% 42%; }
+    }
+
+    
+
+    /* Organic Hero */
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 58px 24px 48px;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(32px, 4.2vw, 48px);
+      line-height: 1.34;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 18px;
+    }
+    .hero h1 span {
+      color: var(--sage);
+      background: linear-gradient(transparent 68%, rgba(135, 179, 150, 0.45) 68%);
+      padding: 0 4px;
+    }
+    .hero-lead {
+      font-size: 15.5px;
+      color: var(--forest-soft);
+      margin-bottom: 26px;
+      line-height: 1.95;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      background: #fff;
+      color: var(--forest);
+      border: 1.5px solid var(--line-organic);
+    }
+    .btn-pill:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(33,43,36,0.08); }
+    .btn-pill.sage { background: var(--sage); color: #fff; border-color: var(--sage); box-shadow: 0 10px 24px rgba(63,109,82,0.22); }
+    .btn-pill.terra { background: var(--terra); color: #fff; border-color: var(--terra); box-shadow: 0 10px 24px rgba(198,107,78,0.22); }
+
+    .organic-meta-pebbles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .m-pebble {
+      background: var(--cream-card);
+      border: 1px solid var(--line-organic);
+      border-radius: 24px 16px 26px 18px;
+      padding: 12px 16px;
+    }
+    .m-pebble small {
+      display: block;
+      font-size: 10.5px;
+      color: var(--terra);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .m-pebble strong {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 14px;
+      color: var(--forest);
+    }
+
+    /* Right Organic Collage Frame */
+    .organic-collage-card {
+      background: var(--cream-card);
+      border: 1.5px solid var(--line-organic);
+      border-radius: 46px 30px 48px 32px;
+      padding: 26px;
+      box-shadow: 0 24px 56px rgba(33, 43, 36, 0.08);
+      position: relative;
+    }
+    .collage-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .collage-pair img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 30px 18px 28px 18px;
+      border: 2px solid #fff;
+      box-shadow: 0 8px 20px rgba(33,43,36,0.08);
+    }
+    .collage-note {
+      background: var(--washi-deep);
+      border-radius: 24px 18px 26px 18px;
+      padding: 16px 18px;
+      font-size: 13px;
+      color: var(--forest);
+    }
+    .collage-note strong {
+      color: var(--sage);
+      font-family: 'Shippori Mincho', serif;
+      font-size: 14.5px;
+    }
+
+    /* Flowing Wave Divider */
+    .wave-sep svg {
+      width: 100%;
+      height: 52px;
+      display: block;
+    }
+
+    /* Content Sections */
+    .section {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 44px 24px;
+    }
+    .sec-head {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sec-kicker {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--sage);
+      background: var(--sage-pale);
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .sec-head h2 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 30px;
+      color: var(--forest);
+    }
+
+    /* Organic Video Sanctuary (Nogachan Voice) */
+    .organic-video-sanctuary {
+      background: linear-gradient(145deg, #27352C 0%, #1C2720 100%);
+      color: var(--washi);
+      border-radius: 48px 32px 50px 34px;
+      padding: 42px;
+      box-shadow: 0 28px 64px rgba(33, 43, 36, 0.16);
+      border: 1.5px solid rgba(135, 179, 150, 0.35);
+    }
+    .video-stage-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-top: 24px;
+    }
+    .v-pebble-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 32px 22px 34px 22px;
+      padding: 20px;
+    }
+    .v-pebble-box h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 16.5px;
+      color: #E5F0E8;
+      margin-bottom: 6px;
+    }
+    .v-pebble-box p {
+      font-size: 12px;
+      color: #BDD0C3;
+      margin-bottom: 12px;
+    }
+    .v-pebble-box video {
+      width: 100%;
+      border-radius: 20px;
+      background: #000;
+      border: 2px solid rgba(255,255,255,0.2);
+      display: block;
+    }
+    .vo-transcript {
+      margin-top: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid #E59A82;
+      padding: 14px 18px;
+      border-radius: 0 20px 20px 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: #E8F0EA;
+    }
+
+    /* 3 Organic Print & Packaging Cards */
+    .organic-cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .o-card {
+      background: var(--cream-card);
+      border: 1.5px solid var(--line-organic);
+      border-radius: 36px 24px 38px 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 16px 40px rgba(33, 43, 36, 0.05);
+      transition: transform 0.3s ease;
+    }
+    .o-card:hover { transform: translateY(-4px); }
+    .o-card-img {
+      height: 205px;
+      position: relative;
+      overflow: hidden;
+      background: var(--washi-deep);
+    }
+    .o-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .o-card-pill {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: rgba(33, 43, 36, 0.84);
+      color: #F7F4EC;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+    .o-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .o-card-body h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 19px;
+      color: var(--forest);
+    }
+    .o-card-body p {
+      font-size: 13.5px;
+      color: var(--forest-soft);
+      line-height: 1.75;
+    }
+
+    /* Organic Dual Domain Story (Real Estate & EC) */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .story-pebble {
+      background: var(--cream-card);
+      border: 1.5px solid var(--line-organic);
+      border-radius: 40px 26px 42px 28px;
+      padding: 32px;
+      box-shadow: 0 14px 36px rgba(33, 43, 36, 0.04);
+    }
+    .story-pebble h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
+      color: var(--forest);
+      margin-bottom: 12px;
+    }
+    .story-pebble ul {
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--forest-soft);
+    }
+    .story-pebble ul li { margin-bottom: 10px; }
+
+    footer.organic-footer {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 40px auto 0;
+      padding: 36px 24px 72px;
+      border-top: 1px solid var(--line-organic);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--forest-soft);
+    }
+    @media (max-width: 960px) {
+      .hero, .video-stage-grid, .organic-cards-3, .story-grid { grid-template-columns: 1fr; }
+    }
+    .recbot-nav { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; border-bottom: 1px solid var(--line-organic); font-size: 13px; }
+    .recbot-nav strong { margin-right: auto; color: var(--forest); letter-spacing: 0.08em; }
+    .recbot-nav a { color: var(--sage); text-decoration: none; }
+    .recbot-nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Organic Morphing Shapes -->
+  <div class="organic-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  
+  <nav class="recbot-nav" aria-label="RECBOT ナビゲーション">
+    <strong>RECBOT</strong>
+    <a href="flyer_a4.html">📄 A4両面フライヤー</a>
+    <a href="poster_b2.html">🖼️ B2大判ポスター</a>
+    <a href="packaging_mockup.html">📦 導入スターターBOX</a>
+    <a href="#promo-videos">🎙️ のがちゃん音声動画</a>
+  </nav>
+
+  <!-- Organic Hero Section -->
+  <section class="hero">
+    <div>
+      
+      <h1>現場の仕事に、<br><span>頼れる相棒</span>を。</h1>
+      <p class="hero-lead">
+        いつもの入力、返信、集計。その繰り返しに、深呼吸できる余白を。<br>
+        不動産とECの現場に特化したAI導入支援<strong>『RECBOT（レックボット）』</strong>の世界観を、温かみのある和紙・アースカラーの有機的デザインで表現。<br>
+        展示会や商談で手渡せる<strong>A4両面フライヤー・B2ポスター・現場導入スターターBOX・のがちゃん音声ナレーション動画</strong>を一式収録しています。
+      </p>
+      <div class="btn-row">
+        <a class="btn-pill sage" href="flyer_a4.html">📄 A4両面フライヤーを見る</a>
+        <a class="btn-pill terra" href="#promo-videos">🎬 のがちゃん音声動画を再生</a>
+        <a class="btn-pill" href="packaging_mockup.html">📦 導入スターターBOX＆展開図</a>
+      </div>
+      <div class="organic-meta-pebbles">
+        
+        <div class="m-pebble">
+          <small>VOICE NARRATION</small>
+          <strong>🎙️ のがちゃん</strong>
+        </div>
+        <div class="m-pebble">
+          <small>DESIGN CONCEPT</small>
+          <strong>現場に馴染む有機的AI</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="organic-collage-card">
+      <div class="collage-pair">
+        <img src="assets/real-estate.jpg" alt="不動産現場のAI伴走支援" />
+        <img src="assets/commerce.jpg" alt="EC運営のAI伴走支援" />
+      </div>
+      <div class="collage-note">
+        <strong>🍃 「AIに丸投げしない」から、現場で心地よく回り続ける。</strong><br>
+        文章の下書きはAI、金額や条件は正確な計算ルール、そして最後の確認と確定は人。人の温度感を残したまま、手作業の疲れだけをほどきます。
+      </div>
+    </div>
+  </section>
+
+  <!-- Organic Wave -->
+  <div class="wave-sep">
+    <svg viewBox="0 0 1440 52" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 24C320 58 640 -8 960 24C1200 48 1340 18 1440 28V52H0V24Z" fill="rgba(63,109,82,0.06)"/>
+    </svg>
+  </div>
+
+  <!-- SECTION 1: PROMO VIDEOS (NOGACHAN VOICE) -->
+  <section class="section" id="promo-videos">
+    <div class="organic-video-sanctuary">
+      <div class="sec-head" style="margin-bottom:14px;">
+        <div>
+          <span class="sec-kicker" style="background:rgba(255,255,255,0.14); color:#E5F0E8;">RECBOT FILM × NOGACHAN VOICE</span>
+          <h2 style="color:#F7F4EC;">🎬 プロモーション動画（声：のがちゃん）</h2>
+        </div>
+      </div>
+      <p style="font-size:14px; color:#D0E0D5;">
+        フィットネスYouTuber・元UIデザイナーの<strong>「のがちゃん」</strong>の明るく親しみやすい声（Fish Audio S2-Pro）で、RECBOTが現場の仕事をどう軽やかに変えるかを54秒で語りかけます。
+      </p>
+
+      <div class="video-stage-grid">
+        <div class="v-pebble-box">
+          <h3>📱 9:16 縦型ショート動画</h3>
+          <p>Reels / Shorts / TikTok 縦型フルHD（1080×1920）</p>
+          <video controls playsinline preload="metadata" src="../promo_video_vertical_9x16.mp4"></video>
+        </div>
+
+        <div class="v-pebble-box">
+          <h3>🖥️ 16:9 横型プロモーション動画</h3>
+          <p>YouTube / 展示会ブース / 商談プレゼン用 フルHD（1920×1080）</p>
+          <video controls playsinline preload="metadata" src="../promo_video_landscape_16x9.mp4"></video>
+          <div class="vo-transcript">
+            <strong>🎙️ のがちゃん ナレーション全文：</strong><br>
+            ①「こんにちは、のがです！毎日の物件入力、問い合わせ返信、ECの出品や集計作業。同じことの繰り返しで、現場が疲れていませんか？」<br>
+            ②「そんな現場の仕事に、頼れる相棒を！不動産とECに特化したAI導入支援、レックボットなら、業務の整理から導入、運用まで、現場に合った仕組みを一緒に作れます！」<br>
+            ③「不動産の現場では、物件紹介文の作成から、管理会社の改修提案、現地写真の整理、見積り管理までを一つの流れに！文章の下書きはAI、最終確認は人だから安心です。」<br>
+            ④「さらにECでは、ショッピーの初期出品や自動化、AI検索に選ばれる、AIO対策までしっかりサポート！」<br>
+            ⑤「まずは小さく試して、現場で確かめるところから。一緒に現場をアップデートしましょう！」
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PRINT & PACKAGING SUITE -->
+  <section class="section" id="print-suite">
+    <div class="sec-head">
+      <div>
+        <span class="sec-kicker">RECBOT PRINT &amp; PACKAGING</span>
+        <h2>🖨️ 手渡す温度感を大切にした印刷物・パッケージ一式</h2>
+      </div>
+    </div>
+
+    <div class="organic-cards-3">
+      <article class="o-card">
+        <div class="o-card-img">
+          <img src="assets/site_hero_capture.png" alt="A4両面フライヤー" />
+          <span class="o-card-pill">PRINT 01 ｜ A4両面フライヤー</span>
+        </div>
+        <div class="o-card-body">
+          <div>
+            <h3>📄 A4両面 販促フライヤー＆診断シート</h3>
+            <p>表面は不動産管理＆EC支援の全体像、裏面は導入4ステップと商談の場でチェックできる「現場の繰り返し業務診断シート」を配置。</p>
+          </div>
+          <a class="btn-pill sage" href="flyer_a4.html">A4フライヤーを開く →</a>
+        </div>
+      </article>
+
+      <article class="o-card">
+        <div class="o-card-img">
+          <img src="assets/real-estate.jpg" alt="B2大判ポスター" />
+          <span class="o-card-pill">PRINT 02 ｜ B2ポスター（2種）</span>
+        </div>
+        <div class="o-card-body">
+          <div>
+            <h3>🖼️ B2大判 展示会＆オフィスポスター</h3>
+            <p>展示会ブースで目を引くディープスレート版と、オフィスや会議室に自然に馴染むウォームアイボリー図解版の2エディション。</p>
+          </div>
+          <a class="btn-pill terra" href="poster_b2.html">B2ポスターを見る →</a>
+        </div>
+      </article>
+
+      <article class="o-card">
+        <div class="o-card-img">
+          <img src="packaging_dieline.svg" alt="導入スターターBOX展開図" />
+          <span class="o-card-pill">PACKAGING 03 ｜ スターターBOX</span>
+        </div>
+        <div class="o-card-body">
+          <div>
+            <h3>📦 現場AI導入スターターBOX＆展開図</h3>
+            <p>導入企業の現場へ届ける「A5運用プレイブック・NFCデスクカード・現地チェック表」の貼箱モックアップと実寸1:1ベクター展開図。</p>
+          </div>
+          <a class="btn-pill" href="packaging_mockup.html">パッケージ仕様を見る →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TWO VERTICAL STORIES -->
+  <section class="section">
+    <div class="sec-head">
+      <div>
+        <span class="sec-kicker">HOW RECBOT HELPS</span>
+        <h2>🌱 現場に合わせて小さくつくり、育てる2つの専門領域</h2>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a class="btn-pill" href="ycs_creative_brief_b1_b7.html">📊 79問戦略ブリーフ</a>
+        <a class="btn-pill" href="ycs_user_hearing_sheet.html">📝 5問要件シート</a>
+      </div>
+    </div>
+
+    <div class="story-grid">
+      <div class="story-pebble">
+        <h3>🏡 01. 不動産向け支援（仲介・管理会社の現場へ）</h3>
+        <ul>
+          <li><strong>日々の入力・検索を軽やかに</strong>：物件紹介文の作成、反響対応の整理、社内情報の検索をAIがサポート。</li>
+          <li><strong>管理会社向け「改修提案・案件管理の仕組みづくり」</strong>：現地記録（写真・メモ）➔ 提案と判断材料整理 ➔ 承認・見積・発注 ➔ 施工〜完了確認までを1つの案件でつなぎます。</li>
+          <li><strong>安心の役割分担</strong>：文章案はAI、金額は計算ルール、最終確認は人が担うため現場の信頼を損ないません。</li>
+        </ul>
+      </div>
+
+      <div class="story-pebble">
+        <h3>🌏 02. EC向け支援（越境EC・AI検索時代の店舗運営へ）</h3>
+        <ul>
+          <li><strong>Shopeeの初期出品・自動化</strong>：多言語の商品情報整備やバリエーション登録など、越境ECの立ち上げ負担を仕組み化。</li>
+          <li><strong>EC向けAIO（AI検索に向けた商品情報最適化）</strong>：生成AI検索や比較レコメンドで選ばれやすい構造化商品データを整備。</li>
+          <li><strong>日々の運営伴走</strong>：問い合わせ回答の下書き作成や売上レポートの定例集計を自動化し、企画と顧客対応に集中できる環境へ。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="organic-footer">
+    <div>
+      <span>RECBOT Brand, Print, Packaging &amp; Promotional Film Suite ｜ Voice: のがちゃん</span>
+    </div>
+    
+  </footer>
+
+</body>
+</html>

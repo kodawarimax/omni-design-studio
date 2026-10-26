@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECBOT（kodawarimax.net）— 現場AI導入スターターキット パッケージ＆什器デザイン仕様書</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #18222F;
+      --ivory: #F6F3EE;
+      --terra: #C86D51;
+      --sage: #2E5E4E;
+      --gold: #C59B5F;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0B111B;
+      color: #F6F3EE;
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      padding: 28px 20px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .toolbar {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      background: rgba(24, 34, 47, 0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 16px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .toolbar h1 { font-size: 16px; font-weight: 700; }
+    .toolbar p { font-size: 12px; color: #94A3B8; margin-top: 4px; }
+    .toolbar-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 15px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #F6F3EE;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.16);
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--terra); border-color: var(--terra); color: #fff; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    /* Studio 3D Mockup Stage */
+    .studio-stage {
+      background: radial-gradient(circle at 50% 25%, #233349 0%, #101824 70%);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 20px;
+      padding: 44px 36px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+    }
+    .stage-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 38px;
+    }
+    .stage-head .kicker {
+      color: #FF9E80;
+      font-family: 'Inter', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .stage-head h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .stage-head p {
+      font-size: 13.5px;
+      color: #CBD5E1;
+      line-height: 1.7;
+    }
+
+    /* 3D Box & Kit Grid */
+    .mockup-showcase {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    /* Left: 3D Magnetic Rigid Box with Belly Band */
+    .box-3d-scene {
+      background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .rigid-box {
+      width: 390px;
+      height: 285px;
+      background: linear-gradient(135deg, #1E2B3C 0%, #121B26 100%);
+      border: 2px solid #C86D51;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: -18px 24px 38px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.2);
+      transform: perspective(900px) rotateY(-12deg) rotateX(8deg);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .rigid-box::before {
+      content: "";
+      position: absolute;
+      top: 10px; left: -16px;
+      width: 16px; height: 265px;
+      background: #0D141D;
+      border-left: 1px solid rgba(200,109,81,0.5);
+      transform: skewY(-45deg);
+    }
+    .rigid-box-foil-frame {
+      border: 1px solid rgba(200, 109, 81, 0.65);
+      height: 100%;
+      border-radius: 6px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    /* Obi Belly Band */
+    .obi-band {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 34px;
+      width: 108px;
+      background: #F6F3EE;
+      color: #18222F;
+      box-shadow: -6px 0 18px rgba(0,0,0,0.35);
+      padding: 16px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      border-left: 3px solid #C86D51;
+    }
+    .obi-band img {
+      width: 58px;
+      height: 58px;
+      border: 1px solid #CBD5E1;
+      padding: 3px;
+      background: #fff;
+      border-radius: 4px;
+    }
+    .foil-kicker {
+      font-family: 'Inter', sans-serif;
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      color: #E59A82;
+      font-weight: 700;
+    }
+    .foil-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      background: linear-gradient(90deg, #F6D399, #C86D51, #F6D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 6px 0;
+    }
+    .foil-sub {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      color: #F6F3EE;
+      letter-spacing: 0.06em;
+    }
+    .foil-meta {
+      font-size: 10px;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+
+    /* Right: Kit Contents Cards (Playbook + NFC Cards + Laminated Sheet) */
+    .kit-items-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .kit-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .kit-thumb {
+      width: 110px;
+      height: 92px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      background: #18222F;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 8px;
+    }
+    .kit-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      opacity: 0.35;
+    }
+    .kit-thumb-label {
+      position: relative;
+      z-index: 2;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      color: #FFD2C2;
+      letter-spacing: 0.08em;
+    }
+    .kit-info h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .kit-info p {
+      font-size: 12px;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+    .kit-spec-pill {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 10.5px;
+      font-family: 'Inter', monospace;
+      color: #F6D399;
+      background: rgba(197, 155, 95, 0.16);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Section 2: Embedded 1:1 Vector Dieline */
+    .dieline-card {
+      background: #0F1722;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .dieline-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .dieline-head h2 { font-size: 18px; }
+    .dieline-frame {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .dieline-frame img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Section 3: Print & Manufacturing Spec Table */
+    .spec-table-card {
+      background: rgba(24, 34, 47, 0.75);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 26px;
+    }
+    table.spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 12.5px;
+    }
+    table.spec-table th, table.spec-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+    table.spec-table th {
+      width: 240px;
+      color: #F6D399;
+      font-weight: 700;
+      background: rgba(255,255,255,0.03);
+    }
+    table.spec-table td { color: #E2E8F0; }
+  </style>
+</head>
+<body>
+
+  
+
+  <div class="toolbar">
+    <div>
+      <h1>📦 RECBOT（kodawarimax.net）— 現場AI導入スターターキット パッケージ＆同梱ツール設計書</h1>
+      <p>B2B契約企業・展示会VIP配布用「現場オンボーディング化粧箱＋NFC起動カード＋運用プレイブック」</p>
+    </div>
+    <div class="toolbar-actions">
+      <a class="btn" href="website.html">🌐 Webショーケース</a>
+      <a class="btn" href="flyer_a4.html">📄 A4両面フライヤー</a>
+      <a class="btn" href="poster_b2.html">🖼️ B2大判ポスター</a>
+      <a class="btn" href="packaging_dieline.svg" target="_blank">📐 1:1 SVG展開図を開く</a>
+      <button class="btn btn-primary" onclick="window.print()">🖨️ 仕様書PDF出力 (Cmd+P)</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- 3D Studio Mockup -->
+    <section class="studio-stage">
+      <div class="stage-head">
+        <span class="kicker">B2B PHYSICAL ONBOARDING EXPERIENCE</span>
+        <h2>「導入したのに現場で使われない」をゼロにする、<br>フィジカル×デジタル統合スターターキット</h2>
+        <p>
+          SaaSやAI導入支援が現場で形骸化する最大の原因は「マニュアルがPCの奥に埋もれること」です。<br>
+          RECBOTでは、不動産管理の現地スタッフやEC倉庫・運営担当者がデスクや現場で即座にAIワークフローを呼び出せるよう、<strong>専用マグネット化粧箱・NFCスマート起動カード・A5運用プレイブック</strong>をパッケージ化しました。
+        </p>
+      </div>
+
+      <div class="mockup-showcase">
+        <!-- 3D Rigid Box -->
+        <div class="box-3d-scene">
+          <div class="rigid-box">
+            <div class="rigid-box-foil-frame">
+              <div>
+                <div class="foil-kicker">REAL ESTATE × E-COMMERCE AI</div>
+                <div class="foil-logo">RECBOT</div>
+                <div class="foil-sub">現場の仕事に、頼れる相棒を。</div>
+              </div>
+              <div class="foil-meta">
+                FIELD WORKFLOW &amp; AI ONBOARDING KIT<br>
+                01 不動産向け支援（仲介・管理・改修案件管理）<br>
+                02 EC向け支援（Shopee自動化・AIO最適化）<br>
+                <span style="color:#F6D399;">https://kodawarimax.net/</span>
+              </div>
+            </div>
+
+            <!-- Warm Ivory Obi Band -->
+            <div class="obi-band">
+              <div style="font-size:9px; font-weight:800; letter-spacing:0.1em; color:#C86D51;">STARTER KIT</div>
+              <div style="font-size:11px; font-weight:800; line-height:1.35;">小さくつくり、<br>現場で育てる<br>AI導入セット</div>
+              <img src="assets/qr_kodawarimax.png" alt="QR" />
+              
+            </div>
+          </div>
+          <div style="margin-top:22px; font-size:12px; color:#94A3B8; text-align:center;">
+            ▲ 外箱モックアップ：タント濃紺マット貼箱（W260×D190×H45mm）＋ カッパー銅箔押し ＋ アラベール巻き帯
+          </div>
+        </div>
+
+        <!-- 3 Physical Kit Items -->
+        <div class="kit-items-col">
+          <div class="kit-card">
+            <div class="kit-thumb">
+              <img src="assets/real-estate.jpg" alt="Playbook" />
+              <span class="kit-thumb-label">ITEM 01<br>PLAYBOOK</span>
+            </div>
+            <div class="kit-info">
+              <h3>① 現場運用プレイブック＆プロンプト設計バインダー</h3>
+              <p>「文章案はAI・金額は計算ルール・最終確定は人」の運用ルールと、不動産物件紹介・改修提案・Shopee/AIO出品の画面付き手順書を収録した差し替え式A5リングバインダー。</p>
+              <span class="kit-spec-pill">規格: A5 (148×210mm) / 36P / 撥水マットPP加工</span>
+            </div>
+          </div>
+
+          <div class="kit-card">
+            <div class="kit-thumb">
+              <img src="assets/commerce.jpg" alt="NFC Card" />
+              <span class="kit-thumb-label">ITEM 02<br>NFC CARD</span>
+            </div>
+            <div class="kit-info">
+              <h3>② RECBOT Quick Launch NFCスマートデスクカード（2枚組）</h3>
+              <p>スマホやPCの横に置き、かざす（または裏面QRを読む）だけで自社の「現地記録フォーム」や「AI下書き画面」が1秒で開くNTAG215内蔵PVCカード。</p>
+              <span class="kit-spec-pill">規格: 85.6×54.0mm (CR80) / マットブラックPVC + 銅箔</span>
+            </div>
+          </div>
+
+          <div class="kit-card">
+            <div class="kit-thumb">
+              <img src="assets/site_realestate_flow.png" alt="Checklist" />
+              <span class="kit-thumb-label">ITEM 03<br>CHECKLIST</span>
+            </div>
+            <div class="kit-info">
+              <h3>③ 現地記録＆EC出品AIO ラミネートチェックシート</h3>
+              <p>賃貸退去立会い・改修現調時の「撮影必須ポイント表」と、EC商品登録時の「AI検索（AIO）構造化チェック項目」を両面にまとめた現場携行用ボード。</p>
+              <span class="kit-spec-pill">規格: A5両面 / 100μm抗菌ラミネート加工</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1:1 Vector Dieline Preview -->
+    <section class="dieline-card">
+      <div class="dieline-head">
+        <div>
+          <h2>📐 1:1 ベクター展開図（木型・箔押し・内箱EVAトレイ設計図）</h2>
+          <p style="font-size:12px; color:#94A3B8; margin-top:4px;">ファイル名: <code>packaging_dieline.svg</code> （Illustrator / CADそのまま入稿可能な実寸比率ベクターデータ）</p>
+        </div>
+        <a class="btn btn-primary" href="packaging_dieline.svg" download="recbot_packaging_dieline.svg">⬇️ SVGベクター展開図をダウンロード</a>
+      </div>
+      <div class="dieline-frame">
+        <img src="packaging_dieline.svg" alt="RECBOT Packaging Dieline SVG" />
+      </div>
+    </section>
+
+    <!-- Print Specification Table -->
+    <section class="spec-table-card">
+      <h2 style="font-size:18px;">🖨️ 印刷・加工・資材仕様書</h2>
+      <table class="spec-table">
+        <tr>
+          <th>パッケージ名称</th>
+          <td>RECBOT 現場AI導入スターターキット（Field AI Onboarding Starter Box）</td>
+        </tr>
+        <tr>
+          <th>外寸サイズ / 構造</th>
+          <td>W260 × D190 × H45 mm ／ マグネット内蔵ブック型貼箱（ネオジム磁石2箇所）＋ 外巻き帯スリーブ</td>
+        </tr>
+        <tr>
+          <th>芯材・貼り紙（外箱）</th>
+          <td>芯材：チップボール 16号（約2.0mm厚） ／ 貼り紙：タント N-13（ディープスレートネイビー）四六判 100kg＋マットスクラッチPP</td>
+        </tr>
+        <tr>
+          <th>箔押し・特色指定</th>
+          <td>天面・背表紙：村田金箔 カッパー箔（No.111 銅箔 / 近似HEX <code>#C86D51</code>） ／ 巻き帯：アラベール スノーホワイト 160kg（CMYK＋スミ）</td>
+        </tr>
+        <tr>
+          <th>内装トレイ（中枠）</th>
+          <td>高密度EVAフォーム（黒・厚さ30mm）トムソン抜き加工（A5バインダー枠・NFCカード枠・ラミネートシート枠）</td>
+        </tr>
+        
+      </table>
+    </section>
+  </div>
+
+</body>
+</html>

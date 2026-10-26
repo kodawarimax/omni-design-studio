@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECBOT（kodawarimax.net）— A4両面 販促フライヤー＆パンフレット</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-ivory: #F6F3EE;
+      --bg-paper: #FDFBF7;
+      --ink-navy: #18222F;
+      --ink-slate: #334155;
+      --ink-muted: #64748B;
+      --accent-terra: #C86D51;
+      --accent-terra-dark: #A85238;
+      --accent-sage: #2E5E4E;
+      --accent-gold: #B58B4C;
+      --border-warm: #E2DDD5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0F1722;
+      color: var(--ink-navy);
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      padding: 32px 20px 64px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .toolbar {
+      max-width: 1120px;
+      margin: 0 auto 28px;
+      background: rgba(24, 34, 47, 0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 16px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      color: #F6F3EE;
+      backdrop-filter: blur(12px);
+    }
+    .toolbar-left h1 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .toolbar-left p {
+      font-size: 12px;
+      color: #94A3B8;
+      margin-top: 4px;
+    }
+    .toolbar-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: #F6F3EE;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: rgba(255,255,255,0.14); }
+    .btn-primary {
+      background: var(--accent-terra);
+      border-color: var(--accent-terra);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--accent-terra-dark); }
+
+    .sheets-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 44px;
+    }
+    .sheet-label {
+      color: #94A3B8;
+      font-size: 12px;
+      font-family: 'Inter', monospace;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: -30px;
+    }
+
+    /* A4 Sheet Container (210mm x 297mm scaled cleanly for screen & exact print) */
+    .a4-sheet {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--bg-ivory);
+      position: relative;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.55);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* Crop Marks simulation */
+    .crop-mark {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      pointer-events: none;
+      z-index: 20;
+      opacity: 0.45;
+    }
+    .crop-tl { top: 6px; left: 6px; border-top: 1px solid var(--ink-navy); border-left: 1px solid var(--ink-navy); }
+    .crop-tr { top: 6px; right: 6px; border-top: 1px solid var(--ink-navy); border-right: 1px solid var(--ink-navy); }
+    .crop-bl { bottom: 6px; left: 6px; border-bottom: 1px solid var(--ink-navy); border-left: 1px solid var(--ink-navy); }
+    .crop-br { bottom: 6px; right: 6px; border-bottom: 1px solid var(--ink-navy); border-right: 1px solid var(--ink-navy); }
+
+    /* FRONT SIDE STYLES */
+    .front-top-bar {
+      background: var(--ink-navy);
+      color: #F6F3EE;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--accent-terra);
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-mark {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 0.14em;
+      color: #FFFFFF;
+    }
+    .brand-tag {
+      font-size: 11px;
+      color: #CBD5E1;
+      padding-left: 12px;
+      border-left: 1px solid rgba(255,255,255,0.25);
+    }
+    .top-pill {
+      background: rgba(200, 109, 81, 0.22);
+      border: 1px solid var(--accent-terra);
+      color: #FFD2C2;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.06em;
+    }
+
+    .front-hero {
+      padding: 26px 28px 20px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 22px;
+      align-items: center;
+      background: linear-gradient(135deg, #FDFBF7 0%, #F2ECE1 100%);
+      border-bottom: 1px solid var(--border-warm);
+    }
+    .hero-kicker {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--accent-terra);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 33px;
+      line-height: 1.28;
+      font-weight: 700;
+      color: var(--ink-navy);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .hero-title span {
+      color: var(--accent-terra);
+      border-bottom: 3px solid rgba(200,109,81,0.35);
+    }
+    .hero-lead {
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--ink-slate);
+      margin-bottom: 14px;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .h-badge {
+      background: var(--ink-navy);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 6px;
+    }
+    .h-badge.alt {
+      background: #E8E2D5;
+      color: var(--ink-navy);
+    }
+
+    .hero-visual-stack {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hero-card-img {
+      width: 100%;
+      height: 128px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      box-shadow: 0 8px 20px rgba(24,34,47,0.14);
+    }
+    .hero-caption-pill {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(24,34,47,0.88);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* Two Main Verticals on Front */
+    .verticals-section {
+      padding: 20px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      flex: 1;
+    }
+    .v-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-warm);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(24,34,47,0.04);
+    }
+    .v-card-header {
+      padding: 12px 16px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .v-card-header.re { background: var(--ink-navy); }
+    .v-card-header.ec { background: var(--accent-sage); }
+    .v-card-header h2 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .v-card-header span {
+      font-family: 'Inter', monospace;
+      font-size: 10px;
+      opacity: 0.85;
+      letter-spacing: 0.1em;
+    }
+    .v-photo-wrap {
+      position: relative;
+      height: 132px;
+      overflow: hidden;
+    }
+    .v-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .v-photo-badge {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
+      background: rgba(24,34,47,0.86);
+      color: #fff;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .v-body {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .v-lead {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--ink-slate);
+      font-weight: 500;
+    }
+    .v-subbox {
+      background: var(--bg-ivory);
+      border-left: 3px solid var(--accent-terra);
+      padding: 9px 11px;
+      border-radius: 0 8px 8px 0;
+    }
+    .v-card.ec-card .v-subbox {
+      border-left-color: var(--accent-sage);
+    }
+    .v-subbox h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-navy);
+      margin-bottom: 4px;
+    }
+    .v-subbox p {
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--ink-slate);
+    }
+    .v-step-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    .v-step-list li {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 10.5px;
+      line-height: 1.4;
+      color: var(--ink-navy);
+    }
+    .v-step-list li strong {
+      display: block;
+      color: var(--accent-terra);
+      font-size: 10px;
+    }
+    .v-card.ec-card .v-step-list li strong {
+      color: var(--accent-sage);
+    }
+
+    /* Hybrid AI Principle Banner */
+    .hybrid-strip {
+      margin: 0 28px 16px;
+      background: var(--ink-navy);
+      color: #F6F3EE;
+      border-radius: 10px;
+      padding: 12px 18px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .hybrid-strip-tag {
+      background: var(--accent-terra);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .hybrid-strip-text {
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: #E2E8F0;
+    }
+    .hybrid-strip-text strong {
+      color: #FFD2C2;
+    }
+
+    /* Front Footer Bar */
+    .front-footer {
+      background: #EAE4D8;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-warm);
+    }
+    .ff-left h4 {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink-navy);
+    }
+    .ff-left p {
+      font-size: 11px;
+      color: var(--ink-slate);
+      margin-top: 2px;
+    }
+    .ff-qr {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-warm);
+    }
+    .ff-qr img {
+      width: 52px;
+      height: 52px;
+      display: block;
+    }
+    .ff-qr-txt {
+      font-size: 10.5px;
+      line-height: 1.45;
+      color: var(--ink-navy);
+    }
+    .ff-qr-txt strong {
+      display: block;
+      font-size: 12px;
+      color: var(--accent-terra);
+    }
+
+    /* BACK SIDE STYLES */
+    .back-section {
+      padding: 22px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+    }
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--ink-navy);
+      padding-bottom: 6px;
+    }
+    .sec-head h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--ink-navy);
+    }
+    .sec-head span {
+      font-family: 'Inter', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-terra);
+      letter-spacing: 0.1em;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .pillar-card {
+      background: #fff;
+      border: 1px solid var(--border-warm);
+      border-top: 4px solid var(--ink-navy);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .pillar-card:nth-child(2) { border-top-color: var(--accent-terra); }
+    .pillar-card:nth-child(3) { border-top-color: var(--accent-sage); }
+    .pillar-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-terra);
+      letter-spacing: 0.08em;
+    }
+    .pillar-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 4px 0 6px;
+      color: var(--ink-navy);
+    }
+    .pillar-sub {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-sage);
+      margin-bottom: 6px;
+    }
+    .pillar-card p {
+      font-size: 11.2px;
+      line-height: 1.6;
+      color: var(--ink-slate);
+    }
+
+    /* 4-Step Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .flow-item {
+      background: #fff;
+      border: 1px solid var(--border-warm);
+      border-radius: 8px;
+      padding: 12px;
+      position: relative;
+    }
+    .flow-step-badge {
+      display: inline-block;
+      background: var(--ink-navy);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .flow-item h4 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-navy);
+      margin-bottom: 4px;
+    }
+    .flow-item p {
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--ink-slate);
+    }
+    .flow-deliverable {
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border-warm);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent-terra);
+    }
+
+    /* Self-Diagnostic Check Sheet */
+    .diag-box {
+      background: #fff;
+      border: 1.5px solid var(--ink-navy);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .diag-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-navy);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .diag-title span {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-terra);
+    }
+    .diag-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .diag-col h5 {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--ink-navy);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .diag-col.ec h5 {
+      background: var(--accent-sage);
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--ink-slate);
+      margin-bottom: 6px;
+    }
+    .checkbox-sq {
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid var(--ink-navy);
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Back CTA & Partner Stamp Box */
+    .back-cta-card {
+      background: linear-gradient(135deg, #18222F 0%, #243447 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: center;
+    }
+    .cta-copy h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .cta-copy p {
+      font-size: 11.5px;
+      line-height: 1.65;
+      color: #CBD5E1;
+      margin-bottom: 10px;
+    }
+    .cta-url-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: 'Inter', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFD2C2;
+    }
+    .cta-right-qr {
+      background: #fff;
+      color: var(--ink-navy);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cta-right-qr img {
+      width: 74px;
+      height: 74px;
+      flex-shrink: 0;
+    }
+    .cta-right-qr-info h4 {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--ink-navy);
+      margin-bottom: 3px;
+    }
+    .cta-right-qr-info p {
+      font-size: 10px;
+      line-height: 1.45;
+      color: var(--ink-slate);
+    }
+
+    @media print {
+      body { background: none; padding: 0; }
+      .toolbar, .sheet-label { display: none !important; }
+      .sheets-wrapper { gap: 0; }
+      .a4-sheet {
+        box-shadow: none;
+        border: none;
+        page-break-after: always;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <h1>📄 RECBOT（kodawarimax.net）— A4両面 販促フライヤー＆導入案内パンフレット</h1>
+      <p>規格: A4正寸 (210mm × 297mm) / 両面フルカラー (CMYK入稿対応) / 展示会配布・不動産管理会社＆EC事業者営業用</p>
+    </div>
+    <div class="toolbar-actions">
+      <a class="btn" href="website.html">🌐 Webショーケースへ戻る</a>
+      <a class="btn" href="poster_b2.html">🖼️ B2大判ポスターを見る</a>
+      <a class="btn" href="packaging_mockup.html">📦 導入キット箱デザインを見る</a>
+      <button class="btn btn-primary" onclick="window.print()">🖨️ PDF出力 / A4印刷 (Cmd+P)</button>
+    </div>
+  </div>
+
+  <div class="sheets-wrapper">
+    <div class="sheet-label">SIDE A — FRONT SURFACE (A4表面：ブランドヒーロー＆2大領域ソリューション)</div>
+
+    <!-- ==================== PAGE 1: A4 FRONT ==================== -->
+    <section class="a4-sheet" id="a4-front">
+      <div class="crop-mark crop-tl"></div>
+      <div class="crop-mark crop-tr"></div>
+      <div class="crop-mark crop-bl"></div>
+      <div class="crop-mark crop-br"></div>
+
+      <div>
+        <header class="front-top-bar">
+          <div class="brand-logo">
+            <span class="brand-mark">RECBOT</span>
+            <span class="brand-tag">不動産・ECに特化したAI導入支援サービス</span>
+          </div>
+          <span class="top-pill">REAL ESTATE × E-COMMERCE AI PARTNER</span>
+        </header>
+
+        <div class="front-hero">
+          <div>
+            <span class="hero-kicker">FIELD-FIRST AI IMPLEMENTATION</span>
+            <h1 class="hero-title">現場の仕事に、<br><span>頼れる相棒</span>を。</h1>
+            <p class="hero-lead">
+              いつもの入力、返信、集計。その繰り返しにAIを。<br>
+              RECBOT（レックボット）は、業務の整理からツール試作・導入・現場定着まで、御社の現場に合った「本当に回り続ける仕組みづくり」を一気通貫で支援します。
+            </p>
+            <div class="hero-badges">
+              <span class="h-badge">✓ 業務の棚卸しから伴走</span>
+              <span class="h-badge">✓ 小さく試して効果検証</span>
+              <span class="h-badge alt">✓ マニュアル整備・運用定着まで</span>
+            </div>
+          </div>
+          <div class="hero-visual-stack">
+            <img class="hero-card-img" src="assets/real-estate.jpg" alt="不動産向けAI導入支援" />
+            <img class="hero-card-img" src="assets/commerce.jpg" alt="EC向けAI導入支援" />
+            <span class="hero-caption-pill">現場画面×AI連携で手戻りをゼロへ</span>
+          </div>
+        </div>
+
+        <div class="verticals-section">
+          <!-- Vertical 01: Real Estate -->
+          <article class="v-card re-card">
+            <div class="v-card-header re">
+              <h2>01｜不動産向け支援</h2>
+              <span>REAL ESTATE SOLUTION</span>
+            </div>
+            <div class="v-photo-wrap">
+              <img src="assets/real-estate.jpg" alt="不動産現場のAI支援" />
+              <span class="v-photo-badge">仲介・管理会社・オーナー提案の現場に</span>
+            </div>
+            <div class="v-body">
+              <p class="v-lead">
+                物件紹介文の作成、反響対応の整理、社内情報の検索など、日々の不動産業務にAIを組み込み、入力・確認・共有の手間を減らします。
+              </p>
+              <div class="v-subbox">
+                <h3>🏢 管理会社向け：改修提案・案件管理の仕組みづくり</h3>
+                <p>オーナー・施工会社・入居者の間で情報が散らばりやすい改修業務を、現地記録から完了確認まで1つの案件フローでつなぎます。</p>
+              </div>
+              <ul class="v-step-list">
+                <li><strong>STEP 1｜現地で記録</strong>写真・メモ・不具合を案件単位で即登録</li>
+                <li><strong>STEP 2｜提案・判断整理</strong>修繕・改修案の比較とAI下書き作成</li>
+                <li><strong>STEP 3｜承認・見積・発注</strong>オーナー承認・見積依頼・発注履歴を一元化</li>
+                <li><strong>STEP 4｜施工〜完了確認</strong>進捗共有から完了報告・履歴保存まで</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Vertical 02: E-Commerce -->
+          <article class="v-card ec-card">
+            <div class="v-card-header ec">
+              <h2>02｜EC向け支援</h2>
+              <span>E-COMMERCE &amp; AIO SOLUTION</span>
+            </div>
+            <div class="v-photo-wrap">
+              <img src="assets/commerce.jpg" alt="EC現場のAI支援" />
+              <span class="v-photo-badge">越境EC・モール運用・AI検索最適化に</span>
+            </div>
+            <div class="v-body">
+              <p class="v-lead">
+                商品情報の整備、問い合わせ回答の下書き、売上レポート作成など、日々のEC運営を止めずに回せるAIワークフローを構築します。
+              </p>
+              <div class="v-subbox">
+                <h3>🌏 Shopee初期出品・自動化 ＆ EC向けAIO対策</h3>
+                <p>越境ECの出品立ち上げから、生成AI検索・レコメンドで選ばれるための構造化商品情報（AIO）整備まで実践的に支援します。</p>
+              </div>
+              <ul class="v-step-list">
+                <li><strong>Shopee初期出品支援</strong>翻訳・属性整理・一括出品フローの自動化</li>
+                <li><strong>EC向けAIO対策</strong>AI検索が理解しやすいスペック・比較情報整備</li>
+                <li><strong>CS返信の下書き自動化</strong>過去の対応履歴を踏まえた迅速・丁寧な返信案</li>
+                <li><strong>売上・在庫レポート集計</strong>定例集計の自動化で分析と企画に集中</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div>
+        <div class="hybrid-strip">
+          <div class="hybrid-strip-tag">RECBOTの<br>設計原則</div>
+          <div class="hybrid-strip-text">
+            AIに丸投げして現場が混乱する導入は行いません。<strong>「文章案や要約はAI」「金額や条件は決定論的な計算ルール」「最終確認・確定は人」</strong>と役割を明確に分けることで、現場スタッフが安心して使い続けられる仕組みをつくります。
+          </div>
+        </div>
+
+        <footer class="front-footer">
+          <div class="ff-left">
+            <h4>RECBOT（レックボット）— 不動産・ECに特化したAI導入支援</h4>
+            <p>Webサイトから現在の業務のお悩みをお気軽にご相談ください ｜ https://kodawarimax.net/</p>
+          </div>
+          <div class="ff-qr">
+            <img src="assets/qr_kodawarimax.png" alt="kodawarimax.net QRコード" />
+            <div class="ff-qr-txt">
+              <strong>無料相談・詳細はこちら</strong>
+              スマホでQRコードを読み取り<br>公式サイトへアクセス
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <div class="sheet-label">SIDE B — BACK SURFACE (A4裏面：3つの支援領域・導入4ステップ・現場診断シート)</div>
+
+    <!-- ==================== PAGE 2: A4 BACK ==================== -->
+    <section class="a4-sheet" id="a4-back">
+      <div class="crop-mark crop-tl"></div>
+      <div class="crop-mark crop-tr"></div>
+      <div class="crop-mark crop-bl"></div>
+      <div class="crop-mark crop-br"></div>
+
+      <div>
+        <header class="front-top-bar">
+          <div class="brand-logo">
+            <span class="brand-mark">RECBOT</span>
+            <span class="brand-tag">HOW WE HELP &amp; IMPLEMENTATION FLOW</span>
+          </div>
+          <span class="top-pill">小さく試して、現場で育てるAI導入</span>
+        </header>
+
+        <div class="back-section">
+          <!-- Section 1: 3 Pillars -->
+          <div>
+            <div class="sec-head">
+              <h2>1. RECBOTの支援内容 — 現場に定着する3つのアプローチ</h2>
+              <span>HOW WE HELP</span>
+            </div>
+            <div class="pillars-grid" style="margin-top: 12px;">
+              <div class="pillar-card">
+                <div class="pillar-num">PILLAR 01</div>
+                <h3>仕事をほどく</h3>
+                <div class="pillar-sub">業務整理・導入方針の設計</div>
+                <p>日々の業務の流れを棚卸しし、「どこに時間がかかっているか」「どこをAIや自動化に置き換えられるか」を現場目線で整理します。</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-num">PILLAR 02</div>
+                <h3>小さくつくり、試す</h3>
+                <div class="pillar-sub">ツール選定・試作・効果検証</div>
+                <p>いきなり大規模なシステムを入れるのではなく、まずは1つの業務から試作（プロトタイプ）をつくり、実際の現場データで効果を確かめます。</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-num">PILLAR 03</div>
+                <h3>使える仕組みに育てる</h3>
+                <div class="pillar-sub">導入支援・マニュアル・運用改善</div>
+                <p>現場のスタッフが迷わず使えるよう、操作手順書やプロンプト集を整え、運用しながら改善を続けられる体制をつくります。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: 4-Step Flow -->
+          <div>
+            <div class="sec-head">
+              <h2>2. 導入の流れ — リスクを最小化する4ステップ</h2>
+              <span>4-STEP WORKFLOW</span>
+            </div>
+            <div class="flow-grid" style="margin-top: 12px;">
+              <div class="flow-item">
+                <span class="flow-step-badge">STEP 01</span>
+                <h4>現状を聞く</h4>
+                <p>現在のお困りごとや業務の流れをお伺いし、AI活用で効果が出やすい対象業務を特定します。</p>
+                <div class="flow-deliverable">成果物：対象業務とゴールの整理</div>
+              </div>
+              <div class="flow-item">
+                <span class="flow-step-badge">STEP 02</span>
+                <h4>小さく試作する</h4>
+                <p>実際の業務データや画面イメージをもとに、小さく試せるプロトタイプと導入プランをご提案します。</p>
+                <div class="flow-deliverable">成果物：試作（デモ）とお見積り</div>
+              </div>
+              <div class="flow-item">
+                <span class="flow-step-badge">STEP 03</span>
+                <h4>現場で確かめる</h4>
+                <p>現場の担当者様に実際に触っていただき、使い勝手や削減できる作業時間を確認します。</p>
+                <div class="flow-deliverable">成果物：導入可否の判断材料</div>
+              </div>
+              <div class="flow-item">
+                <span class="flow-step-badge">STEP 04</span>
+                <h4>導入し、育てる</h4>
+                <p>本番運用を開始し、マニュアル整備やスタッフ教育、運用後の微調整まで継続的にフォローします。</p>
+                <div class="flow-deliverable">成果物：運用手順書と改善方針</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Self-Check Sheet -->
+          <div class="diag-box">
+            <div class="diag-title">
+              <span>📋 現場の「繰り返し業務」自己診断チェックシート</span>
+              <span>1つでも当てはまれば、RECBOTで業務時間を大幅削減できます</span>
+            </div>
+            <div class="diag-cols">
+              <div class="diag-col re">
+                <h5>🏠 不動産仲介・管理会社の現場チェック</h5>
+                <div class="check-item"><span class="checkbox-sq"></span><span>物件紹介文やポータル入力に毎回時間がかかっている</span></div>
+                <div class="check-item"><span class="checkbox-sq"></span><span>現地で撮った修繕写真やメモがLINEやメールに散재している</span></div>
+                <div class="check-item"><span class="checkbox-sq"></span><span>オーナーへの改修提案書・見積比較の作成が属人化している</span></div>
+                <div class="check-item"><span class="checkbox-sq"></span><span>過去の修繕履歴や社内ルールを探すのに時間がかかる</span></div>
+              </div>
+              <div class="diag-col ec">
+                <h5>🛒 EC運営・越境EC（Shopee等）の現場チェック</h5>
+                <div class="check-item"><span class="checkbox-sq"></span><span>Shopeeへの初期出品や多言語の商品登録が追いつかない</span></div>
+                <div class="check-item"><span class="checkbox-sq"></span><span>AI検索（AIO）で自社商品が比較・推薦されやすくなる対策をしたい</span></div>
+                <div class="check-item"><span class="checkbox-sq"></span><span>顧客からの定型的な問い合わせ返信をAI下書きで効率化したい</span></div>
+                <div class="check-item"><span class="checkbox-sq"></span><span>モール別の売上・在庫集計作業を手作業のCSVで行っている</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Bottom CTA Card -->
+          <div class="back-cta-card">
+            <div class="cta-copy">
+              <h3>まずは「今のやり方」をお聞かせください。</h3>
+              <p>
+                「何からAI化すればいいかわからない」「既存の業務フローを壊したくない」という段階からご相談いただけます。まずは1つの業務を小さく試作するところから始めませんか？
+              </p>
+              <div class="cta-url-box">
+                <span>🔗 公式サイト・お問い合わせ</span>
+                <span>https://kodawarimax.net/</span>
+              </div>
+            </div>
+            <div class="cta-right-qr">
+              <img src="assets/qr_kodawarimax.png" alt="QR Code" />
+              <div class="cta-right-qr-info">
+                <h4>オンライン無料相談受付中</h4>
+                <p>左のQRコードよりWebサイトの相談フォームへお進みください。<br><strong>© 2026 RECBOT</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="front-footer">
+        <div class="ff-left">
+          <h4>RECBOT — 不動産・ECに特化したAI導入支援 ｜ https://kodawarimax.net/</h4>
+          <p>取扱領域：不動産仲介・管理業務AI化 / 改修案件管理システム / Shopee初期出品・自動化 / EC向けAIO最適化</p>
+        </div>
+        
+      </footer>
+    </section>
+  </div>
+
+</body>
+</html>
