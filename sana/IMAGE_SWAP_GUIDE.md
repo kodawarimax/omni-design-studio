@@ -17,7 +17,7 @@
 
 | アセットファイル名 | 元ファイル名 (`Sana/` フォルダ) | 内容 |
 | :--- | :--- | :--- |
-| `assets/01_sana_brand_card_pansy.jpg` | `S__52355083_0.jpg` | `Sana flower_jewelry` 専用台紙付きビオラ耳飾り |
+| `assets/01_sana_brand_card_pansy.jpg` | `S__52355083_0.jpg` | ビオラ一輪のボタニカル耳飾り |
 | `assets/02_mint_hydrangea_glass.jpg` | `S__52355088_0.jpg` | 氷翠アジサイの立体フラワークラスター耳飾り |
 | `assets/03_wearing_white_blossom_hair.jpg` | `S__52355089_0.jpg` | 白花のクリアボタニカル・ポニーフック（着用カット） |
 | `assets/04_white_rose_bridal_comb.jpg` | `S__52355082_0.jpg` | 白薔薇と淡水パール調ビジューのセレモニーコーム |
